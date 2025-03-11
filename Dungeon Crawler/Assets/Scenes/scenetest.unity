@@ -991,6 +991,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &893763267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 893763268}
+  - component: {fileID: 893763269}
+  m_Layer: 0
+  m_Name: FightManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &893763268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893763267}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.1494257, y: -1.1761965, z: -10.987439}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &893763269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893763267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a498c1a544e9b8c46b95a280efd21d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fightMapPrefab: {fileID: 0}
+  enemyPrefabs: []
+  spawnParent: {fileID: 1921099994}
+  fighters: []
+  player: {fileID: 0}
 --- !u!1 &1169263579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,6 +1180,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1211836202}
+  - component: {fileID: 1211836203}
   m_Layer: 0
   m_Name: Perso 1
   m_TagString: Untagged
@@ -1154,6 +1204,22 @@ Transform:
   - {fileID: 1361856}
   m_Father: {fileID: 535705030}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1211836203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211836201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec27f4bafc708f4ebb2de513cb94f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fighterName: louloute
+  isEnemy: 0
+  health: 100
+  speed: 10
 --- !u!1 &1380074037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,6 +1443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1525486466}
+  - component: {fileID: 1525486467}
   m_Layer: 0
   m_Name: Perso 3
   m_TagString: Untagged
@@ -1400,6 +1467,22 @@ Transform:
   - {fileID: 1628183868}
   m_Father: {fileID: 535705030}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1525486467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525486465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec27f4bafc708f4ebb2de513cb94f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fighterName: pioupiou
+  isEnemy: 0
+  health: 100
+  speed: 5
 --- !u!1 &1551952156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,6 +1709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1760421470}
+  - component: {fileID: 1760421471}
   m_Layer: 0
   m_Name: Perso 2
   m_TagString: Untagged
@@ -1649,6 +1733,22 @@ Transform:
   - {fileID: 651753355}
   m_Father: {fileID: 535705030}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1760421471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760421469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec27f4bafc708f4ebb2de513cb94f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fighterName: kekette
+  isEnemy: 0
+  health: 100
+  speed: 20
 --- !u!1 &1887637701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1733,6 +1833,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1921099993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1921099994}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1921099994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921099993}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23.62, y: -3.51, z: -10.987439}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2050302078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,3 +1957,5 @@ SceneRoots:
   - {fileID: 1380074039}
   - {fileID: 1551952159}
   - {fileID: 535705030}
+  - {fileID: 893763268}
+  - {fileID: 1921099994}
