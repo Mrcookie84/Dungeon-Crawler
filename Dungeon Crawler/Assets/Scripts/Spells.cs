@@ -1,13 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObject/Spells")]
 public abstract class Spells : ScriptableObject
 {
-    [Header("Dégats"), SerializeField] public int m_degats = 10;
-    [Header("Zone effect"), SerializeField]
-    public float m_zoneEffect = 2;
+    [field: Header("Dégats")]
+    protected internal int m_degats { get; private set; }
+
+    [field: Header("Zone effect")]
+    protected internal float m_zoneEffect { get; private set; }
 
     public virtual SpellsInstance Instance()
     {
@@ -17,8 +17,8 @@ public abstract class Spells : ScriptableObject
 
 public class SpellsInstance
 {
-    public int m_degats = 10;
-    public float m_zoneEffect = 2;
+    public int m_degats;
+    public float m_zoneEffect;
 
     public SpellsInstance(Spells dataSpells)
     {

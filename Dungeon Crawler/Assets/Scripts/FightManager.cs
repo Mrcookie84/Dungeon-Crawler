@@ -1,128 +1,42 @@
+using System;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 public class FightManager : MonoBehaviour
 {
-    public GameObject fightMapPrefab; // La map de combat
-    public GameObject[] enemyPrefabs; // Liste des ennemis
-    public Transform spawnParent; // Parent des ennemis
+    [SerializeField]
+    private List<Groupe> enemySpawn = new List<Groupe>();
+    [SerializeField] 
+    private List<GameObject> spawn = new List<GameObject>();
+    [SerializeField] 
+    private Monster monsterPrefab;
+    [SerializeField] 
+    private Player playerPrefab;
+    [SerializeField]
+    private List<Groupe> playerSpawn = new List<Groupe>();
 
-    private GameObject fightMapInstance;
-    private Vector2[,] gridPositions = new Vector2[2, 3];
-    public List<Fighter> fighters = new List<Fighter>(); // Liste des entités
-    private Queue<Fighter> turnQueue = new Queue<Fighter>(); // File d'attente pour les tours
-    private bool isFightActive = false;
-
-    public Fighter player; // Référence au joueur
-
-    void Start()
+    private void Start()
     {
-        // Initialisation des positions de la grille
-        float startX = -1f, startY = 1f, spacingX = 1f, spacingY = 1f;
-        for (int y = 0; y < 2; y++)
-        {
-            for (int x = 0; x < 3; x++)
-            {
-                gridPositions[y, x] = new Vector2(startX + (x * spacingX), startY - (y * spacingY));
-            }
-        }
+        Spawn();
     }
 
-    public void StartFight()
+    private void Spawn()
     {
-        if (fightMapInstance == null)
+        for (var i = 0; i < enemySpawn[0].entityList.Count; i++)
         {
-            fightMapInstance = Instantiate(fightMapPrefab, Vector3.zero, Quaternion.identity);
+            var enemy = enemySpawn[0].entityList[i];
+            var monster = Instantiate(monsterPrefab);
+            monster.transform.position = spawn[enemySpawn[0].positionList[i]].transform.position;
+            monster.ApplyData(enemy);
         }
-        fightMapInstance.SetActive(true);
 
-        SpawnEnemies();
-        SetupTurnOrder();
-        StartCoroutine(TurnLoop());
-    }
-
-    private void SpawnEnemies()
-    {
-        List<Vector2> availablePositions = new List<Vector2>();
-        foreach (Vector2 pos in gridPositions)
-            availablePositions.Add(pos);
-
-        int enemyCount = Random.Range(1, 4);
-        for (int i = 0; i < enemyCount; i++)
+        for (int i = 0; i < playerSpawn[0].playerList.Count; i++)
         {
-            if (availablePositions.Count == 0) break;
-
-            int randomIndex = Random.Range(0, availablePositions.Count);
-            Vector2 spawnPos = availablePositions[randomIndex];
-
-            GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
-            GameObject enemyObj = Instantiate(enemyPrefab, spawnPos, Quaternion.identity, spawnParent);
-            Fighter enemy = enemyObj.GetComponent<Fighter>();
-            fighters.Add(enemy); // Ajoute l'ennemi à la liste des combattants
-
-            availablePositions.RemoveAt(randomIndex);
+            var player = playerSpawn[0].playerList[i];
+            var m_player = Instantiate(playerPrefab);
+            m_player.transform.position = spawn[playerSpawn[0].positionList[i]].transform.position;
+            m_player.ApplyDataPlayer(player);
         }
-    }
-
-    private void SetupTurnOrder()
-    {
-        fighters.Add(player); // Ajoute le joueur
-        fighters.Sort((a, b) => b.speed.CompareTo(a.speed)); // Tri par vitesse (exemple)
-        foreach (Fighter fighter in fighters)
-        {
-            turnQueue.Enqueue(fighter);
-        }
-        isFightActive = true;
-    }
-
-    private IEnumerator TurnLoop()
-    {
-        while (isFightActive)
-        {
-            if (turnQueue.Count == 0)
-            {
-                SetupTurnOrder();
-            }
-
-            Fighter currentFighter = turnQueue.Dequeue();
-            yield return StartCoroutine(currentFighter.TakeTurn());
-
-            if (CheckVictory()) yield break;
-
-            turnQueue.Enqueue(currentFighter);
-        }
-    }
-
-    private bool CheckVictory()
-    {
-        bool allEnemiesDefeated = fighters.FindAll(f => f.isEnemy && f.isAlive).Count == 0;
-        bool playerDefeated = !player.isAlive;
-
-        if (allEnemiesDefeated)
-        {
-            Debug.Log("Victoire !");
-            EndFight();
-            return true;
-        }
-        else if (playerDefeated)
-        {
-            Debug.Log("Défaite...");
-            EndFight();
-            return true;
-        }
-        return false;
-    }
-
-    public void EndFight()
-    {
-        isFightActive = false;
-        fightMapInstance.SetActive(false);
-        foreach (Transform child in spawnParent)
-        {
-            Destroy(child.gameObject);
-        }
-        fighters.Clear();
-        turnQueue.Clear();
     }
 }
