@@ -23,6 +23,8 @@ public class SceneChangeDoor : MonoBehaviour
     [Header("Scene to go :")]
     [SerializeField] public int sceneNumber = 0;
 
+    
+
 
     private void Start()
     {
@@ -51,7 +53,7 @@ public class SceneChangeDoor : MonoBehaviour
         if (interactBubble.activeSelf && doorOpened.activeSelf && Input.GetKeyDown(KeyCode.E) && solution.activeSelf == false)
         {
 
-            
+            SceneManager.GoToFight();
 
         }
     }
