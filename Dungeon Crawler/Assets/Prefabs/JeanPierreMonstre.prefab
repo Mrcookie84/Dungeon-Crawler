@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 871f2fb4874994f4fb96062d9f07bc5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fighterName: PIERROT
+  health: 100
+  attackPower: 20
   monsterRenderer: {fileID: 6645515340715968248}
 --- !u!1 &3167764135316268109
 GameObject:
