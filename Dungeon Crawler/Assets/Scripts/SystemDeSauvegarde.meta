@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Dungeon Crawler/Assets/Scripts/SystemDeSauvegarde.meta
 guid: d54591affd80d1946a4b0bdda263c31b
+========
+guid: 0e83bcedbf1c6b249884e3f7799ba787
+>>>>>>>> 22673a7 (Combat trigger + map UI + fusion des deux dossier prefab):Dungeon Crawler/Assets/Scripts/RpScene.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
