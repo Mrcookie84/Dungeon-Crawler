@@ -6,6 +6,6 @@ public class FightSceneManager : MonoBehaviour
 {
     public void Awake()
     {
-        SceneManager.sceneFight = gameObject;
+        SceneManager.SceneFight = gameObject;
     }
 }

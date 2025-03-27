@@ -18,10 +18,7 @@ public class SceneChangeDoor : MonoBehaviour
     [Header("Others :")]
     [SerializeField] public GameObject interactBubble;
     [SerializeField] public BoxCollider2D triggerBox;
-    [SerializeField] public GameObject mapUI;
-
-    [Header("Scene to go :")]
-    [SerializeField] public int sceneNumber = 0;
+    [SerializeField] public RectTransform mapUI;
 
     
 
@@ -52,8 +49,9 @@ public class SceneChangeDoor : MonoBehaviour
 
         if (interactBubble.activeSelf && doorOpened.activeSelf && Input.GetKeyDown(KeyCode.E) && solution.activeSelf == false)
         {
-
-            SceneManager.GoToFight();
+            
+            
+            mapUI.DOAnchorPosY(21, 1, false).SetEase(Ease.InCubic);
 
         }
     }
