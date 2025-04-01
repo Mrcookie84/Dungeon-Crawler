@@ -3,8 +3,8 @@ using UnityEngine;
 
 public abstract class Entity: ScriptableObject
 {
-    [field: Header("Hp"),SerializeField]
-    protected int m_hp { get; private set; }
+    [field: Header("Hp"),SerializeField] 
+    protected internal int m_hp { get; internal set; }
 
     [field: Header("Speed"),SerializeField]
     protected float m_speed { get; private set; }

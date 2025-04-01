@@ -1,60 +1,31 @@
 using System.Collections;
 using UnityEngine;
 
+[System.Serializable]
+
+
 public class Fighter : MonoBehaviour
 {
-    public string fighterName;
-    public int health = 100;
-    public int attackPower = 20;
-    public bool isPlayer;
-    public Fighter player;
-    public Fighter enemy;
+    public Entity entityData;
+
+    public void Attack()
+    {
+        //Lancer les sorts avec le groupe
+    }
     
-    private void Start()
+    public void TakeDamage()
     {
-        StartCoroutine(Battle());
+        // pouvoir se prendre des dégats des ennemis
     }
 
-    IEnumerator Battle()
+    public void TurnOver()
     {
-        while (player.health > 0 && enemy.health > 0)
-        {
-            yield return new WaitForSeconds(1);
-            player.Attack(enemy);
-            
-            if (enemy.health <= 0)
-                break;
-            
-            yield return new WaitForSeconds(1);
-            enemy.Attack(player);
-        }
-        Debug.Log("Combat terminé!");
+        // fin du tour, passage aux ennemis 
     }
 
-    public void Attack(Fighter target)
+    public void Die()
     {
-        Debug.Log(fighterName + " attaque " + target.fighterName + " et inflige " + attackPower + " dégâts!");
-        target.TakeDamage(attackPower);
+        // si les joueurs atteignent 0 de vie il meurt 
     }
-
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-        Debug.Log(fighterName + " a maintenant " + health + " points de vie.");
-        
-        if (health <= 0)
-        {
-            Die();
-        }
-    }
-
-    void Die()
-    {
-        Debug.Log(fighterName + " est vaincu!");
-    }
+    
 }
-
-
-   
-
-    
