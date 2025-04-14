@@ -1,12 +1,11 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObject/Spells")]
 public abstract class Spells : ScriptableObject
 {
-    [field: Header("Dégats")]
+    [field: Header("Dégats"), SerializeField]
     protected internal int m_degats { get; private set; }
 
-    [field: Header("Zone effect")]
+    [field: Header("Zone effect"), SerializeField]
     protected internal float m_zoneEffect { get; private set; }
 
     public virtual SpellsInstance Instance()

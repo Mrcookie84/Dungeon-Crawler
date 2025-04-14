@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer playerRenderer;
 
     private PlayerData dataPlayer;
+    
 
     public void ApplyDataPlayer(PlayerData data)
     {
