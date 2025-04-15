@@ -176,15 +176,15 @@ public class PuzzleRotatif : MonoBehaviour
     {
         if (selector == 1)
         {
-            interactBubbleIcon.transform.localPosition = new Vector3(1, 1.6f, -1);
+            interactBubbleIcon.transform.localPosition = new Vector3(1, 3f, -1);
         }
         else if (selector == 2)
         {
-            interactBubbleIcon.transform.localPosition = new Vector3(1, 0.85f, -1);
+            interactBubbleIcon.transform.localPosition = new Vector3(1, 2.2f, -1);
         }
         else if (selector == 3)
         {
-            interactBubbleIcon.transform.localPosition = new Vector3(1, 0, -1);
+            interactBubbleIcon.transform.localPosition = new Vector3(1, 1.4f, -1);
         }
     }
     

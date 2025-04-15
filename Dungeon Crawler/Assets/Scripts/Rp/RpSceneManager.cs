@@ -6,6 +6,6 @@ public class RpSceneManager : MonoBehaviour
 {
     public void Awake()
     {
-        SceneManager.sceneRP = gameObject;
+        SceneManager.StartingScene = gameObject;
     }
 }
