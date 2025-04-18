@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private PlayerData dataPlayer;
     
 
+
     public void ApplyDataPlayer(PlayerData data)
     {
         dataPlayer = data;

@@ -17,4 +17,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e62d931c765fc2245b090a21c4d17f8a, type: 2}
   - {fileID: 11400000, guid: 79fad3d8da0d75f44bc55079bcf15d31, type: 2}
   - {fileID: 11400000, guid: 2421c367102a2b044a1bf060ff68b620, type: 2}
-  positionList: 00000000020000000100000005000000
+  playerList: []
+  positionList: 02000000010000000000000004000000
