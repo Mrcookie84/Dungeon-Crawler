@@ -5,18 +5,25 @@ using System.Collections.Generic;
 
 public class FightManager : MonoBehaviour
 {
+    
+    [Header("List ")]
     [SerializeField]
     private List<Groupe> enemySpawn = new List<Groupe>();
     [SerializeField] 
     private List<GameObject> spawn = new List<GameObject>();
+    [SerializeField]
+    private List<Groupe> playerSpawn = new List<Groupe>();
+    
+    [Header("Prefab link")]
     [SerializeField] 
     private Monster monsterPrefab;
     [SerializeField] 
     private Player playerPrefab;
-    [SerializeField]
-    private List<Groupe> playerSpawn = new List<Groupe>();
-
+    
+    [Header("Entity parent link")]
     [SerializeField] private Transform ParentEntities;
+    
+    
     private void Start()
     {
         Spawn();

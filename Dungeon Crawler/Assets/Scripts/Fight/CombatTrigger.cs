@@ -15,7 +15,7 @@ public class CombatTrigger : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Group"))
         {
             SceneManager.GoToFight();
             Destroy(gameObject);
