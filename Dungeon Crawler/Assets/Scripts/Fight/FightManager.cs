@@ -18,8 +18,6 @@ public class FightManager : MonoBehaviour
     private Monster monsterPrefab;
     [SerializeField] 
     private Player playerPrefab;
-    [SerializeField]
-    private List<Groupe> playerSpawn = new List<Groupe>();
 
     [SerializeField] private Transform ParentEntities;
 

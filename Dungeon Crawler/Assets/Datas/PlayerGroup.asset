@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa8667eed27ed454c9eaa19af19ac07d, type: 3}
-  m_Name: Groupe2
-  m_EditorClassIdentifier: 
+  m_Script: {fileID: 0}
+  m_Name: PlayerGroup
+  m_EditorClassIdentifier: Assembly-CSharp::Groupe
   entityList: []
   playerList:
   - {fileID: 11400000, guid: ab78141b578f5e04daee89c26444ccca, type: 2}
   - {fileID: 11400000, guid: 7e4c6db1239c27b479ac241a71215146, type: 2}
-  - {fileID: 11400000, guid: fcbb0fb2429a7414292c11dc418de992, type: 2}
-  - {fileID: 11400000, guid: ff03f17f7cca2c8438ad02e1dfcf9f4e, type: 2}
-  positionList: 080000000a000000060000000b000000
+  positionList: 0800000007000000

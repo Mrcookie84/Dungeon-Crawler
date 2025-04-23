@@ -34,8 +34,7 @@ public class SceneManager : MonoBehaviour
 
     public void Start()
     {
-        StartingScene.SetActive(true);
-        SceneFight.SetActive(false);
+        GoToRP();
     }
 
     public static void GoToRP()
