@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Dungeon Crawler/Assets/Prefabs/CombatTrigger.prefab.meta
 guid: 1369c3cc918ee6b4c8f140b14b7b4767
+========
+guid: 58be40ea9a248d94a973d755bc428535
+>>>>>>>> origin/Zengers_Hugo:Dungeon Crawler/Assets/Sprites/Persos/Grenouille.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 
