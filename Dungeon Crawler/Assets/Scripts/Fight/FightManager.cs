@@ -142,9 +142,16 @@ public class FightManager : MonoBehaviour
         }
         //else if position ==1
         //else if...
-        
-        
-        //VERIFIE SI ENCORE DU MANA
+
+
+        if (mana == 0)
+        {
+            fightState = FightState.EnnemyTurn;
+        }
+        else 
+        {
+            Array.Clear(runes,0,3);
+        }
         //si oui, on reset just la liste des runes choisiés a {0,0,0}
         //si non => change de state pour le tour de l'ennemi
         //fightState = FightState.EnnemyTurn;
@@ -157,6 +164,7 @@ public class FightManager : MonoBehaviour
         //...
         
         //fin du ennemy turn : repasse fightState = FightState.select rune;
+        fightState = FightState.SelectingRune;
     }
     
 }
