@@ -3,6 +3,7 @@ using UnityEngine;
 
 public abstract class Entity: ScriptableObject
 {
+
     [field: Header("Hp"),SerializeField] 
     protected internal int m_hp { get; internal set; }
 

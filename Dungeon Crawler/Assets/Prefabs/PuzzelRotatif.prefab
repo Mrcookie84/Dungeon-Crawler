@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3467338236553053627}
   - component: {fileID: 1831759323304815900}
-  - component: {fileID: 28192382747527032}
+  - component: {fileID: 6775977256864660933}
   m_Layer: 0
   m_Name: PuzzelRotatif
   m_TagString: Untagged
@@ -82,7 +82,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8681641, y: 4.1955266}
   m_EdgeRadius: 0
---- !u!114 &28192382747527032
+--- !u!114 &6775977256864660933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3232057122483056440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bf79f3c6b223ac47813cba1082ba2d3, type: 3}
+  m_Script: {fileID: 11500000, guid: ec902a6c9fdca4b4f92091e826f89998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tabInteractionIcon: {fileID: 4902455976541380101}

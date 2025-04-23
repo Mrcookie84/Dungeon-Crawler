@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2000538384602160317}
   - component: {fileID: 642916028329851147}
-  - component: {fileID: 3529479653484614301}
+  - component: {fileID: 6789590978082467604}
   m_Layer: 0
   m_Name: SceneExitDoor
   m_TagString: Untagged
@@ -81,7 +81,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.6509647, y: 6.4478908}
   m_EdgeRadius: 0
---- !u!114 &3529479653484614301
+--- !u!114 &6789590978082467604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,14 +90,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 668648233650942986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e40191ac6cbc7d746815d5df1387cd7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f9c94805db4da44984ce9b99383f619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   solution: {fileID: 0}
   doorClosed: {fileID: 2932288650714901478}
   doorOpened: {fileID: 103232057986546286}
   interactBubble: {fileID: 2246199317108178920}
-  playerParent: {fileID: 0}
   triggerBox: {fileID: 642916028329851147}
   mapUI: {fileID: 0}
 --- !u!1001 &5190939176295120014
