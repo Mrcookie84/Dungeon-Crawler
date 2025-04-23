@@ -8,7 +8,6 @@ public class UIPauseMenu : MonoBehaviour
 {
     
     [SerializeField] public GameObject menu;
-    
     private bool _menuOpen;
     
     void Update()
