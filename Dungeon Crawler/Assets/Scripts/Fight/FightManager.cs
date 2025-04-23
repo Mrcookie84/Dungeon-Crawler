@@ -10,6 +10,10 @@ public class FightManager : MonoBehaviour
     private List<Groupe> enemySpawn = new List<Groupe>();
     [SerializeField] 
     private List<GameObject> spawn = new List<GameObject>();
+    [SerializeField]
+    private List<Groupe> playerSpawn = new List<Groupe>();
+    
+    [Header("Prefab link")]
     [SerializeField] 
     private Monster monsterPrefab;
     [SerializeField] 

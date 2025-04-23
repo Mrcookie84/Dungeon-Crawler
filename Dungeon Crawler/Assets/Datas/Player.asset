@@ -15,4 +15,4 @@ MonoBehaviour:
   <m_hp>k__BackingField: 0
   <m_speed>k__BackingField: 0
   <m_def>k__BackingField: 0
-  imagePlayer: {fileID: -1742985820323044230, guid: eb4fb6a655cde184db36c8444e31e478, type: 3}
+  imagePlayer: {fileID: 21300000, guid: 2d55f32aa1dd12b40bb333cbae7be18e, type: 3}

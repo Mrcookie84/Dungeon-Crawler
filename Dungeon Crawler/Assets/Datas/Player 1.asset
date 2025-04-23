@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b02c8bf17f23a64e9cb34c12a7da48a, type: 3}
   m_Name: Player 1
   m_EditorClassIdentifier: 
-  <m_hp>k__BackingField: 0
+  <m_hp>k__BackingField: 100
   <m_speed>k__BackingField: 0
   <m_def>k__BackingField: 0
-  imagePlayer: {fileID: 4238841076636094987, guid: 1d278b86d1b35d446807b0b9ce5c9e73, type: 3}
+  imagePlayer: {fileID: 21300000, guid: 06a04963e4abd2c4088eee506b9748cc, type: 3}
