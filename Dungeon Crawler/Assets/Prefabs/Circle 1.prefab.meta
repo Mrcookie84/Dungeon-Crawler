@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Dungeon Crawler/Assets/Prefabs/Circle 1.prefab.meta
 guid: 2fbdec21121ce9440b4306b861320edb
 PrefabImporter:
+========
+guid: 8ea627e0c5746d34f978753d210fa295
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> cf1bab6ea708fc3ddd25f5004498e47642ac405c:Dungeon Crawler/Assets/Scripts/UIscripts.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

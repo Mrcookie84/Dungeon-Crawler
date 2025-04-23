@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Dungeon Crawler/Assets/Prefabs/Circle.prefab.meta
 guid: c13a412cbf361b041847bea8e7a0a97f
 PrefabImporter:
+========
+guid: 4a579dbb96bf6fa46a3d89f3c2954c92
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> cf1bab6ea708fc3ddd25f5004498e47642ac405c:Dungeon Crawler/Assets/Scripts/SystemDeSauvegarde/Seralization.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
