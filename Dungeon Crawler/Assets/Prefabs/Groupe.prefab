@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6401152300020961570}
   - component: {fileID: 7890025334213758833}
-  - component: {fileID: 8377347685259114523}
+  - component: {fileID: 7552129111651493722}
   - component: {fileID: 8487224448859595636}
   m_Layer: 0
   m_Name: Groupe
@@ -232,7 +232,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8377347685259114523
+--- !u!114 &7552129111651493722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 763527996127890949}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d288fe45f9030145bbece950c5d0c6c, type: 3}
+  m_Script: {fileID: 11500000, guid: b54ccb26f4ed6da4a8a33a934dd06864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 7890025334213758833}
@@ -446,7 +446,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e819100e2c112a64dabb3656e31a5f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
   playerID: 2
+  thisTp: {fileID: 0}
 --- !u!1 &1788909275957308204
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,7 +688,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e819100e2c112a64dabb3656e31a5f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
   playerID: 3
+  thisTp: {fileID: 0}
 --- !u!1 &8192624524325348876
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,4 +846,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e819100e2c112a64dabb3656e31a5f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
   playerID: 1
+  thisTp: {fileID: 0}

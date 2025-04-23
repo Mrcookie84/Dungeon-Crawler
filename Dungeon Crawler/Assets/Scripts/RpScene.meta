@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Dungeon Crawler/Assets/Scenes/ZENGERS Hugo.unity.meta
-guid: e5975f2bfa0eb4b4da605b4785a05f6e
-========
+<<<<<<<< HEAD:Dungeon Crawler/Assets/Scripts/RpScene.meta
 guid: 0e83bcedbf1c6b249884e3f7799ba787
+========
+guid: cc01900ef2d22f14db503779de94ddf9
+>>>>>>>> 22673a7 (Combat trigger + map UI + fusion des deux dossier prefab):Dungeon Crawler/Assets/Scripts/Data.meta
 folderAsset: yes
 >>>>>>>> origin/dev/Corentin:Dungeon Crawler/Assets/Scripts/RpScene.meta
 DefaultImporter:

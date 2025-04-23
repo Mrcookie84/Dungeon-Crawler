@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa8667eed27ed454c9eaa19af19ac07d, type: 3}
-  m_Name: Groupe2
-  m_EditorClassIdentifier: 
+  m_Script: {fileID: 0}
+  m_Name: PlayerGroup
+  m_EditorClassIdentifier: Assembly-CSharp::Groupe
   entityList: []
   playerList:
   - {fileID: 11400000, guid: ab78141b578f5e04daee89c26444ccca, type: 2}

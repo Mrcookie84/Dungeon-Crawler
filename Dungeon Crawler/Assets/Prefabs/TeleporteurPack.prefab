@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1861420853359090909}
   - component: {fileID: 8992826066842721933}
-  - component: {fileID: 5480888480497411451}
+  - component: {fileID: 5330315600961782456}
   m_Layer: 0
   m_Name: TeleporteurPack
   m_TagString: Untagged
@@ -248,7 +248,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.1299067, y: 6.849012}
   m_EdgeRadius: 0
---- !u!114 &5480888480497411451
+--- !u!114 &5330315600961782456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9076604984225772672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e3105d4db605d447903e448dcd286a3, type: 3}
+  m_Script: {fileID: 11500000, guid: ae924605ff942934285c62db8f65c571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canTp: 0

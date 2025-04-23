@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Dungeon Crawler/Assets/Scripts/SystemDeSauvegarde/Seralization.meta
 guid: 4a579dbb96bf6fa46a3d89f3c2954c92
+========
+guid: d54591affd80d1946a4b0bdda263c31b
+>>>>>>>> 22673a7 (Combat trigger + map UI + fusion des deux dossier prefab):Dungeon Crawler/Assets/Scripts/SystemDeSauvegarde.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

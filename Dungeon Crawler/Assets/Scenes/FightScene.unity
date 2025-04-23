@@ -3699,7 +3699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawn:
-  - {fileID: 11400000, guid: 4e0d8df2ddf7ad248a5388ddce36cb49, type: 2}
+  - {fileID: 0}
   spawn:
   - {fileID: 816317862}
   - {fileID: 1918142555}
@@ -3713,11 +3713,15 @@ MonoBehaviour:
   - {fileID: 134720154}
   - {fileID: 28986913}
   - {fileID: 1562271692}
-  playerSpawn:
-  - {fileID: 11400000, guid: fc7c1c948b0a3f648b72c0e0d64a21ed, type: 2}
+  playerSpawn: []
   monsterPrefab: {fileID: 2533379224141386867, guid: 3232554d79772fb47a1f56ef988c67ad, type: 3}
   playerPrefab: {fileID: 7185504507096577514, guid: 319153c17b76ff34bb4284eb5930dbc0, type: 3}
   ParentEntities: {fileID: 763433458}
+  ennemyList: []
+  playerList: []
+  mana: 100
+  capacityPoints: 10
+  runes: 000000000000000000000000
 --- !u!4 &1644035599
 Transform:
   m_ObjectHideFlags: 0
