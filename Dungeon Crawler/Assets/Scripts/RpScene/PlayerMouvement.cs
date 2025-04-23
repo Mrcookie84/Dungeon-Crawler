@@ -25,45 +25,21 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 force = new Vector2(0, 0);
         
-        if (Mathf.Approximately(rigidbody.gravityScale, 1))
+        if (Input.GetKey(fwKey))
         {
-            
-            if (Input.GetKey(fwKey))
-            {
-                force += Vector2.right * speed;
-                targetRotation = Quaternion.Euler(0, 0, 0);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360f);
-            }
-        
-            if (Input.GetKey(BwKey))
-            {
-                force += Vector2.left * speed;
-                targetRotation = Quaternion.Euler(0, 180, 0);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360f);
-            }
+            force += Vector2.right * speed;
+            targetRotation = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360f);
         }
-        else if (Mathf.Approximately(rigidbody.gravityScale, -1))
+    
+        if (Input.GetKey(BwKey))
         {
-            
-            if (Input.GetKey(fwKey))
-            {
-                force += Vector2.right * speed;
-                targetRotation = Quaternion.Euler(180, 0, 0);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360f);
-            }
-        
-            if (Input.GetKey(BwKey))
-            {
-                force += Vector2.left * speed;
-                targetRotation = Quaternion.Euler(180, 180, 0);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360f);
-            }
+            force += Vector2.left * speed;
+            targetRotation = Quaternion.Euler(0, 180, 0);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360f);
         }
         
         rigidbody.velocity = new Vector2(force.x, rigidbody.velocity.y);
         
-        
-
     }
-    
 }
