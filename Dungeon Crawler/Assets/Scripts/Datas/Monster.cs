@@ -7,7 +7,7 @@ public class Monster : MonoBehaviour
     [SerializeField] 
     private SpriteRenderer monsterRenderer;
 
-    private MonsterData dataMonster;
+    public MonsterData dataMonster;
 
     public void ApplyData(MonsterData data)
     {
