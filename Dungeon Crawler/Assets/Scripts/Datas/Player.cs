@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] 
     private SpriteRenderer playerRenderer;
 
-    private PlayerData dataPlayer;
+    public PlayerData dataPlayer;
     
 
 

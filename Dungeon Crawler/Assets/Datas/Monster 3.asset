@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838734ca8a5825b43ae6717c345d4005, type: 3}
   m_Name: Monster 3
   m_EditorClassIdentifier: 
-  <m_hp>k__BackingField: 0
+  <m_hp>k__BackingField: 25
   <m_speed>k__BackingField: 0
   <m_def>k__BackingField: 0
   imageMonster: {fileID: -8642731415249923466, guid: 2faedf066047d0447861da4c8751109d, type: 3}
