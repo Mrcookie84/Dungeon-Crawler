@@ -1242,12 +1242,24 @@ PrefabInstance:
       value: Renard
       objectReference: {fileID: 0}
     - target: {fileID: 4388339576546397044, guid: 099dbaaa86819a54c8c7c94068f3467e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.19189572
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388339576546397044, guid: 099dbaaa86819a54c8c7c94068f3467e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.19189572
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388339576546397044, guid: 099dbaaa86819a54c8c7c94068f3467e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.19189572
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388339576546397044, guid: 099dbaaa86819a54c8c7c94068f3467e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.21
       objectReference: {fileID: 0}
     - target: {fileID: 4388339576546397044, guid: 099dbaaa86819a54c8c7c94068f3467e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.18
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 4388339576546397044, guid: 099dbaaa86819a54c8c7c94068f3467e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1285,6 +1297,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 341657841}
+    - target: {fileID: 8369271405270543783, guid: 099dbaaa86819a54c8c7c94068f3467e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 504b85dfe17cea24faa18c2419df0560, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6302,12 +6318,24 @@ PrefabInstance:
       value: Grenouille
       objectReference: {fileID: 0}
     - target: {fileID: 4388339576546397044, guid: fdff70936bb5d9a46b10ce980580e26f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.16002321
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388339576546397044, guid: fdff70936bb5d9a46b10ce980580e26f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.16002321
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388339576546397044, guid: fdff70936bb5d9a46b10ce980580e26f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.16002321
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388339576546397044, guid: fdff70936bb5d9a46b10ce980580e26f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.885
       objectReference: {fileID: 0}
     - target: {fileID: 4388339576546397044, guid: fdff70936bb5d9a46b10ce980580e26f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.66
+      value: 1.149
       objectReference: {fileID: 0}
     - target: {fileID: 4388339576546397044, guid: fdff70936bb5d9a46b10ce980580e26f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6341,6 +6369,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8369271405270543783, guid: fdff70936bb5d9a46b10ce980580e26f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c97930a37d3393148b3b1a5d098ce009, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
