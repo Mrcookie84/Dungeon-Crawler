@@ -37,8 +37,6 @@ public class DecorsMovement : MonoBehaviour
             targetRotation = Quaternion.Euler(0, 180, 0);
             //transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360f);
         }
-
-        offSett += new Vector3(force.x, RB.velocity.y,-50);
         RB.velocity = new Vector2(force.x, RB.velocity.y);
     }
 }
