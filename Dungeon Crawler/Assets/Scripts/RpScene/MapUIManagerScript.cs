@@ -14,7 +14,7 @@ public class MapUIManagerScript : MonoBehaviour
     
     void Start()
     {
-        //SceneManager.SceneManagerInstance.mapUIManager = this;
+        SceneManager.SceneManagerInstance.mapUIManager = this;
     }
     
     public void GoToZone(GameObject zoneSpawn)
