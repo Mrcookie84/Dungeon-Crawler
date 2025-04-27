@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6caffd356df4bb947b67a54dfac819c4, type: 3}
+  m_Name: EnemyGroup
+  m_EditorClassIdentifier: Assembly-CSharp::Groupe
+  entityList:
+  - {fileID: 11400000, guid: 90d4c94dd13777c45a2c3b5bd5abb874, type: 2}
+  - {fileID: 11400000, guid: e62d931c765fc2245b090a21c4d17f8a, type: 2}
+  - {fileID: 11400000, guid: 79fad3d8da0d75f44bc55079bcf15d31, type: 2}
+  - {fileID: 11400000, guid: 2421c367102a2b044a1bf060ff68b620, type: 2}
+  playerList: []
+  positionList: 00000000020000000400000001000000
