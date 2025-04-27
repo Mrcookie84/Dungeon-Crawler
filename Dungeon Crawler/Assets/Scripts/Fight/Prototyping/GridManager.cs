@@ -14,8 +14,5 @@ public class GridManager : MonoBehaviour
         return entityList[pos.x + 3 * pos.y];
     }
 
-    public bool IsPosInGrid(Vector2Int pos)
-    {
-        
-    }
+    //public bool IsPosInGrid(Vector2Int pos){  }
 }

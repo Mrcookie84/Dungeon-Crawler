@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 777bb5008998a6d43853c30f452d041e
+guid: a99d07b28688b7044b428c99d022b7b2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite anime_0
+      name: Sprite anime 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -105,20 +105,20 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c99c908337acd3945bef10432b6df267
-      internalID: 760315996
+      spriteID: 6ce6abd6016ed484b875fb7ba930002c
+      internalID: 1880793523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite anime_1
+      name: Sprite anime 1_1
       rect:
         serializedVersion: 2
         x: 512
@@ -126,20 +126,20 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f48f422a5c2cd1449b875f2cfa15e9ce
-      internalID: 964581604
+      spriteID: c9e0b2ae79055674a99d50e53cb71b48
+      internalID: -1336249694
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite anime_2
+      name: Sprite anime 1_2
       rect:
         serializedVersion: 2
         x: 1024
@@ -147,20 +147,20 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe2ec9182dfb9044a940d2a4e1124e47
-      internalID: -1158488603
+      spriteID: 17819f22ef01a3d469b7bcccade134fe
+      internalID: -890908313
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite anime_3
+      name: Sprite anime 1_3
       rect:
         serializedVersion: 2
         x: 1536
@@ -168,20 +168,20 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9e912a8bc838c54ba870e68e0ec7395
-      internalID: 1994494878
+      spriteID: d9e5da4e3b99e6944af96c2549f62794
+      internalID: -1514365638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite anime_4
+      name: Sprite anime 1_4
       rect:
         serializedVersion: 2
         x: 2048
@@ -189,41 +189,41 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c51f1f34d9a7ba24cb332ab27f85a737
-      internalID: 710376250
+      spriteID: b43a662bbafbcf540ae5bd16a517d2c9
+      internalID: -1849430274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite anime_5
+      name: Sprite anime 1_5
       rect:
         serializedVersion: 2
-        x: 2564
+        x: 2560
         y: 2235
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 093762646708c6440a4508f452307c3a
-      internalID: 1705818067
+      spriteID: df525ba042ecfee4bb559016a1a36194
+      internalID: -1599252768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite anime_6
+      name: Sprite anime 1_6
       rect:
         serializedVersion: 2
         x: 0
@@ -231,20 +231,20 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b732688cf403ef409028e240df27346
-      internalID: 1007834025
+      spriteID: 023b5c7e49bddee4fa1c64139e4e24e8
+      internalID: 479837158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite anime_7
+      name: Sprite anime 1_7
       rect:
         serializedVersion: 2
         x: 512
@@ -252,20 +252,20 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4472105164b54d4f8c38090a53b9a03
-      internalID: -678852850
+      spriteID: 60ee7bcbe63029f47a9e50234e82ba5e
+      internalID: -649279937
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite anime_8
+      name: Sprite anime 1_8
       rect:
         serializedVersion: 2
         x: 1024
@@ -273,62 +273,62 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eaa680b4e7e71d748aabbbfe7a3fa6b8
-      internalID: -1401609465
+      spriteID: 8c4e80a8dc1f1cc46a46164824a30607
+      internalID: 741516569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite anime_9
+      name: Sprite anime 1_9
       rect:
         serializedVersion: 2
-        x: 1531
-        y: 1724
+        x: 1536
+        y: 1723
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58a57eb818497b340a8ab16e6bea4487
-      internalID: 569203542
+      spriteID: b74e7fb4597f948468321faae21bf181
+      internalID: -2038678918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite anime_10
+      name: Sprite anime 1_10
       rect:
         serializedVersion: 2
-        x: 2052
-        y: 1724
+        x: 2048
+        y: 1723
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 039568bfa4f5aa945b159909f1fb7a63
-      internalID: -1546962684
+      spriteID: f240629f957314e4ebed9c3cfa8c8a5f
+      internalID: -786533901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite anime_11
+      name: Sprite anime 1_11
       rect:
         serializedVersion: 2
         x: 2560
@@ -336,20 +336,20 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 723b573dff4423347a9689f30cef7dd9
-      internalID: -1689985609
+      spriteID: 6ab599a0d48bf8646a5be1e572f109fb
+      internalID: -1198299958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite anime_12
+      name: Sprite anime 1_12
       rect:
         serializedVersion: 2
         x: 0
@@ -357,20 +357,20 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebb292beb8bad0a49a4209378dbacfaf
-      internalID: 1936653368
+      spriteID: 028d38d2bc71907409b1f1bf24fefda3
+      internalID: -1044333647
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite anime_13
+      name: Sprite anime 1_13
       rect:
         serializedVersion: 2
         x: 512
@@ -378,20 +378,20 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4ca424823747334fab78e2876ca3299
-      internalID: 1091087769
+      spriteID: 6f3a1d908d2c29349bdfba052a03ea12
+      internalID: -1295325239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite anime_14
+      name: Sprite anime 1_14
       rect:
         serializedVersion: 2
         x: 1024
@@ -399,14 +399,14 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b01cedd3e4f93b7439f801954948d236
-      internalID: -1914948782
+      spriteID: 50bc972de59877b498dbf77f22652ff4
+      internalID: 1341381232
       vertices: []
       indices: 
       edges: []
@@ -422,21 +422,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite anime_0: 760315996
-      Sprite anime_1: 964581604
-      Sprite anime_10: -1546962684
-      Sprite anime_11: -1689985609
-      Sprite anime_12: 1936653368
-      Sprite anime_13: 1091087769
-      Sprite anime_14: -1914948782
-      Sprite anime_2: -1158488603
-      Sprite anime_3: 1994494878
-      Sprite anime_4: 710376250
-      Sprite anime_5: 1705818067
-      Sprite anime_6: 1007834025
-      Sprite anime_7: -678852850
-      Sprite anime_8: -1401609465
-      Sprite anime_9: 569203542
+      Sprite anime 1_0: 1880793523
+      Sprite anime 1_1: -1336249694
+      Sprite anime 1_10: -786533901
+      Sprite anime 1_11: -1198299958
+      Sprite anime 1_12: -1044333647
+      Sprite anime 1_13: -1295325239
+      Sprite anime 1_14: 1341381232
+      Sprite anime 1_2: -890908313
+      Sprite anime 1_3: -1514365638
+      Sprite anime 1_4: -1849430274
+      Sprite anime 1_5: -1599252768
+      Sprite anime 1_6: 479837158
+      Sprite anime 1_7: -649279937
+      Sprite anime 1_8: 741516569
+      Sprite anime 1_9: -2038678918
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

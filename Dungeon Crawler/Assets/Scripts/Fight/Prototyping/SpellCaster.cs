@@ -70,9 +70,12 @@ public class SpellCaster : MonoBehaviour
                 }
                 
                 // Déplacement de l'ennemi
-                EntityPosition enemyPos = hurtEnemy.GetComponent<EntityPosition>();
-                if (enemyPos.gridPos + spellData.displacementList[i])
-                enemyPos.ChangePosition(enemyPos.po);
+                //EntityPosition enemyPos = hurtEnemy.GetComponent<EntityPosition>();
+                //if (enemyPos.gridPos + spellData.displacementList[i])
+                {
+                    //enemyPos.ChangePosition(enemyPos.po);
+                }
+                
             }
         }
     }
