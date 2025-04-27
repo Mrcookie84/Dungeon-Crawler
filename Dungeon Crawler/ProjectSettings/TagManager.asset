@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Teleporteur
   - Group
+  - PlayerGrid
+  - EnemyGrid
+  - SpellManager
   layers:
   - Default
   - TransparentFX
@@ -42,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 2854536139
     locked: 0
