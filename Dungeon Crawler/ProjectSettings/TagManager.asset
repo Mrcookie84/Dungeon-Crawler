@@ -9,6 +9,7 @@ TagManager:
   - PlayerGrid
   - EnemyGrid
   - SpellManager
+  - BarrierGrid
   layers:
   - Default
   - TransparentFX
