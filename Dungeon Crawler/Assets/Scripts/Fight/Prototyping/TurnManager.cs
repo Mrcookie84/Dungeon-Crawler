@@ -7,9 +7,9 @@ using UnityEngine;
 public class TurnManager : MonoBehaviour
 {
     [SerializeField] private GameObject playerUI;
-    
-    private List<TurnSubscriber> turnList = new List<TurnSubscriber>();
-    private Stack<TurnSubscriber> turnStack = new Stack<TurnSubscriber>();
+
+    [SerializeField] private List<TurnSubscriber> turnList = new List<TurnSubscriber>();
+    [SerializeField] private Stack<TurnSubscriber> turnStack = new Stack<TurnSubscriber>();
 
     private void Start()
     {
@@ -47,7 +47,7 @@ public class TurnManager : MonoBehaviour
 
     public void NextTurn()
     {
-        if (turnStack.TryPeek(out TurnSubscriber dontcare))
+        if (turnStack.Count != 0)
         {
             StartTurn();
         }
@@ -59,20 +59,15 @@ public class TurnManager : MonoBehaviour
 
     private void ResetGlobalTurn()
     {
-        turnStack = new Stack<TurnSubscriber>();
+        Debug.Log("Nouveau tour");
+        //turnStack = new Stack<TurnSubscriber>();
 
         for (int i = turnList.Count; i > 0; i--)
         {
             turnStack.Push(turnList[i - 1]);
         }
-        
-        StartTurn();
-    }
 
-    public void EndPlayerTurn()
-    {
-        DisablePlayerUI();
-        NextTurn();
+        StartTurn();
     }
     
     public void EnablePlayerUI()
