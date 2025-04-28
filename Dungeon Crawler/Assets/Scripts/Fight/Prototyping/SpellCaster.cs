@@ -1,8 +1,10 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SpellCaster : MonoBehaviour
 {
+    private TurnPlayer playerTurn;
     [SerializeField] private EntityPosition casterGPos;
     [SerializeField] private string enemyGridTag;
     private GridManager enemyGrid;
@@ -15,6 +17,8 @@ public class SpellCaster : MonoBehaviour
 
     private void Start()
     {
+        playerTurn = GameObject.FindObjectOfType<TurnPlayer>();
+
         enemyGrid = GameObject.FindGameObjectWithTag(enemyGridTag).GetComponent<GridManager>();
         runeSelection = GameObject.FindGameObjectWithTag(spellManagerTag).GetComponent<RuneSelection>();
         barrierGrid = GameObject.FindGameObjectWithTag(barrierTag).GetComponent<BarrierGrid>();
@@ -22,6 +26,11 @@ public class SpellCaster : MonoBehaviour
 
     public void CastSpell()
     {
+        if (!playerTurn.isPlaying)
+        {
+            return;
+        }
+
         Debug.Log("Sort lancé !");
         ChangeSpell();
         
@@ -53,6 +62,8 @@ public class SpellCaster : MonoBehaviour
 
     private void ActivateSpell(Vector2Int startPos)
     {
+        runeSelection.UpdateMana();
+
         for (int i = 0; i < spellData.hitCellList.Count; i++)
         {
             Vector2Int targetPos = startPos + spellData.hitCellList[i];
@@ -88,13 +99,15 @@ public class SpellCaster : MonoBehaviour
                     // Déplacement de l'ennemi
                     EntityPosition enemyPos = hurtEnemy.GetComponent<EntityPosition>();
                     Vector2Int newPos = enemyPos.gridPos + spellData.displacementList[i];
+                    newPos = new Vector2Int(newPos.x, newPos.y % 2);
                     if (enemyGrid.IsPosInGrid(newPos))
                     {
                         enemyPos.ChangePosition(newPos);
                     }
                     else
                     {
-                        newPos += spellData.displacementList[i + 1];
+                        newPos = enemyPos.gridPos + spellData.displacementList[i] + spellData.displacementList[i + 1];
+                        newPos = new Vector2Int(newPos.x, newPos.y % 2);
                         if (enemyGrid.IsPosInGrid(newPos))
                         {
                             enemyPos.ChangePosition(newPos);

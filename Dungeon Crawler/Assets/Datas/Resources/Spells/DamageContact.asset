@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44a8a02c12b5aeb4fa49b09e448a9752, type: 3}
-  m_Name: RuneData 0
+  m_Script: {fileID: 11500000, guid: cb872ca0c597c634795bdb01492d4e4d, type: 3}
+  m_Name: DamageContact
   m_EditorClassIdentifier: 
-  ID: 0
-  manaCost: 2
-  cooldown: 0
+  dmgTypeName: 02000000
+  dmgValues: 0f000000

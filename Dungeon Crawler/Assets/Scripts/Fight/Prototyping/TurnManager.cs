@@ -15,27 +15,37 @@ public class TurnManager : MonoBehaviour
     {
         // Ajout du joueur
         TurnSubscriber playerTurn = GameObject.FindGameObjectWithTag("Player").GetComponent<TurnSubscriber>();
+        playerTurn.InitializeTurn(this);
         turnList.Add(playerTurn);
-        
+
         // Ajout des tanks
+        TurnSubscriber tankIndividualTurn;
         GameObject[] tanksTurn = GameObject.FindGameObjectsWithTag("Tank");
         for (int i = 0; i < tanksTurn.Length; i++)
         {
-            turnList.Add(tanksTurn[i].GetComponent<TurnSubscriber>());
+            tankIndividualTurn = tanksTurn[i].GetComponent<TurnSubscriber>();
+            tankIndividualTurn.InitializeTurn(this);    
+            turnList.Add(tankIndividualTurn);
         }
         // Ajout des attaquants
-        GameObject[] fighterTurn = GameObject.FindGameObjectsWithTag("Fighter");
-        for (int i = 0; i < fighterTurn.Length; i++)
+        TurnSubscriber fighterIndividualTurn;
+        GameObject[] fightersTurn = GameObject.FindGameObjectsWithTag("Fighter");
+        for (int i = 0; i < fightersTurn.Length; i++)
         {
-            turnList.Add(fighterTurn[i].GetComponent<TurnSubscriber>());
+            fighterIndividualTurn = fightersTurn[i].GetComponent<TurnSubscriber>();
+            fighterIndividualTurn.InitializeTurn(this);
+            turnList.Add(fighterIndividualTurn);
         }
         // Ajout des supports
-        GameObject[] supportTurn = GameObject.FindGameObjectsWithTag("Support");
-        for (int i = 0; i < supportTurn.Length; i++)
+        TurnSubscriber supportIndividualTurn;
+        GameObject[] supportsTurn = GameObject.FindGameObjectsWithTag("Support");
+        for (int i = 0; i < supportsTurn.Length; i++)
         {
-            turnList.Add(supportTurn[i].GetComponent<TurnSubscriber>());
+            supportIndividualTurn = supportsTurn[i].GetComponent<TurnSubscriber>();
+            supportIndividualTurn.InitializeTurn(this);
+            turnList.Add(supportIndividualTurn);
         }
-        
+
         ResetGlobalTurn();
     }
 

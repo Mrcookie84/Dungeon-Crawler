@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44a8a02c12b5aeb4fa49b09e448a9752, type: 3}
-  m_Name: RuneData 0
+  m_Name: RuneData 3
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 3
   manaCost: 2
   cooldown: 0

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: RuneData 2
   m_EditorClassIdentifier: 
   ID: 2
-  manaCost: 0
+  manaCost: 2
   cooldown: 0

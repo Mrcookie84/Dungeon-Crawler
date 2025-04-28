@@ -50,6 +50,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Barrier
+    uniqueID: 1532819613
+    locked: 0
   - name: UI
     uniqueID: 3613335727
     locked: 0

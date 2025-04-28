@@ -10,17 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0160c4158dda8c47b86463cc1cd798e, type: 3}
-  m_Name: SpellData01
+  m_Name: SpellData013
   m_EditorClassIdentifier: 
   hitCellList:
   - {x: 0, y: 0}
   - {x: 1, y: 1}
+  - {x: 2, y: 0}
+  - {x: 1, y: 0}
   damageTypesData:
   - {fileID: 11400000, guid: a570a18f43249a443ab1e277ee8fe113, type: 2}
   - {fileID: 11400000, guid: 3245144a017263c4f8f4ee582c2ea929, type: 2}
+  - {fileID: 11400000, guid: 3245144a017263c4f8f4ee582c2ea929, type: 2}
+  - {fileID: 11400000, guid: 3245144a017263c4f8f4ee582c2ea929, type: 2}
   displacementList:
   - {x: 1, y: 1}
-  - {x: -1, y: -1}
+  - {x: 1, y: -1}
+  - {x: -1, y: 0}
+  - {x: -1, y: 0}
   reinforceBarrier: 0
   weakenBarrier: 1
   blockedByBarrier: 0
