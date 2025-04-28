@@ -3,10 +3,10 @@ using UnityEngine.Events;
 
 public abstract class TurnSubscriber : MonoBehaviour
 {
-    protected UnityEvent endTurnEvent;
+    protected UnityEvent endTurnEvent = new UnityEvent();
     public abstract void PlayTurn(TurnManager turnManager);
 
-    protected void TurnFinished()
+    public void TurnFinished()
     {
         endTurnEvent.Invoke();
     }

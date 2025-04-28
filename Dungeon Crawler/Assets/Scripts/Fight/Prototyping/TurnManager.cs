@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class TurnManager : MonoBehaviour
@@ -46,7 +47,7 @@ public class TurnManager : MonoBehaviour
 
     public void NextTurn()
     {
-        if (turnStack != new Stack<TurnSubscriber>())
+        if (turnStack.TryPeek(out TurnSubscriber dontcare))
         {
             StartTurn();
         }
@@ -66,6 +67,12 @@ public class TurnManager : MonoBehaviour
         }
         
         StartTurn();
+    }
+
+    public void EndPlayerTurn()
+    {
+        DisablePlayerUI();
+        NextTurn();
     }
     
     public void EnablePlayerUI()

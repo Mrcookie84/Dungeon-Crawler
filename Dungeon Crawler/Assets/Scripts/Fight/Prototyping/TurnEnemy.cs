@@ -6,6 +6,8 @@ public class TurnEnemy : TurnSubscriber
     public override void PlayTurn(TurnManager turnManager)
     {
         endTurnEvent.AddListener(turnManager.NextTurn);
+
+        StartCoroutine(AttackCoroutine());
     }
 
     private IEnumerator AttackCoroutine()
