@@ -56,6 +56,7 @@ public class UIPauseMenu : MonoBehaviour
     {
         Scene scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
         UnityEngine.SceneManagement.SceneManager.LoadScene(scene.name);
+        SceneManager.GoToRP();
         Time.timeScale = 1;
     }
     

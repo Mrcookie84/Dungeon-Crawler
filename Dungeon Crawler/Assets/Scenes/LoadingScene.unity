@@ -232,9 +232,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1778930082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 778ca74578e5f3044af20a4169365b0b, type: 3}
+  m_Script: {fileID: 11500000, guid: 145994f43d33e004ab50ef20aff9a2bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combatTrigger: {fileID: 0}
+  mapUIManager: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
