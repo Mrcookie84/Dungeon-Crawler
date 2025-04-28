@@ -10,6 +10,9 @@ TagManager:
   - EnemyGrid
   - SpellManager
   - BarrierGrid
+  - Tank
+  - Fighter
+  - Support
   layers:
   - Default
   - TransparentFX
