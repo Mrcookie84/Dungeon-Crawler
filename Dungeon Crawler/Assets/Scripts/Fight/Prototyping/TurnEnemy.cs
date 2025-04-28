@@ -1,18 +1,19 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TurnEnemy : MonoBehaviour
+public class TurnEnemy : TurnSubscriber
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void PlayTurn(TurnManager turnManager)
     {
-        
+        endTurnEvent.AddListener(turnManager.NextTurn);
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator AttackCoroutine()
     {
+        Debug.Log($"{gameObject.name} attaque !");
+
+        yield return new WaitForSeconds(1);
         
+        TurnFinished();
     }
 }

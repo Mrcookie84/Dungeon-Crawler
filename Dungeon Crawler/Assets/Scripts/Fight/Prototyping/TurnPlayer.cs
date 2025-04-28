@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TurnPlayer : MonoBehaviour
+public class TurnPlayer : TurnSubscriber
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void PlayTurn(TurnManager turnManager)
     {
+        Debug.Log($"Tour de {gameObject.name} commencé !");
+        endTurnEvent.AddListener(turnManager.NextTurn);
+        endTurnEvent.AddListener(turnManager.DisablePlayerUI);
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        turnManager.EnablePlayerUI();
     }
 }

@@ -5,40 +5,76 @@ using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
-    private TurnSubscriber[] subscribers;
+    [SerializeField] private GameObject playerUI;
+    
+    private List<TurnSubscriber> turnList = new List<TurnSubscriber>();
     private Stack<TurnSubscriber> turnStack = new Stack<TurnSubscriber>();
 
     private void Start()
     {
-        subscribers = GameObject.FindObjectsByType<TurnSubscriber>(FindObjectsSortMode.None);
-
-        //subscribers.OrderBy((x, y) => x.priority.CompareTo(y.priority));
+        // Ajout du joueur
+        TurnSubscriber playerTurn = GameObject.FindGameObjectWithTag("Player").GetComponent<TurnSubscriber>();
+        turnList.Add(playerTurn);
+        
+        // Ajout des tanks
+        GameObject[] tanksTurn = GameObject.FindGameObjectsWithTag("Tank");
+        for (int i = 0; i < tanksTurn.Length; i++)
+        {
+            turnList.Add(tanksTurn[i].GetComponent<TurnSubscriber>());
+        }
+        // Ajout des attaquants
+        GameObject[] fighterTurn = GameObject.FindGameObjectsWithTag("Fighter");
+        for (int i = 0; i < fighterTurn.Length; i++)
+        {
+            turnList.Add(fighterTurn[i].GetComponent<TurnSubscriber>());
+        }
+        // Ajout des supports
+        GameObject[] supportTurn = GameObject.FindGameObjectsWithTag("Support");
+        for (int i = 0; i < supportTurn.Length; i++)
+        {
+            turnList.Add(supportTurn[i].GetComponent<TurnSubscriber>());
+        }
+        
+        ResetGlobalTurn();
     }
 
     private void StartTurn()
     {
-        throw new NotImplementedException();
+        TurnSubscriber currentTurn = turnStack.Pop();
+        currentTurn.PlayTurn(this);
     }
 
-    private void EndTurn()
+    public void NextTurn()
     {
-        throw new NotImplementedException();
-    }
-
-    private void NextTurn()
-    {
-        throw new NotImplementedException();
+        if (turnStack != new Stack<TurnSubscriber>())
+        {
+            StartTurn();
+        }
+        else
+        {
+            ResetGlobalTurn();
+        }
     }
 
     private void ResetGlobalTurn()
     {
         turnStack = new Stack<TurnSubscriber>();
 
-        for (int i = 0; i < subscribers.Length; i++)
+        for (int i = turnList.Count; i > 0; i--)
         {
-            turnStack.Push(subscribers[i]);
+            turnStack.Push(turnList[i - 1]);
         }
         
-        
+        StartTurn();
+    }
+    
+    public void EnablePlayerUI()
+    {
+        playerUI.SetActive(true);
+    }
+
+    public void DisablePlayerUI()
+    {
+        playerUI.SetActive(false);
     }
 }
