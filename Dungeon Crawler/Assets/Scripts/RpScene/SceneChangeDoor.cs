@@ -10,11 +10,6 @@ public class SceneChangeDoor : MonoBehaviour
     [Header("Temporary solution to unlock :")] 
     [SerializeField] public GameObject solution;
     
-    
-    [Header("Door Sprite :")]
-    [SerializeField] public GameObject doorClosed;
-    [SerializeField] public GameObject doorOpened;
-    
     [Header("Others :")]
     [SerializeField] public GameObject interactBubble;
     [SerializeField] public BoxCollider2D triggerBox;
@@ -25,31 +20,15 @@ public class SceneChangeDoor : MonoBehaviour
 
     private void Start()
     {
-        doorOpened.SetActive(false);
         interactBubble.SetActive(false);
-        triggerBox.enabled = false;
-        doorClosed.SetActive(true);
+        //triggerBox.enabled = false;
     }
 
     private void Update()
     {
 
-        if (solution.activeSelf == false)
+        if (interactBubble.activeSelf && Input.GetKeyDown(KeyCode.E))
         {
-            doorClosed.SetActive(false);
-            doorOpened.SetActive(true);
-            triggerBox.enabled = true;
-        }
-        else
-        {
-            doorClosed.SetActive(true);
-            doorOpened.SetActive(false);
-            triggerBox.enabled = false;
-        }
-
-        if (interactBubble.activeSelf && doorOpened.activeSelf && Input.GetKeyDown(KeyCode.E) && solution.activeSelf == false)
-        {
-            
             
             mapUI.DOAnchorPosY(21, 1, false).SetEase(Ease.InCubic);
 

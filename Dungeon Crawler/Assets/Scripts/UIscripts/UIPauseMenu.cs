@@ -54,10 +54,9 @@ public class UIPauseMenu : MonoBehaviour
     
     public void ReloadScene()
     {
-        Scene scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
-        UnityEngine.SceneManagement.SceneManager.LoadScene(scene.name);
-        SceneManager.GoToRP();
         Time.timeScale = 1;
+        Debug.Log("Reload de la scene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0,LoadSceneMode.Single);
     }
     
     public void Quit()
