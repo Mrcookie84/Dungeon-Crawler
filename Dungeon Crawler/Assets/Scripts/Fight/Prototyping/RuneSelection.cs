@@ -20,6 +20,12 @@ public class RuneSelection : MonoBehaviour
         GetRuneCombinationData();
     }
 
+    public void RemoveRune(GameObject rune)
+    {
+        selectedRunes.Remove(rune);
+        GetRuneCombinationData();
+    }
+    
     private bool CheckRuneConflict(int runeID)
     {
         return true;

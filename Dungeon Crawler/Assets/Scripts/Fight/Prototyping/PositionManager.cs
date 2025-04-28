@@ -6,7 +6,7 @@ public class PositionManager : MonoBehaviour
     [SerializeField] private Transform playerGrid;
     [SerializeField] private Transform enemyGrid;
     
-    void Start()
+    void Awake()
     {
         
         Vector3 spawnPos;

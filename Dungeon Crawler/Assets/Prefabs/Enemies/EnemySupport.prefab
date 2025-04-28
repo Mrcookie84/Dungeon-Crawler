@@ -22,7 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6402749266899931613, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: m_Name
-      value: Enemy Variant
+      value: EnemySupport
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402749266899931613, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: m_TagString
+      value: Support
       objectReference: {fileID: 0}
     - target: {fileID: 7613900510651527408, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: m_LocalPosition.x

@@ -7,6 +7,14 @@ public class EntityPosition : MonoBehaviour
     private Transform grid; 
     public Vector2Int gridPos;
 
+    public int gridIndex
+    {
+        get
+        {
+            return gridPos.x + 3 * gridPos.y;
+        }
+    }
+
     private void Start()
     {
         grid = GameObject.FindGameObjectWithTag(gridTag).transform;
@@ -18,7 +26,10 @@ public class EntityPosition : MonoBehaviour
 
     public void ChangePosition(Vector2Int newPos)
     {
+        Debug.Log($"{gameObject.name} : {gridPos} → {newPos}");
+        
         gridPos = newPos;
+        transform.position = grid.GetChild(newPos.x + 3 * newPos.y).position;
         
         // Retourner l'entité si elle es en bas
         if (newPos.y == -1)
