@@ -102,17 +102,17 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 250
-        height: 299
+        width: 245
+        height: 300
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e43a9ecd30a15a04bbe2ff0567c6c02e
-      internalID: -1461333836
+      spriteID: c7675034d7bec67418e68cf21a0b9e29
+      internalID: -652723475
       vertices: []
       indices: 
       edges: []
@@ -121,19 +121,19 @@ TextureImporter:
       name: Calque 206_1
       rect:
         serializedVersion: 2
-        x: 259
-        y: 5
-        width: 221
-        height: 294
+        x: 57
+        y: 0
+        width: 188
+        height: 302
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa95346ca7fa17246a5fe1a8f85e680c
-      internalID: 1428737032
+      spriteID: 7abe559968fbfdf4b89160576ae7d779
+      internalID: -1282692212
       vertices: []
       indices: 
       edges: []
@@ -142,19 +142,61 @@ TextureImporter:
       name: Calque 206_2
       rect:
         serializedVersion: 2
-        x: 517
-        y: 107
-        width: 139
-        height: 192
+        x: 275
+        y: 18
+        width: 188
+        height: 279
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7895f32ed02c9d74abfb56b3362ec812
-      internalID: -1430258185
+      spriteID: c5c02d5c75c90604cbaf580b525d8ddd
+      internalID: 1395582210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calque 206_3
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 236
+        width: 15
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ad044f2b7bf03d408c0b6983669db41
+      internalID: 1416856137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Calque 206_4
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 153
+        width: 83
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43680f55da245d34da7b41664a27f19f
+      internalID: -1158001444
       vertices: []
       indices: 
       edges: []
@@ -170,9 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Calque 206_0: -1461333836
-      Calque 206_1: 1428737032
-      Calque 206_2: -1430258185
+      Calque 206_0: -652723475
+      Calque 206_1: -1282692212
+      Calque 206_2: 1395582210
+      Calque 206_3: 1416856137
+      Calque 206_4: -1158001444
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

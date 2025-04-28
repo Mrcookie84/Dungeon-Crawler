@@ -28,7 +28,6 @@ public class SceneManager : MonoBehaviour
         {
             SceneManagerInstance = this;
             DontDestroyOnLoad(this.transform.root.gameObject);
-            
         }
     }
 

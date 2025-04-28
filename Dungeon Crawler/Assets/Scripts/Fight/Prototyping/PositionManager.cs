@@ -23,11 +23,11 @@ public class PositionManager : MonoBehaviour
                 // i > 3  : case du bas
                 if (i <= 3)
                 {
-                    Instantiate(posData.enemyArray[i], spawnPos, Quaternion.Euler(Vector3.zero));
+                    Instantiate(posData.enemyArray[i], spawnPos, Quaternion.Euler(new Vector3(0f, 180f, 0f)));
                 }
                 else
                 {
-                    Instantiate(posData.enemyArray[i], spawnPos, Quaternion.Euler(Vector3.zero));
+                    Instantiate(posData.enemyArray[i], spawnPos, Quaternion.Euler(new Vector3(180f, 180f, 0f)));
                 }
             }
         }
@@ -45,12 +45,12 @@ public class PositionManager : MonoBehaviour
                 // i > 3  : case du bas
                 if (i <= 3)
                 {
-                    Instantiate(posData.playerArray[i], spawnPos, Quaternion.Euler(Vector3.zero));
+                    Instantiate(posData.playerArray[i], spawnPos, Quaternion.Euler(new Vector3(0f, 0f, 0)));
                     
                 }
                 else
                 {
-                    Instantiate(posData.playerArray[i], spawnPos, Quaternion.Euler(new Vector3(0f, 0f, 180f)));
+                    Instantiate(posData.playerArray[i], spawnPos, Quaternion.Euler(new Vector3(180f, 0f, 0f)));
                     // Je sais que l'ennemi regarde vers la droite mais ¯\_o_/¯    - Alexandre
                 }
             }

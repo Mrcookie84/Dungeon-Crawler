@@ -34,7 +34,7 @@ public class EntityPosition : MonoBehaviour
         // Retourner l'entité si elle es en bas
         if (newPos.y == -1)
         {
-            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 180f));
+            transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
         else

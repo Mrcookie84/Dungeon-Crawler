@@ -16,11 +16,11 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 1, y: 1}
   damageTypesData:
-  - {fileID: 11400000, guid: 3f48f674adad78a4c892f5a8492f6b28, type: 2}
-  - {fileID: 11400000, guid: 3f48f674adad78a4c892f5a8492f6b28, type: 2}
+  - {fileID: 11400000, guid: db9dda77078eb114c8f558db4ece781e, type: 2}
+  - {fileID: 11400000, guid: db9dda77078eb114c8f558db4ece781e, type: 2}
   displacementList:
   - {x: 1, y: 1}
   - {x: -1, y: -1}
   reinforceBarrier: 0
-  weakenBarrier: 0
-  blockedByBarrier: 1
+  weakenBarrier: 1
+  blockedByBarrier: 0
