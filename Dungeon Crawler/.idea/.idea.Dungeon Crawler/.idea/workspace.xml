@@ -27,7 +27,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+<<<<<<< HEAD
     "git-widget-placeholder": "Alexandre",
+=======
+    "git-widget-placeholder": "AlexLeDev",
+>>>>>>> 8b52542 (Sans les 30Mb de double des anims)
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -93,6 +97,10 @@
       <workItem from="1745672830687" duration="21005000" />
       <workItem from="1745755585120" duration="16283000" />
       <workItem from="1745824518497" duration="3384000" />
+<<<<<<< HEAD
+=======
+      <workItem from="1745913263745" duration="2750000" />
+>>>>>>> 8b52542 (Sans les 30Mb de double des anims)
     </task>
     <servers />
   </component>
