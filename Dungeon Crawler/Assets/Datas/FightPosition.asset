@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerArray:
   - {fileID: 0}
-  - {fileID: 3126566767669286085, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
+  - {fileID: 6738760618170967851, guid: 2c0e1f400ae8161469f40e2c88799fe8, type: 3}
+  - {fileID: 3548002928779807524, guid: ddeb47f21fa491144ab8309f13490688, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 3126566767669286085, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
   enemyArray:
   - {fileID: 4338044252648731311, guid: 5f6968725f228aa4f9821bd20a1920f6, type: 3}
   - {fileID: 0}

@@ -32,9 +32,9 @@ public class EntityPosition : MonoBehaviour
         transform.position = grid.GetChild(newPos.x + 3 * newPos.y).position;
         
         // Retourner l'entité si elle es en bas
-        if (newPos.y == -1)
+        if (newPos.y == 1)
         {
-            transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
+            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 180f));
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
         else
@@ -50,6 +50,12 @@ public class EntityPosition : MonoBehaviour
             if (transform.position == grid.GetChild(i).transform.position)
             {
                 gridPos = new Vector2Int(i % 3, i / 3);
+
+                if (gridPos.y == 1)
+                {
+                    transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 180f));
+                    transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                }
             }
         }
     }

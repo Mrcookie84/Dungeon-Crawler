@@ -7,25 +7,34 @@ public class Rune : MonoBehaviour
 {
     public RuneData data;
     [SerializeField] private string runeSelectionTag;
-    private bool selected = false;
+    private RuneSelection runeSelection;
+    public bool selected = false;
+
+    private void Start()
+    {
+        runeSelection = GameObject.FindGameObjectWithTag(runeSelectionTag).GetComponent<RuneSelection>();
+        runeSelection.resetRune.AddListener(UnSelect);
+    }
 
     public void UpdateRuneSelection()
     {
-        RuneSelection runeSelection = GameObject.FindGameObjectWithTag(runeSelectionTag).GetComponent<RuneSelection>();
         if (!selected)
         {
             runeSelection.AddRune(gameObject);
-            selected = true;
         }
         else
         {
             runeSelection.RemoveRune(gameObject);
-            selected = false;
         }
     }
     
     public int GetID()
     {
         return data.ID;
+    }
+
+    private void UnSelect()
+    {
+        selected = false;
     }
 }
