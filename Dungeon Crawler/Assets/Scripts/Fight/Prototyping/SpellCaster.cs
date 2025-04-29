@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class SpellCaster : MonoBehaviour
@@ -14,6 +15,8 @@ public class SpellCaster : MonoBehaviour
     private RuneSelection runeSelection;
     [SerializeField] private DamageTypesData damageData;
     [SerializeField] private SpellData spellData;
+
+    public UnityEvent spellCasted = new UnityEvent();
 
     private void Start()
     {
@@ -32,6 +35,7 @@ public class SpellCaster : MonoBehaviour
         }
 
         Debug.Log("Sort lancé !");
+        spellCasted.Invoke();
         ChangeSpell();
         
         // Vérification de la ligne sur laquelle le sort est lancé
@@ -93,6 +97,7 @@ public class SpellCaster : MonoBehaviour
                     {
                         int dmg = spellData.damageTypesData[i].dmgValues[j];
                         string dmgType = spellData.damageTypesData[i].dmgTypeName[j].ToString();
+                        hurtEnemy.GetComponent<EntityHealth>().TakeDamage(dmg);
                         //Debug.Log($"{hurtEnemy.name} s'est pris {dmg} dégâts de {dmgType} !");
                     }
                     

@@ -17,6 +17,7 @@ public class EnemyAI : MonoBehaviour
         if (target != null)
         {
             Debug.Log($"{target.name} attaquée par {gameObject.name} !");
+            target.GetComponent<EntityHealth>().TakeDamage(10);
         }
         else
         {
