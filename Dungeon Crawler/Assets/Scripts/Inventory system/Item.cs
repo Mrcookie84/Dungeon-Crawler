@@ -7,5 +7,7 @@ namespace DefaultNamespace
     {
         
         public string itemName;
+        public Sprite sprite;
+
     }
 }
