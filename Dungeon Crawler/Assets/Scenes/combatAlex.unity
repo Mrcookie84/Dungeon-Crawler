@@ -1590,6 +1590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 582431836}
   - component: {fileID: 582431835}
+  - component: {fileID: 582431837}
   m_Layer: 0
   m_Name: SpellManager
   m_TagString: SpellManager
@@ -1636,6 +1637,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 514924451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &582431837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582431834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16aa84a77c8a923408728bf68b09604a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTurn: {fileID: 0}
+  runeSelection: {fileID: 0}
+  playerGrid: {fileID: 0}
+  enemyGrid: {fileID: 0}
+  barrierGrid: {fileID: 0}
+  UIplayerSelections: []
+  UIcastButton: {fileID: 0}
+  spellCasted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &646620508
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,10 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8907508124825360126}
   - component: {fileID: -7346857730855540150}
-  - component: {fileID: -4393678726572512601}
   - component: {fileID: 2109979061175751635}
-  - component: {fileID: 3435286469089208928}
-  - component: {fileID: 8734545141521901412}
   - component: {fileID: -7666935225237567098}
   m_Layer: 0
   m_Name: Player
@@ -36,6 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2551319208624728258}
+  - {fileID: 6782358934867309043}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-7346857730855540150
@@ -67,27 +65,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &-4393678726572512601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3126566767669286085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16aa84a77c8a923408728bf68b09604a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  casterGPos: {fileID: -7346857730855540150}
-  enemyGridTag: EnemyGrid
-  barrierTag: BarrierGrid
-  spellManagerTag: SpellManager
-  damageData: {fileID: 11400000, guid: db9dda77078eb114c8f558db4ece781e, type: 2}
-  spellData: {fileID: 11400000, guid: 8eae9aab7956ea64d9f023bb1bf8695d, type: 2}
-  spellCasted:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &2109979061175751635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,13 +90,63 @@ MonoBehaviour:
       m_Calls: []
   healthBarsGroup: {fileID: 0}
   healthSlider: {fileID: 0}
---- !u!70 &3435286469089208928
-CapsuleCollider2D:
+--- !u!114 &-7666935225237567098
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3126566767669286085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a5b407f65dd19041a6b78090d2b157b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1720636928566789164}
+  idleAnim: {fileID: 0}
+  attackAnim: {fileID: 0}
+  hurtAnim: {fileID: 0}
+  deathAnim: {fileID: 0}
+--- !u!1 &6767726554298434850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6782358934867309043}
+  - component: {fileID: 6369584373221965987}
+  - component: {fileID: 8336649079977848557}
+  m_Layer: 0
+  m_Name: Spell Selection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6782358934867309043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767726554298434850}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8907508124825360126}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &6369584373221965987
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767726554298434850}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -146,54 +173,21 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.5, y: 1}
   m_Direction: 0
---- !u!114 &8734545141521901412
+--- !u!114 &8336649079977848557
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3126566767669286085}
+  m_GameObject: {fileID: 6767726554298434850}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: -4393678726572512601}
-          m_TargetAssemblyTypeName: SpellCaster, Assembly-CSharp
-          m_MethodName: CastSpell
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &-7666935225237567098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3126566767669286085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a5b407f65dd19041a6b78090d2b157b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1720636928566789164}
-  idleAnim: {fileID: 0}
-  attackAnim: {fileID: 0}
-  hurtAnim: {fileID: 0}
-  deathAnim: {fileID: 0}
+  m_Delegates: []
 --- !u!1 &7027195218989833837
 GameObject:
   m_ObjectHideFlags: 0
