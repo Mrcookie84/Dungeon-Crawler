@@ -13,6 +13,8 @@ TagManager:
   - PlayerGrid
   - EnemyGrid
   - BarrierGrid
+  - EnemiesHealthBars
+  - PlayersHealthBars
   layers:
   - Default
   - TransparentFX
