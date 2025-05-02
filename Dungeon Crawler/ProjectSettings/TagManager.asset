@@ -15,6 +15,7 @@ TagManager:
   - BarrierGrid
   - EnemiesHealthBars
   - PlayersHealthBars
+  - CharaPortait
   layers:
   - Default
   - TransparentFX
