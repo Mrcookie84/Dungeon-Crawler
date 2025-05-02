@@ -1,109 +1,224 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class SpellCaster : MonoBehaviour
 {
-    private TurnPlayer playerTurn;
-    [SerializeField] private EntityPosition casterGPos;
-    [SerializeField] private string enemyGridTag;
-    private GridManager enemyGrid;
-    [SerializeField] private string barrierTag;
-    private BarrierGrid barrierGrid;
-    [SerializeField] private string spellManagerTag;
-    private RuneSelection runeSelection;
-    [SerializeField] private DamageTypesData damageData;
-    [SerializeField] private SpellData spellData;
+    [Header("Turn Component")]
+    [SerializeField] private TurnPlayer playerTurn;
+    
+    [Header("Runes info")]
+    [SerializeField] private RuneSelection runeSelection;
+    
+    [Header("Grid Info")]
+    [SerializeField] private GridManager playerGrid;
+    [SerializeField] private GridManager enemyGrid;
+    [SerializeField] private BarrierGrid barrierGrid;
+
+    [Header("UI")]
+    [SerializeField] private GameObject[] UIplayerSelections;
+    [SerializeField] private Button UIcastButton;
 
     public UnityEvent spellCasted = new UnityEvent();
 
-    private void Start()
+    private CastMode currentCastMode = CastMode.Enemy;
+    private EntityPosition casterGPos;
+    private SpellEnemyData spellEnemyData;
+    private SpellPlayerData spellPlayerData;
+    private Vector2Int triggerPos;
+    
+    public bool HasSpell
     {
-        playerTurn = GameObject.FindObjectOfType<TurnPlayer>();
+        get { return spellEnemyData != null; }
+    }
 
-        enemyGrid = GameObject.FindGameObjectWithTag(enemyGridTag).GetComponent<GridManager>();
-        runeSelection = GameObject.FindGameObjectWithTag(spellManagerTag).GetComponent<RuneSelection>();
-        barrierGrid = GameObject.FindGameObjectWithTag(barrierTag).GetComponent<BarrierGrid>();
+
+    public enum CastMode
+    {
+        Player,
+        Enemy
+    }
+
+    public void ChangeSpell()
+    {
+        spellEnemyData = Resources.Load<SpellEnemyData>(runeSelection.GetEnemySpellData());
+        Debug.Log(spellEnemyData);
+
+        spellPlayerData = Resources.Load<SpellPlayerData>(runeSelection.GetPlayerSpellData());
+        Debug.Log(spellPlayerData);
+    }
+
+    public void ChangeCaster(EntityPosition casterPos)
+    {
+        casterGPos = casterPos;
+        Debug.Log($"{casterGPos.gameObject.name} est sélectionné.");
+
+        UpdateCastButton();
+    }
+
+    public void ChangeCastMode(Image buttonSprite)
+    {
+        // Alterner entre les différents modes d'attaque
+        switch (currentCastMode)
+        {
+            // Possibilité d'ajouter d'autres modes au cas où cette méchanique se développe plus
+            case CastMode.Player:
+                {
+                    currentCastMode = CastMode.Enemy;
+                    buttonSprite.color = Color.red;
+                    break;
+                }
+
+            case CastMode.Enemy:
+                {
+                    currentCastMode = CastMode.Player;
+                    buttonSprite.color = Color.green;
+                    break;
+                }
+
+            // (par défaut : mode ennemi en cas de problème)
+            default:
+                {
+                    currentCastMode = CastMode.Enemy;
+                    buttonSprite.color = Color.red;
+                    break;
+                }
+        }
+
+        UpdateCastButton();
+    }
+
+    private Vector2Int? EnemyRaycast(bool reverseRaycast)
+    {
+        // Blayage de la grille ennemi depuis l'arrière
+        if (reverseRaycast)
+        {
+            for (int i = 3; i < 0; i--)
+            {
+                if (enemyGrid.entityList[3 * casterGPos.gridPos.y + i - 1] != null)
+                {
+                    return new Vector2Int(i, casterGPos.gridPos.y);
+                }
+            }
+        }
+
+        // Balayage de la grille ennemi pour trouver la case sur laquelle activer le sort
+        for (int i = 0; i < 3; i++)
+        {
+            if (enemyGrid.entityList[3* casterGPos.gridPos.y + i] != null)
+            {
+                return new Vector2Int(i, casterGPos.gridPos.y);
+            }
+        }
+
+        return null;
+    }
+
+    private List<GameObject> GetAllPlayersOnRow()
+    {
+        List<GameObject> playerList = new List<GameObject>();
+
+        // Balayage de la ligne
+        for (int i = 0; i < 3; i++)
+        {
+            if (playerGrid.entityList[3* casterGPos.gridPos.y + i] != null)
+            {
+                playerList.Add(playerGrid.entityList[3 * casterGPos.gridPos.y + i]);
+            }
+        }
+
+        return playerList;
     }
 
     public void CastSpell()
     {
-        if (!playerTurn.isPlaying)
+        runeSelection.UpdateMana();
+
+        switch (currentCastMode)
         {
-            return;
+            case CastMode.Player:
+                {
+                    CastPlayerSpell();
+                    break;
+                }
+
+            case CastMode.Enemy:
+                {
+                    CastEnemySpell();
+                    break;
+                }
         }
 
-        Debug.Log("Sort lancé !");
-        spellCasted.Invoke();
-        ChangeSpell();
-        
-        // Vérification de la ligne sur laquelle le sort est lancé
-        int rowIndex = 0;
-        if (casterGPos.gridPos.y == 1)
+        playerTurn.TurnFinished();
+    }
+
+    private void CastPlayerSpell()
+    {
+        if (spellPlayerData.multipleTargets)
         {
-            rowIndex = 3;
-        }
-        
-        // Trouver le premier ennemi sur la ligne
-        bool spellHit = false;
-        for (int i = 0; i < 3; i++)
-        {
-            if (enemyGrid.entityList[rowIndex + i] != null && !spellHit)
+            List<GameObject> affectedPlayers = GetAllPlayersOnRow();
+
+            foreach (GameObject player in affectedPlayers)
             {
-                spellHit = true;
-                Debug.Log($"Le sort se déclenche sur {enemyGrid.GetEntityAtPos(new Vector2Int(i, casterGPos.gridPos.y)).name} !");
-                
-                ActivateSpell(new Vector2Int(i, casterGPos.gridPos.y));
+                if (spellPlayerData.switchWorld)
+                {
+                    Debug.Log($"{player.name} change de monde.");
+                }
             }
         }
 
-        if (!spellHit)
+        else
         {
-            Debug.Log("Le sort a raté");
+            GameObject player = casterGPos.gameObject ;
+
+            if (spellPlayerData.switchWorld)
+            {
+                Debug.Log($"{player.name} change de monde.");
+            }
         }
     }
 
-    private void ActivateSpell(Vector2Int startPos)
+    private void CastEnemySpell()
     {
-        runeSelection.UpdateMana();
-
-        for (int i = 0; i < spellData.hitCellList.Count; i++)
+        for (int i = 0; i < spellEnemyData.hitCellList.Count; i++)
         {
-            Vector2Int targetPos = startPos + spellData.hitCellList[i];
+            Vector2Int targetPos = triggerPos + spellEnemyData.hitCellList[i];
             targetPos = new Vector2Int(Mathf.Min(targetPos.x, 3), targetPos.y % 2);
             //Debug.Log(targetPos);
-            
+
             // Mise à jour de la barrière
-            if (spellData.reinforceBarrier)
+            if (spellEnemyData.reinforceBarrier)
             {
                 barrierGrid.ChangeBarrierState(targetPos.x, BarrierGrid.BarrierState.Reinforced);
             }
-            else if (spellData.weakenBarrier)
+            else if (spellEnemyData.weakenBarrier)
             {
                 barrierGrid.ChangeBarrierState(targetPos.x, BarrierGrid.BarrierState.Destroyed);
             }
 
-            if (!(targetPos.y != startPos.y && spellData.blockedByBarrier) || barrierGrid.CheckBarrierState(targetPos.y) == BarrierGrid.BarrierState.Destroyed)
+            if (!(targetPos.y != triggerPos.y && spellEnemyData.blockedByBarrier) || barrierGrid.CheckBarrierState(targetPos.y) == BarrierGrid.BarrierState.Destroyed)
             {
                 GameObject hurtEnemy = enemyGrid.GetEntityAtPos(targetPos);
                 if (hurtEnemy != null)
                 {
-                
+
                     //Debug.Log($"{hurtEnemy.name} est touché !");
-            
+
                     // Infliger les dégâts pour chaque type
-                    for (int j = 0; j < spellData.damageTypesData[i].dmgValues.Length; j++)
+                    for (int j = 0; j < spellEnemyData.damageTypesData[i].dmgValues.Length; j++)
                     {
-                        int dmg = spellData.damageTypesData[i].dmgValues[j];
-                        string dmgType = spellData.damageTypesData[i].dmgTypeName[j].ToString();
+                        int dmg = spellEnemyData.damageTypesData[i].dmgValues[j];
+                        string dmgType = spellEnemyData.damageTypesData[i].dmgTypeName[j].ToString();
                         hurtEnemy.GetComponent<EntityHealth>().TakeDamage(dmg);
                         //Debug.Log($"{hurtEnemy.name} s'est pris {dmg} dégâts de {dmgType} !");
                     }
-                    
+
                     // Déplacement de l'ennemi
                     EntityPosition enemyPos = hurtEnemy.GetComponent<EntityPosition>();
-                    Vector2Int newPos = enemyPos.gridPos + spellData.displacementList[i];
+                    Vector2Int newPos = enemyPos.gridPos + spellEnemyData.displacementList[i];
                     newPos = new Vector2Int(newPos.x, newPos.y % 2);
                     if (enemyGrid.IsPosInGrid(newPos))
                     {
@@ -111,7 +226,7 @@ public class SpellCaster : MonoBehaviour
                     }
                     else
                     {
-                        newPos = enemyPos.gridPos + spellData.displacementList[i] + spellData.displacementList[i + 1];
+                        newPos = enemyPos.gridPos + spellEnemyData.displacementList[i] + spellEnemyData.displacementList[i + 1];
                         newPos = new Vector2Int(newPos.x, newPos.y % 2);
                         if (enemyGrid.IsPosInGrid(newPos))
                         {
@@ -125,13 +240,62 @@ public class SpellCaster : MonoBehaviour
                 }
             }
         }
-        
+
         enemyGrid.UpdateEntitiesIndex();
     }
 
-    private void ChangeSpell()
+    public List<Vector2Int> GetAllCellHit()
     {
-        spellData = Resources.Load<SpellData>(runeSelection.GetRuneCombinationData());
-        Debug.Log(spellData);
+        List<Vector2Int> hitCellList = new List<Vector2Int>();
+
+        Vector2Int currentCell;
+        for (int i = 0; i < spellEnemyData.hitCellList.Count; i++)
+        {
+            currentCell = triggerPos + spellEnemyData.hitCellList[i];
+            hitCellList.Add(currentCell);
+        }
+
+        return hitCellList;
+    }
+
+    private void UpdateCastButton()
+    {
+        if (casterGPos == null)
+        {
+            UIcastButton.gameObject.SetActive(false);
+            return;
+        }
+        
+        switch (currentCastMode)
+        {
+            // Possibilité d'ajouter d'autres modes au cas où cette méchanique se développe plus
+            case CastMode.Player:
+                {
+                    if (spellPlayerData == null)
+                    {
+                        UIcastButton.gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        UIcastButton.gameObject.SetActive(true);
+                    }
+                    break;
+                }
+
+            case CastMode.Enemy:
+                {
+                    if (spellEnemyData == null)
+                    {
+                        UIcastButton.gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        UIcastButton.gameObject.SetActive(true);
+                    }
+                    break;
+                }
+        }
+
+        triggerPos = (Vector2Int)EnemyRaycast(false);
     }
 }

@@ -72,9 +72,10 @@ public class RuneSelection : MonoBehaviour
         else return true;
     }
 
+    // Spells/SpellData
     public string GetRuneCombinationData()
     {   
-        string dataPath = $"Spells/SpellData";
+        string dataPath = $"";
         for (int i = 0; i < 4; i++)
         {
             if (IsRuneIDInSelection(i))
@@ -86,6 +87,16 @@ public class RuneSelection : MonoBehaviour
         Debug.Log(dataPath);
         return dataPath;
     }
+
+    public string GetEnemySpellData()
+    {
+        return "Spells/SpellEnemyData" + GetRuneCombinationData();
+    }
+    public string GetPlayerSpellData()
+    {
+        return "Spells/SpellPlayerData" + GetRuneCombinationData();
+    }
+
 
     private bool IsRuneIDInSelection(int id)
     {

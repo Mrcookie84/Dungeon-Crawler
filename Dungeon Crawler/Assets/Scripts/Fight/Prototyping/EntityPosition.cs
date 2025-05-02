@@ -1,11 +1,14 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EntityPosition : MonoBehaviour
 {
     [SerializeField] private string gridTag;
     private Transform grid; 
     public Vector2Int gridPos;
+
+    public UnityEvent isMoving = new UnityEvent();
 
     public int gridIndex
     {
@@ -26,7 +29,7 @@ public class EntityPosition : MonoBehaviour
 
     public void ChangePosition(Vector2Int newPos)
     {
-        Debug.Log($"{gameObject.name} : {gridPos} → {newPos}");
+        //Debug.Log($"{gameObject.name} : {gridPos} → {newPos}");
         
         gridPos = newPos;
         transform.position = grid.GetChild(newPos.x + 3 * newPos.y).position;
@@ -41,6 +44,8 @@ public class EntityPosition : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(Vector3.zero);
         }
+
+        isMoving.Invoke();
     }
 
     private void FindGridPos()
