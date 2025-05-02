@@ -42,20 +42,24 @@ public class SpellCaster : MonoBehaviour
         Enemy
     }
 
-    private void ChangeSpell()
+    public void ChangeSpell()
     {
-        spellEnemyData = Resources.Load<SpellEnemyData>(runeSelection.GetRuneCombinationData());
+        spellEnemyData = Resources.Load<SpellEnemyData>(runeSelection.GetEnemySpellData());
         Debug.Log(spellEnemyData);
+
+        spellPlayerData = Resources.Load<SpellPlayerData>(runeSelection.GetPlayerSpellData());
+        Debug.Log(spellPlayerData);
     }
 
     public void ChangeCaster(EntityPosition casterPos)
     {
         casterGPos = casterPos;
+        Debug.Log($"{casterGPos.gameObject.name} est sélectionné.");
 
-        triggerPos = (Vector2Int)EnemyRaycast(false);
+        UpdateCastButton();
     }
 
-    public void ChangeCastMode()
+    public void ChangeCastMode(Image buttonSprite)
     {
         // Alterner entre les différents modes d'attaque
         switch (currentCastMode)
@@ -64,12 +68,14 @@ public class SpellCaster : MonoBehaviour
             case CastMode.Player:
                 {
                     currentCastMode = CastMode.Enemy;
+                    buttonSprite.color = Color.red;
                     break;
                 }
 
             case CastMode.Enemy:
                 {
                     currentCastMode = CastMode.Player;
+                    buttonSprite.color = Color.green;
                     break;
                 }
 
@@ -77,9 +83,12 @@ public class SpellCaster : MonoBehaviour
             default:
                 {
                     currentCastMode = CastMode.Enemy;
+                    buttonSprite.color = Color.red;
                     break;
                 }
         }
+
+        UpdateCastButton();
     }
 
     private Vector2Int? EnemyRaycast(bool reverseRaycast)
@@ -142,6 +151,8 @@ public class SpellCaster : MonoBehaviour
                     break;
                 }
         }
+
+        playerTurn.TurnFinished();
     }
 
     private void CastPlayerSpell()
@@ -156,6 +167,16 @@ public class SpellCaster : MonoBehaviour
                 {
                     Debug.Log($"{player.name} change de monde.");
                 }
+            }
+        }
+
+        else
+        {
+            GameObject player = casterGPos.gameObject ;
+
+            if (spellPlayerData.switchWorld)
+            {
+                Debug.Log($"{player.name} change de monde.");
             }
         }
     }
@@ -235,5 +256,46 @@ public class SpellCaster : MonoBehaviour
         }
 
         return hitCellList;
+    }
+
+    private void UpdateCastButton()
+    {
+        if (casterGPos == null)
+        {
+            UIcastButton.gameObject.SetActive(false);
+            return;
+        }
+        
+        switch (currentCastMode)
+        {
+            // Possibilité d'ajouter d'autres modes au cas où cette méchanique se développe plus
+            case CastMode.Player:
+                {
+                    if (spellPlayerData == null)
+                    {
+                        UIcastButton.gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        UIcastButton.gameObject.SetActive(true);
+                    }
+                    break;
+                }
+
+            case CastMode.Enemy:
+                {
+                    if (spellEnemyData == null)
+                    {
+                        UIcastButton.gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        UIcastButton.gameObject.SetActive(true);
+                    }
+                    break;
+                }
+        }
+
+        triggerPos = (Vector2Int)EnemyRaycast(false);
     }
 }
