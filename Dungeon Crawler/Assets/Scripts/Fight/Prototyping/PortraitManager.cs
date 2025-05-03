@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class PortraitManager : MonoBehaviour
 {
@@ -10,8 +10,10 @@ public class PortraitManager : MonoBehaviour
         if (sprite == null)
         {
             portraitholder.SetActive(false);
+            return;
         }
-        
+
+        portraitholder.SetActive(true);
         portraitholder.GetComponent<Image>().sprite = sprite;
     }
 }

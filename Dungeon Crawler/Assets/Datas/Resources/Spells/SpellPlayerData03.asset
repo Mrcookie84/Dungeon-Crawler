@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 8f8f6ec2228fb4744bc604dc7d0530e3, type: 3}
   m_Name: SpellPlayerData03
-  m_EditorClassIdentifier: Assembly-CSharp::SpellPlayerData
+  m_EditorClassIdentifier: 
   switchWorld: 1
   multipleTargets: 1

@@ -20,15 +20,15 @@ public class SpellCaster : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private GameObject[] UIplayerSelections;
-    [SerializeField] private Button UIcastButton;
+    [SerializeField] private GameObject UIcastButton;
 
     public UnityEvent spellCasted = new UnityEvent();
 
-    private CastMode currentCastMode = CastMode.Enemy;
+    [SerializeField] private CastMode currentCastMode = CastMode.Enemy;
     private EntityPosition casterGPos;
     private SpellEnemyData spellEnemyData;
     private SpellPlayerData spellPlayerData;
-    private Vector2Int triggerPos;
+    private Vector2Int? triggerPos;
     
     public bool HasSpell
     {
@@ -45,10 +45,24 @@ public class SpellCaster : MonoBehaviour
     public void ChangeSpell()
     {
         spellEnemyData = Resources.Load<SpellEnemyData>(runeSelection.GetEnemySpellData());
-        Debug.Log(spellEnemyData);
 
         spellPlayerData = Resources.Load<SpellPlayerData>(runeSelection.GetPlayerSpellData());
-        Debug.Log(spellPlayerData);
+
+        if (casterGPos != null)
+        {
+            triggerPos = EnemyRaycast(false);
+        }
+
+        UpdateSpellPreview();
+        UpdateCastButton();
+    }
+
+    public void ResetSpell()
+    {
+        spellEnemyData = null;
+        spellPlayerData = null;
+
+        UpdateCastButton();
     }
 
     public void ChangeCaster(EntityPosition casterPos)
@@ -56,6 +70,8 @@ public class SpellCaster : MonoBehaviour
         casterGPos = casterPos;
         Debug.Log($"{casterGPos.gameObject.name} est sélectionné.");
 
+        triggerPos = EnemyRaycast(false);
+        UpdateSpellPreview();
         UpdateCastButton();
     }
 
@@ -88,6 +104,7 @@ public class SpellCaster : MonoBehaviour
                 }
         }
 
+        UpdateSpellPreview();
         UpdateCastButton();
     }
 
@@ -117,16 +134,16 @@ public class SpellCaster : MonoBehaviour
         return null;
     }
 
-    private List<GameObject> GetAllPlayersOnRow()
+    private List<EntityPosition> GetAllPlayersOnRow()
     {
-        List<GameObject> playerList = new List<GameObject>();
+        List<EntityPosition> playerList = new List<EntityPosition>();
 
         // Balayage de la ligne
         for (int i = 0; i < 3; i++)
         {
             if (playerGrid.entityList[3* casterGPos.gridPos.y + i] != null)
             {
-                playerList.Add(playerGrid.entityList[3 * casterGPos.gridPos.y + i]);
+                playerList.Add(playerGrid.entityList[3 * casterGPos.gridPos.y + i].GetComponent<EntityPosition>());
             }
         }
 
@@ -136,6 +153,9 @@ public class SpellCaster : MonoBehaviour
     public void CastSpell()
     {
         runeSelection.UpdateMana();
+
+        playerGrid.ResetHighlight();
+        enemyGrid.ResetHighlight();
 
         switch (currentCastMode)
         {
@@ -151,41 +171,39 @@ public class SpellCaster : MonoBehaviour
                     break;
                 }
         }
-
-        playerTurn.TurnFinished();
     }
 
     private void CastPlayerSpell()
     {
         if (spellPlayerData.multipleTargets)
         {
-            List<GameObject> affectedPlayers = GetAllPlayersOnRow();
+            List<EntityPosition> affectedPlayers = GetAllPlayersOnRow();
 
-            foreach (GameObject player in affectedPlayers)
+            foreach (EntityPosition player in affectedPlayers)
             {
                 if (spellPlayerData.switchWorld)
                 {
-                    Debug.Log($"{player.name} change de monde.");
+                    player.ChangePosition(new Vector2Int(player.gridPos.x, (player.gridPos.y + 1) % 2));
                 }
             }
         }
 
         else
         {
-            GameObject player = casterGPos.gameObject ;
-
             if (spellPlayerData.switchWorld)
             {
-                Debug.Log($"{player.name} change de monde.");
+                casterGPos.ChangePosition(new Vector2Int(casterGPos.gridPos.x, (casterGPos.gridPos.y + 1) % 2));
             }
         }
+
+        playerGrid.UpdateEntitiesIndex();
     }
 
     private void CastEnemySpell()
     {
         for (int i = 0; i < spellEnemyData.hitCellList.Count; i++)
         {
-            Vector2Int targetPos = triggerPos + spellEnemyData.hitCellList[i];
+            Vector2Int targetPos = (Vector2Int)triggerPos + spellEnemyData.hitCellList[i];
             targetPos = new Vector2Int(Mathf.Min(targetPos.x, 3), targetPos.y % 2);
             //Debug.Log(targetPos);
 
@@ -199,14 +217,11 @@ public class SpellCaster : MonoBehaviour
                 barrierGrid.ChangeBarrierState(targetPos.x, BarrierGrid.BarrierState.Destroyed);
             }
 
-            if (!(targetPos.y != triggerPos.y && spellEnemyData.blockedByBarrier) || barrierGrid.CheckBarrierState(targetPos.y) == BarrierGrid.BarrierState.Destroyed)
+            if (!(targetPos.y != ((Vector2Int)triggerPos).y && spellEnemyData.blockedByBarrier) || barrierGrid.CheckBarrierState(targetPos.y) == BarrierGrid.BarrierState.Destroyed)
             {
                 GameObject hurtEnemy = enemyGrid.GetEntityAtPos(targetPos);
                 if (hurtEnemy != null)
                 {
-
-                    //Debug.Log($"{hurtEnemy.name} est touché !");
-
                     // Infliger les dégâts pour chaque type
                     for (int j = 0; j < spellEnemyData.damageTypesData[i].dmgValues.Length; j++)
                     {
@@ -224,17 +239,13 @@ public class SpellCaster : MonoBehaviour
                     {
                         enemyPos.ChangePosition(newPos);
                     }
-                    else
+                    else if (i < spellEnemyData.hitCellList.Count - 1)
                     {
                         newPos = enemyPos.gridPos + spellEnemyData.displacementList[i] + spellEnemyData.displacementList[i + 1];
                         newPos = new Vector2Int(newPos.x, newPos.y % 2);
                         if (enemyGrid.IsPosInGrid(newPos))
                         {
                             enemyPos.ChangePosition(newPos);
-                        }
-                        else
-                        {
-                            Debug.Log($"{hurtEnemy.name} ne peux pas bouger. ({newPos})");
                         }
                     }
                 }
@@ -251,7 +262,8 @@ public class SpellCaster : MonoBehaviour
         Vector2Int currentCell;
         for (int i = 0; i < spellEnemyData.hitCellList.Count; i++)
         {
-            currentCell = triggerPos + spellEnemyData.hitCellList[i];
+            currentCell = (Vector2Int)triggerPos + spellEnemyData.hitCellList[i];
+            currentCell.y %= 2; // Remettre la coordonnée y dans le cadriage
             hitCellList.Add(currentCell);
         }
 
@@ -262,7 +274,7 @@ public class SpellCaster : MonoBehaviour
     {
         if (casterGPos == null)
         {
-            UIcastButton.gameObject.SetActive(false);
+            UIcastButton.SetActive(false);
             return;
         }
         
@@ -273,11 +285,11 @@ public class SpellCaster : MonoBehaviour
                 {
                     if (spellPlayerData == null)
                     {
-                        UIcastButton.gameObject.SetActive(false);
+                        UIcastButton.SetActive(false);
                     }
                     else
                     {
-                        UIcastButton.gameObject.SetActive(true);
+                        UIcastButton.SetActive(true);
                     }
                     break;
                 }
@@ -286,16 +298,68 @@ public class SpellCaster : MonoBehaviour
                 {
                     if (spellEnemyData == null)
                     {
-                        UIcastButton.gameObject.SetActive(false);
+                        UIcastButton.SetActive(false);
                     }
                     else
                     {
-                        UIcastButton.gameObject.SetActive(true);
+                        UIcastButton.SetActive(true);
                     }
                     break;
                 }
         }
+    }
 
-        triggerPos = (Vector2Int)EnemyRaycast(false);
+    private void UpdateSpellPreview()
+    {
+        playerGrid.ResetHighlight();
+        enemyGrid.ResetHighlight();
+
+        if (casterGPos == null)
+        {
+            return;
+        }
+
+        switch (currentCastMode)
+        {
+            case CastMode.Player:
+                {
+                    if (spellPlayerData == null)
+                    {
+                        return;
+                    }
+
+                    List<Vector2Int> highlightCoords = new List<Vector2Int>();
+
+                    if (spellPlayerData.multipleTargets)
+                    {
+                        List<EntityPosition> playersPosComponent = GetAllPlayersOnRow();
+
+                        foreach (EntityPosition posComp in playersPosComponent)
+                        {
+                            highlightCoords.Add(posComp.gridPos);
+                        }
+                    }
+                    else
+                    {
+                        highlightCoords.Add(casterGPos.gridPos);
+                    }
+
+                    playerGrid.HighlightCells(highlightCoords);
+
+                    break;
+                }
+
+            case CastMode.Enemy:
+                {
+                    if (spellEnemyData == null)
+                    {
+                        return;
+                    }
+
+                    enemyGrid.HighlightCells(GetAllCellHit());
+
+                    break;
+                }
+        }
     }
 }

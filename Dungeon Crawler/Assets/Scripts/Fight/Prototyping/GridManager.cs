@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GridManager : MonoBehaviour
@@ -17,7 +18,10 @@ public class GridManager : MonoBehaviour
 
     public bool IsPosInGrid(Vector2Int pos)
     {
-        return (0 <= pos.x && pos.x <= 2 && 0 <= pos.y && pos.y <= 1);
+        bool xCheck = 0 <= pos.x && pos.x <= 2;
+        bool yCheck = 0 <= pos.y && pos.y <= 1;
+        
+        return (xCheck && yCheck);
     }
 
     public void UpdateEntitiesIndex()
@@ -38,5 +42,22 @@ public class GridManager : MonoBehaviour
         }
 
         entityList = newEntityList;
+    }
+
+    public void HighlightCells(List<Vector2Int> cellList)
+    {
+        foreach (Vector2Int cell in cellList)
+        {
+            Debug.Log($"Case iluminée : ({cell.x}, {cell.y})");
+            transform.GetChild(cell.x + cell.y * 3).GetChild(0).gameObject.SetActive(true);
+        }
+    }
+
+    public void ResetHighlight()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            transform.GetChild(i).GetChild(0).gameObject.SetActive(false);
+        }
     }
 }

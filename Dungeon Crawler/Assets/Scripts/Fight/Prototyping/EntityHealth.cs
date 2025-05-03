@@ -55,7 +55,7 @@ public class EntityHealth : MonoBehaviour
             healthSlider.gameObject.SetActive(false);
         }
         
-        int healthBarIndex = posComponent.gridIndex;
+        int healthBarIndex = posComponent.gridPos.x + posComponent.gridPos.y * 3;
         Transform newHealthBar = healthBarsGroup.GetChild(healthBarIndex);
         newHealthBar.gameObject.SetActive(true);
         healthSlider = newHealthBar.GetComponent<Slider>();

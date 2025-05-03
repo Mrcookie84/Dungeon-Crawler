@@ -40,6 +40,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1322260763606463193, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
+      propertyPath: charaPortraitSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2c41339a7e3e0944f9c6e30dfab18476, type: 3}
     - target: {fileID: 1720636928566789164, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_Controller
       value: 

@@ -8,15 +8,17 @@ public class PlayerSelection : MonoBehaviour
     [SerializeField] private string spellCasterTag;
     private SpellCaster spellCaster;
     [SerializeField] private string charaPortaitTag;
-    private Image charaPortait;
+    [SerializeField] private Sprite charaPortraitSprite;
+    private PortraitManager charaPortait;
 
     public UnityEvent playerSelected = new UnityEvent();
 
     private void Start()
     {
         spellCaster = GameObject.FindGameObjectWithTag(spellCasterTag).GetComponent<SpellCaster>();
-        charaPortait = GameObject.FindGameObjectWithTag(charaPortaitTag).GetComponent<Image>();
+        charaPortait = GameObject.FindGameObjectWithTag(charaPortaitTag).GetComponent<PortraitManager>();
         playerSelected.AddListener(delegate { spellCaster.ChangeCaster(posComponent); });
+        playerSelected.AddListener(delegate { charaPortait.ChangeImage(charaPortraitSprite); });
     }
 
     public void InvokeSelectionEvent()

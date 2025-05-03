@@ -14,10 +14,3 @@ public class SpellEnemyData : ScriptableObject
     public bool weakenBarrier = false;
     public bool blockedByBarrier = false;
 }
-
-[CreateAssetMenu(fileName = "SpellPlayerData", menuName = "ScriptableObject/Spells/SpellPlayerData")]
-public class SpellPlayerData : ScriptableObject
-{
-    public bool switchWorld = false;
-    public bool multipleTargets = false;
-}

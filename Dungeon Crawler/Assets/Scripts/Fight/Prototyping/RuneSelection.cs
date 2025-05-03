@@ -84,7 +84,6 @@ public class RuneSelection : MonoBehaviour
             }
         }
 
-        Debug.Log(dataPath);
         return dataPath;
     }
 

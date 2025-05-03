@@ -336,6 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posComponent: {fileID: -7346857730855540150}
   spellCasterTag: SpellManager
+  charaPortaitTag: CharaPortrait
   playerSelected:
     m_PersistentCalls:
       m_Calls: []
