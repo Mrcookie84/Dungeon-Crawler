@@ -20,6 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3245144a017263c4f8f4ee582c2ea929, type: 2}
   displacementList:
   - {x: 0, y: 0}
+  - {x: 0, y: 0}
   reinforceBarrier: 1
   weakenBarrier: 0
   blockedByBarrier: 0
