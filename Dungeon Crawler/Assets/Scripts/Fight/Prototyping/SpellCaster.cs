@@ -68,7 +68,7 @@ public class SpellCaster : MonoBehaviour
     public void ChangeCaster(EntityPosition casterPos)
     {
         casterGPos = casterPos;
-        Debug.Log($"{casterGPos.gameObject.name} est sélectionné.");
+        //Debug.Log($"{casterGPos.gameObject.name} est sélectionné.");
 
         triggerPos = EnemyRaycast(false);
         UpdateSpellPreview();
@@ -217,7 +217,14 @@ public class SpellCaster : MonoBehaviour
                 barrierGrid.ChangeBarrierState(targetPos.x, BarrierGrid.BarrierState.Destroyed);
             }
 
-            if (!(targetPos.y != ((Vector2Int)triggerPos).y && spellEnemyData.blockedByBarrier) || barrierGrid.CheckBarrierState(targetPos.y) == BarrierGrid.BarrierState.Destroyed)
+            // Barrier check
+            bool passingThrought = targetPos.y != ((Vector2Int)triggerPos).y;
+            bool canPassThrought = passingThrought && !spellEnemyData.blockedByBarrier;
+            bool isBarrierBroken = barrierGrid.CheckBarrierState(targetPos.y) == BarrierGrid.BarrierState.Destroyed;
+
+            bool validTarget = !passingThrought || canPassThrought || isBarrierBroken;
+
+            if (validTarget)
             {
                 GameObject hurtEnemy = enemyGrid.GetEntityAtPos(targetPos);
                 if (hurtEnemy != null)
@@ -234,8 +241,16 @@ public class SpellCaster : MonoBehaviour
                     // Déplacement de l'ennemi
                     EntityPosition enemyPos = hurtEnemy.GetComponent<EntityPosition>();
                     Vector2Int newPos = enemyPos.gridPos + spellEnemyData.displacementList[i];
-                    newPos = new Vector2Int(newPos.x, newPos.y % 2);
-                    if (enemyGrid.IsPosInGrid(newPos))
+                    newPos.y %= 2;
+
+                    // Barrier check
+                    passingThrought = newPos.y != ((Vector2Int)triggerPos).y;
+                    canPassThrought = passingThrought && !spellEnemyData.blockedByBarrier;
+                    isBarrierBroken = barrierGrid.CheckBarrierState(newPos.y) == BarrierGrid.BarrierState.Destroyed;
+
+                    validTarget = !passingThrought || canPassThrought || isBarrierBroken;
+
+                    if (enemyGrid.IsPosInGrid(newPos) && (validTarget))
                     {
                         enemyPos.ChangePosition(newPos);
                     }

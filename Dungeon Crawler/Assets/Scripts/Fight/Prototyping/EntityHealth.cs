@@ -7,30 +7,21 @@ public class EntityHealth : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
     [SerializeField] private EntityPosition posComponent;
-    [SerializeField] private string healthBarsGroupTag;
 
     public bool dead;
 
     public UnityEvent tookDamage = new UnityEvent();
     public UnityEvent isDying = new UnityEvent();
-
-
-    [SerializeField] private Transform healthBarsGroup;
-    [SerializeField] private Slider healthSlider;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        healthBarsGroup = GameObject.FindGameObjectWithTag(healthBarsGroupTag).transform;
-        
         currentHealth = maxHealth;
-        ChangeHealthBar();
     }
 
     public void TakeDamage(int amount)
     {   
         currentHealth -= amount;
-        healthSlider.value = currentHealth;
 
         if (CheckDeath() && !dead)
         {
@@ -46,21 +37,5 @@ public class EntityHealth : MonoBehaviour
     private bool CheckDeath()
     {
         return currentHealth <= 0;
-    }
-
-    public void ChangeHealthBar()
-    {
-        if (healthSlider != null)
-        {
-            healthSlider.gameObject.SetActive(false);
-        }
-        
-        int healthBarIndex = posComponent.gridPos.x + posComponent.gridPos.y * 3;
-        Transform newHealthBar = healthBarsGroup.GetChild(healthBarIndex);
-        newHealthBar.gameObject.SetActive(true);
-        healthSlider = newHealthBar.GetComponent<Slider>();
-
-        healthSlider.maxValue = maxHealth;
-        healthSlider.value = currentHealth;
     }
 }

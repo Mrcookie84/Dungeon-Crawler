@@ -69,7 +69,7 @@ public class TurnManager : MonoBehaviour
 
     private void ResetGlobalTurn()
     {
-        Debug.Log("Nouveau tour");
+        //Debug.Log("Nouveau tour");
         //turnStack = new Stack<TurnSubscriber>();
 
         for (int i = turnList.Count; i > 0; i--)

@@ -1,14 +1,18 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GridManager : MonoBehaviour
 {
     public GameObject[] entityList = new GameObject[6];
+    
+    public UnityEvent gridUpdate = new UnityEvent();
 
     public void AddEntity(GameObject entity, Vector2Int gridPos)
     {
         entityList[gridPos.x + 3 * gridPos.y] = entity;
+
+        gridUpdate.Invoke();
     }
 
     public GameObject GetEntityAtPos(Vector2Int pos)
@@ -42,13 +46,15 @@ public class GridManager : MonoBehaviour
         }
 
         entityList = newEntityList;
+
+        gridUpdate.Invoke();
     }
 
     public void HighlightCells(List<Vector2Int> cellList)
     {
         foreach (Vector2Int cell in cellList)
         {
-            Debug.Log($"Case iluminée : ({cell.x}, {cell.y})");
+            //Debug.Log($"Case iluminée : ({cell.x}, {cell.y})");
             transform.GetChild(cell.x + cell.y * 3).GetChild(0).gameObject.SetActive(true);
         }
     }
