@@ -18,7 +18,7 @@ public class AnimationScript : MonoBehaviour
     private KeyCode fwKey = KeyCode.D;
     private KeyCode BwKey = KeyCode.A;
     
-    // Start is called before the first frame update
+    
     void Start()
     {
 
@@ -29,7 +29,7 @@ public class AnimationScript : MonoBehaviour
         }
     }
     
-    // Update is called once per frame
+
     void Update()
     {
         
@@ -56,6 +56,7 @@ public class AnimationScript : MonoBehaviour
                 
                 animatorComponent.SetBool("isInteracting" , false);
                 break;
+            
             case PlayerState.walking:
                 animatorComponent.SetBool("isIdle" , false);
                 
@@ -63,6 +64,7 @@ public class AnimationScript : MonoBehaviour
                 
                 animatorComponent.SetBool("isInteracting" , false);
                 break;
+            
             case PlayerState.interact:
                 
                 animatorComponent.SetBool("isIdle" , false);
