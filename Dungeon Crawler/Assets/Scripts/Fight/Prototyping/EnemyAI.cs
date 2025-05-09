@@ -26,6 +26,9 @@ public class EnemyAI : MonoBehaviour
     [Space(5)]
     [SerializeField] private int scoreDif;
 
+    [Header("Action")]
+    [SerializeField] private EnemyAction actionComp;
+
     private int currentCellScore = 0;
     private Vector2Int bestCellCoords = new Vector2Int();
     private int bestCellScore = 0;
@@ -43,13 +46,11 @@ public class EnemyAI : MonoBehaviour
 
         if (bestCellScore - currentCellScore >= scoreDif)
         {
-            Debug.Log($"{gameObject.name} se déplace.");
             Move();
         }
         else
         {
-            Debug.Log($"{gameObject.name} attaque.");
-            Attack();
+            actionComp.DoAction();
         }
     }
 
@@ -58,14 +59,14 @@ public class EnemyAI : MonoBehaviour
         Vector2Int movDirection = FindMoveDirection();
         Vector2Int targetCell = gridComponent.gridPos + movDirection;
 
-        // Vérifier si il essaye de passer la barrière
+        // Vï¿½rifier si il essaye de passer la barriï¿½re
         if (movDirection.y != 0 && barrierGrid.CheckBarrierState(gridComponent.gridPos.x) == BarrierGrid.BarrierState.Reinforced)
         {
-            Attack();
+            actionComp.DoAction();;
             return;
         }
 
-        // Vérifier si il y a un autre ennemi sur le chemin
+        // Vï¿½rifier si il y a un autre ennemi sur le chemin
         GameObject otherEnemy = enemyGrid.GetEntityAtPos(targetCell);
         if (otherEnemy != null)
         {
@@ -94,33 +95,6 @@ public class EnemyAI : MonoBehaviour
         return new Vector2Int(xComp, yComp);
     }
 
-    private void Attack()
-    {
-        GameObject target = ChooseTarget();
-        if (target != null)
-        {
-            Debug.Log($"{target.name} attaquée par {gameObject.name} !");
-            target.GetComponent<EntityHealth>().TakeDamage(10);
-        }
-        else
-        {
-            Debug.Log($"{gameObject.name} rate sont attaque...");
-        }
-    }
-
-    private GameObject ChooseTarget()
-    {
-        for (int i = 0; i < playerGrid.entityList.Length / 2; i++)
-        {
-            if (playerGrid.entityList[i + 3*gridComponent.gridPos.y] != null)
-            {
-                return playerGrid.entityList[i + 3 * gridComponent.gridPos.y];
-            }
-        }
-
-        return null;
-    }
-
     private void EvaluateAllCells()
     {
         bestCellScore = int.MinValue;
@@ -146,7 +120,7 @@ public class EnemyAI : MonoBehaviour
     {
         int cellScore = 0;
 
-        // Affinité dimensionnelle
+        // Affinitï¿½ dimensionnelle
         if (coords.y == dimAffinityRow)
         {
             cellScore += dimAffintyW;

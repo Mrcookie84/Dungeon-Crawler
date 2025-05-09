@@ -15,3 +15,4 @@ MonoBehaviour:
   ID: 0
   manaCost: 2
   cooldown: 0
+  UIPrefab: {fileID: 684799698216932617, guid: 99c9be602b5953c4d939b482700cc904, type: 3}

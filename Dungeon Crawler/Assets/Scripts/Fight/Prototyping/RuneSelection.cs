@@ -8,7 +8,7 @@ using static Unity.Collections.Unicode;
 public class RuneSelection : MonoBehaviour
 {
     [Header("Rune UI")]
-    [SerializeField] private GameObject runeHolder;
+    [SerializeField] private Transform runeHolder;
     [SerializeField] private int xSpacing;
     [SerializeField] private int ySpacing;
     [Space(5)]
@@ -57,6 +57,8 @@ public class RuneSelection : MonoBehaviour
         }
 
         GetRuneCombinationData();
+        
+        UpdateRuneUI();
     }
 
     public void RemoveRune(GameObject rune)
@@ -67,6 +69,8 @@ public class RuneSelection : MonoBehaviour
         selectedRunes.Remove(rune);
         runeComponent.selected = false;
         GetRuneCombinationData();
+        
+        UpdateRuneUI();
     }
     
     private bool CheckRuneConflict(int runeID)
@@ -164,6 +168,25 @@ public class RuneSelection : MonoBehaviour
 
     private void UpdateRuneUI()
     {
+        DeleteAllRuneUI();
+        
+        for (int i = 0; i < selectedRunes.Count; i++)
+        {
+            GameObject runeUI = selectedRunes[i].GetComponent<Rune>().data.UIPrefab;
+            Transform slot = runeHolder.GetChild(i);
 
+            Instantiate(runeUI, slot);
+        }
+    }
+
+    private void DeleteAllRuneUI()
+    {
+        for (int i = 0; i < runeHolder.childCount; i++)
+        {
+            if (runeHolder.GetChild(i).childCount != 0)
+            {
+                Destroy(runeHolder.GetChild(i).GetChild(0).gameObject);
+            }
+        }
     }
 }

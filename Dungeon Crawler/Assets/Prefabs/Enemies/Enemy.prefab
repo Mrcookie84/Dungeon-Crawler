@@ -248,6 +248,7 @@ MonoBehaviour:
   enemyInWorldW: 0
   playerInWorldW: 0
   scoreDif: 2
+  actionComp: {fileID: 0}
 --- !u!114 &-9180488397278699492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e45479d0c7752a469352a2ca1f3a210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 1
   currentHealth: 0
   posComponent: {fileID: -5975568748125914461}
   dead: 0

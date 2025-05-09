@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class EntityHealth : MonoBehaviour
 {
@@ -25,6 +24,7 @@ public class EntityHealth : MonoBehaviour
 
         if (CheckDeath() && !dead)
         {
+            Destroy(gameObject);
             dead = true;
             isDying.Invoke();
         }

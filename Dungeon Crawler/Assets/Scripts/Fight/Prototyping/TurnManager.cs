@@ -52,7 +52,14 @@ public class TurnManager : MonoBehaviour
     private void StartTurn()
     {
         TurnSubscriber currentTurn = turnStack.Pop();
-        currentTurn.PlayTurn(this);
+        if (currentTurn != null)
+        {
+            currentTurn.PlayTurn(this);
+        }
+        else
+        {
+            NextTurn();
+        }
     }
 
     public void NextTurn()
