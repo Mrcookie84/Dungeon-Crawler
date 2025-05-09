@@ -8,6 +8,10 @@ using static Unity.Collections.Unicode;
 public class RuneSelection : MonoBehaviour
 {
     [Header("Rune UI")]
+    [SerializeField] private GameObject runeHolder;
+    [SerializeField] private int xSpacing;
+    [SerializeField] private int ySpacing;
+    [Space(5)]
     [SerializeField] private GameObject runeRealityUI;
     [SerializeField] private GameObject runeSpaceUI;
     [SerializeField] private GameObject runeFocusUI;
@@ -156,5 +160,10 @@ public class RuneSelection : MonoBehaviour
     private bool canUsMoreMana(int amout)
     {
         return potentialMana - amout >= 0;
+    }
+
+    private void UpdateRuneUI()
+    {
+
     }
 }

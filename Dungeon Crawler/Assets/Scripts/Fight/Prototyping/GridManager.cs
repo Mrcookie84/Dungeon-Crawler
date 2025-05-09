@@ -17,6 +17,11 @@ public class GridManager : MonoBehaviour
 
     public GameObject GetEntityAtPos(Vector2Int pos)
     {
+        if (!IsPosInGrid(pos))
+        {
+            return null;
+        }
+
         return entityList[pos.x + 3 * pos.y];
     }
 
@@ -65,5 +70,62 @@ public class GridManager : MonoBehaviour
         {
             transform.GetChild(i).GetChild(0).gameObject.SetActive(false);
         }
+    }
+
+    public List<GameObject> GetEntitiesOnRow(int row)
+    {
+        List<GameObject> rowList = new List<GameObject>();
+        for (int i = 0;i < 3; i++)
+        {
+            if (entityList[i + row*3] != null)
+            {
+                rowList.Add(entityList[i + row * 3]);
+            }
+        }
+
+        return rowList;
+    }
+
+    public List<GameObject> GetAdjacentEntities(Vector2Int cellCoords)
+    {
+        List<GameObject> adjacentList = new List<GameObject>();
+
+        // Gauche
+        Vector2Int currentCell = new Vector2Int(-1, 0);
+        GameObject currentEntity = GetEntityAtPos(cellCoords + currentCell);
+
+        if (currentEntity != null)
+        {
+            adjacentList.Add(currentEntity);
+        }
+
+        // Droite
+        currentCell = new Vector2Int(1, 0);
+        currentEntity = GetEntityAtPos(cellCoords + currentCell);
+
+        if (currentEntity != null)
+        {
+            adjacentList.Add(currentEntity);
+        }
+
+        // Haut
+        currentCell = new Vector2Int(0, 1);
+        currentEntity = GetEntityAtPos(cellCoords + currentCell);
+
+        if (currentEntity != null)
+        {
+            adjacentList.Add(currentEntity);
+        }
+
+        // Bas
+        currentCell = new Vector2Int(0, -1);
+        currentEntity = GetEntityAtPos(cellCoords + currentCell);
+
+        if (currentEntity != null)
+        {
+            adjacentList.Add(currentEntity);
+        }
+
+        return adjacentList;
     }
 }

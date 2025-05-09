@@ -239,6 +239,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridComponent: {fileID: -5975568748125914461}
   playerGridTag: PlayerGrid
+  enemyGridTag: EnemyGrid
+  barrierGridTag: BarrierGrid
+  columnW: 000000000000000000000000
+  dimAffinityRow: 0
+  dimAffintyW: 0
+  adjacentEnemyW: 0
+  enemyInWorldW: 0
+  playerInWorldW: 0
+  scoreDif: 2
 --- !u!114 &-9180488397278699492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +277,6 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   posComponent: {fileID: -5975568748125914461}
-  healthBarsGroupTag: EnemiesHealthBars
   dead: 0
   tookDamage:
     m_PersistentCalls:
@@ -276,8 +284,6 @@ MonoBehaviour:
   isDying:
     m_PersistentCalls:
       m_Calls: []
-  healthBarsGroup: {fileID: 0}
-  healthSlider: {fileID: 0}
 --- !u!114 &8916927351157303100
 MonoBehaviour:
   m_ObjectHideFlags: 0
