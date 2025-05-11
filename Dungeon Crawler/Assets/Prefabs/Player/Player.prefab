@@ -81,7 +81,6 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   posComponent: {fileID: -7346857730855540150}
-  healthBarsGroupTag: PlayersHealthBars
   dead: 0
   tookDamage:
     m_PersistentCalls:
@@ -89,8 +88,6 @@ MonoBehaviour:
   isDying:
     m_PersistentCalls:
       m_Calls: []
-  healthBarsGroup: {fileID: 0}
-  healthSlider: {fileID: 0}
 --- !u!114 &-7666935225237567098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +131,7 @@ Transform:
   m_GameObject: {fileID: 5720583357554483498}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.108, y: 0.774, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -258,8 +255,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: 0, y: 0.71}
+  m_Size: {x: 1, y: 2}
   m_Direction: 0
 --- !u!114 &8336649079977848557
 MonoBehaviour:
@@ -337,6 +334,7 @@ MonoBehaviour:
   posComponent: {fileID: -7346857730855540150}
   spellCasterTag: SpellManager
   charaPortaitTag: CharaPortrait
+  charaPortraitSprite: {fileID: 0}
   playerSelected:
     m_PersistentCalls:
       m_Calls: []

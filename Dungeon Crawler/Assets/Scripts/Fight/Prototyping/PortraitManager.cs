@@ -15,5 +15,6 @@ public class PortraitManager : MonoBehaviour
 
         portraitholder.SetActive(true);
         portraitholder.GetComponent<Image>().sprite = sprite;
+        portraitholder.GetComponent<Image>().SetNativeSize();
     }
 }
