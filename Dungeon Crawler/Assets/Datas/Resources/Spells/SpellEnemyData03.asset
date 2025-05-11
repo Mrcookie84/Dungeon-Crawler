@@ -27,3 +27,5 @@ MonoBehaviour:
   reinforceBarrier: 0
   weakenBarrier: 1
   blockedByBarrier: 0
+  desc: "brise la barri\xE8re sur les emplacement touch\xE9s et inflige des d\xE9g\xE2ts
+    de r\xE9alit\xE9"

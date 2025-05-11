@@ -24,3 +24,4 @@ MonoBehaviour:
   reinforceBarrier: 0
   weakenBarrier: 0
   blockedByBarrier: 0
+  desc: "Inverse la position de deux ennemis, inflige des d\xE9g\xE2ts de collisions"

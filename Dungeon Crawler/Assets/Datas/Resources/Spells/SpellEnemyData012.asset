@@ -24,3 +24,7 @@ MonoBehaviour:
   reinforceBarrier: 0
   weakenBarrier: 1
   blockedByBarrier: 0
+  desc: "brise la barri\xE8re sur les emplacement touch\xE9s et inflige des d\xE9g\xE2ts
+    de r\xE9alit\xE9  la cible subit des d\xE9g\xE2ts d\u2019\xE9crasement, la cible
+    inverse sa place verticalement (si un autre ennemi est pr\xE9sent il \xE9change
+    lui aussi de place et subit des d\xE9g\xE2ts de contact)"

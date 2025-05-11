@@ -27,3 +27,6 @@ MonoBehaviour:
   reinforceBarrier: 0
   weakenBarrier: 0
   blockedByBarrier: 1
+  desc: "La cible directement touch\xE9e subit des d\xE9g\xE2ts d\u2019\xE9crasement. 
+    Les autres ennemis pouss\xE9s par le changement de position prennent des d\xE9g\xE2ts
+    de contact."
