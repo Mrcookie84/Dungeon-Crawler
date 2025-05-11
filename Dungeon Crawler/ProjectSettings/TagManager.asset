@@ -16,6 +16,7 @@ TagManager:
   - EnemiesHealthBars
   - PlayersHealthBars
   - CharaPortrait
+  - PlayerFight
   layers:
   - Default
   - TransparentFX

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -148,6 +149,7 @@ public class SpellCaster : MonoBehaviour
         return playerList;
     }
 
+    /*
     public void CastSpell()
     {
         runeSelection.UpdateMana();
@@ -169,7 +171,7 @@ public class SpellCaster : MonoBehaviour
                     break;
                 }
         }
-    }
+    }*/
 
     private void CastPlayerSpell()
     {
@@ -266,6 +268,119 @@ public class SpellCaster : MonoBehaviour
         }
 
         enemyGrid.UpdateEntitiesIndex();
+    }
+
+    /// <summary>
+    /// Méthode appelée par le bouton "Lancer" dans l'interface joueur
+    /// C'est ici que le sort est déclenché
+    /// </summary>
+    public void CastSpell()
+    {
+        StartCoroutine(CastEnemySpellCoroutine(0.1f));
+    }
+
+    /// <summary>
+    /// Coroutine qui lance toutes les autres coroutines qui appliquent les données du sort
+    /// - Durée définie par les data de spellEnemyData.SpellDuration
+    /// </summary>
+    /// <param name="t"> Durée de la coroutine </param>
+    /// <returns></returns>
+    private IEnumerator CastEnemySpellCoroutine(float t)
+    {
+        // Désactivation des boutons
+
+        // Récupération des cases et ennemis affectés par le sort
+        List<Vector2Int> hitCellList = GetAllCellHit();
+        GameObject[] enemyArray = enemyGrid.GetEntitiesAtMultPos(hitCellList);
+
+        // Lancement de toutes le coroutines
+        StartCoroutine(FxCoroutine(t, hitCellList));
+        StartCoroutine(DisplacementCoroutine(t, hitCellList));
+        StartCoroutine(DamageCoroutine(t, enemyArray));
+        StartCoroutine(BarrierCoroutine(t, hitCellList));
+
+        yield return new WaitForSeconds(t);
+
+        // Réactiver les boutons
+    }
+
+    /// <summary>
+    /// Coroutine qui déclenche les fx du sort lancé au bout d'une durée définie
+    /// - Durée définie par spell"""Data.t_fx
+    /// </summary>
+    /// <param name="t"> Durée de la coroutine </param>
+    /// <param name="affectedCells"> Liste des cases où il faut déclencher un fx</param>
+    /// <returns></returns>
+    private IEnumerator FxCoroutine(float t, List<Vector2Int> affectedCells)
+    {
+        yield return new WaitForSeconds(t);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="t"> Durée de la coroutine </param>
+    /// <param name="affectedCells"></param>
+    /// <returns></returns>
+    private IEnumerator DisplacementCoroutine(float t, List<Vector2Int> affectedCells)
+    {
+        yield return new WaitForSeconds(t);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="t"> Durée de la coroutine </param>
+    /// <param name="affectedEnemies"> Liste des ennemis</param>
+    /// <returns></returns>
+    private IEnumerator DamageCoroutine(float t, GameObject[] affectedEnemies)
+    {
+        // Attente avant déclenchement
+        yield return new WaitForSeconds(t);
+
+        foreach (GameObject enemy in affectedEnemies)
+        {
+            if (enemy != null) continue;
+
+            EntityHealth entityHealth = enemy.GetComponent<EntityHealth>();
+
+            // Appliquer tout les types de dégâts
+            for (int i = 0; i < spellEnemyData.damageTypesData[i].dmgValues.Length; i++)
+            {
+                entityHealth.TakeDamage(spellEnemyData.damageTypesData[i].dmgValues[i]);
+
+                // Faire apparaître un texte avec la valeur des dégâts
+                // et la couleur du type de dégâts infligés
+                // (c'est pour ça la boucle for, il y a besoin de l'indice)
+            }
+        }
+    }
+
+    /// <summary>
+    /// Coroutine qui définie quand la barrière est mise à jour
+    /// - Durée définie par spell"""Data.t_barrier
+    /// </summary>
+    /// <param name="t"> Durée de la coroutine </param>
+    /// <param name="affectedCells"> Liste des cases où l'état de la barrière est mis à jour </param>
+    /// <returns></returns>
+    private IEnumerator BarrierCoroutine(float t, List<Vector2Int> affectedCells)
+    {
+        yield return new WaitForSeconds(t);
+
+        // Changer l'état de la barrière à chaque case touchée
+        foreach (Vector2Int cell in affectedCells)
+        {
+            if (spellEnemyData.reinforceBarrier)
+            {
+                barrierGrid.ChangeBarrierState(cell.x, BarrierGrid.BarrierState.Reinforced);
+                // Lancer l'animation
+            }
+            else if (spellEnemyData.weakenBarrier)
+            {
+                barrierGrid.ChangeBarrierState(cell.x, BarrierGrid.BarrierState.Destroyed);
+                // Lancer l'animation
+            }
+        }
     }
 
     public List<Vector2Int> GetAllCellHit()
