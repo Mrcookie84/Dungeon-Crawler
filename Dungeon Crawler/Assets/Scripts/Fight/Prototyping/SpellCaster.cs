@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class SpellCaster : MonoBehaviour
@@ -118,6 +116,8 @@ public class SpellCaster : MonoBehaviour
                     return new Vector2Int(i, casterGPos.gridPos.y);
                 }
             }
+
+            return null;
         }
 
         // Balayage de la grille ennemi pour trouver la case sur laquelle activer le sort

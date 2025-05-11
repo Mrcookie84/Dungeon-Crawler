@@ -11,16 +11,12 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private List<TurnSubscriber> turnList = new List<TurnSubscriber>();
     private Stack<TurnSubscriber> turnStack = new Stack<TurnSubscriber>();
 
-    int nbEnemy = 0;
-    int nbPlayer = 0;
-
     private void Start()
     {
         // Ajout du joueur
-        TurnSubscriber playerTurn = GameObject.FindGameObjectWithTag("Player").GetComponent<TurnSubscriber>();
+        TurnSubscriber playerTurn = GameObject.FindGameObjectWithTag("PlayerFight").GetComponent<TurnSubscriber>();
         playerTurn.InitializeTurn(this);
         turnList.Add(playerTurn);
-        nbPlayer = 3;
 
         // Ajout des tanks
         TurnSubscriber tankIndividualTurn;
@@ -30,8 +26,6 @@ public class TurnManager : MonoBehaviour
             tankIndividualTurn = tanksTurn[i].GetComponent<TurnSubscriber>();
             tankIndividualTurn.InitializeTurn(this);    
             turnList.Add(tankIndividualTurn);
-
-            nbEnemy++;
         }
         // Ajout des attaquants
         TurnSubscriber fighterIndividualTurn;
@@ -41,8 +35,6 @@ public class TurnManager : MonoBehaviour
             fighterIndividualTurn = fightersTurn[i].GetComponent<TurnSubscriber>();
             fighterIndividualTurn.InitializeTurn(this);
             turnList.Add(fighterIndividualTurn);
-
-            nbEnemy++;
         }
         // Ajout des supports
         TurnSubscriber supportIndividualTurn;
@@ -52,8 +44,6 @@ public class TurnManager : MonoBehaviour
             supportIndividualTurn = supportsTurn[i].GetComponent<TurnSubscriber>();
             supportIndividualTurn.InitializeTurn(this);
             turnList.Add(supportIndividualTurn);
-
-            nbEnemy++;
         }
 
         ResetGlobalTurn();
@@ -89,11 +79,6 @@ public class TurnManager : MonoBehaviour
         //Debug.Log("Nouveau tour");
         //turnStack = new Stack<TurnSubscriber>();
 
-        if (nbEnemy <= 0)
-        {
-            ; ; ; ; ; ; ; ;
-        }
-
         for (int i = turnList.Count; i > 0; i--)
         {
             turnStack.Push(turnList[i - 1]);
@@ -110,5 +95,15 @@ public class TurnManager : MonoBehaviour
     public void DisablePlayerUI()
     {
         playerUI.SetActive(false);
+    }
+
+    public static void TestEndFight(GridManager grid)
+    {
+        Debug.Log("Test fin de combat");
+        
+        if (grid.isEmpty)
+        {
+            SceneManager.GoToRP();
+        }
     }
 }

@@ -8,6 +8,28 @@ public class GridManager : MonoBehaviour
     
     public UnityEvent gridUpdate = new UnityEvent();
 
+    public bool isEmpty
+    {
+        get
+        {
+            bool result = true;
+            foreach (var entity in entityList)
+            {
+                if (entity != null)
+                {
+                    EntityHealth health = entity.GetComponent<EntityHealth>();
+
+                    if (!health.dead)
+                    {
+                        result = false;
+                    }
+                }
+            }
+
+            return result;
+        }
+    }
+
     public void AddEntity(GameObject entity, Vector2Int gridPos)
     {
         entityList[gridPos.x + 3 * gridPos.y] = entity;

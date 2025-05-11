@@ -17,6 +17,11 @@ public class EntityPosition : MonoBehaviour
         }
     }
 
+    public GridManager LinkedGrid
+    {
+        get { return grid.GetComponent<GridManager>(); }
+    }
+
     private void Start()
     {
         grid = GameObject.FindGameObjectWithTag(gridTag).transform;

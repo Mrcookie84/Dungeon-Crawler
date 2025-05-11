@@ -24,9 +24,11 @@ public class EntityHealth : MonoBehaviour
 
         if (CheckDeath() && !dead)
         {
-            Destroy(gameObject);
             dead = true;
             isDying.Invoke();
+
+            TurnManager.TestEndFight(posComponent.LinkedGrid);
+            Destroy(gameObject);
         }
         else
         {

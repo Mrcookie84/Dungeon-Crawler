@@ -18,7 +18,7 @@ public class PositionManager : MonoBehaviour
             {
                 spawnPos = enemyGrid.GetChild(i).position;
 
-                Instantiate(posData.enemyArray[i], spawnPos, Quaternion.Euler(Vector3.zero));
+                Instantiate(posData.enemyArray[i], spawnPos, Quaternion.Euler(Vector3.zero), transform.parent);
             }
         }
         
@@ -30,7 +30,7 @@ public class PositionManager : MonoBehaviour
             {
                 spawnPos = playerGrid.GetChild(i).position;
                 
-                Instantiate(posData.playerArray[i], spawnPos, Quaternion.Euler(Vector3.zero));
+                Instantiate(posData.playerArray[i], spawnPos, Quaternion.Euler(Vector3.zero), transform.parent);
             }
         }
     }
