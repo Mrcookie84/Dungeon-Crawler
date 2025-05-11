@@ -9,7 +9,10 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private GameObject playerUI;
 
     [SerializeField] private List<TurnSubscriber> turnList = new List<TurnSubscriber>();
-    [SerializeField] private Stack<TurnSubscriber> turnStack = new Stack<TurnSubscriber>();
+    private Stack<TurnSubscriber> turnStack = new Stack<TurnSubscriber>();
+
+    int nbEnemy = 0;
+    int nbPlayer = 0;
 
     private void Start()
     {
@@ -17,6 +20,7 @@ public class TurnManager : MonoBehaviour
         TurnSubscriber playerTurn = GameObject.FindGameObjectWithTag("Player").GetComponent<TurnSubscriber>();
         playerTurn.InitializeTurn(this);
         turnList.Add(playerTurn);
+        nbPlayer = 3;
 
         // Ajout des tanks
         TurnSubscriber tankIndividualTurn;
@@ -26,6 +30,8 @@ public class TurnManager : MonoBehaviour
             tankIndividualTurn = tanksTurn[i].GetComponent<TurnSubscriber>();
             tankIndividualTurn.InitializeTurn(this);    
             turnList.Add(tankIndividualTurn);
+
+            nbEnemy++;
         }
         // Ajout des attaquants
         TurnSubscriber fighterIndividualTurn;
@@ -35,6 +41,8 @@ public class TurnManager : MonoBehaviour
             fighterIndividualTurn = fightersTurn[i].GetComponent<TurnSubscriber>();
             fighterIndividualTurn.InitializeTurn(this);
             turnList.Add(fighterIndividualTurn);
+
+            nbEnemy++;
         }
         // Ajout des supports
         TurnSubscriber supportIndividualTurn;
@@ -44,6 +52,8 @@ public class TurnManager : MonoBehaviour
             supportIndividualTurn = supportsTurn[i].GetComponent<TurnSubscriber>();
             supportIndividualTurn.InitializeTurn(this);
             turnList.Add(supportIndividualTurn);
+
+            nbEnemy++;
         }
 
         ResetGlobalTurn();
@@ -78,6 +88,11 @@ public class TurnManager : MonoBehaviour
     {
         //Debug.Log("Nouveau tour");
         //turnStack = new Stack<TurnSubscriber>();
+
+        if (nbEnemy <= 0)
+        {
+            ; ; ; ; ; ; ; ;
+        }
 
         for (int i = turnList.Count; i > 0; i--)
         {

@@ -21,6 +21,7 @@ public class SpellCaster : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject[] UIplayerSelections;
     [SerializeField] private GameObject UIcastButton;
+    [SerializeField] private TMPro.TextMeshProUGUI UISpellDesc;
 
     public UnityEvent spellCasted = new UnityEvent();
 
@@ -53,8 +54,7 @@ public class SpellCaster : MonoBehaviour
             triggerPos = EnemyRaycast(false);
         }
 
-        UpdateSpellPreview();
-        UpdateCastButton();
+        UpdateSpell();
     }
 
     public void ResetSpell()
@@ -62,7 +62,7 @@ public class SpellCaster : MonoBehaviour
         spellEnemyData = null;
         spellPlayerData = null;
 
-        UpdateCastButton();
+        UpdateSpell();
     }
 
     public void ChangeCaster(EntityPosition casterPos)
@@ -71,8 +71,7 @@ public class SpellCaster : MonoBehaviour
         //Debug.Log($"{casterGPos.gameObject.name} est sélectionné.");
 
         triggerPos = EnemyRaycast(false);
-        UpdateSpellPreview();
-        UpdateCastButton();
+        UpdateSpell();
     }
 
     public void ChangeCastMode(Image buttonSprite)
@@ -104,8 +103,7 @@ public class SpellCaster : MonoBehaviour
                 }
         }
 
-        UpdateSpellPreview();
-        UpdateCastButton();
+        UpdateSpell();
     }
 
     private Vector2Int? EnemyRaycast(bool reverseRaycast)
@@ -285,6 +283,13 @@ public class SpellCaster : MonoBehaviour
         return hitCellList;
     }
 
+    private void UpdateSpell()
+    {
+        UpdateSpellDesc();
+        UpdateSpellPreview();
+        UpdateCastButton();
+    }
+
     private void UpdateCastButton()
     {
         if (casterGPos == null)
@@ -311,7 +316,7 @@ public class SpellCaster : MonoBehaviour
 
             case CastMode.Enemy:
                 {
-                    if (spellEnemyData == null)
+                    if (spellEnemyData == null || triggerPos == null)
                     {
                         UIcastButton.SetActive(false);
                     }
@@ -366,13 +371,44 @@ public class SpellCaster : MonoBehaviour
 
             case CastMode.Enemy:
                 {
-                    if (spellEnemyData == null)
+                    if (spellEnemyData == null || triggerPos == null)
                     {
                         return;
                     }
 
                     enemyGrid.HighlightCells(GetAllCellHit());
 
+                    break;
+                }
+        }
+    }
+
+    private void UpdateSpellDesc()
+    {
+        switch (currentCastMode)
+        {
+            case CastMode.Player:
+                {
+                    if (spellPlayerData == null)
+                    {
+                        UISpellDesc.text = "";
+                        break;
+                    }
+
+                    UISpellDesc.text = spellPlayerData.desc;
+
+                    break;
+                }
+
+            case CastMode.Enemy:
+                {
+                    if (spellEnemyData == null)
+                    {
+                        UISpellDesc.text = "";
+                        break;
+                    }
+
+                    UISpellDesc.text = spellEnemyData.desc;
                     break;
                 }
         }

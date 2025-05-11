@@ -7,4 +7,7 @@ public class SpellPlayerData : ScriptableObject
 {
     public bool switchWorld = false;
     public bool multipleTargets = false;
+
+    [Header("Description")]
+    public string desc;
 }

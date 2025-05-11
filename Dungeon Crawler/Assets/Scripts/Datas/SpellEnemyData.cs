@@ -13,4 +13,7 @@ public class SpellEnemyData : ScriptableObject
     public bool reinforceBarrier = false;
     public bool weakenBarrier = false;
     public bool blockedByBarrier = false;
+
+    [Header("Description")]
+    public string desc;
 }

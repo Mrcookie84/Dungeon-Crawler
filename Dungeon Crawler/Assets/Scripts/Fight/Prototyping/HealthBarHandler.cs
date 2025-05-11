@@ -16,9 +16,15 @@ public class HealthBarHandler : MonoBehaviour
             return;
         }
 
-        container.SetActive(true);
-
         EntityHealth healthInfo = linkedEntity.GetComponent<EntityHealth>();
+
+        if (healthInfo.dead)
+        {
+            container.SetActive(false);
+            return;
+        }
+
+        container.SetActive(true);
         healthSlider.maxValue = healthInfo.maxHealth;
         healthSlider.value = healthInfo.currentHealth;
     }
