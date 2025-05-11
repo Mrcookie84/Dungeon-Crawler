@@ -47,6 +47,20 @@ public class GridManager : MonoBehaviour
         return entityList[pos.x + 3 * pos.y];
     }
 
+    public GameObject[] GetEntitiesAtMultPos(List<Vector2Int> posArray)
+    {
+        GameObject[] entityArray = new GameObject[posArray.Count];
+
+        int i = 0;
+        foreach (Vector2Int pos in posArray)
+        {
+            entityArray[i] = GetEntityAtPos(pos);
+            i++;
+        }
+
+        return entityArray;
+    }
+
     public bool IsPosInGrid(Vector2Int pos)
     {
         bool xCheck = 0 <= pos.x && pos.x <= 2;
