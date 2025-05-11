@@ -9,16 +9,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2108263569466956935, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5793fafa6752d0f4cbab86cf6de53f58, type: 3}
+    - target: {fileID: 2108263569466956935, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2108263569466956935, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2108263569466956935, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: m_Color.r
-      value: 0.745283
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: actionComp
@@ -83,6 +87,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6402749266899931613, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       insertIndex: 4
       addedObject: {fileID: -8748550606687673412}
+    - targetCorrespondingSourceObject: {fileID: 6402749266899931613, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7272314774641694991}
   m_SourcePrefab: {fileID: 100100000, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
 --- !u!1 &4338044252648731311 stripped
 GameObject:
@@ -109,6 +116,27 @@ MonoBehaviour:
   SdmgType: 1
   GdmgValue: 10
   GdmgType: 2
+--- !u!95 &-7272314774641694991
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4338044252648731311}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1f300a40c09abf64a9a4fb729b4142f5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &5330701929267632593 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -5975568748125914461, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
