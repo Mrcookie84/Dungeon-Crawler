@@ -13,7 +13,7 @@ public class Rune : MonoBehaviour
     private void Start()
     {
         runeSelection = GameObject.FindGameObjectWithTag(runeSelectionTag).GetComponent<RuneSelection>();
-        runeSelection.resetRune.AddListener(UnSelect);
+        runeSelection.ResetRune.AddListener(UnSelect);
     }
 
     public void UpdateRuneSelection()

@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e45479d0c7752a469352a2ca1f3a210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 1000
   currentHealth: 0
   posComponent: {fileID: -5975568748125914461}
   dead: 0

@@ -9,13 +9,6 @@ public class RuneSelection : MonoBehaviour
 {
     [Header("Rune UI")]
     [SerializeField] private Transform runeHolder;
-    [SerializeField] private int xSpacing;
-    [SerializeField] private int ySpacing;
-    [Space(5)]
-    [SerializeField] private GameObject runeRealityUI;
-    [SerializeField] private GameObject runeSpaceUI;
-    [SerializeField] private GameObject runeFocusUI;
-    [SerializeField] private GameObject runeExtensionUI;
 
     [Header("ManaUI")]
     public int maxMana;
@@ -27,7 +20,7 @@ public class RuneSelection : MonoBehaviour
     [Header("Current State")]
     public List<GameObject> selectedRunes;
 
-    public UnityEvent resetRune = new UnityEvent();
+    public UnityEvent ResetRune = new UnityEvent();
 
     private void Start()
     {
@@ -143,7 +136,8 @@ public class RuneSelection : MonoBehaviour
         potentialManaSliderUI.value = potentialMana;
 
         selectedRunes.Clear();
-        resetRune.Invoke();
+        DeleteAllRuneUI();
+        ResetRune.Invoke();
     }
 
     private void RemoveMana(int amount)

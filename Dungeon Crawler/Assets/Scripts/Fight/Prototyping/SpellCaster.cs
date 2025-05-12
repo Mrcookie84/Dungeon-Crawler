@@ -277,7 +277,10 @@ public class SpellCaster : MonoBehaviour
     /// </summary>
     public void CastSpell()
     {
-        StartCoroutine(CastEnemySpellCoroutine(spellEnemyData.SpellDuration));
+        if (currentCastMode == CastMode.Enemy)
+            StartCoroutine(CastEnemySpellCoroutine(spellEnemyData.SpellDuration));
+        else
+            CastPlayerSpell(); // Doit être mis à jour plus tard
     }
 
     /// <summary>
@@ -289,7 +292,6 @@ public class SpellCaster : MonoBehaviour
     private IEnumerator CastEnemySpellCoroutine(float t)
     {
         UIplayerInterface.SetActive(false);
-        ResetSpell();
         
         // Récupération des cases et ennemis affectés par le sort
         List<Vector2Int> hitCellList = GetAllCellHit();
@@ -301,8 +303,12 @@ public class SpellCaster : MonoBehaviour
         StartCoroutine(DamageCoroutine(spellEnemyData.t_damage, enemyArray));
         StartCoroutine(BarrierCoroutine(spellEnemyData.t_barrier, hitCellList));
 
-        yield return new WaitForSeconds(t);
+        enemyGrid.ResetHighlight();
+        runeSelection.UpdateMana();
 
+        yield return new WaitForSeconds(5f);
+
+        ResetSpell();
         UIplayerInterface.SetActive(true);
     }
 
@@ -335,15 +341,19 @@ public class SpellCaster : MonoBehaviour
             if (affectedEnemies[i] == null) continue;
 
             EntityPosition enemyPos = affectedEnemies[i].GetComponent<EntityPosition>();
-            
+            Vector2Int targetPos = enemyPos.gridPos + spellEnemyData.displacementList[i];
+
             bool tryingToCross = spellEnemyData.displacementList[i].y != 0;
             bool barrierBroken = barrierGrid.CheckBarrierState(enemyPos.gridPos.x) == BarrierGrid.BarrierState.Destroyed;
+            bool targetInGrid = enemyGrid.IsPosInGrid(targetPos);
 
-            if (!tryingToCross || barrierBroken)
+            if ((!tryingToCross || barrierBroken) && targetInGrid)
             {
-                enemyPos.ChangePosition(enemyPos.gridPos + spellEnemyData.displacementList[i]);
+                enemyPos.ChangePosition(targetPos);
             }
         }
+
+        enemyGrid.UpdateEntitiesIndex();
     }
 
     /// <summary>

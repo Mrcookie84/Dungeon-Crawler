@@ -10,7 +10,7 @@ public class HealthBarGroupManager : MonoBehaviour
         foreach (HealthBarHandler healthBar in healthBars)
         {
             if (healthBar == null) continue;
-            
+
             healthBar.SyncSlider(syncGrid);
         }
     }
