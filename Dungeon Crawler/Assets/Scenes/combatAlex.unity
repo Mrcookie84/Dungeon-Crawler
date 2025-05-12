@@ -3032,6 +3032,7 @@ MonoBehaviour:
   playerGrid: {fileID: 658287937}
   enemyGrid: {fileID: 927520407}
   barrierGrid: {fileID: 1412030046}
+  UIplayerInterface: {fileID: 1445850616}
   UIplayerSelections: []
   UIcastButton: {fileID: 1862072684}
   UISpellDesc: {fileID: 1964994774}
@@ -6291,6 +6292,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrierStates: 010000000100000001000000
+--- !u!1 &1445850616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7672260432984457963, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+  m_PrefabInstance: {fileID: 279817250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1459796896
 GameObject:
   m_ObjectHideFlags: 0

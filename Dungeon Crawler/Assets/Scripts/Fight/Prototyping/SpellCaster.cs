@@ -288,21 +288,22 @@ public class SpellCaster : MonoBehaviour
     /// <returns></returns>
     private IEnumerator CastEnemySpellCoroutine(float t)
     {
+        UIplayerInterface.SetActive(false);
+        ResetSpell();
         
-
         // Récupération des cases et ennemis affectés par le sort
         List<Vector2Int> hitCellList = GetAllCellHit();
         GameObject[] enemyArray = enemyGrid.GetEntitiesAtMultPos(hitCellList);
 
         // Lancement de toutes le coroutines
         StartCoroutine(FxCoroutine(spellEnemyData.t_fx, hitCellList));
-        StartCoroutine(DisplacementCoroutine(spellEnemyData.t_disp, hitCellList));
+        StartCoroutine(DisplacementCoroutine(spellEnemyData.t_disp, enemyArray));
         StartCoroutine(DamageCoroutine(spellEnemyData.t_damage, enemyArray));
         StartCoroutine(BarrierCoroutine(spellEnemyData.t_barrier, hitCellList));
 
         yield return new WaitForSeconds(t);
 
-        // Réactiver les boutons
+        UIplayerInterface.SetActive(true);
     }
 
     /// <summary>
@@ -325,9 +326,24 @@ public class SpellCaster : MonoBehaviour
     /// <param name="t"> Durée de la coroutine </param>
     /// <param name="affectedCells"></param>
     /// <returns></returns>
-    private IEnumerator DisplacementCoroutine(float t, List<Vector2Int> affectedCells)
+    private IEnumerator DisplacementCoroutine(float t, GameObject[] affectedEnemies)
     {
         yield return new WaitForSeconds(t);
+
+        for (int i = 0; i < affectedEnemies.Length; i++)
+        {
+            if (affectedEnemies[i] == null) continue;
+
+            EntityPosition enemyPos = affectedEnemies[i].GetComponent<EntityPosition>();
+            
+            bool tryingToCross = spellEnemyData.displacementList[i].y != 0;
+            bool barrierBroken = barrierGrid.CheckBarrierState(enemyPos.gridPos.x) == BarrierGrid.BarrierState.Destroyed;
+
+            if (!tryingToCross || barrierBroken)
+            {
+                enemyPos.ChangePosition(enemyPos.gridPos + spellEnemyData.displacementList[i]);
+            }
+        }
     }
 
     /// <summary>
