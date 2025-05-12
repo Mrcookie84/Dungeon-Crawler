@@ -18,6 +18,7 @@ public class SpellCaster : MonoBehaviour
     [SerializeField] private BarrierGrid barrierGrid;
 
     [Header("UI")]
+    [SerializeField] private GameObject UIplayerInterface;
     [SerializeField] private GameObject[] UIplayerSelections;
     [SerializeField] private GameObject UIcastButton;
     [SerializeField] private TMPro.TextMeshProUGUI UISpellDesc;
@@ -276,7 +277,7 @@ public class SpellCaster : MonoBehaviour
     /// </summary>
     public void CastSpell()
     {
-        StartCoroutine(CastEnemySpellCoroutine(0.1f));
+        StartCoroutine(CastEnemySpellCoroutine(spellEnemyData.SpellDuration));
     }
 
     /// <summary>
@@ -287,17 +288,17 @@ public class SpellCaster : MonoBehaviour
     /// <returns></returns>
     private IEnumerator CastEnemySpellCoroutine(float t)
     {
-        // Désactivation des boutons
+        
 
         // Récupération des cases et ennemis affectés par le sort
         List<Vector2Int> hitCellList = GetAllCellHit();
         GameObject[] enemyArray = enemyGrid.GetEntitiesAtMultPos(hitCellList);
 
         // Lancement de toutes le coroutines
-        StartCoroutine(FxCoroutine(t, hitCellList));
-        StartCoroutine(DisplacementCoroutine(t, hitCellList));
-        StartCoroutine(DamageCoroutine(t, enemyArray));
-        StartCoroutine(BarrierCoroutine(t, hitCellList));
+        StartCoroutine(FxCoroutine(spellEnemyData.t_fx, hitCellList));
+        StartCoroutine(DisplacementCoroutine(spellEnemyData.t_disp, hitCellList));
+        StartCoroutine(DamageCoroutine(spellEnemyData.t_damage, enemyArray));
+        StartCoroutine(BarrierCoroutine(spellEnemyData.t_barrier, hitCellList));
 
         yield return new WaitForSeconds(t);
 
@@ -314,6 +315,8 @@ public class SpellCaster : MonoBehaviour
     private IEnumerator FxCoroutine(float t, List<Vector2Int> affectedCells)
     {
         yield return new WaitForSeconds(t);
+        
+        // Instantier les fx
     }
 
     /// <summary>
@@ -328,7 +331,7 @@ public class SpellCaster : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Coroutine qui déclenche l'application des dégâts sur les ennemis affectés
     /// </summary>
     /// <param name="t"> Durée de la coroutine </param>
     /// <param name="affectedEnemies"> Liste des ennemis</param>
@@ -340,7 +343,7 @@ public class SpellCaster : MonoBehaviour
 
         foreach (GameObject enemy in affectedEnemies)
         {
-            if (enemy != null) continue;
+            if (enemy == null) continue;
 
             EntityHealth entityHealth = enemy.GetComponent<EntityHealth>();
 

@@ -14,6 +14,17 @@ public class SpellEnemyData : ScriptableObject
     public bool weakenBarrier = false;
     public bool blockedByBarrier = false;
 
+    [Header("Timer")]
+    public float t_fx;
+    public float t_damage;
+    public float t_disp;
+    public float t_barrier;
+    
     [Header("Description")]
     public string desc;
+
+    public float SpellDuration
+    {
+        get { return Mathf.Max(t_barrier, t_damage, t_disp, t_fx); }
+    }
 }
