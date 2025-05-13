@@ -23,10 +23,11 @@ public class WorldSwitch : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         
-        
         if (other.gameObject.CompareTag("Group"))
         {
             canTp = true;
+            
+            Debug.Log("Tp has collide with group");
             
             foreach (Transform child in other.transform)
             {
