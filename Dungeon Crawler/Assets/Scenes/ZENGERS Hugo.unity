@@ -4468,6 +4468,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2619427778646319127, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 00123a7fdb29fc543be279de6ef3b20e, type: 2}
     - target: {fileID: 2908012162104007186, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -4524,6 +4528,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3405939646831085345, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -225269085, guid: 2261561f1d68b0f49a46f4a611539321, type: 3}
+    - target: {fileID: 3764854714282778719, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 46b630686688ce044ae2ea6ae485455d, type: 2}
     - target: {fileID: 3810433503902414190, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -4612,6 +4624,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6013472658302983956, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1880793523, guid: eea030e59af190f479900dfaa50b9f35, type: 3}
     - target: {fileID: 6315381359964674187, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5000,6 +5016,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 210.75
       objectReference: {fileID: 0}
+    - target: {fileID: 9179595607463582554, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 46b630686688ce044ae2ea6ae485455d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6315381359964674187, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
