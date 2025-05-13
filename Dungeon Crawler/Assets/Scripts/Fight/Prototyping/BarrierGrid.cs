@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class BarrierGrid : MonoBehaviour
 {
-    public Animator animator;
     public enum BarrierState
     {
         Destroyed,
@@ -15,24 +14,23 @@ public class BarrierGrid : MonoBehaviour
     {
         return barrierStates[column];
     }
-    public void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.E)){
-             animator.SetTrigger("destruction");
-        }
-    }
+
     public void ChangeBarrierState(int column, BarrierState newState)
     {
         barrierStates[column] = newState;
+        Animator animator = transform.GetChild(column).GetComponent<Animator>();
         if (newState == BarrierState.Destroyed)
         {
             animator.SetTrigger("destruction");
+            animator.SetBool("isDestroyed", true);
             //transform.GetChild(column).gameObject.SetActive(false);
             
         }
         else
         {
-            transform.GetChild(column).gameObject.SetActive(true);
+            animator.SetTrigger("reconstruction");
+            animator.SetBool("isDestroyed", false);
+            //transform.GetChild(column).gameObject.SetActive(true);
         }
     }
 }

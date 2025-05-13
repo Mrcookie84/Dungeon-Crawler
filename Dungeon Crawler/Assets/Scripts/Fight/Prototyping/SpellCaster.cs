@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -277,6 +278,9 @@ public class SpellCaster : MonoBehaviour
     /// </summary>
     public void CastSpell()
     {
+        EntityFightAnimation casterAnim = casterGPos.gameObject.GetComponent<EntityFightAnimation>();
+        casterAnim.ChangeState(EntityFightAnimation.State.Attack);
+        
         if (currentCastMode == CastMode.Enemy)
             StartCoroutine(CastEnemySpellCoroutine(spellEnemyData.SpellDuration));
         else
@@ -342,6 +346,7 @@ public class SpellCaster : MonoBehaviour
 
             EntityPosition enemyPos = affectedEnemies[i].GetComponent<EntityPosition>();
             Vector2Int targetPos = enemyPos.gridPos + spellEnemyData.displacementList[i];
+            targetPos.y %= 2;
 
             bool tryingToCross = spellEnemyData.displacementList[i].y != 0;
             bool barrierBroken = barrierGrid.CheckBarrierState(enemyPos.gridPos.x) == BarrierGrid.BarrierState.Destroyed;
@@ -367,16 +372,18 @@ public class SpellCaster : MonoBehaviour
         // Attente avant déclenchement
         yield return new WaitForSeconds(t);
 
-        foreach (GameObject enemy in affectedEnemies)
+        for (int i = 0; i < affectedEnemies.Length; i++)
         {
+            GameObject enemy = affectedEnemies[i];
+            
             if (enemy == null) continue;
 
             EntityHealth entityHealth = enemy.GetComponent<EntityHealth>();
 
             // Appliquer tout les types de dégâts
-            for (int i = 0; i < spellEnemyData.damageTypesData[i].dmgValues.Length; i++)
+            for (int j = 0; j < spellEnemyData.damageTypesData[i].dmgValues.Length; j++)
             {
-                entityHealth.TakeDamage(spellEnemyData.damageTypesData[i].dmgValues[i]);
+                entityHealth.TakeDamage(spellEnemyData.damageTypesData[i].dmgValues[j]);
 
                 // Faire apparaître un texte avec la valeur des dégâts
                 // et la couleur du type de dégâts infligés
@@ -416,12 +423,34 @@ public class SpellCaster : MonoBehaviour
     {
         List<Vector2Int> hitCellList = new List<Vector2Int>();
 
-        Vector2Int currentCell;
+        Vector2Int currentCell =  (Vector2Int)triggerPos;
         for (int i = 0; i < spellEnemyData.hitCellList.Count; i++)
         {
+            Vector2Int previousCell = currentCell;
+            
             currentCell = (Vector2Int)triggerPos + spellEnemyData.hitCellList[i];
             currentCell.y %= 2; // Remettre la coordonnée y dans le cadriage
-            hitCellList.Add(currentCell);
+
+            if (enemyGrid.IsPosInGrid(currentCell))
+            {
+                bool passingThrought = (currentCell.y - previousCell.y) != 0;
+                bool barrierBroken = barrierGrid.CheckBarrierState(currentCell.x) == BarrierGrid.BarrierState.Destroyed;
+                bool canPassThrought = (passingThrought && barrierBroken) || !spellEnemyData.blockedByBarrier;
+            
+                if ((canPassThrought ||!passingThrought))
+                {
+                    hitCellList.Add(currentCell);
+                }
+                else
+                {
+                    break;
+                }
+            }
+            else
+            {
+                break;
+            }
+            
         }
 
         return hitCellList;
