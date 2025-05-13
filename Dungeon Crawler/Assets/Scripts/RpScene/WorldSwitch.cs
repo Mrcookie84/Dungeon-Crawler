@@ -27,6 +27,8 @@ public class WorldSwitch : MonoBehaviour
         {
             canTp = true;
             
+            Debug.Log("Tp has collide with group");
+            
             foreach (Transform child in other.transform)
             {
                 if (child.GetComponent<PlayerDetection>() != null)
