@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7666935225237567098}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: PlayerEntityFight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,6 +82,7 @@ MonoBehaviour:
   currentHealth: 0
   posComponent: {fileID: -7346857730855540150}
   dead: 0
+  animHandler: {fileID: -7666935225237567098}
   tookDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -101,10 +102,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1720636928566789164}
-  idleAnim: {fileID: 0}
-  attackAnim: {fileID: 0}
-  hurtAnim: {fileID: 0}
-  deathAnim: {fileID: 0}
 --- !u!1 &5720583357554483498
 GameObject:
   m_ObjectHideFlags: 0

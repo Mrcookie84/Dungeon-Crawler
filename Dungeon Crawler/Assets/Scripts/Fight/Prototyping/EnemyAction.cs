@@ -10,6 +10,9 @@ public abstract class EnemyAction : MonoBehaviour
     protected GridManager enemyGrid;
     [SerializeField] protected string barrierGridTag;
     protected BarrierGrid barrierGrid;
+
+    [Header("Animator")]
+    [SerializeField] protected EntityFightAnimation animHandler;
     
     private void Start()
     {

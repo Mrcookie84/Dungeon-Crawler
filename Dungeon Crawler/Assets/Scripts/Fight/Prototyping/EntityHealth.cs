@@ -8,6 +8,9 @@ public class EntityHealth : MonoBehaviour
     [SerializeField] private EntityPosition posComponent;
 
     public bool dead;
+    
+    [Header("Animator")]
+    [SerializeField] private EntityFightAnimation animHandler;
 
     public UnityEvent tookDamage = new UnityEvent();
     public UnityEvent isDying = new UnityEvent();
@@ -32,6 +35,7 @@ public class EntityHealth : MonoBehaviour
         }
         else
         {
+            animHandler.ChangeState(EntityFightAnimation.State.Hurt);
             tookDamage.Invoke();
         }
     }

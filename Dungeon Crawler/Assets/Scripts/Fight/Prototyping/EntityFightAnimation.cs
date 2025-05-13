@@ -3,34 +3,47 @@ using UnityEngine;
 public class EntityFightAnimation : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [SerializeField] private AnimationClip idleAnim;
-    [SerializeField] private AnimationClip attackAnim;
-    [SerializeField] private AnimationClip hurtAnim;
-    [SerializeField] private AnimationClip deathAnim;
 
-    private AnimationClip currentAnim;
-
-    public void DoIdleAnimation()
+    private State currentState = State.Idle;
+    
+    public enum State
     {
-        currentAnim = idleAnim;
-        animator.Play(idleAnim.name);
+        Idle,
+        Attack,
+        Hurt,
+        Dead
     }
 
-    public void DoAttackAnimation()
+    public void ChangeState(State newState)
     {
-        currentAnim = attackAnim;
-        animator.Play(attackAnim.name);
+        currentState = newState;
+        
+        UpdateAnim();
     }
 
-    public void DoHurtAnimation()
+    public void UpdateAnim()
     {
-        currentAnim = hurtAnim;
-        animator.Play(hurtAnim.name);
-    }
-
-    public void DoDeathAnimation()
-    {
-        currentAnim = deathAnim;
-        animator.Play(deathAnim.name);
+        switch (currentState)
+        {
+            case State.Attack:
+                animator.SetTrigger("CAttaque");
+                currentState = State.Idle;
+                animator.SetBool("isIdle", true);
+                break;
+            
+            case State.Hurt:
+                animator.SetTrigger("CDegat");
+                currentState = State.Idle;
+                animator.SetBool("isIdle", true);
+                break;
+            
+            case State.Dead:
+                animator.SetBool("isDead", true);
+                break;
+            
+            default:
+                animator.SetBool("isIdle", true);
+                break;
+        }
     }
 }
