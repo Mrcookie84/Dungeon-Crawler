@@ -346,7 +346,7 @@ public class SpellCaster : MonoBehaviour
 
             EntityPosition enemyPos = affectedEnemies[i].GetComponent<EntityPosition>();
             Vector2Int targetPos = enemyPos.gridPos + spellEnemyData.displacementList[i];
-            targetPos.y %= 2;
+            targetPos.y = Mathf.Abs(targetPos.y) % 2;
 
             bool tryingToCross = spellEnemyData.displacementList[i].y != 0;
             bool barrierBroken = barrierGrid.CheckBarrierState(enemyPos.gridPos.x) == BarrierGrid.BarrierState.Destroyed;
