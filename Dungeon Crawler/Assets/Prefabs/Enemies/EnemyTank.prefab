@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: actionComp
       value: 
       objectReference: {fileID: -6333288629114519412}
+    - target: {fileID: 6095385791367872599, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6402749266899931613, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: m_Name
       value: EnemyTank
