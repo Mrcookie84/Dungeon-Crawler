@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -38,6 +39,11 @@ public class EntityHealth : MonoBehaviour
             animHandler.ChangeState(EntityFightAnimation.State.Hurt);
             tookDamage.Invoke();
         }
+    }
+
+    public void Heal(int amount)
+    {
+        currentHealth = Math.Min(maxHealth, currentHealth + amount);
     }
 
     private bool CheckDeath()
