@@ -224,8 +224,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1000
   currentHealth: 0
+  healthBarGroupTag: EnemiesHealthBars
   posComponent: {fileID: -5975568748125914461}
   dead: 0
+  destoryOnDeath: 1
   animHandler: {fileID: 8916927351157303100}
   tookDamage:
     m_PersistentCalls:

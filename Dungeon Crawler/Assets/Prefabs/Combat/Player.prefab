@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7666935225237567098}
   m_Layer: 0
   m_Name: Player
-  m_TagString: PlayerEntityFight
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  healthBarGroupTag: PlayersHealthBars
   posComponent: {fileID: -7346857730855540150}
   dead: 0
   animHandler: {fileID: -7666935225237567098}
