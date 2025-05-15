@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: -7346857730855540150}
   - component: {fileID: 2109979061175751635}
   - component: {fileID: -7666935225237567098}
+  - component: {fileID: -3003012497256881573}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: PlayerEntityFight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,6 +84,7 @@ MonoBehaviour:
   healthBarGroupTag: PlayersHealthBars
   posComponent: {fileID: -7346857730855540150}
   dead: 0
+  destoryOnDeath: 0
   animHandler: {fileID: -7666935225237567098}
   tookDamage:
     m_PersistentCalls:
@@ -103,6 +105,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1720636928566789164}
+--- !u!114 &-3003012497256881573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3126566767669286085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb3a1208d1e144bbfabf21c0e4aee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultStatus: {fileID: 11400000, guid: 4c133c9365231e1448c1227e70496a6d, type: 2}
 --- !u!1 &5720583357554483498
 GameObject:
   m_ObjectHideFlags: 0

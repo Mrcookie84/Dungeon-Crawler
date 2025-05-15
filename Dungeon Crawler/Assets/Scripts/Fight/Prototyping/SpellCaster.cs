@@ -198,6 +198,7 @@ public class SpellCaster : MonoBehaviour
             }
         }
 
+        runeSelection.UpdateMana();
         playerGrid.UpdateEntitiesIndex();
     }
 
@@ -388,6 +389,14 @@ public class SpellCaster : MonoBehaviour
                 // Faire apparaître un texte avec la valeur des dégâts
                 // et la couleur du type de dégâts infligés
                 // (c'est pour ça la boucle for, il y a besoin de l'indice)
+            }
+            
+            // Appliquer de potentiels statuts
+            EntityStatusHolder entityStatusHolder = enemy.GetComponent<EntityStatusHolder>();
+
+            if (spellEnemyData.statusData != null)
+            {
+                entityStatusHolder.AddStatus(spellEnemyData.statusData, spellEnemyData.statusDuration);
             }
         }
     }

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 public class TurnPlayer : TurnSubscriber
 {
@@ -20,5 +19,17 @@ public class TurnPlayer : TurnSubscriber
         isPlaying = true;
 
         turnManager.EnablePlayerUI();
+    }
+
+    public override void StatusUpdate()
+    {
+        GameObject[] allPlayerEntities = GameObject.FindGameObjectsWithTag("PlayerEntityFight");
+        
+        foreach (GameObject playerEntity in allPlayerEntities)
+        {
+            EntityStatusHolder statusHolder = playerEntity.GetComponent<EntityStatusHolder>();
+            
+            statusHolder.UpdateStatus();
+        }
     }
 }

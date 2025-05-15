@@ -1,12 +1,22 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EntityStatusHolder : MonoBehaviour
 {
-    private List<StatusInfo> statusList;
+    [SerializeField] private StatusData defaultStatus;
+    
+    private List<StatusInfo> statusList = new List<StatusInfo>();
+
+    private void Start()
+    {
+        if (defaultStatus == null) return;
+        AddStatus(defaultStatus, 999);
+    }
 
     public void AddStatus(StatusData status, int duration)
     {
+        status.Apply(gameObject);
         statusList.Add(new StatusInfo(status,duration));
     }
 
@@ -15,9 +25,14 @@ public class EntityStatusHolder : MonoBehaviour
         for (int i = 0; i < statusList.Count; i++)
         {
             StatusInfo statusInfo = statusList[i];
+            statusInfo.status.Tick(gameObject);
             statusInfo.DecrementDuration();
 
-            if (statusInfo.duration <= 0) statusList.RemoveAt(i);
+            if (statusInfo.duration <= 0)
+            {
+                statusInfo.status.Finish(gameObject);
+                statusList.RemoveAt(i);
+            }
         }
     }
     
