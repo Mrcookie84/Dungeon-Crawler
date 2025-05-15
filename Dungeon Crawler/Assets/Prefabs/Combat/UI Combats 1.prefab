@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 7219955667423682946}
   - component: {fileID: 9110797328847331181}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Button Affliction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 2122591757201425182}
   - component: {fileID: 5912614853207575226}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button Extension
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -887,7 +887,7 @@ GameObject:
   - component: {fileID: 6066983095011539854}
   - component: {fileID: 9180648685562399522}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Button Focus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1137,7 +1137,7 @@ GameObject:
   - component: {fileID: 5552950576478773018}
   - component: {fileID: 1635918361715954472}
   m_Layer: 5
-  m_Name: Regeneration
+  m_Name: SwitchSupportMode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1415,7 +1415,7 @@ GameObject:
   - component: {fileID: 3047469370449116241}
   - component: {fileID: 7883281914364741433}
   m_Layer: 5
-  m_Name: "Realit\xE9"
+  m_Name: Button Reality
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1595,7 +1595,7 @@ GameObject:
   - component: {fileID: 1573712488304771931}
   - component: {fileID: 171841632085479412}
   m_Layer: 5
-  m_Name: Temps
+  m_Name: Button Time
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2141,7 +2141,7 @@ GameObject:
   - component: {fileID: 4799718312838701367}
   - component: {fileID: 4381052810163844528}
   m_Layer: 5
-  m_Name: Attack
+  m_Name: SwitchAttackMode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2780,14 +2780,14 @@ RectTransform:
   m_Children:
   - {fileID: 51412599549885069}
   - {fileID: 2278252787469927955}
-  - {fileID: 743201069554644651}
-  - {fileID: 5108119334808969151}
   - {fileID: 3998433080990194535}
-  - {fileID: 1262718026521845204}
-  - {fileID: 2802365799316250078}
+  - {fileID: 5108119334808969151}
   - {fileID: 6254368326049622462}
-  - {fileID: 2054346053351394687}
   - {fileID: 7642364766044486489}
+  - {fileID: 2054346053351394687}
+  - {fileID: 2802365799316250078}
+  - {fileID: 743201069554644651}
+  - {fileID: 1262718026521845204}
   - {fileID: 7707802359556431376}
   - {fileID: 315730250326642403}
   - {fileID: 3319241266686538057}
@@ -2852,7 +2852,7 @@ GameObject:
   - component: {fileID: 6136323980395242473}
   - component: {fileID: 813649762748423210}
   m_Layer: 5
-  m_Name: Espace
+  m_Name: Button Space
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Rune : MonoBehaviour
@@ -8,33 +5,27 @@ public class Rune : MonoBehaviour
     public RuneData data;
     [SerializeField] private string runeSelectionTag;
     private RuneSelection runeSelection;
-    public bool selected = false;
+    public int maxSelected;
 
     private void Start()
     {
         runeSelection = GameObject.FindGameObjectWithTag(runeSelectionTag).GetComponent<RuneSelection>();
-        runeSelection.ResetRune.AddListener(UnSelect);
     }
 
     public void UpdateRuneSelection()
     {
-        if (!selected)
+        if (runeSelection.selectedRunes[this] < maxSelected)
         {
-            runeSelection.AddRune(gameObject);
+            runeSelection.TryAddRune(this);
         }
         else
         {
-            runeSelection.RemoveRune(gameObject);
+            runeSelection.RemoveRune(this);
         }
     }
     
     public int GetID()
     {
         return data.ID;
-    }
-
-    private void UnSelect()
-    {
-        selected = false;
     }
 }
