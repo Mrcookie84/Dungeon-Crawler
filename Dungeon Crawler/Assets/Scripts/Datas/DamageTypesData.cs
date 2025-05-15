@@ -10,6 +10,8 @@ public class DamageTypesData : ScriptableObject
     {
         Reality,
         Crush,
-        Contact
+        Contact,
+        Degradation,
+        DimensionalWeakness
     }
 }
