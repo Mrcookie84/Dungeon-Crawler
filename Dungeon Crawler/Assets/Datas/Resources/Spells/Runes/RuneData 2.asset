@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 2
   manaCost: 2
-  cooldown: 0
-  UIPrefab: {fileID: 494801131165291255, guid: b64161a8be0fc1048a25c3b5f8e815b4, type: 3}
+  cooldown: 1
+  UIPrefab: {fileID: 4720094450973123644, guid: 17739a06d51b8a34b9da5c41802f6595, type: 3}
