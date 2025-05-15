@@ -1,8 +1,22 @@
 using UnityEngine;
 
-public abstract class StatusData : MonoBehaviour
+public abstract class StatusData : ScriptableObject
 {
-    public abstract void Tick(GameObject entity);
+    [Header("UI")]
+    [SerializeField] public Sprite icon;
+    
+    public virtual void Apply(GameObject entity)
+    {
+        return;
+    }
 
-    public abstract void Finish();
+    public virtual void Tick(GameObject entity)
+    {
+        return;
+    }
+
+    public virtual void Finish(GameObject entity)
+    {
+        return;
+    }
 }

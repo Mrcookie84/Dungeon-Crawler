@@ -125,11 +125,22 @@ MonoBehaviour:
   playerGridTag: PlayerGrid
   enemyGridTag: EnemyGrid
   barrierGridTag: BarrierGrid
-  animHandler: {fileID: 0}
+  animHandler: {fileID: 4310899594908269608}
   SdmgValue: 15
   SdmgType: 0
   GdmgValue: 10
   GdmgType: 0
+--- !u!114 &4310899594908269608 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8916927351157303100, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+  m_PrefabInstance: {fileID: 4642136417388190484}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780906407045188297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a5b407f65dd19041a6b78090d2b157b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7889934481926431159 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -5975568748125914461, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}

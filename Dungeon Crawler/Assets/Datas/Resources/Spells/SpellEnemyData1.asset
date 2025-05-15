@@ -24,4 +24,10 @@ MonoBehaviour:
   reinforceBarrier: 0
   weakenBarrier: 0
   blockedByBarrier: 0
+  statusData: {fileID: 11400000, guid: 4c133c9365231e1448c1227e70496a6d, type: 2}
+  statusDuration: 3
+  t_fx: 0
+  t_damage: 0
+  t_disp: 0
+  t_barrier: 0
   desc: "Inverse la position de deux ennemis, inflige des d\xE9g\xE2ts de collisions"

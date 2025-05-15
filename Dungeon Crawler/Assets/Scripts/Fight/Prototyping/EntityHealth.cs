@@ -50,6 +50,7 @@ public class EntityHealth : MonoBehaviour
     public void Heal(int amount)
     {
         currentHealth = Math.Min(maxHealth, currentHealth + amount);
+        healthBarGroup.UpdateHealthBars();
     }
 
     private bool CheckDeath()

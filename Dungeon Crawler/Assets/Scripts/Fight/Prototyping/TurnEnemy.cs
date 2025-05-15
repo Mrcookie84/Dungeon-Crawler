@@ -1,9 +1,12 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class TurnEnemy : TurnSubscriber
 {
+    [Header("Satus Info")]
+    [SerializeField] private EntityStatusHolder statusHolder;
+    
+    [Header("AI Info")]
     [SerializeField] private EnemyAI ai;
 
     public override void InitializeTurn(TurnManager turnManager)
@@ -26,5 +29,10 @@ public class TurnEnemy : TurnSubscriber
         yield return new WaitForSeconds(1);
         
         TurnFinished();
+    }
+
+    public override void StatusUpdate()
+    {
+        statusHolder.UpdateStatus();
     }
 }
