@@ -19,10 +19,31 @@ public class RuneSelection : MonoBehaviour
     [SerializeField] private Slider potentialManaSliderUI;
 
     [Header("Current State")]
-    public List<Rune> selectedRunes;
+    public Dictionary<Rune, int> selectedRunes = new Dictionary<Rune, int>();
+
+    // ========================= Propriétés ============================= //
+
+    public string CurrentSpellPlayer
+    {
+        get { return "Spells/SpellPlayerData" + GetRuneCombinationData(); }
+    }
+
+    public string CurrentSpellEnemy
+    {
+        get { return "Spells/SpellEnemyData" + GetRuneCombinationData(); }
+    }
+
+    // ========================= Méthodes internes ============================= //
 
     private void Start()
     {
+        // Initialisation des runes sélectionnée
+        foreach (Rune rune in runeSelectors)
+        {
+            if (rune == null) continue;
+            selectedRunes.Add(rune, 0);
+        }
+
         currentMana = maxMana;
         potentialMana = maxMana;
 
@@ -32,15 +53,74 @@ public class RuneSelection : MonoBehaviour
         potentialManaSliderUI.value = maxMana;
     }
 
-    public bool AddRune(Rune rune)
+    private bool CheckRuneConflict(Rune newRune)
     {
-        Debug.Log(rune.name);
-        int runeID = rune.GetID();
-        
-        if (CheckRuneConflict(runeID) && canUsMoreMana(rune.data.manaCost))
+        // Conflit entre focus et extension
+        if (newRune == runeSelectors[3] && selectedRunes[runeSelectors[4]] > 0)
+            return false;
+        // Conflit entre extension et focus
+        else if (newRune == runeSelectors[4] && selectedRunes[runeSelectors[3]] > 0)
+            return false;
+        // Pas de conflit
+        else
+            return true;
+    }
+
+    private void ChangeCurrentMana(int amount)
+    {
+        currentMana += amount;
+        manaSliderUI.value = currentMana;
+    }
+
+    private void ChangePotentialMana(int amount)
+    {
+        potentialMana += amount;
+        potentialManaSliderUI.value = potentialMana;
+    }
+
+    private bool canUsMoreMana(int amount)
+    {
+        return potentialMana - amount >= 0;
+    }
+
+    private void UpdateRuneUI()
+    {
+        DeleteAllRuneUI();
+
+        int runeIndex = 0;
+        foreach (Rune rune in selectedRunes.Keys)
         {
-            RemoveMana(rune.data.manaCost);
-            selectedRunes.Add(rune);
+            GameObject runeUI = rune.data.UIPrefab;
+
+            for (int i = 0; i < selectedRunes[rune]; i++)
+            {
+                Transform slot = runeHolder.GetChild(runeIndex);
+
+                Instantiate(runeUI, slot);
+
+                runeIndex++;
+            }
+        }
+    }
+
+    private void DeleteAllRuneUI()
+    {
+        for (int i = 0; i < runeHolder.childCount; i++)
+        {
+            if (runeHolder.GetChild(i).childCount == 0) continue;
+
+            DestroyImmediate(runeHolder.GetChild(i).GetChild(0).gameObject);
+        }
+    }
+
+    // ========================= Méthodes externes ============================= //
+
+    public bool TryAddRune(Rune rune)
+    {   
+        if (CheckRuneConflict(rune) && canUsMoreMana(rune.data.manaCost))
+        {
+            ChangePotentialMana(-rune.data.manaCost);
+            selectedRunes[rune] += 1;
             UpdateRuneUI();
 
             return true;
@@ -53,82 +133,26 @@ public class RuneSelection : MonoBehaviour
 
     public void RemoveRune(Rune rune)
     {
-        RemoveMana(-rune.data.manaCost);
+        ChangePotentialMana(rune.data.manaCost * selectedRunes[rune]);
 
-        //selectedRunes.Remo(rune);
-        for (int i = selectedRunes.Count - 1; i >= 0; i--)
-        {
-            if (selectedRunes[i] == rune)
-            {
-                selectedRunes.RemoveAt(i);
-                break;
-            }
-        }
-        
-        //GetRuneCombinationData();
+        selectedRunes[rune] = 0;
         
         UpdateRuneUI();
-    }
-    
-    private bool CheckRuneConflict(int runeID)
-    {
-        if (runeID == 2 && IsRuneIDInSelection(3)) return false;
-        else if (runeID == 3 && IsRuneIDInSelection(2)) return false;
-        else return true;
     }
     
     public string GetRuneCombinationData()
     {   
         string dataPath = $"";
-        for (int i = 0; i < 6; i++)
+        foreach (Rune rune in runeSelectors)
         {
-            if (IsRuneIDInSelection(i))
+            if (rune == null) continue;
+            for (int i = 0; i < selectedRunes[rune]; i++)
             {
-                dataPath += $"{i}";
+                dataPath += $"{rune.GetID()}";
             }
         }
 
         return dataPath;
-    }
-
-    public string GetEnemySpellData()
-    {
-        return "Spells/SpellEnemyData" + GetRuneCombinationData();
-    }
-    public string GetPlayerSpellData()
-    {
-        return "Spells/SpellPlayerData" + GetRuneCombinationData();
-    }
-
-
-    private bool IsRuneIDInSelection(int id)
-    {
-        int[] IDs = GetAllRuneIDs();
-
-        bool result = false;
-        for (int i = 0; i < IDs.Length; i++)
-        {
-            if (IDs[i] == id)
-            {
-                result = true;
-            }
-        }
-
-        return result;
-    }
-
-    private int[] GetAllRuneIDs()
-    {
-        int[] idList = new int[selectedRunes.Count];
-
-        for (int i = 0; i < selectedRunes.Count; i++)
-        {
-            int runeID = selectedRunes[i].GetID();
-
-            idList[i] = runeID;
-        }
-
-        return idList;
     }
 
     public void UpdateMana()
@@ -137,24 +161,17 @@ public class RuneSelection : MonoBehaviour
         manaSliderUI.value = potentialMana;
         potentialManaSliderUI.value = potentialMana;
 
-        selectedRunes.Clear();
         DeleteAllRuneUI();
     }
 
-    private void RemoveMana(int amount)
-    {
-        potentialMana -= amount;
-        potentialManaSliderUI.value = potentialMana;
-    }
-
-    public void ResetSpell()
+    public void ResetSelection()
     {
         foreach (Rune rune in runeSelectors)
         {
-            rune.UnSelect();
+            if (rune == null) continue;
+            selectedRunes[rune] = 0;
         }
-        
-        selectedRunes.Clear();
+
         UpdateRuneUI();
     }
 
@@ -165,35 +182,5 @@ public class RuneSelection : MonoBehaviour
 
         manaSliderUI.value = maxMana;
         potentialManaSliderUI.value = maxMana;
-    }
-
-    private bool canUsMoreMana(int amount)
-    {
-        return potentialMana - amount >= 0;
-    }
-
-    private void UpdateRuneUI()
-    {
-        DeleteAllRuneUI();
-        
-        Debug.Log(selectedRunes.Count);
-        for (int i = 0; i < selectedRunes.Count; i++)
-        {
-            GameObject runeUI = selectedRunes[i].GetComponent<Rune>().data.UIPrefab;
-            Transform slot = runeHolder.GetChild(i);
-            
-            Instantiate(runeUI, slot);
-        }
-    }
-
-    private void DeleteAllRuneUI()
-    {
-        for (int i = 0; i < runeHolder.childCount; i++)
-        {
-            if (runeHolder.GetChild(i).childCount == 0) continue;
-            
-            Debug.Log($"Suppressing slot{i}");
-            DestroyImmediate(runeHolder.GetChild(i).GetChild(0).gameObject);
-        }
     }
 }

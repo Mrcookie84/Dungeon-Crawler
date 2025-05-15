@@ -46,9 +46,9 @@ public class SpellCaster : MonoBehaviour
 
     public void ChangeSpell()
     {
-        spellEnemyData = Resources.Load<SpellEnemyData>(runeSelection.GetEnemySpellData());
+        spellEnemyData = Resources.Load<SpellEnemyData>(runeSelection.CurrentSpellEnemy);
 
-        spellPlayerData = Resources.Load<SpellPlayerData>(runeSelection.GetPlayerSpellData());
+        spellPlayerData = Resources.Load<SpellPlayerData>(runeSelection.CurrentSpellPlayer);
 
         if (casterGPos != null)
         {
@@ -63,7 +63,7 @@ public class SpellCaster : MonoBehaviour
         spellEnemyData = null;
         spellPlayerData = null;
         
-        ResetSpell();
+        runeSelection.ResetSelection();
         UpdateSpell();
     }
 
@@ -203,77 +203,6 @@ public class SpellCaster : MonoBehaviour
         playerGrid.UpdateEntitiesIndex();
     }
 
-    private void CastEnemySpell()
-    {
-        for (int i = 0; i < spellEnemyData.hitCellList.Count; i++)
-        {
-            Vector2Int targetPos = (Vector2Int)triggerPos + spellEnemyData.hitCellList[i];
-            targetPos = new Vector2Int(Mathf.Min(targetPos.x, 3), targetPos.y % 2);
-            //Debug.Log(targetPos);
-
-            // Mise à jour de la barrière
-            if (spellEnemyData.reinforceBarrier)
-            {
-                barrierGrid.ChangeBarrierState(targetPos.x, BarrierGrid.BarrierState.Reinforced);
-            }
-            else if (spellEnemyData.weakenBarrier)
-            {
-                barrierGrid.ChangeBarrierState(targetPos.x, BarrierGrid.BarrierState.Destroyed);
-            }
-
-            // Barrier check
-            bool passingThrought = targetPos.y != ((Vector2Int)triggerPos).y;
-            bool canPassThrought = passingThrought && !spellEnemyData.blockedByBarrier;
-            bool isBarrierBroken = barrierGrid.CheckBarrierState(targetPos.y) == BarrierGrid.BarrierState.Destroyed;
-
-            bool validTarget = !passingThrought || canPassThrought || isBarrierBroken;
-
-            if (validTarget)
-            {
-                GameObject hurtEnemy = enemyGrid.GetEntityAtPos(targetPos);
-                if (hurtEnemy != null)
-                {
-                    // Infliger les dégâts pour chaque type
-                    for (int j = 0; j < spellEnemyData.damageTypesData[i].dmgValues.Length; j++)
-                    {
-                        int dmg = spellEnemyData.damageTypesData[i].dmgValues[j];
-                        string dmgType = spellEnemyData.damageTypesData[i].dmgTypeName[j].ToString();
-                        hurtEnemy.GetComponent<EntityHealth>().TakeDamage(dmg);
-                        //Debug.Log($"{hurtEnemy.name} s'est pris {dmg} dégâts de {dmgType} !");
-                    }
-
-                    // Déplacement de l'ennemi
-                    EntityPosition enemyPos = hurtEnemy.GetComponent<EntityPosition>();
-                    Vector2Int newPos = enemyPos.gridPos + spellEnemyData.displacementList[i];
-                    newPos.y %= 2;
-
-                    // Barrier check
-                    passingThrought = newPos.y != ((Vector2Int)triggerPos).y;
-                    canPassThrought = passingThrought && !spellEnemyData.blockedByBarrier;
-                    isBarrierBroken = barrierGrid.CheckBarrierState(newPos.y) == BarrierGrid.BarrierState.Destroyed;
-
-                    validTarget = !passingThrought || canPassThrought || isBarrierBroken;
-
-                    if (enemyGrid.IsPosInGrid(newPos) && (validTarget))
-                    {
-                        enemyPos.ChangePosition(newPos);
-                    }
-                    else if (i < spellEnemyData.hitCellList.Count - 1)
-                    {
-                        newPos = enemyPos.gridPos + spellEnemyData.displacementList[i] + spellEnemyData.displacementList[i + 1];
-                        newPos = new Vector2Int(newPos.x, newPos.y % 2);
-                        if (enemyGrid.IsPosInGrid(newPos))
-                        {
-                            enemyPos.ChangePosition(newPos);
-                        }
-                    }
-                }
-            }
-        }
-
-        enemyGrid.UpdateEntitiesIndex();
-    }
-
     /// <summary>
     /// Méthode appelée par le bouton "Lancer" dans l'interface joueur
     /// C'est ici que le sort est déclenché
@@ -314,6 +243,7 @@ public class SpellCaster : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         ResetSpell();
+        runeSelection.UpdateMana();
         UIplayerInterface.SetActive(true);
     }
 

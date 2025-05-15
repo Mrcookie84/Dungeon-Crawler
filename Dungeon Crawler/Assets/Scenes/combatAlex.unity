@@ -2159,18 +2159,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1071174449}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1250644435371041641, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 694506182}
-    - targetCorrespondingSourceObject: {fileID: 3547598281658149123, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 476626284}
     - targetCorrespondingSourceObject: {fileID: 4696163819247359560, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       insertIndex: -1
       addedObject: {fileID: 469479383}
     - targetCorrespondingSourceObject: {fileID: 7816545493872520761, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       insertIndex: -1
       addedObject: {fileID: 858488569}
+    - targetCorrespondingSourceObject: {fileID: 3547598281658149123, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 476626284}
+    - targetCorrespondingSourceObject: {fileID: 1250644435371041641, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 694506182}
   m_SourcePrefab: {fileID: 100100000, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
 --- !u!1 &285101983
 GameObject:
@@ -2966,16 +2966,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runeHolder: {fileID: 101204865}
-  runeSelectors: []
+  runeSelectors:
+  - {fileID: 469479383}
+  - {fileID: 858488569}
+  - {fileID: 0}
+  - {fileID: 476626284}
+  - {fileID: 694506182}
+  - {fileID: 0}
   maxMana: 8
   currentMana: 0
   manaSliderUI: {fileID: 273819413}
   potentialManaSliderUI: {fileID: 700326168}
-  selectedRunes:
-  - {fileID: 469479383}
-  - {fileID: 858488569}
-  - {fileID: 476626284}
-  - {fileID: 694506182}
 --- !u!4 &582431836
 Transform:
   m_ObjectHideFlags: 0
