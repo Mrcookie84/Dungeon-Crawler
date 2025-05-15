@@ -10,20 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0160c4158dda8c47b86463cc1cd798e, type: 3}
-  m_Name: SpellEnemyData12
+  m_Name: SpellEnemyData 115
   m_EditorClassIdentifier: 
   hitCellList:
   - {x: 0, y: 0}
-  - {x: 0, y: 1}
+  - {x: 1, y: 0}
   damageTypesData:
-  - {fileID: 11400000, guid: db9dda77078eb114c8f558db4ece781e, type: 2}
+  - {fileID: 11400000, guid: 67b5bb60f1016e44bb06720070443f44, type: 2}
   - {fileID: 11400000, guid: 67b5bb60f1016e44bb06720070443f44, type: 2}
   displacementList:
-  - {x: 0, y: 1}
-  - {x: 0, y: -1}
+  - {x: 1, y: 0}
+  - {x: -1, y: 0}
   reinforceBarrier: 0
   weakenBarrier: 0
-  blockedByBarrier: 1
-  desc: "la cible subit des d\xE9g\xE2ts d\u2019\xE9crasement, si la barri\xE8re
-    est d\xE9truite la cible inverse sa place verticalement (si un autre ennemi est
-    pr\xE9sent il \xE9change lui aussi de place et subit des d\xE9g\xE2ts de contact)"
+  blockedByBarrier: 0
+  statusData: {fileID: 0}
+  statusDuration: 0
+  t_fx: 0
+  t_damage: 0
+  t_disp: 0
+  t_barrier: 0
+  desc: 
