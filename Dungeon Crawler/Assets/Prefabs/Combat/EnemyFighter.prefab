@@ -49,6 +49,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8748550606687673412}
     - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: dimAffintyW
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: playerInWorldW
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: columnW.Array.data[0]
       value: -10
       objectReference: {fileID: 0}
