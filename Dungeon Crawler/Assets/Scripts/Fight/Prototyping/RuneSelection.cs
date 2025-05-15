@@ -9,6 +9,7 @@ public class RuneSelection : MonoBehaviour
 {
     [Header("Rune UI")]
     [SerializeField] private Transform runeHolder;
+    [SerializeField] private Rune[] runeSelectors;
 
     [Header("ManaUI")]
     public int maxMana;
@@ -18,9 +19,7 @@ public class RuneSelection : MonoBehaviour
     [SerializeField] private Slider potentialManaSliderUI;
 
     [Header("Current State")]
-    public List<GameObject> selectedRunes;
-
-    public UnityEvent ResetRune = new UnityEvent();
+    public List<Rune> selectedRunes;
 
     private void Start()
     {
@@ -33,35 +32,40 @@ public class RuneSelection : MonoBehaviour
         potentialManaSliderUI.value = maxMana;
     }
 
-    public void AddRune(GameObject rune)
+    public bool AddRune(Rune rune)
     {
-        Rune runeComponent = rune.GetComponent<Rune>();
-        int runeID = runeComponent.GetID();
+        Debug.Log(rune.name);
+        int runeID = rune.GetID();
         
-        if (CheckRuneConflict(runeID) && canUsMoreMana(runeComponent.data.manaCost))
+        if (CheckRuneConflict(runeID) && canUsMoreMana(rune.data.manaCost))
         {
-            RemoveMana(runeComponent.data.manaCost);
+            RemoveMana(rune.data.manaCost);
             selectedRunes.Add(rune);
-            runeComponent.selected = true;
+            UpdateRuneUI();
+
+            return true;
         }
         else
         {
-            runeComponent.selected = false;
+            return false;
         }
-
-        GetRuneCombinationData();
-        
-        UpdateRuneUI();
     }
 
-    public void RemoveRune(GameObject rune)
+    public void RemoveRune(Rune rune)
     {
-        Rune runeComponent = rune.GetComponent<Rune>();
-        RemoveMana(-runeComponent.data.manaCost);
+        RemoveMana(-rune.data.manaCost);
 
-        selectedRunes.Remove(rune);
-        runeComponent.selected = false;
-        GetRuneCombinationData();
+        //selectedRunes.Remo(rune);
+        for (int i = selectedRunes.Count - 1; i >= 0; i--)
+        {
+            if (selectedRunes[i] == rune)
+            {
+                selectedRunes.RemoveAt(i);
+                break;
+            }
+        }
+        
+        //GetRuneCombinationData();
         
         UpdateRuneUI();
     }
@@ -72,12 +76,11 @@ public class RuneSelection : MonoBehaviour
         else if (runeID == 3 && IsRuneIDInSelection(2)) return false;
         else return true;
     }
-
-    // Spells/SpellData
+    
     public string GetRuneCombinationData()
     {   
         string dataPath = $"";
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 6; i++)
         {
             if (IsRuneIDInSelection(i))
             {
@@ -120,8 +123,7 @@ public class RuneSelection : MonoBehaviour
 
         for (int i = 0; i < selectedRunes.Count; i++)
         {
-            Rune runeData = selectedRunes[i].GetComponent<Rune>();
-            int runeID = runeData.GetID();
+            int runeID = selectedRunes[i].GetID();
 
             idList[i] = runeID;
         }
@@ -137,13 +139,23 @@ public class RuneSelection : MonoBehaviour
 
         selectedRunes.Clear();
         DeleteAllRuneUI();
-        ResetRune.Invoke();
     }
 
     private void RemoveMana(int amount)
     {
         potentialMana -= amount;
         potentialManaSliderUI.value = potentialMana;
+    }
+
+    public void ResetSpell()
+    {
+        foreach (Rune rune in runeSelectors)
+        {
+            rune.UnSelect();
+        }
+        
+        selectedRunes.Clear();
+        UpdateRuneUI();
     }
 
     public void ResetMana()
@@ -155,20 +167,21 @@ public class RuneSelection : MonoBehaviour
         potentialManaSliderUI.value = maxMana;
     }
 
-    private bool canUsMoreMana(int amout)
+    private bool canUsMoreMana(int amount)
     {
-        return potentialMana - amout >= 0;
+        return potentialMana - amount >= 0;
     }
 
     private void UpdateRuneUI()
     {
         DeleteAllRuneUI();
         
+        Debug.Log(selectedRunes.Count);
         for (int i = 0; i < selectedRunes.Count; i++)
         {
             GameObject runeUI = selectedRunes[i].GetComponent<Rune>().data.UIPrefab;
             Transform slot = runeHolder.GetChild(i);
-
+            
             Instantiate(runeUI, slot);
         }
     }
@@ -177,10 +190,10 @@ public class RuneSelection : MonoBehaviour
     {
         for (int i = 0; i < runeHolder.childCount; i++)
         {
-            if (runeHolder.GetChild(i).childCount != 0)
-            {
-                Destroy(runeHolder.GetChild(i).GetChild(0).gameObject);
-            }
+            if (runeHolder.GetChild(i).childCount == 0) continue;
+            
+            Debug.Log($"Suppressing slot{i}");
+            DestroyImmediate(runeHolder.GetChild(i).GetChild(0).gameObject);
         }
     }
 }

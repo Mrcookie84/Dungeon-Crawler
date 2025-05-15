@@ -62,7 +62,8 @@ public class SpellCaster : MonoBehaviour
     {
         spellEnemyData = null;
         spellPlayerData = null;
-
+        
+        ResetSpell();
         UpdateSpell();
     }
 
@@ -309,7 +310,6 @@ public class SpellCaster : MonoBehaviour
         StartCoroutine(BarrierCoroutine(spellEnemyData.t_barrier, hitCellList));
 
         enemyGrid.ResetHighlight();
-        runeSelection.UpdateMana();
 
         yield return new WaitForSeconds(5f);
 

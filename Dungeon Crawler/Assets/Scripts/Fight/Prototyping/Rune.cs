@@ -8,23 +8,26 @@ public class Rune : MonoBehaviour
     public RuneData data;
     [SerializeField] private string runeSelectionTag;
     private RuneSelection runeSelection;
-    public bool selected = false;
+    private int amountSelected = 0;
+    public int maxSelected;
 
     private void Start()
     {
         runeSelection = GameObject.FindGameObjectWithTag(runeSelectionTag).GetComponent<RuneSelection>();
-        runeSelection.ResetRune.AddListener(UnSelect);
     }
 
     public void UpdateRuneSelection()
     {
-        if (!selected)
+        if (amountSelected < maxSelected)
         {
-            runeSelection.AddRune(gameObject);
+            if (runeSelection.AddRune(this))
+                amountSelected += 1;
         }
         else
         {
-            runeSelection.RemoveRune(gameObject);
+            amountSelected = 0;
+            for (int i = 0; i < maxSelected; i++)
+                runeSelection.RemoveRune(this);
         }
     }
     
@@ -33,8 +36,8 @@ public class Rune : MonoBehaviour
         return data.ID;
     }
 
-    private void UnSelect()
+    public void UnSelect()
     {
-        selected = false;
+        amountSelected = 0;
     }
 }

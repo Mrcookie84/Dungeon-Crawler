@@ -2556,7 +2556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 7989fcc4b0fb8104e85ae8458fe1e64f, type: 2}
   runeSelectionTag: SpellManager
-  selected: 0
+  maxSelected: 2
 --- !u!1 &476626282 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3547598281658149123, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
@@ -2576,7 +2576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 87e24761a8459014a9d8ee8bf230f1bf, type: 2}
   runeSelectionTag: SpellManager
-  selected: 0
+  maxSelected: 1
 --- !u!1 &493685625
 GameObject:
   m_ObjectHideFlags: 0
@@ -2966,14 +2966,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runeHolder: {fileID: 101204865}
+  runeSelectors: []
   maxMana: 8
   currentMana: 0
   manaSliderUI: {fileID: 273819413}
   potentialManaSliderUI: {fileID: 700326168}
-  selectedRunes: []
-  ResetRune:
-    m_PersistentCalls:
-      m_Calls: []
+  selectedRunes:
+  - {fileID: 469479383}
+  - {fileID: 858488569}
+  - {fileID: 476626284}
+  - {fileID: 694506182}
 --- !u!4 &582431836
 Transform:
   m_ObjectHideFlags: 0
@@ -3357,7 +3359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 9abc87c9058192844afecd4de17a7971, type: 2}
   runeSelectionTag: SpellManager
-  selected: 0
+  maxSelected: 1
 --- !u!114 &700326168 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3958174708107888522, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
@@ -3564,7 +3566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 0}
   runeSelectionTag: SpellManager
-  selected: 0
+  maxSelected: 0
 --- !u!114 &777773177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3893,7 +3895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 7706509014c18454a9a819205acae696, type: 2}
   runeSelectionTag: SpellManager
-  selected: 0
+  maxSelected: 2
 --- !u!1 &885063619
 GameObject:
   m_ObjectHideFlags: 0
@@ -6114,7 +6116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 7706509014c18454a9a819205acae696, type: 2}
   runeSelectionTag: SpellManager
-  selected: 0
+  maxSelected: 0
 --- !u!114 &1461664687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6767,7 +6769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 87e24761a8459014a9d8ee8bf230f1bf, type: 2}
   runeSelectionTag: SpellManager
-  selected: 0
+  maxSelected: 0
 --- !u!114 &1760568077
 MonoBehaviour:
   m_ObjectHideFlags: 0
