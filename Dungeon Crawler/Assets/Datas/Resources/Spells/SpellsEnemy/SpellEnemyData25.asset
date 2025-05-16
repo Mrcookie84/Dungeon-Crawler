@@ -27,4 +27,4 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: 
+  desc: "applique l'affliction d\xE9gradation pendant 2 tours "

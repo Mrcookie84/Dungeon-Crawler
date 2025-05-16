@@ -33,4 +33,5 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: 
+  desc: "\xE9change deux ennemis, inflige des d\xE9g\xE2ts d'\xE9crasement et de
+    contact"

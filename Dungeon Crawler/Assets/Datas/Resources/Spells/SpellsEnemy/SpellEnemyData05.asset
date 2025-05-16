@@ -30,4 +30,4 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: 
+  desc: "brise la barri\xE8re, applique le statu faiblesse dimensionelle "
