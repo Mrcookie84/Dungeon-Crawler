@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0160c4158dda8c47b86463cc1cd798e, type: 3}
-  m_Name: SpellEnemyData 003
+  m_Name: SpellEnemyData24
   m_EditorClassIdentifier: 
   hitCellList:
   - {x: 0, y: 0}
@@ -21,7 +21,7 @@ MonoBehaviour:
   displacementList:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  reinforceBarrier: 1
+  reinforceBarrier: 0
   weakenBarrier: 0
   blockedByBarrier: 0
   statusData: {fileID: 0}

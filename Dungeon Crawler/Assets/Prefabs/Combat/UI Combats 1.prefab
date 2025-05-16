@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 2020460034329131093}
   - component: {fileID: 7219955667423682946}
   - component: {fileID: 9110797328847331181}
+  - component: {fileID: 7204186303252219900}
   m_Layer: 5
   m_Name: Button Affliction
   m_TagString: Untagged
@@ -270,6 +271,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7204186303252219900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362806049814092444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597caf215c0add04e90d85635c0b5a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 2c796d40a6efb8b48af9dc6b7b0cd7f0, type: 2}
+  runeSelectionTag: SpellManager
+  maxSelected: 1
 --- !u!1 &1250644435371041641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,6 +1610,7 @@ GameObject:
   - component: {fileID: 1860537169062013969}
   - component: {fileID: 1573712488304771931}
   - component: {fileID: 171841632085479412}
+  - component: {fileID: 6872890366828718639}
   m_Layer: 5
   m_Name: Button Time
   m_TagString: Untagged
@@ -1702,6 +1719,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6872890366828718639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5010239227886677213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597caf215c0add04e90d85635c0b5a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 87e24761a8459014a9d8ee8bf230f1bf, type: 2}
+  runeSelectionTag: SpellManager
+  maxSelected: 2
 --- !u!1 &5114369030780094580
 GameObject:
   m_ObjectHideFlags: 0
