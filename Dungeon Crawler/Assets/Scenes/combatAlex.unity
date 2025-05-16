@@ -1012,6 +1012,58 @@ PrefabInstance:
       propertyPath: syncGrid
       value: 
       objectReference: {fileID: 927520407}
+    - target: {fileID: 171841632085479412, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 171841632085479412, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 171841632085479412, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 171841632085479412, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2115186578}
+    - target: {fileID: 171841632085479412, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 582431837}
+    - target: {fileID: 171841632085479412, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 171841632085479412, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 171841632085479412, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateRuneSelection
+      objectReference: {fileID: 0}
+    - target: {fileID: 171841632085479412, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeSpell
+      objectReference: {fileID: 0}
+    - target: {fileID: 171841632085479412, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Rune, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 171841632085479412, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SpellCaster, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 171841632085479412, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 171841632085479412, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 337722342640929353, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2034,6 +2086,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 938379188262996836, guid: ebef84bd1a87f9f4bae660e9b48d7219, type: 3}
   m_PrefabInstance: {fileID: 403026103}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &457030678 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7204186303252219900, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+  m_PrefabInstance: {fileID: 279817250}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597caf215c0add04e90d85635c0b5a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &464254653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,6 +2170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597caf215c0add04e90d85635c0b5a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 87e24761a8459014a9d8ee8bf230f1bf, type: 2}
+  runeSelectionTag: SpellManager
+  maxSelected: 1
 --- !u!1 &493685625
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,11 +2563,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runeHolder: {fileID: 101204865}
   runeSelectors:
-  - {fileID: 469479382}
-  - {fileID: 858488568}
+  - {fileID: 469479383}
+  - {fileID: 858488569}
   - {fileID: 0}
-  - {fileID: 476626283}
-  - {fileID: 694506181}
+  - {fileID: 476626284}
+  - {fileID: 694506182}
   - {fileID: 0}
   maxMana: 8
   currentMana: 0
@@ -2600,6 +2666,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597caf215c0add04e90d85635c0b5a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 9abc87c9058192844afecd4de17a7971, type: 2}
+  runeSelectionTag: SpellManager
+  maxSelected: 1
 --- !u!114 &700326168 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3958174708107888522, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
@@ -5847,6 +5916,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2110960441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2110960442}
+  m_Layer: 0
+  m_Name: Slot3
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2110960442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110960441}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.24, y: 0.77, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 616229862}
+  m_Father: {fileID: 658287936}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2115198364
 GameObject:
   m_ObjectHideFlags: 0
