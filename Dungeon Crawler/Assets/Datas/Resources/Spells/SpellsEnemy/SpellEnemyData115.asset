@@ -30,4 +30,5 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: 
+  desc: "\xE9change les ennemis inflige des d\xE9g\xE2ts d'\xE9crasement, applique
+    l'affilction immobilisation pour 2 tours"
