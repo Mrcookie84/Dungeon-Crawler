@@ -14,8 +14,13 @@ public class TurnPlayer : TurnSubscriber
 
     public override void PlayTurn(TurnManager turnManager)
     {
-        //Debug.Log($"Tour de {gameObject.name} commencé !");
+        RuneSelection runeSelec = GameManager.FindObjectOfType<RuneSelection>();
         
+        foreach (Rune rune in runeSelec.selectedRunes.Keys)
+        {
+            rune.UpdateCooldown();
+        }
+
         isPlaying = true;
 
         turnManager.EnablePlayerUI();

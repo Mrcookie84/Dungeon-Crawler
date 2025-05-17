@@ -5,13 +5,14 @@ using UnityEngine;
 public class EntityStatusHolder : MonoBehaviour
 {
     [SerializeField] private StatusData defaultStatus;
+    [SerializeField] private int defaultDuration;
     
     private List<StatusInfo> statusList = new List<StatusInfo>();
 
     private void Start()
     {
         if (defaultStatus == null) return;
-        AddStatus(defaultStatus, 999);
+        AddStatus(defaultStatus, defaultDuration);
     }
 
     public void AddStatus(StatusData status, int duration)
@@ -26,13 +27,17 @@ public class EntityStatusHolder : MonoBehaviour
         {
             StatusInfo statusInfo = statusList[i];
             statusInfo.status.Tick(gameObject);
-            statusInfo.DecrementDuration();
-
+            statusInfo.duration -= 1;
+            
+            
             if (statusInfo.duration <= 0)
             {
                 statusInfo.status.Finish(gameObject);
                 statusList.RemoveAt(i);
+                return;
             }
+
+            statusList[i] = statusInfo;
         }
     }
     
@@ -45,11 +50,6 @@ public class EntityStatusHolder : MonoBehaviour
         {
             this.status = newStatus;
             this.duration = newDuration;
-        }
-
-        public void DecrementDuration()
-        {
-            this.duration -= 1;
         }
     }
 }

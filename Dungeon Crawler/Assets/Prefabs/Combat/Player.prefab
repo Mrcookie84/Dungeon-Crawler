@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultStatus: {fileID: 11400000, guid: 4c133c9365231e1448c1227e70496a6d, type: 2}
+  defaultDuration: 999
 --- !u!1 &5720583357554483498
 GameObject:
   m_ObjectHideFlags: 0
