@@ -26,7 +26,7 @@ public class SpellCaster : MonoBehaviour
 
     public UnityEvent spellCasted = new UnityEvent();
 
-    [SerializeField] private CastMode currentCastMode = CastMode.Enemy;
+    private CastMode currentCastMode = CastMode.Enemy;
     private EntityPosition casterGPos;
     private SpellEnemyData spellEnemyData;
     private SpellPlayerData spellPlayerData;
@@ -152,30 +152,6 @@ public class SpellCaster : MonoBehaviour
         return playerList;
     }
 
-    /*
-    public void CastSpell()
-    {
-        runeSelection.UpdateMana();
-
-        playerGrid.ResetHighlight();
-        enemyGrid.ResetHighlight();
-
-        switch (currentCastMode)
-        {
-            case CastMode.Player:
-                {
-                    CastPlayerSpell();
-                    break;
-                }
-
-            case CastMode.Enemy:
-                {
-                    CastEnemySpell();
-                    break;
-                }
-        }
-    }*/
-
     private void CastPlayerSpell()
     {
         if (spellPlayerData.multipleTargets)
@@ -199,7 +175,6 @@ public class SpellCaster : MonoBehaviour
             }
         }
 
-        runeSelection.UpdateMana();
         playerGrid.UpdateEntitiesIndex();
     }
 
@@ -211,6 +186,8 @@ public class SpellCaster : MonoBehaviour
     {
         EntityFightAnimation casterAnim = casterGPos.gameObject.GetComponent<EntityFightAnimation>();
         casterAnim.ChangeState(EntityFightAnimation.State.Attack);
+
+        spellCasted.Invoke();
         
         if (currentCastMode == CastMode.Enemy)
             StartCoroutine(CastEnemySpellCoroutine(spellEnemyData.SpellDuration));
@@ -243,7 +220,6 @@ public class SpellCaster : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         ResetSpell();
-        runeSelection.UpdateMana();
         UIplayerInterface.SetActive(true);
     }
 

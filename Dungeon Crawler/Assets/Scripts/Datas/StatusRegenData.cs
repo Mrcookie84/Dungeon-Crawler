@@ -9,7 +9,6 @@ public class StatusRegenData : StatusData
     
     public override void Tick(GameObject entity)
     {
-        Debug.Log("Regen active");
         EntityHealth entityHealth = entity.GetComponent<EntityHealth>();
         
         entityHealth.Heal(regenAmount);

@@ -148,7 +148,7 @@ public class RuneSelection : MonoBehaviour
             if (rune == null) continue;
             for (int i = 0; i < selectedRunes[rune]; i++)
             {
-                dataPath += $"{rune.GetID()}";
+                dataPath += $"{rune.Id}";
             }
         }
 
@@ -164,11 +164,17 @@ public class RuneSelection : MonoBehaviour
         DeleteAllRuneUI();
     }
 
-    public void ResetSelection()
+    public void ResetSelection(bool restoreRune = false)
     {
         foreach (Rune rune in runeSelectors)
         {
             if (rune == null) continue;
+
+            if (restoreRune)
+            {
+                rune.RestoreRune(selectedRunes[rune]);
+            }
+
             selectedRunes[rune] = 0;
         }
 

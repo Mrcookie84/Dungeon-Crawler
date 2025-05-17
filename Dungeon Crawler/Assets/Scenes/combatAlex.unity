@@ -1297,63 +1297,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 813649762748423210, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 813649762748423210, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 813649762748423210, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 813649762748423210, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
-      value: 
-      objectReference: {fileID: 858488569}
-    - target: {fileID: 813649762748423210, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 582431837}
     - target: {fileID: 813649762748423210, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 813649762748423210, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 813649762748423210, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: UpdateRuneSelection
-      objectReference: {fileID: 0}
-    - target: {fileID: 813649762748423210, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: ChangeSpell
       objectReference: {fileID: 0}
     - target: {fileID: 813649762748423210, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: Rune, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 813649762748423210, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: SpellCaster, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 813649762748423210, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 813649762748423210, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 813649762748423210, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 813649762748423210, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 908595264020481594, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
@@ -1717,63 +1673,19 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5912614853207575226, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912614853207575226, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912614853207575226, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912614853207575226, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 694506182}
-    - target: {fileID: 5912614853207575226, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 582431837}
     - target: {fileID: 5912614853207575226, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912614853207575226, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912614853207575226, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: UpdateRuneSelection
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912614853207575226, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: ChangeSpell
       objectReference: {fileID: 0}
     - target: {fileID: 5912614853207575226, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: Rune, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912614853207575226, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: SpellCaster, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5912614853207575226, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912614853207575226, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912614853207575226, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912614853207575226, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5926171060593060292, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
@@ -1985,55 +1897,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7883281914364741433, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7883281914364741433, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7883281914364741433, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7883281914364741433, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
-      value: 
-      objectReference: {fileID: 469479383}
-    - target: {fileID: 7883281914364741433, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 582431837}
     - target: {fileID: 7883281914364741433, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7883281914364741433, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7883281914364741433, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: UpdateRuneSelection
-      objectReference: {fileID: 0}
-    - target: {fileID: 7883281914364741433, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: ChangeSpell
       objectReference: {fileID: 0}
     - target: {fileID: 7883281914364741433, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: Rune, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7883281914364741433, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: SpellCaster, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7883281914364741433, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7883281914364741433, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8034945623173571460, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
@@ -2101,55 +1977,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 658287937}
     - target: {fileID: 9180648685562399522, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9180648685562399522, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9180648685562399522, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9180648685562399522, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 476626284}
-    - target: {fileID: 9180648685562399522, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 582431837}
     - target: {fileID: 9180648685562399522, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9180648685562399522, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9180648685562399522, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: UpdateRuneSelection
-      objectReference: {fileID: 0}
-    - target: {fileID: 9180648685562399522, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: ChangeSpell
       objectReference: {fileID: 0}
     - target: {fileID: 9180648685562399522, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: Rune, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 9180648685562399522, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: SpellCaster, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9180648685562399522, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 9180648685562399522, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2158,19 +1998,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9006567871796106261, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1071174449}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4696163819247359560, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 469479383}
-    - targetCorrespondingSourceObject: {fileID: 7816545493872520761, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 858488569}
-    - targetCorrespondingSourceObject: {fileID: 3547598281658149123, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 476626284}
-    - targetCorrespondingSourceObject: {fileID: 1250644435371041641, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 694506182}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
 --- !u!1 &285101983
 GameObject:
@@ -2537,46 +2365,28 @@ Transform:
   - {fileID: 833687960}
   m_Father: {fileID: 541555352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &469479381 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4696163819247359560, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+--- !u!114 &469479382 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8352021543158789768, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
   m_PrefabInstance: {fileID: 279817250}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &469479383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469479381}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 597caf215c0add04e90d85635c0b5a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 7989fcc4b0fb8104e85ae8458fe1e64f, type: 2}
-  runeSelectionTag: SpellManager
-  maxSelected: 2
---- !u!1 &476626282 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3547598281658149123, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+--- !u!114 &476626283 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7922306007967684706, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
   m_PrefabInstance: {fileID: 279817250}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &476626284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476626282}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 597caf215c0add04e90d85635c0b5a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 87e24761a8459014a9d8ee8bf230f1bf, type: 2}
-  runeSelectionTag: SpellManager
-  maxSelected: 1
 --- !u!1 &493685625
 GameObject:
   m_ObjectHideFlags: 0
@@ -2967,11 +2777,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runeHolder: {fileID: 101204865}
   runeSelectors:
-  - {fileID: 469479383}
-  - {fileID: 858488569}
+  - {fileID: 469479382}
+  - {fileID: 858488568}
   - {fileID: 0}
-  - {fileID: 476626284}
-  - {fileID: 694506182}
+  - {fileID: 476626283}
+  - {fileID: 694506181}
   - {fileID: 0}
   maxMana: 8
   currentMana: 0
@@ -3009,14 +2819,37 @@ MonoBehaviour:
   playerGrid: {fileID: 658287937}
   enemyGrid: {fileID: 927520407}
   barrierGrid: {fileID: 1412030046}
-  UIplayerInterface: {fileID: 1445850616}
+  UIplayerInterface: {fileID: 751951503}
   UIplayerSelections: []
   UIcastButton: {fileID: 1862072684}
   UISpellDesc: {fileID: 1964994774}
   spellCasted:
     m_PersistentCalls:
-      m_Calls: []
-  currentCastMode: 1
+      m_Calls:
+      - m_Target: {fileID: 582431835}
+        m_TargetAssemblyTypeName: RuneSelection, Assembly-CSharp
+        m_MethodName: UpdateMana
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 582431835}
+        m_TargetAssemblyTypeName: RuneSelection, Assembly-CSharp
+        m_MethodName: ResetSelection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &616229861
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,26 +3174,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &694506180 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1250644435371041641, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+--- !u!114 &694506181 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5595574941974803204, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
   m_PrefabInstance: {fileID: 279817250}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &694506182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694506180}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 597caf215c0add04e90d85635c0b5a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 9abc87c9058192844afecd4de17a7971, type: 2}
-  runeSelectionTag: SpellManager
-  maxSelected: 1
 --- !u!114 &700326168 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3958174708107888522, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
@@ -3404,6 +3228,11 @@ Transform:
   - {fileID: 885063620}
   m_Father: {fileID: 927520406}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &751951503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3354896643743903471, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+  m_PrefabInstance: {fileID: 279817250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &764541346
 GameObject:
   m_ObjectHideFlags: 0
@@ -3532,6 +3361,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fbd7a571b05924fb54468112799524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endTurnEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 582431835}
+        m_TargetAssemblyTypeName: RuneSelection, Assembly-CSharp
+        m_MethodName: ResetSelection
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   isPlaying: 0
 --- !u!224 &777773175
 RectTransform:
@@ -3566,8 +3410,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 0}
+  linkedText: {fileID: 0}
   runeSelectionTag: SpellManager
   maxSelected: 0
+  maxRunes: 0
 --- !u!114 &777773177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3877,26 +3723,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &858488567 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7816545493872520761, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+--- !u!114 &858488568 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7489082427345356588, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
   m_PrefabInstance: {fileID: 279817250}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &858488569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858488567}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 597caf215c0add04e90d85635c0b5a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 7706509014c18454a9a819205acae696, type: 2}
-  runeSelectionTag: SpellManager
-  maxSelected: 2
 --- !u!1 &885063619
 GameObject:
   m_ObjectHideFlags: 0
@@ -6116,8 +5953,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 7706509014c18454a9a819205acae696, type: 2}
+  linkedText: {fileID: 0}
   runeSelectionTag: SpellManager
   maxSelected: 0
+  maxRunes: 0
 --- !u!114 &1461664687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6769,8 +6608,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 87e24761a8459014a9d8ee8bf230f1bf, type: 2}
+  linkedText: {fileID: 0}
   runeSelectionTag: SpellManager
   maxSelected: 0
+  maxRunes: 0
 --- !u!114 &1760568077
 MonoBehaviour:
   m_ObjectHideFlags: 0

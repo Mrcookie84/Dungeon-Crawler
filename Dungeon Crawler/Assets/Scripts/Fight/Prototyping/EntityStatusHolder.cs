@@ -27,7 +27,6 @@ public class EntityStatusHolder : MonoBehaviour
         {
             StatusInfo statusInfo = statusList[i];
             statusInfo.status.Tick(gameObject);
-            Debug.Log(statusInfo.duration);
             statusInfo.duration -= 1;
             
             
