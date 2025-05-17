@@ -43,6 +43,7 @@ public class Rune : MonoBehaviour
 
                 return;
             }
+            return;
         }
 
         runeSelection.RemoveRune(this);

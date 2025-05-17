@@ -11,14 +11,20 @@ public class RuneSelection : MonoBehaviour
     [SerializeField] private Transform runeHolder;
     [SerializeField] private Rune[] runeSelectors;
 
-    [Header("ManaUI")]
+    [Header("Mana")]
     public int maxMana;
-    public int currentMana;
+    [HideInInspector] public int currentMana;
     private int potentialMana;
     [SerializeField] private Slider manaSliderUI;
     [SerializeField] private Slider potentialManaSliderUI;
 
-    [Header("Current State")]
+    [Header("Capacity")]
+    public int maxCapacity;
+    [HideInInspector] public int currentCapacity;
+    private int potentialCapacity;
+    [SerializeField] private Slider capacitySliderUI;
+    [SerializeField] private Slider potentialCapacitySliderUI;
+
     public Dictionary<Rune, int> selectedRunes = new Dictionary<Rune, int>();
 
     // ========================= Propriétés ============================= //
@@ -44,6 +50,7 @@ public class RuneSelection : MonoBehaviour
             selectedRunes.Add(rune, 0);
         }
 
+        // Initialisation du mana
         currentMana = maxMana;
         potentialMana = maxMana;
 
@@ -51,6 +58,15 @@ public class RuneSelection : MonoBehaviour
         manaSliderUI.value = maxMana;
         potentialManaSliderUI.maxValue = maxMana;
         potentialManaSliderUI.value = maxMana;
+
+        // Initialisation de la capacité
+        currentCapacity = maxCapacity;
+        potentialCapacity = maxCapacity;
+
+        capacitySliderUI.maxValue = maxCapacity;
+        capacitySliderUI.value = maxCapacity;
+        potentialCapacitySliderUI.maxValue = maxCapacity;
+        potentialCapacitySliderUI.value = maxCapacity;
     }
 
     private bool CheckRuneConflict(Rune newRune)
@@ -77,10 +93,27 @@ public class RuneSelection : MonoBehaviour
         potentialMana += amount;
         potentialManaSliderUI.value = potentialMana;
     }
+    
+    private void ChangeCurrentCapacity(int amount)
+    {
+        currentCapacity += amount;
+        capacitySliderUI.value = currentCapacity;
+    }
+
+    private void ChangePotentialCapacity(int amount)
+    {
+        potentialCapacity += amount;
+        potentialCapacitySliderUI.value = potentialCapacity;
+    }
 
     private bool canUsMoreMana(int amount)
     {
         return potentialMana - amount >= 0;
+    }
+
+    private bool canUsMoreCapacity(int amount)
+    {
+        return potentialCapacity - amount >= 0;
     }
 
     private void UpdateRuneUI()
@@ -117,18 +150,17 @@ public class RuneSelection : MonoBehaviour
 
     public bool TryAddRune(Rune rune)
     {   
-        if (CheckRuneConflict(rune) && canUsMoreMana(rune.data.manaCost))
+        if (CheckRuneConflict(rune) && canUsMoreMana(rune.data.manaCost) && canUsMoreCapacity(rune.data.manaCost))
         {
             ChangePotentialMana(-rune.data.manaCost);
+            ChangePotentialCapacity(-rune.data.manaCost);
             selectedRunes[rune] += 1;
             UpdateRuneUI();
 
             return true;
         }
-        else
-        {
-            return false;
-        }
+
+        return false;
     }
 
     public void RemoveRune(Rune rune)
