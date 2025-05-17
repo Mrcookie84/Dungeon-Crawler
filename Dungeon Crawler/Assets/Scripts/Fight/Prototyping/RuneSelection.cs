@@ -152,9 +152,10 @@ public class RuneSelection : MonoBehaviour
         return false;
     }
 
-    public void RemoveRune(Rune rune)
+    public void RemoveRune(Rune rune, bool restorMana = true)
     {
-        ChangePotentialMana(rune.data.manaCost * selectedRunes[rune]);
+        if (restorMana)
+            ChangePotentialMana(rune.data.manaCost * selectedRunes[rune]);
         ChangeCurrentCapacity(rune.data.manaCost * selectedRunes[rune]);
 
         selectedRunes[rune] = 0;
@@ -197,7 +198,7 @@ public class RuneSelection : MonoBehaviour
                 rune.RestoreRune(selectedRunes[rune]);
             }
 
-            RemoveRune(rune);
+            RemoveRune(rune, restoreRune);
         }
     }
 
@@ -214,6 +215,6 @@ public class RuneSelection : MonoBehaviour
     {
         currentCapacity = maxCapacity;
 
-        manaSliderUI.value = maxCapacity;
+        capacitySliderUI.value = maxCapacity;
     }
 }
