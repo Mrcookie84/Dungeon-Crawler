@@ -21,9 +21,7 @@ public class RuneSelection : MonoBehaviour
     [Header("Capacity")]
     public int maxCapacity;
     [HideInInspector] public int currentCapacity;
-    private int potentialCapacity;
     [SerializeField] private Slider capacitySliderUI;
-    [SerializeField] private Slider potentialCapacitySliderUI;
 
     public Dictionary<Rune, int> selectedRunes = new Dictionary<Rune, int>();
 
@@ -61,12 +59,9 @@ public class RuneSelection : MonoBehaviour
 
         // Initialisation de la capacité
         currentCapacity = maxCapacity;
-        potentialCapacity = maxCapacity;
 
         capacitySliderUI.maxValue = maxCapacity;
         capacitySliderUI.value = maxCapacity;
-        potentialCapacitySliderUI.maxValue = maxCapacity;
-        potentialCapacitySliderUI.value = maxCapacity;
     }
 
     private bool CheckRuneConflict(Rune newRune)
@@ -100,12 +95,6 @@ public class RuneSelection : MonoBehaviour
         capacitySliderUI.value = currentCapacity;
     }
 
-    private void ChangePotentialCapacity(int amount)
-    {
-        potentialCapacity += amount;
-        potentialCapacitySliderUI.value = potentialCapacity;
-    }
-
     private bool canUsMoreMana(int amount)
     {
         return potentialMana - amount >= 0;
@@ -113,7 +102,7 @@ public class RuneSelection : MonoBehaviour
 
     private bool canUsMoreCapacity(int amount)
     {
-        return potentialCapacity - amount >= 0;
+        return currentCapacity - amount >= 0;
     }
 
     private void UpdateRuneUI()
@@ -153,7 +142,7 @@ public class RuneSelection : MonoBehaviour
         if (CheckRuneConflict(rune) && canUsMoreMana(rune.data.manaCost) && canUsMoreCapacity(rune.data.manaCost))
         {
             ChangePotentialMana(-rune.data.manaCost);
-            ChangePotentialCapacity(-rune.data.manaCost);
+            ChangeCurrentCapacity(-rune.data.manaCost);
             selectedRunes[rune] += 1;
             UpdateRuneUI();
 
@@ -166,6 +155,7 @@ public class RuneSelection : MonoBehaviour
     public void RemoveRune(Rune rune)
     {
         ChangePotentialMana(rune.data.manaCost * selectedRunes[rune]);
+        ChangeCurrentCapacity(rune.data.manaCost * selectedRunes[rune]);
 
         selectedRunes[rune] = 0;
         
@@ -218,5 +208,12 @@ public class RuneSelection : MonoBehaviour
 
         manaSliderUI.value = maxMana;
         potentialManaSliderUI.value = maxMana;
+    }
+
+    public void ResetCapacity()
+    {
+        currentCapacity = maxCapacity;
+
+        manaSliderUI.value = maxCapacity;
     }
 }
