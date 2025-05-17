@@ -175,10 +175,8 @@ public class RuneSelection : MonoBehaviour
                 rune.RestoreRune(selectedRunes[rune]);
             }
 
-            selectedRunes[rune] = 0;
+            RemoveRune(rune);
         }
-
-        UpdateRuneUI();
     }
 
     public void ResetMana()

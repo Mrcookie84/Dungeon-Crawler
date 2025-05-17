@@ -79,5 +79,7 @@ public class Rune : MonoBehaviour
     {
         _coolDownPool[0] += amount;
         _coolDownPool[CoolDown] -= amount;
+
+        linkedText.text = _coolDownPool[0].ToString();
     }
 }
