@@ -37,30 +37,6 @@ public class GridManager : MonoBehaviour
         gridUpdate.Invoke();
     }
 
-    public GameObject GetEntityAtPos(Vector2Int pos)
-    {
-        if (!IsPosInGrid(pos))
-        {
-            return null;
-        }
-
-        return entityList[pos.x + 3 * pos.y];
-    }
-
-    public GameObject[] GetEntitiesAtMultPos(List<Vector2Int> posArray)
-    {
-        GameObject[] entityArray = new GameObject[posArray.Count];
-
-        int i = 0;
-        foreach (Vector2Int pos in posArray)
-        {
-            entityArray[i] = GetEntityAtPos(pos);
-            i++;
-        }
-
-        return entityArray;
-    }
-
     public bool IsPosInGrid(Vector2Int pos)
     {
         bool xCheck = 0 <= pos.x && pos.x <= 2;
@@ -108,6 +84,32 @@ public class GridManager : MonoBehaviour
         }
     }
 
+
+    // Détection des entités
+    public GameObject GetEntityAtPos(Vector2Int pos)
+    {
+        if (!IsPosInGrid(pos))
+        {
+            return null;
+        }
+
+        return entityList[pos.x + 3 * pos.y];
+    }
+
+    public GameObject[] GetEntitiesAtMultPos(List<Vector2Int> posArray)
+    {
+        GameObject[] entityArray = new GameObject[posArray.Count];
+
+        int i = 0;
+        foreach (Vector2Int pos in posArray)
+        {
+            entityArray[i] = GetEntityAtPos(pos);
+            i++;
+        }
+
+        return entityArray;
+    }
+
     public List<GameObject> GetEntitiesOnRow(int row)
     {
         List<GameObject> rowList = new List<GameObject>();
@@ -120,6 +122,14 @@ public class GridManager : MonoBehaviour
         }
 
         return rowList;
+    }
+
+    public GameObject GetRandomEntityOnRow(int row)
+    {
+        List<GameObject> possibleEntities = GetEntitiesOnRow(row);
+        int rng = Random.Range(0, possibleEntities.Count);
+
+        return possibleEntities[rng];
     }
 
     public List<GameObject> GetAdjacentEntities(Vector2Int cellCoords)

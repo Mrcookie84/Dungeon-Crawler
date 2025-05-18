@@ -188,7 +188,9 @@ public class SpellCaster : MonoBehaviour
         casterAnim.ChangeState(EntityFightAnimation.State.Attack);
 
         spellCasted.Invoke();
-        
+        enemyGrid.ResetHighlight();
+        playerGrid.ResetHighlight();
+
         if (currentCastMode == CastMode.Enemy)
             StartCoroutine(CastEnemySpellCoroutine(spellEnemyData.SpellDuration));
         else
@@ -215,8 +217,6 @@ public class SpellCaster : MonoBehaviour
         StartCoroutine(DamageCoroutine(spellEnemyData.t_damage, enemyArray));
         StartCoroutine(BarrierCoroutine(spellEnemyData.t_barrier, hitCellList));
 
-        enemyGrid.ResetHighlight();
-
         yield return new WaitForSeconds(5f);
 
         ResetSpell();
@@ -233,6 +233,21 @@ public class SpellCaster : MonoBehaviour
     private IEnumerator FxCoroutine(float t, List<Vector2Int> affectedCells)
     {
         yield return new WaitForSeconds(t);
+
+        /*
+        for (int i = 0; i < affectedCells.Count; i++)
+        {
+            Vector2Int cell = affectedCells[i];
+            Transform cellTr = enemyGrid.transform.GetChild(cell.x + 3 * cell.y);
+
+            switch (spellEnemyData.damageTypesData[i])
+            {
+                default:
+                    ParticleSystem fxHolder = cellTr.GetChild(cellTr.childCount-1).GetComponent<ParticleSystem>();
+                    fxHolder.Play();
+                    break;
+            }
+        }*/
         
         // Instantier les fx
     }
