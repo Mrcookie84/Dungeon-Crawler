@@ -27,6 +27,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private int scoreDif;
 
     [Header("Action")]
+    [SerializeField] private bool canBreakBarrier;
     [SerializeField] private EnemyAction actionComp;
 
     private int currentCellScore = 0;
@@ -62,7 +63,10 @@ public class EnemyAI : MonoBehaviour
         // V�rifier si il essaye de passer la barri�re
         if (movDirection.y != 0 && barrierGrid.CheckBarrierState(gridComponent.gridPos.x) == BarrierGrid.BarrierState.Reinforced)
         {
-            actionComp.DoAction();;
+            if (canBreakBarrier)
+                barrierGrid.ChangeBarrierState(targetCell.x, BarrierGrid.BarrierState.Destroyed);
+            else
+                actionComp.DoAction();
             return;
         }
 
