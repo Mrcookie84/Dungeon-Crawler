@@ -72,10 +72,7 @@ public class EnemyAI : MonoBehaviour
         {
             otherEnemy.GetComponent<EntityPosition>().ChangePosition(gridComponent.gridPos);
         }
-
-        List<Vector2Int> list = new List<Vector2Int>();
-        list.Add(targetCell);
-        enemyGrid.HighlightCells(list);
+        
         gridComponent.ChangePosition(targetCell);
 
         enemyGrid.UpdateEntitiesIndex();

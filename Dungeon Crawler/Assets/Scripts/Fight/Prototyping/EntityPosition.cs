@@ -33,7 +33,7 @@ public class EntityPosition : MonoBehaviour
 
     public void ChangePosition(Vector2Int newPos)
     {
-        Debug.Log($"{gameObject.name} : {gridPos} → {newPos}");
+        //Debug.Log($"{gameObject.name} : {gridPos} → {newPos}");
         
         gridPos = newPos;
         transform.position = grid.GetChild(newPos.x + 3 * newPos.y).position;

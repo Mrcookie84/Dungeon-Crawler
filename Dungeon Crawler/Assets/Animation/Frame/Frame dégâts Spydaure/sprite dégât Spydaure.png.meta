@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 150
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -95,7 +95,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "sprite d\xE9g\xE2t Spydaure_0"
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 217
+        width: 418
+        height: 426
+      alignment: 9
+      pivot: {x: 0.5188582, y: 0.028145732}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d68c50acc947ea40ab72b2bd9e9f7a0
+      internalID: -1395393396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "sprite d\xE9g\xE2t Spydaure_1"
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 225
+        width: 442
+        height: 370
+      alignment: 9
+      pivot: {x: 0.52675134, y: 0.020644153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1de28796e3f28954b9f76b2f3c1e1ff9
+      internalID: -1731531537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "sprite d\xE9g\xE2t Spydaure_2"
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 225
+        width: 461
+        height: 358
+      alignment: 9
+      pivot: {x: 0.4914503, y: 0.037604645}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 859ad2cac74c7ce4b96523ed0ff59407
+      internalID: -1743251565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "sprite d\xE9g\xE2t Spydaure_3"
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 221
+        width: 461
+        height: 453
+      alignment: 9
+      pivot: {x: 0.53419846, y: 0.02146723}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd171de915d88f4dbf16474512b4629
+      internalID: -1140406377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "sprite d\xE9g\xE2t Spydaure_4"
+      rect:
+        serializedVersion: 2
+        x: 2095
+        y: 221
+        width: 492
+        height: 492
+      alignment: 9
+      pivot: {x: 0.5240325, y: 0.035366897}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe03a69d81cba04ba67d02d36f8bed0
+      internalID: -687727215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "sprite d\xE9g\xE2t Spydaure_5"
+      rect:
+        serializedVersion: 2
+        x: 2615
+        y: 229
+        width: 500
+        height: 469
+      alignment: 9
+      pivot: {x: 0.5157656, y: 0.01258092}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d62f6d3e8d5c27241a5e97bd5e572c1e
+      internalID: -172086423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "sprite d\xE9g\xE2t Spydaure_6"
+      rect:
+        serializedVersion: 2
+        x: 3143
+        y: 217
+        width: 453
+        height: 414
+      alignment: 9
+      pivot: {x: 0.50870067, y: 0.014468834}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84497bd5e5de65748944a1886a1d765e
+      internalID: -620450296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +253,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "sprite d\xE9g\xE2t Spydaure_0": -1395393396
+      "sprite d\xE9g\xE2t Spydaure_1": -1731531537
+      "sprite d\xE9g\xE2t Spydaure_2": -1743251565
+      "sprite d\xE9g\xE2t Spydaure_3": -1140406377
+      "sprite d\xE9g\xE2t Spydaure_4": -687727215
+      "sprite d\xE9g\xE2t Spydaure_5": -172086423
+      "sprite d\xE9g\xE2t Spydaure_6": -620450296
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

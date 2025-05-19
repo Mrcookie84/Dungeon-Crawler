@@ -14,6 +14,10 @@ public class SpellEnemyData : ScriptableObject
     public bool weakenBarrier = false;
     public bool blockedByBarrier = false;
 
+    [Header("Statut appliqué")]
+    public StatusData statusData;
+    public int statusDuration;
+    
     [Header("Timer")]
     public float t_fx;
     public float t_damage;
