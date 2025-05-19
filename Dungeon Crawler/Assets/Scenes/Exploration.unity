@@ -1919,7 +1919,7 @@ GameObject:
   - component: {fileID: 379354241}
   - component: {fileID: 379354240}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UIExploCanva
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2236,10 +2236,42 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2020752384892140261, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020752384892140261, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020752384892140261, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1270325051}
+    - target: {fileID: 2020752384892140261, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020752384892140261, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenCloseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020752384892140261, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIPauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020752384892140261, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2024594654270407194, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1270325051}
+    - target: {fileID: 2024594654270407194, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIPauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2954415181885138366, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2400,6 +2432,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1270325051}
+    - target: {fileID: 8690450187008232065, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIPauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8731768997416329081, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -3223,11 +3259,6 @@ CanvasRenderer:
 --- !u!1 &557391244 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7357057494857238535, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
-  m_PrefabInstance: {fileID: 394279393}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &570410304 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 72300085623686571, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
   m_PrefabInstance: {fileID: 394279393}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &583131683
@@ -7678,15 +7709,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 2074664298}
-  menuButton: {fileID: 83266912}
+  menuBouton: {fileID: 83266912}
   inventory: {fileID: 5537440}
-  buttonToDisable1:
-  - {fileID: 570410304}
+  boutonToDisable1:
   - {fileID: 557391244}
-  parameterMenu: {fileID: 951760433}
-  buttonToDisable3:
+  parameter: {fileID: 951760433}
+  boutonToDisable3:
   - {fileID: 260513211}
-  - {fileID: 570410304}
 --- !u!1 &1299522911
 GameObject:
   m_ObjectHideFlags: 0
@@ -12678,6 +12707,10 @@ PrefabInstance:
       propertyPath: solution
       value: 
       objectReference: {fileID: 198504226}
+    - target: {fileID: 6789590978082467604, guid: 8fe77b07a7ea78941bea56691ff7ef9a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

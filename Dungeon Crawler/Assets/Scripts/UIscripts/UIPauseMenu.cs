@@ -6,41 +6,45 @@ using UnityEngine.SceneManagement;
 
 public class UIPauseMenu : MonoBehaviour
 {
-    
+    [Header("Menu")]
     [SerializeField] public GameObject menu;
+    public GameObject menuBouton;
     private bool _menuOpen;
     
+    [Header("Inventory")]
     [SerializeField] public GameObject inventory;
+    public List<GameObject> boutonToDisable1 = new List<GameObject>();
     private bool _inventory;
+    
+    //
+    //Map here ??
+    //
+    
+    [Header("Parameter")]
+    [SerializeField] public GameObject parameter;
+    public List<GameObject> boutonToDisable3 = new List<GameObject>();
+    private bool _parameter;
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.SceneFight.activeSelf == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && _inventory== false && _parameter == false)
         {
-            OpenClosePauseMenu();
+            OpenCloseMenu();
         }
     }
 
     private void Start()
     {
         menu.SetActive(false);
+        menuBouton.SetActive(true);
     }
 
-    public void OpenClosePauseMenu()
+    public void OpenCloseMenu()
     {
-        
+        menuBouton.SetActive(_menuOpen);
         _menuOpen = !_menuOpen;
         menu.SetActive(_menuOpen);
 
-        if (_menuOpen == true)
-        {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
-        }
-        
     }
     
     public void OpenCloseInventory()
@@ -48,7 +52,25 @@ public class UIPauseMenu : MonoBehaviour
         
         _inventory = !_inventory;
         inventory.SetActive(_inventory);
+
+        foreach (var iGameObject in boutonToDisable1)
+        {
+            iGameObject.SetActive(!_inventory);
+        }
         
+    }
+    
+    public void OpenCloseParameter()
+    {
+        
+        _parameter = !_parameter;
+        parameter.SetActive(_parameter);
+        
+        foreach (var iGameObject in boutonToDisable3)
+        {
+            iGameObject.SetActive(!_parameter);
+        }
+
     }
     
     
@@ -61,7 +83,7 @@ public class UIPauseMenu : MonoBehaviour
     
     public void Quit()
     {
-        OpenClosePauseMenu();
+        OpenCloseMenu();
         Time.timeScale = 1;
         Debug.Log("supposed to quit");
         Application.Quit();
