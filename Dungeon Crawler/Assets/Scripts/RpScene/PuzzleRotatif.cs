@@ -15,6 +15,7 @@ public class PuzzleRotatif : MonoBehaviour
     [Header("Door :")] 
     [SerializeField] public GameObject door;
     
+    [Header("Position de la touche E :")]
     
     [Header("LES GD , C'EST ICI QU'IL FAUT MODIFIER LE MDP : ")]
     [Header("mot de passe (1/2/3) :")]
@@ -176,15 +177,15 @@ public class PuzzleRotatif : MonoBehaviour
     {
         if (selector == 1)
         {
-            interactBubbleIcon.transform.localPosition = new Vector3(-1.36f, 2.68f, -1);
+            interactBubbleIcon.transform.localPosition = new Vector3(1.50f, 3f, interactBubbleIcon.transform.localPosition.z);
         }
         else if (selector == 2)
         {
-            interactBubbleIcon.transform.localPosition = new Vector3(1.01f, 2.11f, -1);
+            interactBubbleIcon.transform.localPosition = new Vector3(-1.2f, 2f, interactBubbleIcon.transform.localPosition.z);
         }
         else if (selector == 3)
         {
-            interactBubbleIcon.transform.localPosition = new Vector3(-0.69f, 0.72f, -1);
+            interactBubbleIcon.transform.localPosition = new Vector3(1.2f, 1f ,interactBubbleIcon.transform.localPosition.z);
         }
     }
     
