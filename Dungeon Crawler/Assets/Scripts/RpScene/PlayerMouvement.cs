@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 10f;
     
     private KeyCode fwKey = KeyCode.D;
-    private KeyCode BwKey = KeyCode.A;
+    private KeyCode BwKey = KeyCode.Q;
 
 
     private Quaternion targetRotation;
