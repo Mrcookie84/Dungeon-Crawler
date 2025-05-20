@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7769951945374784038}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6789590978082467604}
+        m_TargetAssemblyTypeName: SceneChangeDoor, Assembly-CSharp
+        m_MethodName: BoutonUse
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &668648233650942986
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,10 +225,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9c94805db4da44984ce9b99383f619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  solution: {fileID: 0}
-  interactBubble: {fileID: 0}
-  triggerBox: {fileID: 642916028329851147}
-  mapUI: {fileID: 0}
+  group: {fileID: 0}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  levelParent:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &3534245269314212642
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +571,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3188991389808347258}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6789590978082467604}
+        m_TargetAssemblyTypeName: SceneChangeDoor, Assembly-CSharp
+        m_MethodName: BoutonUse
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6280061455995961794
 GameObject:
   m_ObjectHideFlags: 0
