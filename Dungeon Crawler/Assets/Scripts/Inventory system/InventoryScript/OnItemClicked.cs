@@ -6,13 +6,20 @@ using UnityEngine.EventSystems;
 
 public class OnItemClicked : MonoBehaviour, IPointerClickHandler
 {
+    
+    
     private static List<OnItemClicked> m_allItems = new List<OnItemClicked>();
 
     public Item data;
-
+    
     private void Awake()
     {
         m_allItems.Add(this);
+    }
+
+    private void Start()
+    {
+        UnselectAllItems();
     }
 
     private void SelectItem()
@@ -31,12 +38,12 @@ public class OnItemClicked : MonoBehaviour, IPointerClickHandler
     
     private void OnMouseUpAsButton()
     {
-        Debug.LogError($"Clicked on {gameObject.name}");
+        Debug.Log($"Clicked on {gameObject.name}");
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.LogError($"Clicked on {gameObject.name}");
+        Debug.Log($"Clicked on : " + this.data.itemName);
         SelectItem();
     }
 }

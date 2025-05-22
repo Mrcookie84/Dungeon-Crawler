@@ -16,7 +16,7 @@ public class AnimationScript : MonoBehaviour
     private Animator animatorComponent;
     
     private KeyCode fwKey = KeyCode.D;
-    private KeyCode BwKey = KeyCode.A;
+    private KeyCode BwKey = KeyCode.Q;
     
     
     void Start()

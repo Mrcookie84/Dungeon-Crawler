@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f6bb67a12f4e4c917f55640a7ff579, type: 3}
   m_Name: item1 2
   m_EditorClassIdentifier: 
-  itemName: Lacost_TN
+  sprite: {fileID: 547518842, guid: 21289d7826422974097c4d7e99a2a3b0, type: 3}
+  effect: +30%
