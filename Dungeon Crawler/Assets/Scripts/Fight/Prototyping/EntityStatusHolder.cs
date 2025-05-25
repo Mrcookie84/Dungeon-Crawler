@@ -27,7 +27,7 @@ public class EntityStatusHolder : MonoBehaviour
         {
             if (statusInfo.status != status) continue;
 
-            statusInfo.duration = duration;
+            statusInfo.duration = Math.Max(duration, statusInfo.duration);
             return;
         }
 
