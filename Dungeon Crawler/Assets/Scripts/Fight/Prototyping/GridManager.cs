@@ -41,7 +41,7 @@ public class GridManager : MonoBehaviour
     {
         bool xCheck = 0 <= pos.x && pos.x <= 2;
         bool yCheck = 0 <= pos.y && pos.y <= 1;
-        
+
         return (xCheck && yCheck);
     }
 
@@ -110,12 +110,12 @@ public class GridManager : MonoBehaviour
         return entityArray;
     }
 
-    public List<GameObject> GetEntitiesOnRow(int row)
+    public List<GameObject> GetEntitiesOnRow(int row, GameObject excludedEntity = null)
     {
         List<GameObject> rowList = new List<GameObject>();
         for (int i = 0;i < 3; i++)
         {
-            if (entityList[i + row*3] != null)
+            if (entityList[i + row*3] != null && entityList[i + row * 3] != excludedEntity)
             {
                 rowList.Add(entityList[i + row * 3]);
             }
@@ -132,44 +132,27 @@ public class GridManager : MonoBehaviour
         return possibleEntities[rng];
     }
 
-    public List<GameObject> GetAdjacentEntities(Vector2Int cellCoords)
+    public List<GameObject> GetAdjacentEntities(Vector2Int cellCoords, GameObject excludedEntity = null)
     {
         List<GameObject> adjacentList = new List<GameObject>();
 
-        // Gauche
-        Vector2Int currentCell = new Vector2Int(-1, 0);
-        GameObject currentEntity = GetEntityAtPos(cellCoords + currentCell);
+        Vector2Int[] adjacentPoses = new Vector2Int[4];
+        adjacentPoses[0] = new Vector2Int(0, 1);
+        adjacentPoses[1] = new Vector2Int(1, 0);
+        adjacentPoses[2] = new Vector2Int(0, -1);
+        adjacentPoses[3] = new Vector2Int(-1, 0);
 
-        if (currentEntity != null)
+        foreach (Vector2Int adjacentCell in adjacentPoses)
         {
-            adjacentList.Add(currentEntity);
-        }
+            Vector2Int currentCell = cellCoords + adjacentCell;
+            if (!IsPosInGrid(currentCell)) continue;
 
-        // Droite
-        currentCell = new Vector2Int(1, 0);
-        currentEntity = GetEntityAtPos(cellCoords + currentCell);
+            GameObject currentEntity = GetEntityAtPos(currentCell);
 
-        if (currentEntity != null)
-        {
-            adjacentList.Add(currentEntity);
-        }
-
-        // Haut
-        currentCell = new Vector2Int(0, 1);
-        currentEntity = GetEntityAtPos(cellCoords + currentCell);
-
-        if (currentEntity != null)
-        {
-            adjacentList.Add(currentEntity);
-        }
-
-        // Bas
-        currentCell = new Vector2Int(0, -1);
-        currentEntity = GetEntityAtPos(cellCoords + currentCell);
-
-        if (currentEntity != null)
-        {
-            adjacentList.Add(currentEntity);
+            if (currentEntity != null && currentEntity != excludedEntity)
+            {
+                adjacentList.Add(currentEntity);
+            }
         }
 
         return adjacentList;

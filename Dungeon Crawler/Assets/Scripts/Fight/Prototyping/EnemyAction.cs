@@ -32,7 +32,6 @@ public class EnemyAction : MonoBehaviour
         for (int i = 0; i < actions.Count; i++)
         {
             if (actions[i] == null) continue;
-            Debug.Log($"{actions[i]} | {probActions[i]}");
             actionTable.Add(actions[i], probActions[i]);
         }
     }
@@ -53,7 +52,7 @@ public class EnemyAction : MonoBehaviour
                 }
                 else
                 {
-
+                    Support(action);
                 }
                 
                 break;

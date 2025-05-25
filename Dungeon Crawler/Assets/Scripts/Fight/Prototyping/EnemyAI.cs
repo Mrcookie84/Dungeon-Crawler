@@ -131,11 +131,11 @@ public class EnemyAI : MonoBehaviour
         cellScore += columnW[coords.x];
 
         // Placement des ennemis
-        int nbEntitiy = enemyGrid.GetAdjacentEntities(gridComponent.gridPos).Count;
+        int nbEntitiy = enemyGrid.GetAdjacentEntities(coords, gameObject).Count;
         cellScore += nbEntitiy * adjacentEnemyW;
 
         // Placement dans les mondes
-        nbEntitiy = enemyGrid.GetEntitiesOnRow(coords.y).Count;
+        nbEntitiy = enemyGrid.GetEntitiesOnRow(coords.y, gameObject).Count;
         cellScore += nbEntitiy * enemyInWorldW;
 
         nbEntitiy = playerGrid.GetEntitiesOnRow(coords.y).Count;

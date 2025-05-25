@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a6ea69e0f41314faafe8cda8413d5e, type: 3}
   m_Name: EAGroupContactAttack
   m_EditorClassIdentifier: 
-  isAttack: 0
+  isAttack: 1
   dmgValue: 25
   dmgType: 2
   multipleTarget: 1

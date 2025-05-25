@@ -74,11 +74,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: dimAffintyW
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: adjacentEnemyW
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: dimAffinityRow
@@ -86,15 +86,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: playerInWorldW
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: columnW.Array.data[0]
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: columnW.Array.data[1]
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6095385791367872599, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: maxHealth

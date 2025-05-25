@@ -1584,10 +1584,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1218802672}
-    - target: {fileID: 6591100286334407047, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -681631569
-      objectReference: {fileID: 0}
     - target: {fileID: 6596283165032836780, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_Name
       value: UI Combats 1
@@ -1624,6 +1620,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7180156485744183537, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: linkedGrid
+      value: 
+      objectReference: {fileID: 927520407}
     - target: {fileID: 7316474438681556914, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1756,6 +1756,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7830869169629704606, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: linkedGrid
+      value: 
+      objectReference: {fileID: 686105099}
     - target: {fileID: 7836515033423892620, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_Interactable
       value: 0
@@ -4499,6 +4503,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1395881286 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7180156485744183537, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+  m_PrefabInstance: {fileID: 279817250}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916cb7fe286127c44a90734773c7091b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1412030044
 GameObject:
   m_ObjectHideFlags: 0
@@ -5126,6 +5141,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1682677790 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7830869169629704606, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+  m_PrefabInstance: {fileID: 279817250}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916cb7fe286127c44a90734773c7091b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1706586779 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9006567871796106261, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
@@ -5622,9 +5648,37 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
+      propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
+      propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
       propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 518895791}
+    - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
+      propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1682677790}
+    - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
+      propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
+      propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateStatusHolders
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
+      propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: StatusHolderGroupManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
+      propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1984905738852313902, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
       propertyPath: m_Name
       value: Player Grid
@@ -5994,9 +6048,37 @@ PrefabInstance:
     m_TransformParent: {fileID: 514924451}
     m_Modifications:
     - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
+      propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
+      propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
       propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 58401271}
+    - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
+      propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1395881286}
+    - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
+      propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
+      propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateStatusHolders
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
+      propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: StatusHolderGroupManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
+      propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1984905738852313902, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
       propertyPath: m_Name
       value: Enemy Grid
