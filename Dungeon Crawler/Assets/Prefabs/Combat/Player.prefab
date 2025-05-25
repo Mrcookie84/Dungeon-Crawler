@@ -118,12 +118,28 @@ MonoBehaviour:
   dead: 0
   destoryOnDeath: 0
   animHandler: {fileID: -7666935225237567098}
+  gotAttacked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -3003012497256881573}
+        m_TargetAssemblyTypeName: EntityStatusHolder, Assembly-CSharp
+        m_MethodName: DamageResponse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   tookDamage:
     m_PersistentCalls:
       m_Calls: []
   isDying:
     m_PersistentCalls:
       m_Calls: []
+  invicible: 0
 --- !u!114 &-7666935225237567098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,10 +166,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultStatus:
-  - {fileID: 11400000, guid: 4c133c9365231e1448c1227e70496a6d, type: 2}
   - {fileID: 11400000, guid: 555b3ec30c76bd246bb4f9ce6421298a, type: 2}
-  - {fileID: 11400000, guid: a55e12d09b7b06c41b2f6b2404de8161, type: 2}
-  defaultDuration: 999
+  defaultDuration: 1
+  statusList: []
 --- !u!1 &5720583357554483498
 GameObject:
   m_ObjectHideFlags: 0

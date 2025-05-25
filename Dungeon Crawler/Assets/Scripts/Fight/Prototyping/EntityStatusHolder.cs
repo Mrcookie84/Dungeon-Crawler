@@ -10,7 +10,7 @@ public class EntityStatusHolder : MonoBehaviour
 
     private GridManager updateGrid;
     
-    [HideInInspector] public List<StatusInfo> statusList = new List<StatusInfo>();
+    public List<StatusInfo> statusList = new List<StatusInfo>();
 
     private void Start()
     {
@@ -43,7 +43,10 @@ public class EntityStatusHolder : MonoBehaviour
         {
             if (statusList[i].status != status) continue;
 
+            status.Finish(gameObject);
             statusList.RemoveAt(i);
+
+            updateGrid.gridUpdate.Invoke();
             return;
         }
     }
@@ -72,12 +75,16 @@ public class EntityStatusHolder : MonoBehaviour
 
     public void DamageResponse()
     {
-        foreach (var statusInfo in statusList)
+        var statusListCopy = new StatusInfo[statusList.Count];
+        statusList.CopyTo(statusListCopy);
+
+        foreach (var statusInfo in statusListCopy)
         {
             statusInfo.status.Hit(gameObject);
         }
     }
-    
+
+    [Serializable]
     public class StatusInfo
     {
         public StatusData status { get; set; }

@@ -129,7 +129,10 @@ public class GridManager : MonoBehaviour
         List<GameObject> possibleEntities = GetEntitiesOnRow(row);
         int rng = Random.Range(0, possibleEntities.Count);
 
-        return possibleEntities[rng];
+        if (possibleEntities.Count != 0)
+            return possibleEntities[rng];
+        else
+            return null;
     }
 
     public List<GameObject> GetAdjacentEntities(Vector2Int cellCoords, GameObject excludedEntity = null)

@@ -26,9 +26,10 @@ public class StatusHolderHandler : MonoBehaviour
         float currentXOffSet = 0f;
         float currentYOffSet = 0f;
 
-        Debug.Log(statusList.Count);
         foreach (StatusInfo info in statusList)
         {
+            if (info.duration <= 0) continue;
+
             GameObject currentUI = Instantiate(statusUI, transform);
             currentUI.name = info.status.name;
             currentUI.transform.localPosition += new Vector3(currentXOffSet, currentYOffSet, 0f);

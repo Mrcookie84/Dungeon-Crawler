@@ -77,6 +77,8 @@ public class EnemyAction : MonoBehaviour
 
         foreach (GameObject entity in targets)
         {
+            if (entity == null) continue;
+
             if (action.dmgValue > 0)
             {
                 EntityHealth entityHealth = entity.GetComponent<EntityHealth>();

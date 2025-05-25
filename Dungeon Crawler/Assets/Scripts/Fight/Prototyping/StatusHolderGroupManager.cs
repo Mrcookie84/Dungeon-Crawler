@@ -13,7 +13,11 @@ public class StatusHolderGroupManager : MonoBehaviour
         for (int i = 0; i < 6; i++)
         {
             GameObject currentEntity = linkedGrid.entityList[i];
-            if (currentEntity == null) continue;
+            if (currentEntity == null)
+            {
+                statusHolderHandlers[i].ResetStatus();
+                continue;
+            }
 
             List<StatusInfo> statusInfos = currentEntity.GetComponent<EntityStatusHolder>().statusList;
 

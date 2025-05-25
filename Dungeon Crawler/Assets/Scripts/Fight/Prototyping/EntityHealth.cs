@@ -16,8 +16,11 @@ public class EntityHealth : MonoBehaviour
     [Header("Animator")]
     [SerializeField] private EntityFightAnimation animHandler;
 
+    public UnityEvent gotAttacked = new UnityEvent();
     public UnityEvent tookDamage = new UnityEvent();
     public UnityEvent isDying = new UnityEvent();
+
+    [HideInInspector] public bool invicible = false;
     
     void Awake()
     {
@@ -27,7 +30,15 @@ public class EntityHealth : MonoBehaviour
     }
 
     public void TakeDamage(int amount)
-    {   
+    {
+        if (invicible)
+        {
+            gotAttacked.Invoke();
+            return;
+        }
+
+        gotAttacked.Invoke();
+
         currentHealth -= amount;
         healthBarGroup.UpdateHealthBars();
 
