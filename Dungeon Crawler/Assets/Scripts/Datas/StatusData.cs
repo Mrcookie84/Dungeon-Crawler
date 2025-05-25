@@ -19,4 +19,9 @@ public abstract class StatusData : ScriptableObject
     {
         return;
     }
+
+    public virtual void Hit(GameObject entity)
+    {
+        return;
+    }
 }

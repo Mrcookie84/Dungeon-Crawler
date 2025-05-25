@@ -1,24 +1,51 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static EntityStatusHolder;
 
 public class EntityStatusHolder : MonoBehaviour
 {
-    [SerializeField] private StatusData defaultStatus;
+    [SerializeField] private StatusData[] defaultStatus;
     [SerializeField] private int defaultDuration;
+
+    private GridManager updateGrid;
     
-    private List<StatusInfo> statusList = new List<StatusInfo>();
+    [HideInInspector] public List<StatusInfo> statusList = new List<StatusInfo>();
 
     private void Start()
     {
-        if (defaultStatus == null) return;
-        AddStatus(defaultStatus, defaultDuration);
+        updateGrid = GetComponent<EntityPosition>().LinkedGrid;
+
+        foreach (var status in defaultStatus)
+            if (status != null)
+                AddStatus(status, defaultDuration);
     }
 
     public void AddStatus(StatusData status, int duration)
     {
+        foreach (var statusInfo in statusList)
+        {
+            if (statusInfo.status != status) continue;
+
+            statusInfo.duration = duration;
+            return;
+        }
+
         status.Apply(gameObject);
         statusList.Add(new StatusInfo(status,duration));
+
+        updateGrid.gridUpdate.Invoke();
+    }
+
+    public void RemoveStatus(StatusData status)
+    {
+        for (int i = 0; i < statusList.Count; i++)
+        {
+            if (statusList[i].status != status) continue;
+
+            statusList.RemoveAt(i);
+            return;
+        }
     }
 
     public void UpdateStatus()
@@ -39,9 +66,19 @@ public class EntityStatusHolder : MonoBehaviour
 
             statusList[i] = statusInfo;
         }
+
+        updateGrid.gridUpdate.Invoke();
+    }
+
+    public void DamageResponse()
+    {
+        foreach (var statusInfo in statusList)
+        {
+            statusInfo.status.Hit(gameObject);
+        }
     }
     
-    public struct StatusInfo
+    public class StatusInfo
     {
         public StatusData status { get; set; }
         public int duration { get; set; }

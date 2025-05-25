@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &523813749849583958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2786611580890795145}
+  m_Layer: 0
+  m_Name: Status Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2786611580890795145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523813749849583958}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.6, y: 1.945, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8907508124825360126}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3126566767669286085
 GameObject:
   m_ObjectHideFlags: 0
@@ -36,6 +67,7 @@ Transform:
   - {fileID: 2551319208624728258}
   - {fileID: 2119575284852711873}
   - {fileID: 6782358934867309043}
+  - {fileID: 2786611580890795145}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-7346857730855540150
@@ -117,7 +149,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87bb3a1208d1e144bbfabf21c0e4aee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultStatus: {fileID: 11400000, guid: 4c133c9365231e1448c1227e70496a6d, type: 2}
+  defaultStatus:
+  - {fileID: 11400000, guid: 4c133c9365231e1448c1227e70496a6d, type: 2}
+  - {fileID: 11400000, guid: 555b3ec30c76bd246bb4f9ce6421298a, type: 2}
+  - {fileID: 11400000, guid: a55e12d09b7b06c41b2f6b2404de8161, type: 2}
   defaultDuration: 999
 --- !u!1 &5720583357554483498
 GameObject:
@@ -426,15 +461,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 1194f3778be9d214e9929c5308fca7c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.932, y: 1.776}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &1720636928566789164
