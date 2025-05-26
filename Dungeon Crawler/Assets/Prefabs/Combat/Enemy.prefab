@@ -193,12 +193,17 @@ MonoBehaviour:
   dead: 0
   destoryOnDeath: 1
   animHandler: {fileID: 8916927351157303100}
+  status: {fileID: 5266034602962899747}
+  gotAttacked:
+    m_PersistentCalls:
+      m_Calls: []
   tookDamage:
     m_PersistentCalls:
       m_Calls: []
   isDying:
     m_PersistentCalls:
       m_Calls: []
+  invicible: 0
 --- !u!114 &5266034602962899747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,8 +216,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87bb3a1208d1e144bbfabf21c0e4aee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultStatus: {fileID: 0}
+  defaultStatus:
+  - {fileID: 0}
   defaultDuration: 0
+  statusList: []
 --- !u!114 &8916927351157303100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +274,7 @@ MonoBehaviour:
   enemyInWorldW: 0
   playerInWorldW: 0
   scoreDif: 2
+  canBreakBarrier: 0
   actionComp: {fileID: -3990165560712512099}
 --- !u!114 &-3990165560712512099
 MonoBehaviour:

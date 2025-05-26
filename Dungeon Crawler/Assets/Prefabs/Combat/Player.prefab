@@ -118,6 +118,7 @@ MonoBehaviour:
   dead: 0
   destoryOnDeath: 0
   animHandler: {fileID: -7666935225237567098}
+  status: {fileID: -3003012497256881573}
   gotAttacked:
     m_PersistentCalls:
       m_Calls:

@@ -73,7 +73,7 @@ public class EntityStatusHolder : MonoBehaviour
         updateGrid.gridUpdate.Invoke();
     }
 
-    public void DamageResponse(GameObject entity, EntityHealth.DamageInfo attackInfo)
+    public void DamageResponse(EntityHealth.DamageInfo attackInfo)
     {
         var statusListCopy = new StatusInfo[statusList.Count];
         statusList.CopyTo(statusListCopy);

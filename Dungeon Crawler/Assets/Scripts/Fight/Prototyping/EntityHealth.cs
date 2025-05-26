@@ -37,12 +37,12 @@ public class EntityHealth : MonoBehaviour
         if (invicible)
         {
             Debug.Log("Dégâts annulés");
-            status.DamageResponse(gameObject, attackInfo);
+            status.DamageResponse(attackInfo);
             gotAttacked.Invoke();
             return;
         }
         
-        status.DamageResponse(gameObject, attackInfo);
+        status.DamageResponse(attackInfo);
         gotAttacked.Invoke();
 
         currentHealth -= amount;
