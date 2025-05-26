@@ -305,7 +305,7 @@ public class SpellCaster : MonoBehaviour
             // Appliquer tout les types de dégâts
             for (int j = 0; j < spellEnemyData.damageTypesData[i].dmgValues.Length; j++)
             {
-                entityHealth.TakeDamage(spellEnemyData.damageTypesData[i].dmgValues[j]);
+                entityHealth.TakeDamage(casterGPos.gameObject, spellEnemyData.damageTypesData[i].dmgValues[j]);
 
                 // Faire apparaître un texte avec la valeur des dégâts
                 // et la couleur du type de dégâts infligés
@@ -317,7 +317,7 @@ public class SpellCaster : MonoBehaviour
 
             if (spellEnemyData.statusData != null)
             {
-                entityStatusHolder.AddStatus(spellEnemyData.statusData, spellEnemyData.statusDuration);
+                entityStatusHolder.AddStatus(spellEnemyData.statusData, spellEnemyData.statusDuration, casterGPos.gameObject);
             }
         }
     }

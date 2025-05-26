@@ -7,16 +7,22 @@ public class StatusReflectData : StatusData
 {
     [Header("Recharge")]
     public bool recharge;
-    public int charge;
+    public int chargeTurn;
+    public StatusData reloadStatus;
 
-    public override void Apply(GameObject entity)
+    [Header("Reflect")]
+    public bool reflect;
+
+    public override void Apply(GameObject entity, GameObject source)
     {
+        base.Apply(entity, source);
+        
         EntityHealth health = entity.GetComponent<EntityHealth>();
 
         health.invicible = true;
     }
 
-    public override void Hit(GameObject entity)
+    public override void Hit(GameObject entity, EntityHealth.DamageInfo attackInfo)
     {
         EntityHealth health = entity.GetComponent<EntityHealth>();
 
@@ -25,7 +31,15 @@ public class StatusReflectData : StatusData
         EntityStatusHolder entityStatusHolder = entity.GetComponent<EntityStatusHolder>();
         entityStatusHolder.RemoveStatus(this);
 
-        if (!recharge)
+        if (reflect && attackInfo.attacker != null)
+        {
+            Debug.Log("Dégats renvoyés");
+            EntityHealth attackerHeatlh = attackInfo.attacker.GetComponent<EntityHealth>();
+            
+            attackerHeatlh.TakeDamage(null, attackInfo.dmgValue);
+        }
+        
+        if (recharge)
         {
             // Code qui applique le statut cooldown
             // Oh mon dieu les implications, il est trop tard pour que j'y pense

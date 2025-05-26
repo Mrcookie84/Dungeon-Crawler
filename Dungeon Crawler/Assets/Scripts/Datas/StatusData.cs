@@ -4,9 +4,13 @@ public abstract class StatusData : ScriptableObject
 {
     [Header("UI")]
     [SerializeField] public Sprite icon;
+
+    protected GameObject source;
     
-    public virtual void Apply(GameObject entity)
+    public virtual void Apply(GameObject entity, GameObject source)
     {
+        this.source = source;
+        
         return;
     }
 
@@ -20,7 +24,7 @@ public abstract class StatusData : ScriptableObject
         return;
     }
 
-    public virtual void Hit(GameObject entity)
+    public virtual void Hit(GameObject entity, EntityHealth.DamageInfo attackInfo)
     {
         return;
     }

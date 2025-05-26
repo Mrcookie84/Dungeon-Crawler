@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: StatusReflectData
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
+  recharge: 0
+  chargeTurn: 0
+  reloadStatus: {fileID: 0}
+  reflect: 1

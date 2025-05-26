@@ -82,13 +82,13 @@ public class EnemyAction : MonoBehaviour
             if (action.dmgValue > 0)
             {
                 EntityHealth entityHealth = entity.GetComponent<EntityHealth>();
-                entityHealth.TakeDamage(action.dmgValue);
+                entityHealth.TakeDamage(gameObject, action.dmgValue);
             }
 
             if (action.status != null)
             {
                 EntityStatusHolder entityStatus = entity.GetComponent<EntityStatusHolder>();
-                entityStatus.AddStatus(action.status, action.statusDuration);
+                entityStatus.AddStatus(action.status, action.statusDuration, gameObject);
             }
         }
     }
@@ -125,7 +125,7 @@ public class EnemyAction : MonoBehaviour
             if (action.status != null)
             {
                 EntityStatusHolder entityStatus = entity.GetComponent<EntityStatusHolder>();
-                entityStatus.AddStatus(action.status, action.statusDuration);
+                entityStatus.AddStatus(action.status, action.statusDuration, gameObject);
             }
         }
     }

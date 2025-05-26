@@ -18,10 +18,10 @@ public class EntityStatusHolder : MonoBehaviour
 
         foreach (var status in defaultStatus)
             if (status != null)
-                AddStatus(status, defaultDuration);
+                AddStatus(status, defaultDuration, gameObject);
     }
 
-    public void AddStatus(StatusData status, int duration)
+    public void AddStatus(StatusData status, int duration, GameObject source)
     {
         foreach (var statusInfo in statusList)
         {
@@ -31,7 +31,7 @@ public class EntityStatusHolder : MonoBehaviour
             return;
         }
 
-        status.Apply(gameObject);
+        status.Apply(gameObject, source);
         statusList.Add(new StatusInfo(status,duration));
 
         updateGrid.gridUpdate.Invoke();
@@ -73,14 +73,14 @@ public class EntityStatusHolder : MonoBehaviour
         updateGrid.gridUpdate.Invoke();
     }
 
-    public void DamageResponse()
+    public void DamageResponse(GameObject entity, EntityHealth.DamageInfo attackInfo)
     {
         var statusListCopy = new StatusInfo[statusList.Count];
         statusList.CopyTo(statusListCopy);
 
         foreach (var statusInfo in statusListCopy)
         {
-            statusInfo.status.Hit(gameObject);
+            statusInfo.status.Hit(gameObject, attackInfo);
         }
     }
 

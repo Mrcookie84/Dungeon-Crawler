@@ -13,8 +13,9 @@ public class EntityHealth : MonoBehaviour
     [HideInInspector] public bool dead;
     [SerializeField] private bool destoryOnDeath;
     
-    [Header("Animator")]
+    [Header("Components")]
     [SerializeField] private EntityFightAnimation animHandler;
+    [SerializeField] private EntityStatusHolder status;
 
     public UnityEvent gotAttacked = new UnityEvent();
     public UnityEvent tookDamage = new UnityEvent();
@@ -29,14 +30,19 @@ public class EntityHealth : MonoBehaviour
         healthBarGroup = GameObject.FindGameObjectWithTag(healthBarGroupTag).GetComponent<HealthBarGroupManager>();
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(GameObject source, int amount)
     {
+        DamageInfo attackInfo = new DamageInfo(source, amount);
+        
         if (invicible)
         {
+            Debug.Log("Dégâts annulés");
+            status.DamageResponse(gameObject, attackInfo);
             gotAttacked.Invoke();
             return;
         }
-
+        
+        status.DamageResponse(gameObject, attackInfo);
         gotAttacked.Invoke();
 
         currentHealth -= amount;
@@ -67,5 +73,20 @@ public class EntityHealth : MonoBehaviour
     private bool CheckDeath()
     {
         return currentHealth <= 0;
+    }
+
+    [Serializable]
+    public struct DamageInfo
+    {
+        [SerializeField] public GameObject attacker { get; }
+        [SerializeField] public int dmgValue { get; }
+        [SerializeField] public DamageTypesData.DmgTypes dmgType { get; }
+        
+        public DamageInfo(GameObject attacker, int dmgValue, DamageTypesData.DmgTypes dmgType = DamageTypesData.DmgTypes.Crush)
+        {
+            this.attacker = attacker;
+            this.dmgValue = dmgValue;
+            this.dmgType  = dmgType;
+        }
     }
 }

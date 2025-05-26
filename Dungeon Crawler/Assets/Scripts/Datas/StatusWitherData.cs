@@ -13,6 +13,6 @@ public class StatusWitherData : StatusData
         Debug.Log("Regen active");
         EntityHealth entityHealth = entity.GetComponent<EntityHealth>();
         
-        entityHealth.TakeDamage(witherAmount);
+        entityHealth.TakeDamage(null, witherAmount);
     }
 }
