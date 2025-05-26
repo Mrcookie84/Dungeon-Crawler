@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using static EntityStatusHolder;
 
 public class EntityStatusHolder : MonoBehaviour
 {
@@ -57,8 +56,9 @@ public class EntityStatusHolder : MonoBehaviour
         {
             StatusInfo statusInfo = statusList[i];
             statusInfo.status.Tick(gameObject);
-            statusInfo.duration -= 1;
-            
+
+            if (!statusInfo.status.permanent)
+                statusInfo.duration -= 1;
             
             if (statusInfo.duration <= 0)
             {

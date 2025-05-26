@@ -36,7 +36,6 @@ public class EntityHealth : MonoBehaviour
         
         if (invicible)
         {
-            Debug.Log("Dégâts annulés");
             status.DamageResponse(attackInfo);
             gotAttacked.Invoke();
             return;

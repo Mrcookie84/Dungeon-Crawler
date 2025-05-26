@@ -36,7 +36,11 @@ public class StatusHolderHandler : MonoBehaviour
 
             if (info.status.icon != null)
                 currentUI.GetComponent<Image>().sprite = info.status.icon;
-            currentUI.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = info.duration.ToString();
+
+            if (info.status.permanent)
+                currentUI.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = "";
+            else
+                currentUI.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = info.duration.ToString();
 
             currentXOffSet = (currentXOffSet + xOffSet) % (xOffSet * statusPerRow);
             if (currentXOffSet == 0f)

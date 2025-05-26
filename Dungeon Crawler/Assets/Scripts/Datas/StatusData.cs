@@ -2,8 +2,10 @@ using UnityEngine;
 
 public abstract class StatusData : ScriptableObject
 {
+    public bool permanent;
+    
     [Header("UI")]
-    [SerializeField] public Sprite icon;
+    public Sprite icon;
 
     protected GameObject source;
     

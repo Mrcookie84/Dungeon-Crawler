@@ -33,7 +33,6 @@ public class StatusReflectData : StatusData
 
         if (reflect && attackInfo.attacker != null)
         {
-            Debug.Log("Dégats renvoyés");
             EntityHealth attackerHeatlh = attackInfo.attacker.GetComponent<EntityHealth>();
             
             attackerHeatlh.TakeDamage(null, attackInfo.dmgValue);
