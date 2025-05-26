@@ -1,0 +1,422 @@
+fileFormatVersion: 2
+guid: 3560eb7043327f0489fd6fe47f4a8648
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Feu spriteshit_0
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 429
+        width: 171
+        height: 271
+      alignment: 9
+      pivot: {x: 0.5317665, y: 0.054344825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c2c9cb4b3fa8604aa0d46fc3638671c
+      internalID: -992155353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feu spriteshit_1
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 438
+        width: 177
+        height: 265
+      alignment: 9
+      pivot: {x: 0.49051747, y: 0.0692217}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d61e9940fd8a32488de53f5f70f17e2
+      internalID: -1839270867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feu spriteshit_2
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 443
+        width: 180
+        height: 266
+      alignment: 9
+      pivot: {x: 0.5153622, y: 0.06861487}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402f6bd09eccdc945a2f10362d6e9eae
+      internalID: -2122646082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feu spriteshit_3
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 435
+        width: 177
+        height: 279
+      alignment: 9
+      pivot: {x: 0.5446267, y: 0.06252691}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2df9170cdbcb894db8f5ac1705a8176
+      internalID: 505295281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feu spriteshit_4
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 443
+        width: 188
+        height: 271
+      alignment: 9
+      pivot: {x: 0.61765957, y: 0.072203465}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ca5ddd037ab324cae1f46ef4ac28c7
+      internalID: -578768758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feu spriteshit_5
+      rect:
+        serializedVersion: 2
+        x: 1631
+        y: 424
+        width: 190
+        height: 304
+      alignment: 9
+      pivot: {x: 0.46466258, y: 0.10012878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 180eb464354adbe4385d809a15ac91c5
+      internalID: 439634256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feu spriteshit_6
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 67
+        width: 180
+        height: 260
+      alignment: 9
+      pivot: {x: 0.50000006, y: 0.055316336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71e9103b1b65128499b740348a2a4996
+      internalID: -1310017433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feu spriteshit_7
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 56
+        width: 183
+        height: 277
+      alignment: 9
+      pivot: {x: 0.46427992, y: 0.09258931}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d402af1b03adf884abb667a63b4df756
+      internalID: -1959086976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feu spriteshit_8
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 67
+        width: 188
+        height: 274
+      alignment: 9
+      pivot: {x: 0.50671583, y: 0.047763962}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb6d5b7a19d74364b8d66180557ebcc1
+      internalID: -2014402913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feu spriteshit_9
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 64
+        width: 182
+        height: 294
+      alignment: 9
+      pivot: {x: 0.5607689, y: 0.063143805}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85d1a739f3913ae4ba30a7018b5b34e5
+      internalID: -1671969720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feu spriteshit_10
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 70
+        width: 174
+        height: 293
+      alignment: 9
+      pivot: {x: 0.59102726, y: 0.04534313}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec7910ad9869c64fa144e852637f627
+      internalID: -444073029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feu spriteshit_11
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 67
+        width: 190
+        height: 296
+      alignment: 9
+      pivot: {x: 0.50008285, y: 0.053352743}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0d837ac7c0c7df4caeedc1e882e647e
+      internalID: 1597732924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feu spriteshit_12
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 73
+        width: 194
+        height: 276
+      alignment: 9
+      pivot: {x: 0.5440762, y: 0.028283216}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b438ef213443c80469e3bf5294a1b046
+      internalID: 186664139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Feu spriteshit_13
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 53
+        width: 204
+        height: 274
+      alignment: 9
+      pivot: {x: 0.49757177, y: 0.08445395}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e86f7025d136e479cb6504b1b78d78
+      internalID: 2009173098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Feu spriteshit_0: -992155353
+      Feu spriteshit_1: -1839270867
+      Feu spriteshit_10: -444073029
+      Feu spriteshit_11: 1597732924
+      Feu spriteshit_12: 186664139
+      Feu spriteshit_13: 2009173098
+      Feu spriteshit_2: -2122646082
+      Feu spriteshit_3: 505295281
+      Feu spriteshit_4: -578768758
+      Feu spriteshit_5: 439634256
+      Feu spriteshit_6: -1310017433
+      Feu spriteshit_7: -1959086976
+      Feu spriteshit_8: -2014402913
+      Feu spriteshit_9: -1671969720
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
