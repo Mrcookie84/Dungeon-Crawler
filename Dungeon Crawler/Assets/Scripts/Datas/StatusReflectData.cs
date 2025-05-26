@@ -7,7 +7,7 @@ public class StatusReflectData : StatusData
 {
     [Header("Recharge")]
     public bool recharge;
-    public int chargeTurn;
+    [Min(1)] public int chargeTurn;
     public StatusData reloadStatus;
 
     [Header("Reflect")]
@@ -40,8 +40,7 @@ public class StatusReflectData : StatusData
         
         if (recharge)
         {
-            // Code qui applique le statut cooldown
-            // Oh mon dieu les implications, il est trop tard pour que j'y pense
+            entityStatusHolder.AddStatus(reloadStatus, chargeTurn, null);
         }
     }
 

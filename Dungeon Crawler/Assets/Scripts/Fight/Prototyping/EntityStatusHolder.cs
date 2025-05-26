@@ -17,7 +17,7 @@ public class EntityStatusHolder : MonoBehaviour
 
         foreach (var status in defaultStatus)
             if (status != null)
-                AddStatus(status, defaultDuration, gameObject);
+                AddStatus(status, defaultDuration, null);
     }
 
     public void AddStatus(StatusData status, int duration, GameObject source)
