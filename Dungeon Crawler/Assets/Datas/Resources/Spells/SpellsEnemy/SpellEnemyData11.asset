@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0160c4158dda8c47b86463cc1cd798e, type: 3}
+  m_Name: SpellEnemyData11
+  m_EditorClassIdentifier: 
+  hitCellList:
+  - {x: 0, y: 0}
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}
+  damageTypesData:
+  - {fileID: 11400000, guid: 5fdbe92aff967e24ca63d911f079976b, type: 2}
+  - {fileID: 11400000, guid: 67b5bb60f1016e44bb06720070443f44, type: 2}
+  - {fileID: 11400000, guid: 67b5bb60f1016e44bb06720070443f44, type: 2}
+  displacementList:
+  - {x: 0, y: 0}
+  - {x: 1, y: 0}
+  - {x: -1, y: 0}
+  reinforceBarrier: 0
+  weakenBarrier: 0
+  blockedByBarrier: 0
+  statusData: {fileID: 0}
+  statusDuration: 0
+  t_fx: 0
+  t_damage: 0
+  t_disp: 0
+  t_barrier: 0
+  desc: "\xE9change deux ennemis, inflige des d\xE9g\xE2ts d'\xE9crasement et de
+    contact"
