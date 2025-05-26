@@ -1,16 +1,21 @@
 using System;
 using System.Collections.Generic;
 using DefaultNamespace;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 public class OnItemClicked : MonoBehaviour, IPointerClickHandler
 {
-    
-    
-    private static List<OnItemClicked> m_allItems = new List<OnItemClicked>();
 
-    public Item data;
+    
+    
+    public List<OnItemClicked> m_allItems = new List<OnItemClicked>();
+
+    public Item item;
+
+    public GameObject selectedGO;
     
     private void Awake()
     {
@@ -26,24 +31,24 @@ public class OnItemClicked : MonoBehaviour, IPointerClickHandler
     {
         UnselectAllItems();
         transform.localScale = new Vector3(1.1f,1.1f);
+        selectedGO = this.gameObject;
     }
-
-    private void UnselectAllItems()
+    
+    public void UnselectAllItems()
     {
         foreach (var item in m_allItems)
         {
             item.transform.localScale = new Vector3(1,1);
         }
+        
     }
     
-    private void OnMouseUpAsButton()
-    {
-        Debug.Log($"Clicked on {gameObject.name}");
-    }
-
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log($"Clicked on : " + this.data.itemName);
-        SelectItem();
+
+            SelectItem();
+            Debug.Log($"Clicked on : " + this.item.ItemData.itemName);
+            InventoryManagerScript.InventoryINSTANCE.SaveSelectedItemData(item.ItemData);
+        
     }
 }
