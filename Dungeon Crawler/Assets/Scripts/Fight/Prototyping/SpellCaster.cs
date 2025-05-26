@@ -303,14 +303,15 @@ public class SpellCaster : MonoBehaviour
             EntityHealth entityHealth = enemy.GetComponent<EntityHealth>();
 
             // Appliquer tout les types de dégâts
-            for (int j = 0; j < spellEnemyData.damageTypesData[i].dmgValues.Length; j++)
-            {
-                entityHealth.TakeDamage(casterGPos.gameObject, spellEnemyData.damageTypesData[i].dmgValues[j]);
+            if (spellEnemyData.damageTypesData[i] != null)
+                for (int j = 0; j < spellEnemyData.damageTypesData[i].dmgValues.Length; j++)
+                {
+                    entityHealth.TakeDamage(casterGPos.gameObject, spellEnemyData.damageTypesData[i].dmgValues[j]);
 
-                // Faire apparaître un texte avec la valeur des dégâts
-                // et la couleur du type de dégâts infligés
-                // (c'est pour ça la boucle for, il y a besoin de l'indice)
-            }
+                    // Faire apparaître un texte avec la valeur des dégâts
+                    // et la couleur du type de dégâts infligés
+                    // (c'est pour ça la boucle for, il y a besoin de l'indice)
+                }
             
             // Appliquer de potentiels statuts
             EntityStatusHolder entityStatusHolder = enemy.GetComponent<EntityStatusHolder>();
