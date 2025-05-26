@@ -5750,6 +5750,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Explo 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5271390825795700347, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6628274634996541700, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5942,6 +5946,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1270325051}
+    - target: {fileID: 8731768997416329081, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8791398539772908897, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -16703,9 +16711,7 @@ Transform:
   m_LocalPosition: {x: 1443.2393, y: 385.73267, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1469234119}
-  - {fileID: 2098102560}
+  m_Children: []
   m_Father: {fileID: 1583702616}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1213886396
