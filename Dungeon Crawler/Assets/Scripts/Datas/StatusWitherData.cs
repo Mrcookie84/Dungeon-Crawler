@@ -10,9 +10,8 @@ public class StatusWitherData : StatusData
     
     public override void Tick(GameObject entity)
     {
-        Debug.Log("Regen active");
         EntityHealth entityHealth = entity.GetComponent<EntityHealth>();
         
-        entityHealth.TakeDamage(witherAmount);
+        entityHealth.TakeDamage(null, witherAmount);
     }
 }

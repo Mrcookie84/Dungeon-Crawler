@@ -13,5 +13,7 @@ public class StatusSwitchWorldData : StatusData
         newPos.y = (newPos.y + 1) % 2;
         
         posComp.ChangePosition(newPos);
+        posComp.LinkedGrid.UpdateEntitiesIndex();
+        posComp.LinkedGrid.gridUpdate.Invoke();
     }
 }

@@ -188,7 +188,9 @@ public class SpellCaster : MonoBehaviour
         casterAnim.ChangeState(EntityFightAnimation.State.Attack);
 
         spellCasted.Invoke();
-        
+        enemyGrid.ResetHighlight();
+        playerGrid.ResetHighlight();
+
         if (currentCastMode == CastMode.Enemy)
             StartCoroutine(CastEnemySpellCoroutine(spellEnemyData.SpellDuration));
         else
@@ -215,8 +217,6 @@ public class SpellCaster : MonoBehaviour
         StartCoroutine(DamageCoroutine(spellEnemyData.t_damage, enemyArray));
         StartCoroutine(BarrierCoroutine(spellEnemyData.t_barrier, hitCellList));
 
-        enemyGrid.ResetHighlight();
-
         yield return new WaitForSeconds(5f);
 
         ResetSpell();
@@ -233,6 +233,21 @@ public class SpellCaster : MonoBehaviour
     private IEnumerator FxCoroutine(float t, List<Vector2Int> affectedCells)
     {
         yield return new WaitForSeconds(t);
+
+        /*
+        for (int i = 0; i < affectedCells.Count; i++)
+        {
+            Vector2Int cell = affectedCells[i];
+            Transform cellTr = enemyGrid.transform.GetChild(cell.x + 3 * cell.y);
+
+            switch (spellEnemyData.damageTypesData[i])
+            {
+                default:
+                    ParticleSystem fxHolder = cellTr.GetChild(cellTr.childCount-1).GetComponent<ParticleSystem>();
+                    fxHolder.Play();
+                    break;
+            }
+        }*/
         
         // Instantier les fx
     }
@@ -288,21 +303,22 @@ public class SpellCaster : MonoBehaviour
             EntityHealth entityHealth = enemy.GetComponent<EntityHealth>();
 
             // Appliquer tout les types de dégâts
-            for (int j = 0; j < spellEnemyData.damageTypesData[i].dmgValues.Length; j++)
-            {
-                entityHealth.TakeDamage(spellEnemyData.damageTypesData[i].dmgValues[j]);
+            if (spellEnemyData.damageTypesData[i] != null)
+                for (int j = 0; j < spellEnemyData.damageTypesData[i].dmgValues.Length; j++)
+                {
+                    entityHealth.TakeDamage(casterGPos.gameObject, spellEnemyData.damageTypesData[i].dmgValues[j]);
 
-                // Faire apparaître un texte avec la valeur des dégâts
-                // et la couleur du type de dégâts infligés
-                // (c'est pour ça la boucle for, il y a besoin de l'indice)
-            }
+                    // Faire apparaître un texte avec la valeur des dégâts
+                    // et la couleur du type de dégâts infligés
+                    // (c'est pour ça la boucle for, il y a besoin de l'indice)
+                }
             
             // Appliquer de potentiels statuts
             EntityStatusHolder entityStatusHolder = enemy.GetComponent<EntityStatusHolder>();
 
             if (spellEnemyData.statusData != null)
             {
-                entityStatusHolder.AddStatus(spellEnemyData.statusData, spellEnemyData.statusDuration);
+                entityStatusHolder.AddStatus(spellEnemyData.statusData, spellEnemyData.statusDuration, casterGPos.gameObject);
             }
         }
     }

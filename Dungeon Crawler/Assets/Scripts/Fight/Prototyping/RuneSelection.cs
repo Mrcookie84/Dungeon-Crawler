@@ -29,12 +29,12 @@ public class RuneSelection : MonoBehaviour
 
     public string CurrentSpellPlayer
     {
-        get { return "Spells/SpellPlayerData" + GetRuneCombinationData(); }
+        get { return "Spells/SpellsEnemy/SpellPlayerData" + GetRuneCombinationData(); }
     }
 
     public string CurrentSpellEnemy
     {
-        get { return "Spells/SpellEnemyData" + GetRuneCombinationData(); }
+        get { return "Spells/SpellsEnemy/SpellEnemyData" + GetRuneCombinationData(); }
     }
 
     // ========================= Méthodes internes ============================= //

@@ -116,11 +116,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7613900510651527408}
   - component: {fileID: -5975568748125914461}
-  - component: {fileID: 5489690597942634482}
-  - component: {fileID: -9180488397278699492}
   - component: {fileID: 6095385791367872599}
-  - component: {fileID: 8916927351157303100}
   - component: {fileID: 5266034602962899747}
+  - component: {fileID: 8916927351157303100}
+  - component: {fileID: -9180488397278699492}
+  - component: {fileID: 5489690597942634482}
+  - component: {fileID: -3990165560712512099}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -173,6 +174,83 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6095385791367872599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6402749266899931613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e45479d0c7752a469352a2ca1f3a210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1000
+  currentHealth: 0
+  healthBarGroupTag: EnemiesHealthBars
+  posComponent: {fileID: -5975568748125914461}
+  dead: 0
+  destoryOnDeath: 1
+  animHandler: {fileID: 8916927351157303100}
+  status: {fileID: 5266034602962899747}
+  gotAttacked:
+    m_PersistentCalls:
+      m_Calls: []
+  tookDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  isDying:
+    m_PersistentCalls:
+      m_Calls: []
+  invicible: 0
+--- !u!114 &5266034602962899747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6402749266899931613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87bb3a1208d1e144bbfabf21c0e4aee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultStatus:
+  - {fileID: 0}
+  defaultDuration: 0
+  statusList: []
+--- !u!114 &8916927351157303100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6402749266899931613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a5b407f65dd19041a6b78090d2b157b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1119370436856598345}
+--- !u!114 &-9180488397278699492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6402749266899931613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8556d34ed433ab44796723464a2667ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endTurnEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  isPlaying: 0
+  statusHolder: {fileID: 5266034602962899747}
+  ai: {fileID: 5489690597942634482}
 --- !u!114 &5489690597942634482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,8 +274,9 @@ MonoBehaviour:
   enemyInWorldW: 0
   playerInWorldW: 0
   scoreDif: 2
-  actionComp: {fileID: 0}
---- !u!114 &-9180488397278699492
+  canBreakBarrier: 0
+  actionComp: {fileID: -3990165560712512099}
+--- !u!114 &-3990165560712512099
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,59 +285,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6402749266899931613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8556d34ed433ab44796723464a2667ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 97a29307bce19924bb897ee4ca37ef53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlaying: 0
-  statusHolder: {fileID: 5266034602962899747}
-  ai: {fileID: 5489690597942634482}
---- !u!114 &6095385791367872599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6402749266899931613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e45479d0c7752a469352a2ca1f3a210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 1000
-  currentHealth: 0
-  healthBarGroupTag: EnemiesHealthBars
-  posComponent: {fileID: -5975568748125914461}
-  dead: 0
-  destoryOnDeath: 1
+  gridComp: {fileID: -5975568748125914461}
+  playerGridTag: PlayerGrid
+  enemyGridTag: EnemyGrid
+  barrierGridTag: BarrierGrid
+  actions:
+  - {fileID: 0}
+  probActions: 00000000
   animHandler: {fileID: 8916927351157303100}
-  tookDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  isDying:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &8916927351157303100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6402749266899931613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a5b407f65dd19041a6b78090d2b157b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1119370436856598345}
---- !u!114 &5266034602962899747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6402749266899931613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87bb3a1208d1e144bbfabf21c0e4aee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

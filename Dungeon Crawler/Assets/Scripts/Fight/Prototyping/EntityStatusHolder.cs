@@ -4,21 +4,50 @@ using UnityEngine;
 
 public class EntityStatusHolder : MonoBehaviour
 {
-    [SerializeField] private StatusData defaultStatus;
+    [SerializeField] private StatusData[] defaultStatus;
     [SerializeField] private int defaultDuration;
+
+    private GridManager updateGrid;
     
-    private List<StatusInfo> statusList = new List<StatusInfo>();
+    public List<StatusInfo> statusList = new List<StatusInfo>();
 
     private void Start()
     {
-        if (defaultStatus == null) return;
-        AddStatus(defaultStatus, defaultDuration);
+        updateGrid = GetComponent<EntityPosition>().LinkedGrid;
+
+        foreach (var status in defaultStatus)
+            if (status != null)
+                AddStatus(status, defaultDuration, null);
     }
 
-    public void AddStatus(StatusData status, int duration)
+    public void AddStatus(StatusData status, int duration, GameObject source)
     {
-        status.Apply(gameObject);
+        foreach (var statusInfo in statusList)
+        {
+            if (statusInfo.status != status) continue;
+
+            statusInfo.duration = Math.Max(duration, statusInfo.duration);
+            return;
+        }
+
+        status.Apply(gameObject, source);
         statusList.Add(new StatusInfo(status,duration));
+
+        updateGrid.gridUpdate.Invoke();
+    }
+
+    public void RemoveStatus(StatusData status)
+    {
+        for (int i = 0; i < statusList.Count; i++)
+        {
+            if (statusList[i].status != status) continue;
+
+            status.Finish(gameObject);
+            statusList.RemoveAt(i);
+
+            updateGrid.gridUpdate.Invoke();
+            return;
+        }
     }
 
     public void UpdateStatus()
@@ -27,8 +56,9 @@ public class EntityStatusHolder : MonoBehaviour
         {
             StatusInfo statusInfo = statusList[i];
             statusInfo.status.Tick(gameObject);
-            statusInfo.duration -= 1;
-            
+
+            if (!statusInfo.status.permanent)
+                statusInfo.duration -= 1;
             
             if (statusInfo.duration <= 0)
             {
@@ -39,9 +69,23 @@ public class EntityStatusHolder : MonoBehaviour
 
             statusList[i] = statusInfo;
         }
+
+        updateGrid.gridUpdate.Invoke();
     }
-    
-    public struct StatusInfo
+
+    public void DamageResponse(EntityHealth.DamageInfo attackInfo)
+    {
+        var statusListCopy = new StatusInfo[statusList.Count];
+        statusList.CopyTo(statusListCopy);
+
+        foreach (var statusInfo in statusListCopy)
+        {
+            statusInfo.status.Hit(gameObject, attackInfo);
+        }
+    }
+
+    [Serializable]
+    public class StatusInfo
     {
         public StatusData status { get; set; }
         public int duration { get; set; }

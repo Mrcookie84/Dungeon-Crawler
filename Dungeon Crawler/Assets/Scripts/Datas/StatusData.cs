@@ -2,11 +2,17 @@ using UnityEngine;
 
 public abstract class StatusData : ScriptableObject
 {
-    [Header("UI")]
-    [SerializeField] public Sprite icon;
+    public bool permanent;
     
-    public virtual void Apply(GameObject entity)
+    [Header("UI")]
+    public Sprite icon;
+
+    protected GameObject source;
+    
+    public virtual void Apply(GameObject entity, GameObject source)
     {
+        this.source = source;
+        
         return;
     }
 
@@ -16,6 +22,11 @@ public abstract class StatusData : ScriptableObject
     }
 
     public virtual void Finish(GameObject entity)
+    {
+        return;
+    }
+
+    public virtual void Hit(GameObject entity, EntityHealth.DamageInfo attackInfo)
     {
         return;
     }
