@@ -12,7 +12,7 @@ namespace DefaultNamespace
         [SerializeField] private RectTransform m_scrollerContent;
         [SerializeField] public GameObject m_uiItem;
 
-        [SerializeField] private List<Item> m_data;
+        [SerializeField] public List<Item> m_data;
         public int Spacing;
 
         private void Awake()
@@ -26,7 +26,7 @@ namespace DefaultNamespace
             {
                 var itemInstantiated = Instantiate(m_uiItem, m_scrollerContent, true);
                 itemInstantiated.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -i * Spacing);
-                itemInstantiated.GetComponent<OnItemClicked>().data = items[i];
+                itemInstantiated.GetComponent<OnItemClicked>().item = items[i];
             }
 
             m_scrollerContent.GetComponent<RectTransform>().sizeDelta = new Vector2(0,items.Count * Spacing);

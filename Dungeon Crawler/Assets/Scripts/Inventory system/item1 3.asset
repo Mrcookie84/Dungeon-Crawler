@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4f6bb67a12f4e4c917f55640a7ff579, type: 3}
-  m_Name: item1 2
+  m_Name: item1 3
   m_EditorClassIdentifier: 
   ItemData:
-    itemName: Collier 2
-    sprite: {fileID: 21300000, guid: 492dbf009fea6304997532891831db78, type: 3}
+    itemName: collier
+    sprite: {fileID: 21300000, guid: 5a8202b36bd8c364eb9f8ee5608287ef, type: 3}
     spaceDmgBonus: 0
     realityDmgBonus: 20
     itemSlot: 2

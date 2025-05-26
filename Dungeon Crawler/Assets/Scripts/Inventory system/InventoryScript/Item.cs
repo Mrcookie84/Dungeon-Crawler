@@ -5,9 +5,8 @@ namespace DefaultNamespace
     [CreateAssetMenu(fileName = "Equipement", menuName = "ScriptableObject/Equipement")]
     public class Item : ScriptableObject
     {
-        
-        public string itemName;
-        public Sprite sprite;
+
+        public ItemData ItemData;
 
     }
 }
