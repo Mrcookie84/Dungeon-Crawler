@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6401152300020961570}
   - component: {fileID: 7890025334213758833}
-  - component: {fileID: 7552129111651493722}
   - component: {fileID: 8487224448859595636}
   - component: {fileID: 2130407962009185349}
+  - component: {fileID: 440641751543874053}
   m_Layer: 0
   m_Name: Groupe
   m_TagString: Group
@@ -66,20 +66,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7552129111651493722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763527996127890949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b54ccb26f4ed6da4a8a33a934dd06864, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbody: {fileID: 7890025334213758833}
-  speed: 10
 --- !u!61 &8487224448859595636
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -170,6 +156,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.7126465, y: 1.2563477}
   m_EdgeRadius: 0
+--- !u!114 &440641751543874053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763527996127890949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3104daad9e3562e458f013e06af23cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody2D: {fileID: 7890025334213758833}
+  speed: 10
 --- !u!1 &1381024172512462444
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +328,7 @@ MonoBehaviour:
   rigidbody: {fileID: 2240708945404299384}
   playerID: 2
   thisTp: {fileID: 0}
-  DecalageTP: 0
+  animatorComponent: {fileID: 0}
 --- !u!1 &1788909275957308204
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +410,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &5393050986026861739
@@ -602,7 +602,7 @@ MonoBehaviour:
   rigidbody: {fileID: 3794472022267885476}
   playerID: 3
   thisTp: {fileID: 0}
-  DecalageTP: 0
+  animatorComponent: {fileID: 0}
 --- !u!1 &8192624524325348876
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +761,7 @@ MonoBehaviour:
   rigidbody: {fileID: 3428837399399436344}
   playerID: 1
   thisTp: {fileID: 0}
-  DecalageTP: 0
+  animatorComponent: {fileID: 0}
 --- !u!1001 &3800033626924271173
 PrefabInstance:
   m_ObjectHideFlags: 0

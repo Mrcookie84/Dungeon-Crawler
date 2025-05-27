@@ -65,15 +65,30 @@ public class UIPauseMenu : MonoBehaviour
         grenouillePersonalInventory.SetActive(false);
     }
     
-    #region UIdeDroite
-
-        void Update()
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && _inventory== false && _parameter == false)
         {
-            if (Input.GetKeyDown(KeyCode.Escape) && _inventory== false && _parameter == false)
-            {
-                OpenCloseMenu();
-            }
+            OpenCloseMenu();
         }
+
+        if (Input.GetKeyDown(KeybindManager.SINGLETON.GetKey("Inventaire")))
+        {
+            OpenCloseInventory();
+        }
+
+        if (Input.GetKeyDown(KeybindManager.SINGLETON.GetKey("Renard")))
+        {
+            OpenCloseRenardPersonalInventory();
+        }
+
+        if (Input.GetKeyDown(KeybindManager.SINGLETON.GetKey("Grenouille")))
+        {
+            OpenCloseGrenouillePersonalInventory();
+        }
+    }
+    
+    #region UIdeDroite
         
         public void OpenCloseMenu()
         {
@@ -114,28 +129,28 @@ public class UIPauseMenu : MonoBehaviour
 
         public void OpenCloseRenardPersonalInventory()
         {
-            
-            _renardPersonalInventoryState = !_renardPersonalInventoryState;
-            renardPersonalInventory.SetActive(_renardPersonalInventoryState);
-
-            foreach (var iGameObject in boutonToDisableRenard)
             {
-                iGameObject.SetActive(!_renardPersonalInventoryState);
+                _renardPersonalInventoryState = !_renardPersonalInventoryState;
+                renardPersonalInventory.SetActive(_renardPersonalInventoryState);
+
+                foreach (var iGameObject in boutonToDisableRenard)
+                {
+                    iGameObject.SetActive(!_renardPersonalInventoryState);
+                }
             }
-            
         }
         
         public void OpenCloseGrenouillePersonalInventory()
         {
-            
-            _grenouillePersonalInventoryState = !_grenouillePersonalInventoryState;
-            grenouillePersonalInventory.SetActive(_grenouillePersonalInventoryState);
-
-            foreach (var iGameObject in boutonToDisableGrenouille)
             {
-                iGameObject.SetActive(!_grenouillePersonalInventoryState);
+                _grenouillePersonalInventoryState = !_grenouillePersonalInventoryState;
+                grenouillePersonalInventory.SetActive(_grenouillePersonalInventoryState);
+
+                foreach (var iGameObject in boutonToDisableGrenouille)
+                {
+                    iGameObject.SetActive(!_grenouillePersonalInventoryState);
+                }
             }
-            
         }
 
     #endregion
