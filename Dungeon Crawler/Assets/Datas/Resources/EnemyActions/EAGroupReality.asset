@@ -9,8 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f8f6ec2228fb4744bc604dc7d0530e3, type: 3}
-  m_Name: SpellPlayerData03
+  m_Script: {fileID: 11500000, guid: 15a6ea69e0f41314faafe8cda8413d5e, type: 3}
+  m_Name: EAGroupReality
   m_EditorClassIdentifier: 
-  switchWorld: 1
-  multipleTargets: 1
+  isAttack: 1
+  dmgValue: 10
+  dmgType: 0
+  multipleTarget: 1
+  healAmount: 0
+  supportTarget: 0
+  status: {fileID: 0}
+  statusDuration: 0

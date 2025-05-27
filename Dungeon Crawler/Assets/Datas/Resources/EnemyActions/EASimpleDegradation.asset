@@ -9,10 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44a8a02c12b5aeb4fa49b09e448a9752, type: 3}
-  m_Name: RuneData 4
+  m_Script: {fileID: 11500000, guid: 15a6ea69e0f41314faafe8cda8413d5e, type: 3}
+  m_Name: EASimpleDegradation
   m_EditorClassIdentifier: 
-  ID: 4
-  manaCost: 2
-  cooldown: 2
-  UIPrefab: {fileID: 2790061022347219064, guid: c0e70231dc2293343810e97073e9e324, type: 3}
+  isAttack: 1
+  dmgValue: 25
+  dmgType: 3
+  multipleTarget: 0
+  healAmount: 0
+  supportTarget: 0
+  status: {fileID: 0}
+  statusDuration: 0

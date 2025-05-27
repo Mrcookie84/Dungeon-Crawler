@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15a6ea69e0f41314faafe8cda8413d5e, type: 3}
-  m_Name: EASimpleHeal
+  m_Name: EASimpleWorldChange
   m_EditorClassIdentifier: 
-  isAttack: 0
-  dmgValue: 0
-  dmgType: 0
+  isAttack: 1
+  dmgValue: 15
+  dmgType: 2
   multipleTarget: 0
   healAmount: 10
   supportTarget: 0
-  status: {fileID: 0}
-  statusDuration: 0
+  status: {fileID: 11400000, guid: 555b3ec30c76bd246bb4f9ce6421298a, type: 2}
+  statusDuration: 1

@@ -9,12 +9,36 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -3990165560712512099, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: actions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -3990165560712512099, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: actions.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 5e6c3dae59ef30b458cf2cf64767d5c6, type: 2}
+      objectReference: {fileID: 11400000, guid: 2f562c22afd992447bb079efe6ad6429, type: 2}
+    - target: {fileID: -3990165560712512099, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: actions.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: b7837709209e0e64d9af795b5df12c17, type: 2}
+    - target: {fileID: -3990165560712512099, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: actions.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f5fe194a980352458358d65f13545d5, type: 2}
+    - target: {fileID: -3990165560712512099, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: probActions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -3990165560712512099, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: probActions.Array.data[0]
-      value: 100
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -3990165560712512099, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: probActions.Array.data[1]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -3990165560712512099, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: probActions.Array.data[2]
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1119370436856598345, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: m_Controller
@@ -86,7 +110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6095385791367872599, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: maxHealth
-      value: 120
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 6402749266899931613, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: m_Name
