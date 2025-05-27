@@ -2577,8 +2577,6 @@ Transform:
   - {fileID: 1412030045}
   - {fileID: 770185098}
   - {fileID: 518072408}
-  - {fileID: 2041671510}
-  - {fileID: 550148394}
   m_Father: {fileID: 1769615210}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &518072408 stripped
