@@ -30,8 +30,6 @@ public class UIManagerScript : MonoBehaviour
     
     void Update()
     {
-        
-        
         if (Input.GetKeyDown(KeyCode.Escape) && _inventory == false && _parameterMenu == false)
         {
             menuButton.SetActive(!_menuOpen);

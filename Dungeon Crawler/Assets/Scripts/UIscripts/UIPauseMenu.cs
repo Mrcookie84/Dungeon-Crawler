@@ -39,7 +39,7 @@ public class UIPauseMenu : MonoBehaviour
         [Header("Renard")]
         [SerializeField] public GameObject renardPersonalInventory;
         public List<GameObject> boutonToDisableRenard = new List<GameObject>();
-        private bool _renardPersonalInventoryState;
+        private bool _renardPersonalInventoryState = false;
         
         /*
         [Header("Panda")]
@@ -51,7 +51,7 @@ public class UIPauseMenu : MonoBehaviour
         [Header("Parameter")]
         [SerializeField] public GameObject grenouillePersonalInventory;
         public List<GameObject> boutonToDisableGrenouille = new List<GameObject>();
-        private bool _grenouillePersonalInventoryState;
+        private bool _grenouillePersonalInventoryState = false;
 
     #endregion
     
