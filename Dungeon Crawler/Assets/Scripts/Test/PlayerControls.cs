@@ -2,31 +2,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Rigidbody2D rigidbody2D;
-    
-    public float speed = 10f;
-    
-    private KeyCode fwKey = KeyCode.D;
-    private KeyCode BwKey = KeyCode.A;
-
-
-    private Quaternion targetRotation;
     void Update()
     {
-        Vector2 force = new Vector2(0, 0);
         if (Input.GetKey(KeybindManager.SINGLETON.GetKey("Right")))
         {
-            force += Vector2.right * speed;
-            targetRotation = Quaternion.Euler(0, 0, 0);
-            
-            transform.transform.rotation = Quaternion.RotateTowards(((Component)this).transform.rotation, targetRotation, 360f);
+            Debug.Log("Aller à droite");
         }
 
         if (Input.GetKey(KeybindManager.SINGLETON.GetKey("Left")))
         {
-            force += Vector2.left * speed;
-            targetRotation = Quaternion.Euler(0, 180, 0);
-            transform.transform.rotation = Quaternion.RotateTowards(((Component)this).transform.rotation, targetRotation, 360f);
+            Debug.Log("Aller à gauche");
         }
 
         if (Input.GetKeyDown(KeybindManager.SINGLETON.GetKey("Grimoire")))

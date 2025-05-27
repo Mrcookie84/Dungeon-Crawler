@@ -1695,44 +1695,7 @@ RectTransform:
   m_Children:
   - {fileID: 5177889142581029005}
   - {fileID: 3717598190889270583}
-<<<<<<< HEAD:Dungeon Crawler/Assets/Prefabs/Exploration/UI Parametre.prefab
   m_Father: {fileID: 8301237791664574079}
-=======
-  - {fileID: 2942501615973768399}
-  - {fileID: 3125887453633495216}
-  - {fileID: 7017573750846488610}
-  - {fileID: 4083454631146485159}
-  - {fileID: 70269674961469357}
-  - {fileID: 1712319001901956888}
-  - {fileID: 4711376774719753131}
-  - {fileID: 2398787662672320465}
-  - {fileID: 1181742788272654685}
-  - {fileID: 1649017679890961562}
-  - {fileID: 6416039706795153150}
-  - {fileID: 295178251582717530}
-  - {fileID: 4074338750617000333}
-  - {fileID: 4723088154822584425}
-  - {fileID: 8145823834093227735}
-  - {fileID: 7266951183376874011}
-  - {fileID: 6711888396842248498}
-  - {fileID: 4419320630367162437}
-  - {fileID: 2494864375321385612}
-  - {fileID: 2548880545275011695}
-  - {fileID: 3236116533428647298}
-  - {fileID: 3153513792403944866}
-  - {fileID: 8296732676201697575}
-  - {fileID: 2223288647117281817}
-  - {fileID: 3485394971745064368}
-  - {fileID: 5042712539341066485}
-  - {fileID: 8134094179267193693}
-  - {fileID: 8671186162264640453}
-  - {fileID: 3749188313963075208}
-  - {fileID: 8238625291199961726}
-  - {fileID: 7997407879476505623}
-  - {fileID: 6535567982011318946}
-  - {fileID: 313615318149205448}
-  m_Father: {fileID: 0}
->>>>>>> dev/Quentin:Dungeon Crawler/Assets/Prefabs/UI Parametre.prefab
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4607,41 +4570,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionName: Parametre
   buttonText: {fileID: 5642084405601657296}
---- !u!1 &7302922275691584598
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 313615318149205448}
-  m_Layer: 5
-  m_Name: MenuManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &313615318149205448
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7302922275691584598}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5697405838863471512}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7524602699601865638
 GameObject:
   m_ObjectHideFlags: 0
