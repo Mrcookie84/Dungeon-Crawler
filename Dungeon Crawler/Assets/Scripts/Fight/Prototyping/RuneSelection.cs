@@ -29,7 +29,7 @@ public class RuneSelection : MonoBehaviour
 
     public string CurrentSpellPlayer
     {
-        get { return "Spells/SpellsEnemy/SpellPlayerData" + GetRuneCombinationData(); }
+        get { return "Spells/SpellsPlayer/SpellPlayerData" + GetRuneCombinationData(); }
     }
 
     public string CurrentSpellEnemy

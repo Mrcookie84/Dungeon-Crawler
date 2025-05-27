@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EAGroupContactAttack
   m_EditorClassIdentifier: 
   isAttack: 1
-  dmgValue: 25
+  dmgValue: 15
   dmgType: 2
   multipleTarget: 1
   healAmount: 0
