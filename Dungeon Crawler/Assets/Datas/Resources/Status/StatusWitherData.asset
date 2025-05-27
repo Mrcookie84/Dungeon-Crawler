@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed56c46bc0e9284281676f52d2bc081, type: 3}
   m_Name: StatusWitherData
   m_EditorClassIdentifier: 
+  permanent: 0
   icon: {fileID: 0}
-  witherAmount: 30
-  dmgType: 0
+  witherAmount: 10
+  dmgType: 3
