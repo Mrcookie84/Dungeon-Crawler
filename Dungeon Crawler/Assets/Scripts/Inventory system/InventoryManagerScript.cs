@@ -1,490 +1,172 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using DefaultNamespace;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class InventoryManagerScript : MonoBehaviour
 {
-
     public static InventoryManagerScript InventoryINSTANCE;
 
-    
-    
     public ItemData CurrentSelectedItemData;
     public ItemData emptyData;
-    
-    
+
     [Header("Player individual inventory :")]
     public Player1Inventory player1Inventory;
     public Player2Inventory player2Inventory;
 
-    public ScrollerItems ScrollerItems;
-
     private void Awake()
     {
-
         if (InventoryINSTANCE == null)
-        {
             InventoryINSTANCE = this;
-        }
         else
-        {
             Destroy(this);
-        }
-        
     }
 
     private void Start()
     {
-
+        ResetInventory(player1Inventory);
+        ResetInventory(player2Inventory);
         CurrentSelectedItemData = emptyData;
-        
-        player1Inventory.weaponItemData = emptyData;
-        player1Inventory.armorItemData = emptyData;
-        player1Inventory.accessorie1ItemData = emptyData;
-        player1Inventory.accessorie2ItemData = emptyData;
-        
-        player1Inventory.weaponSprite.sprite = emptyData.sprite;
-        player1Inventory.armornSprite.sprite = emptyData.sprite;
-        player1Inventory.accessorie1Sprite.sprite = emptyData.sprite;
-        player1Inventory.accessorie2Sprite.sprite = emptyData.sprite;
-        
-        //------------------------------------------------------------------
-        
-        player2Inventory.weaponItemData = emptyData;
-        player2Inventory.armorItemData = emptyData;
-        player2Inventory.accessorie1ItemData = emptyData;
-        player2Inventory.accessorie2ItemData = emptyData;
-        
-        player2Inventory.weaponSprite.sprite = emptyData.sprite;
-        player2Inventory.armornSprite.sprite = emptyData.sprite;
-        player2Inventory.accessorie1Sprite.sprite = emptyData.sprite;
-        player2Inventory.accessorie2Sprite.sprite = emptyData.sprite;
-        
-        //--------------------------------------------------------------------
-        
-        Debug.Log(" Wrong type of object or boutonID is wrong ");
-        
-        
+
         RefreshInventoryUI();
+    }
+
+    private void ResetInventory(MonoBehaviour inventory)
+    {
+        if (inventory is Player1Inventory p1)
+        {
+            p1.weaponItemData = p1.armorItemData = p1.accessorie1ItemData = p1.accessorie2ItemData = emptyData;
+            p1.weaponSprite.sprite = p1.armornSprite.sprite =
+                p1.accessorie1Sprite.sprite = p1.accessorie2Sprite.sprite = emptyData.sprite;
+        }
+        else if (inventory is Player2Inventory p2)
+        {
+            p2.weaponItemData = p2.armorItemData = p2.accessorie1ItemData = p2.accessorie2ItemData = emptyData;
+            p2.weaponSprite.sprite = p2.armornSprite.sprite =
+                p2.accessorie1Sprite.sprite = p2.accessorie2Sprite.sprite = emptyData.sprite;
+        }
     }
 
     public void SaveSelectedItemData(ItemData itemData)
     {
-
         CurrentSelectedItemData = itemData;
-        
     }
 
-    #region CheckItemEnDouble
-
-        private void CheckIfAlreadyEquippedSomeWhereElse(int boutonID)
-        {
-            #region CheckForFox
-
-                if (boutonID == 1 && CurrentSelectedItemData == player2Inventory.weaponItemData)
-                {
-                    Debug.LogError("Current selected item was already equipped somewhere , attempt to re equip it here ...");
-                    player2Inventory.weaponItemData = emptyData;
-                    player1Inventory.weaponItemData = CurrentSelectedItemData;
-                    RefreshInventoryUI();
-                    return;
-                }
-                
-                if (boutonID == 2 && CurrentSelectedItemData == player2Inventory.armorItemData)
-                {
-                    Debug.LogError("Current selected item was already equipped somewhere , attempt to re equip it here ...");
-                    player2Inventory.armorItemData = emptyData;
-                    player1Inventory.armorItemData = CurrentSelectedItemData;
-                    RefreshInventoryUI();
-                    return;
-                }
-                
-                if (boutonID == 3 && CurrentSelectedItemData == player1Inventory.accessorie2ItemData 
-                    || CurrentSelectedItemData == player2Inventory.accessorie1ItemData 
-                    || CurrentSelectedItemData == player2Inventory.accessorie2ItemData)
-                {
-                    Debug.LogError("Current selected item was already equipped somewhere , attempt to re equip it here ...");
-                    
-                    if (CurrentSelectedItemData == player1Inventory.accessorie2ItemData)
-                    {
-                        player1Inventory.accessorie2ItemData = emptyData;
-                        RefreshInventoryUI();
-                    }
-                    
-                    if (CurrentSelectedItemData == player2Inventory.accessorie1ItemData)
-                    {
-                        player2Inventory.accessorie1ItemData = emptyData;
-                        RefreshInventoryUI();
-                    }
-                    
-                    if (CurrentSelectedItemData == player2Inventory.accessorie2ItemData)
-                    {
-                        player2Inventory.accessorie2ItemData = emptyData;
-                        RefreshInventoryUI();
-                    }
-                        
-                    player1Inventory.accessorie1ItemData = CurrentSelectedItemData;
-                    RefreshInventoryUI();
-                    return;
-                }
-                
-                if (boutonID == 4 && CurrentSelectedItemData == player1Inventory.accessorie1ItemData 
-                    || CurrentSelectedItemData == player2Inventory.accessorie1ItemData 
-                    || CurrentSelectedItemData == player2Inventory.accessorie2ItemData)
-                {
-                    Debug.LogError("Current selected item was already equipped somewhere , attempt to re equip it here ...");
-                    if (CurrentSelectedItemData == player1Inventory.accessorie1ItemData)
-                    {
-                        player1Inventory.accessorie1ItemData = emptyData;
-                        RefreshInventoryUI();
-                    }
-                    
-                    if (CurrentSelectedItemData == player2Inventory.accessorie1ItemData)
-                    {
-                        player2Inventory.accessorie1ItemData = emptyData;
-                        RefreshInventoryUI();
-                    }
-                    
-                    if (CurrentSelectedItemData == player2Inventory.accessorie2ItemData)
-                    {
-                        player2Inventory.accessorie2ItemData = emptyData;
-                        RefreshInventoryUI();
-                    }
-                        
-                    player1Inventory.accessorie2ItemData = CurrentSelectedItemData;
-                    RefreshInventoryUI();
-                    return;
-                }
-                
-            #endregion
-
-            #region CheckForFrog
-
-                if (boutonID == 9 && CurrentSelectedItemData == player1Inventory.weaponItemData)
-                {
-                    Debug.LogError("Current selected item was already equipped somewhere , attempt to re equip it here ...");
-                    player1Inventory.weaponItemData = emptyData;
-                    player2Inventory.weaponItemData = CurrentSelectedItemData;
-                    RefreshInventoryUI();
-                    return;
-                }
-                
-                if (boutonID == 10 && CurrentSelectedItemData == player1Inventory.armorItemData)
-                {
-                    Debug.LogError("Current selected item was already equipped somewhere , attempt to re equip it here ...");
-                    player1Inventory.armorItemData = emptyData;
-                    player2Inventory.armorItemData = CurrentSelectedItemData;
-                    RefreshInventoryUI();
-                    return;
-                }
-                
-                if (boutonID == 11 && CurrentSelectedItemData == player2Inventory.accessorie2ItemData 
-                    || CurrentSelectedItemData == player1Inventory.accessorie1ItemData 
-                    || CurrentSelectedItemData == player1Inventory.accessorie2ItemData)
-                {
-                    Debug.LogWarning("Current selected item was already equipped somewhere , attempt to re equip it here ... 11");
-                        
-                    if (CurrentSelectedItemData == player2Inventory.accessorie2ItemData)
-                    {
-                        player2Inventory.accessorie2ItemData = emptyData;
-                        RefreshInventoryUI();
-                    }
-                    
-                    if (CurrentSelectedItemData == player1Inventory.accessorie1ItemData)
-                    {
-                        player1Inventory.accessorie1ItemData = emptyData;
-                        RefreshInventoryUI();
-                    }
-                    
-                    if (CurrentSelectedItemData == player1Inventory.accessorie2ItemData)
-                    {
-                        player1Inventory.accessorie2ItemData = emptyData;
-                        RefreshInventoryUI();
-                    }
-                        
-                    player2Inventory.accessorie1ItemData = CurrentSelectedItemData;
-                    RefreshInventoryUI();
-                    return;
-                }
-                
-                if (boutonID == 12 && CurrentSelectedItemData == player2Inventory.accessorie1ItemData 
-                    || CurrentSelectedItemData == player1Inventory.accessorie1ItemData 
-                    || CurrentSelectedItemData == player1Inventory.accessorie2ItemData)
-                {
-                    Debug.LogWarning("Current selected item was already equipped somewhere , attempt to re equip it here ... 12");
-                    
-                    if (CurrentSelectedItemData == player2Inventory.accessorie1ItemData)
-                    {
-                        player2Inventory.accessorie1ItemData = emptyData;
-                        RefreshInventoryUI();
-                    }
-                    
-                    if (CurrentSelectedItemData == player1Inventory.accessorie1ItemData)
-                    {
-                        player1Inventory.accessorie1ItemData = emptyData;
-                        RefreshInventoryUI();
-                    }
-                    
-                    if (CurrentSelectedItemData == player1Inventory.accessorie2ItemData)
-                    {
-                        player1Inventory.accessorie2ItemData = emptyData;
-                        RefreshInventoryUI();
-                    }
-                        
-                    player1Inventory.accessorie2ItemData = CurrentSelectedItemData;
-                    RefreshInventoryUI();
-                    return;
-                }
-                
-            #endregion
-            
-        }
-        
-        private void CheckIfAlreadyEquippedInTheSameSpot(int boutonID)
-        {
-            if (CurrentSelectedItemData == emptyData)
-            {
-                return;
-            }
-
-            #region CheckForFox
-
-                if (boutonID == 1 && CurrentSelectedItemData == player1Inventory.weaponItemData)
-                {
-                    Debug.LogError("Weapon already equipped , processing unequipped it ...");
-                    player1Inventory.weaponItemData = emptyData;
-                    player1Inventory.weaponItemData = CurrentSelectedItemData;
-                    Debug.LogError("Selected weapon has been requiped / Empty has been equipped");
-                    RefreshInventoryUI();
-                    return;
-                }
-                
-                
-                if (boutonID == 2 && CurrentSelectedItemData == player1Inventory.armorItemData)
-                {
-                    Debug.LogError("Weapon already equipped , processing unequipped it ...");
-                    player1Inventory.armorItemData = emptyData;
-                    player1Inventory.armorItemData = CurrentSelectedItemData;
-                    Debug.LogError("Selected weapon has been requiped / Empty has been equipped");
-                    RefreshInventoryUI();
-                    return;
-                }
-                
-                
-                if (boutonID == 3 && CurrentSelectedItemData == player1Inventory.accessorie1ItemData)
-                {
-                    Debug.LogError("Weapon already equipped , processing unequipped it ...");
-                    player1Inventory.accessorie1ItemData = emptyData;
-                    player1Inventory.accessorie1ItemData = CurrentSelectedItemData;
-                    Debug.LogError("Selected weapon has been requiped / Empty has been equipped");
-                    RefreshInventoryUI();
-                    return;
-                }
-                
-                
-                if (boutonID == 4 && CurrentSelectedItemData == player1Inventory.accessorie2ItemData)
-                {
-                    Debug.LogError("Weapon already equipped , processing unequipped it ...");
-                    player1Inventory.accessorie1ItemData = emptyData;
-                    player1Inventory.accessorie1ItemData = CurrentSelectedItemData;
-                    Debug.LogError("Selected weapon has been requiped / Empty has been equipped");
-                    RefreshInventoryUI();
-                    return;
-                }
-
-            #endregion
-                
-            // Panda here
-            
-            #region CheckForFrog
-
-                if (boutonID == 9 && CurrentSelectedItemData == player2Inventory.weaponItemData)
-                {
-                    Debug.LogError("Weapon already equipped , processing unequipped it ...");
-                    player2Inventory.weaponItemData = emptyData;
-                    player2Inventory.weaponItemData = CurrentSelectedItemData;
-                    Debug.LogError("Selected weapon has been requiped / Empty has been equipped");
-                    RefreshInventoryUI();
-                    return;
-                }
-                
-                
-                if (boutonID == 10 && CurrentSelectedItemData == player2Inventory.armorItemData)
-                { 
-                    Debug.LogWarning("Weapon already equipped , processing unequipped it ...");
-                    player2Inventory.armorItemData = emptyData;
-                    player2Inventory.armorItemData = CurrentSelectedItemData;
-                    Debug.LogWarning("Selected weapon has been requiped / Empty has been equipped");
-                    RefreshInventoryUI();
-                    return;
-                }
-                
-                
-                if (boutonID == 11 && CurrentSelectedItemData == player2Inventory.accessorie1ItemData)
-                {
-                    Debug.LogWarning("Weapon already equipped , processing unequipped it ...");
-                    player2Inventory.accessorie1ItemData = emptyData;
-                    player2Inventory.accessorie1ItemData = CurrentSelectedItemData;
-                    Debug.LogWarning("Selected weapon has been requiped / Empty has been equipped");
-                    RefreshInventoryUI();
-                    return;
-                }
-                
-                
-                if (boutonID == 12 && CurrentSelectedItemData == player2Inventory.accessorie2ItemData)
-                {
-                    Debug.LogWarning("Weapon already equipped , processing unequipped it ...");
-                    player2Inventory.accessorie2ItemData = emptyData;
-                    player2Inventory.accessorie2ItemData = CurrentSelectedItemData;
-                    Debug.LogWarning("Selected weapon has been re equipped / Empty has been equipped");
-                    RefreshInventoryUI();
-                    return;
-                }
-
-            #endregion
-            
-            RefreshInventoryUI();
-            
-        }
-    #endregion
-    
-    
-    
-    
-    //------------------------------------------------------------------------------------------------------------------
-    
     
     public void EquipementSlot(int boutonID)
     {
-        if (CurrentSelectedItemData != null || CurrentSelectedItemData != emptyData)
+        if (CurrentSelectedItemData == null)
         {
-            if (boutonID == 1 && CurrentSelectedItemData.itemSlot == ItemData.ItemSlot.Weapon && CurrentSelectedItemData != emptyData)
-            {
-                CheckIfAlreadyEquippedInTheSameSpot(boutonID);
-                CheckIfAlreadyEquippedSomeWhereElse(boutonID);
-                player1Inventory.weaponItemData = CurrentSelectedItemData;
-                RefreshInventoryUI();
-            }
-            
-            if (boutonID == 2 && CurrentSelectedItemData.itemSlot == ItemData.ItemSlot.Armor && CurrentSelectedItemData != emptyData)
-            {
-                CheckIfAlreadyEquippedInTheSameSpot(boutonID);
-                CheckIfAlreadyEquippedSomeWhereElse(boutonID);
-                player1Inventory.armorItemData = CurrentSelectedItemData;
-                RefreshInventoryUI();
-            }
-            if (boutonID == 3 && CurrentSelectedItemData.itemSlot == ItemData.ItemSlot.Accessories && CurrentSelectedItemData != emptyData)
-            {
-                CheckIfAlreadyEquippedInTheSameSpot(boutonID);
-                CheckIfAlreadyEquippedSomeWhereElse(boutonID);
-                player1Inventory.accessorie1ItemData = CurrentSelectedItemData;
-                RefreshInventoryUI();
-            }
-            
-            if (boutonID == 4 && CurrentSelectedItemData.itemSlot == ItemData.ItemSlot.Accessories && CurrentSelectedItemData != emptyData)
-            {
-                CheckIfAlreadyEquippedInTheSameSpot(boutonID);
-                CheckIfAlreadyEquippedSomeWhereElse(boutonID);
-                player1Inventory.accessorie2ItemData = CurrentSelectedItemData;
-                RefreshInventoryUI();
-            }
-            
-        
-            //--------------------
-        
-            if (boutonID == 9 && CurrentSelectedItemData.itemSlot == ItemData.ItemSlot.Weapon && CurrentSelectedItemData != emptyData)
-            {
-                CheckIfAlreadyEquippedInTheSameSpot(boutonID);
-                CheckIfAlreadyEquippedSomeWhereElse(boutonID);
-                player2Inventory.weaponItemData = CurrentSelectedItemData;
-                RefreshInventoryUI();
-            }
-            if (boutonID == 10 && CurrentSelectedItemData.itemSlot == ItemData.ItemSlot.Armor && CurrentSelectedItemData != emptyData)
-            {
-                CheckIfAlreadyEquippedInTheSameSpot(boutonID);
-                CheckIfAlreadyEquippedSomeWhereElse(boutonID);
-                player2Inventory.armorItemData = CurrentSelectedItemData;
-                RefreshInventoryUI();
-            }
-            if (boutonID == 11 && CurrentSelectedItemData.itemSlot == ItemData.ItemSlot.Accessories && CurrentSelectedItemData != emptyData)
-            {
-                CheckIfAlreadyEquippedInTheSameSpot(boutonID);
-                CheckIfAlreadyEquippedSomeWhereElse(boutonID);
-                player2Inventory.accessorie1ItemData = CurrentSelectedItemData;
-                RefreshInventoryUI();
-            }
-            if (boutonID == 12 && CurrentSelectedItemData.itemSlot == ItemData.ItemSlot.Accessories && CurrentSelectedItemData != emptyData)
-            {
-                CheckIfAlreadyEquippedInTheSameSpot(boutonID);
-                CheckIfAlreadyEquippedSomeWhereElse(boutonID);
-                player2Inventory.accessorie2ItemData = CurrentSelectedItemData;
-                RefreshInventoryUI();
+            Debug.LogWarning("Please select an item first!");
+            return;
+        }
 
-            }
-        
-            RefreshInventoryUI();
-        }
-        else if (CurrentSelectedItemData != null || CurrentSelectedItemData == emptyData)
+        if (CurrentSelectedItemData == emptyData)
         {
-            if (boutonID == 1)
-            {
-                player1Inventory.weaponItemData = emptyData;
-                RefreshInventoryUI();
-            }
-            if (boutonID == 2)
-            {
-                player1Inventory.weaponItemData = emptyData;
-                RefreshInventoryUI();
-            }
-            if (boutonID == 3)
-            {
-                player1Inventory.weaponItemData = emptyData;
-                RefreshInventoryUI();
-            }
-            if (boutonID == 4)
-            {
-                player1Inventory.weaponItemData = emptyData;
-                RefreshInventoryUI();
-            }
-            
-            if (boutonID == 9)
-            {
-                player1Inventory.weaponItemData = emptyData;
-                RefreshInventoryUI();
-            }
-            if (boutonID == 10)
-            {
-                player1Inventory.weaponItemData = emptyData;
-                RefreshInventoryUI();
-            }
-            if (boutonID == 11)
-            {
-                player1Inventory.weaponItemData = emptyData;
-                RefreshInventoryUI();
-            }
-            if (boutonID == 12)
-            {
-                player1Inventory.weaponItemData = emptyData;
-                RefreshInventoryUI();
-            }
+            UnequipSlot(boutonID);
+            return;
         }
-        else
+
+        if (!IsValidSlotForItem(boutonID, CurrentSelectedItemData.itemSlot))
+            return;
+
+        CheckIfAlreadyEquippedInSameSpot(boutonID);
+        CheckIfAlreadyEquippedSomewhereElse(boutonID);
+        EquipItem(boutonID);
+
+        RefreshInventoryUI();
+    }
+
+    private bool IsValidSlotForItem(int slotID, ItemData.ItemSlot itemSlot)
+    {
+        return (slotID == 1 || slotID == 9) && itemSlot == ItemData.ItemSlot.Weapon
+            || (slotID == 2 || slotID == 10) && itemSlot == ItemData.ItemSlot.Armor
+            || (slotID == 3 || slotID == 4 || slotID == 11 || slotID == 12) && itemSlot == ItemData.ItemSlot.Accessories;
+    }
+
+    private void EquipItem(int boutonID)
+    {
+        switch (boutonID)
         {
-            Debug.LogError(" Please select an item first");
+            case 1: player1Inventory.weaponItemData = CurrentSelectedItemData; break;
+            case 2: player1Inventory.armorItemData = CurrentSelectedItemData; break;
+            case 3: player1Inventory.accessorie1ItemData = CurrentSelectedItemData; break;
+            case 4: player1Inventory.accessorie2ItemData = CurrentSelectedItemData; break;
+            case 9: player2Inventory.weaponItemData = CurrentSelectedItemData; break;
+            case 10: player2Inventory.armorItemData = CurrentSelectedItemData; break;
+            case 11: player2Inventory.accessorie1ItemData = CurrentSelectedItemData; break;
+            case 12: player2Inventory.accessorie2ItemData = CurrentSelectedItemData; break;
         }
-        
+    }
+
+    private void UnequipSlot(int boutonID)
+    {
+        switch (boutonID)
+        {
+            case 1: player1Inventory.weaponItemData = emptyData; break;
+            case 2: player1Inventory.armorItemData = emptyData; break;
+            case 3: player1Inventory.accessorie1ItemData = emptyData; break;
+            case 4: player1Inventory.accessorie2ItemData = emptyData; break;
+            case 9: player2Inventory.weaponItemData = emptyData; break;
+            case 10: player2Inventory.armorItemData = emptyData; break;
+            case 11: player2Inventory.accessorie1ItemData = emptyData; break;
+            case 12: player2Inventory.accessorie2ItemData = emptyData; break;
+        }
+
+        RefreshInventoryUI();
+    }
+
+    private void CheckIfAlreadyEquippedInSameSpot(int boutonID)
+    {
+        if (CurrentSelectedItemData == emptyData) return;
+
+        switch (boutonID)
+        {
+            case 1 when CurrentSelectedItemData == player1Inventory.weaponItemData:
+            case 2 when CurrentSelectedItemData == player1Inventory.armorItemData:
+            case 3 when CurrentSelectedItemData == player1Inventory.accessorie1ItemData:
+            case 4 when CurrentSelectedItemData == player1Inventory.accessorie2ItemData:
+            case 9 when CurrentSelectedItemData == player2Inventory.weaponItemData:
+            case 10 when CurrentSelectedItemData == player2Inventory.armorItemData:
+            case 11 when CurrentSelectedItemData == player2Inventory.accessorie1ItemData:
+            case 12 when CurrentSelectedItemData == player2Inventory.accessorie2ItemData:
+                Debug.Log("Item already equipped in the same slot.");
+                break;
+        }
+    }
+
+    private void CheckIfAlreadyEquippedSomewhereElse(int boutonID)
+    {
+        // Déquiper l'item s’il est équipé ailleurs
+        if (player1Inventory.weaponItemData == CurrentSelectedItemData)
+            player1Inventory.weaponItemData = emptyData;
+
+        if (player1Inventory.armorItemData == CurrentSelectedItemData)
+            player1Inventory.armorItemData = emptyData;
+
+        if (player1Inventory.accessorie1ItemData == CurrentSelectedItemData)
+            player1Inventory.accessorie1ItemData = emptyData;
+
+        if (player1Inventory.accessorie2ItemData == CurrentSelectedItemData)
+            player1Inventory.accessorie2ItemData = emptyData;
+
+        if (player2Inventory.weaponItemData == CurrentSelectedItemData)
+            player2Inventory.weaponItemData = emptyData;
+
+        if (player2Inventory.armorItemData == CurrentSelectedItemData)
+            player2Inventory.armorItemData = emptyData;
+
+        if (player2Inventory.accessorie1ItemData == CurrentSelectedItemData)
+            player2Inventory.accessorie1ItemData = emptyData;
+
+        if (player2Inventory.accessorie2ItemData == CurrentSelectedItemData)
+            player2Inventory.accessorie2ItemData = emptyData;
     }
 
     private void RefreshInventoryUI()
     {
         player1Inventory.LoadSprite();
         player1Inventory.RefreshItemStatsUpdate();
-            
+
         player2Inventory.LoadSprite();
         player2Inventory.RefreshItemStatsUpdate();
     }
-    
 }

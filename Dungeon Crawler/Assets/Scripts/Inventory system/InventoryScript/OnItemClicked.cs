@@ -8,18 +8,15 @@ using UnityEngine.Serialization;
 
 public class OnItemClicked : MonoBehaviour, IPointerClickHandler
 {
-
-    
-    
-    public List<OnItemClicked> m_allItems = new List<OnItemClicked>();
+    public static List<OnItemClicked> mAllItems = new List<OnItemClicked>();
 
     public Item item;
 
-    public GameObject selectedGO;
+    public GameObject selectedGo;
     
     private void Awake()
     {
-        m_allItems.Add(this);
+        mAllItems.Add(this);
     }
 
     private void Start()
@@ -31,14 +28,14 @@ public class OnItemClicked : MonoBehaviour, IPointerClickHandler
     {
         UnselectAllItems();
         transform.localScale = new Vector3(1.1f,1.1f);
-        selectedGO = this.gameObject;
+        selectedGo = gameObject;
     }
     
     public void UnselectAllItems()
     {
-        foreach (var item in m_allItems)
+        foreach (var varItem in mAllItems)
         {
-            item.transform.localScale = new Vector3(1,1);
+            varItem.transform.localScale = new Vector3(1,1);
         }
         
     }
@@ -51,4 +48,10 @@ public class OnItemClicked : MonoBehaviour, IPointerClickHandler
             InventoryManagerScript.InventoryINSTANCE.SaveSelectedItemData(item.ItemData);
         
     }
+    
+    private void OnDestroy()
+    {
+        mAllItems.Remove(this);
+    }
+    
 }

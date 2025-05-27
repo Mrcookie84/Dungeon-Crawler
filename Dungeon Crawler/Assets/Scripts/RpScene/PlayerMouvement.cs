@@ -30,15 +30,14 @@ public class PlayerMovement : MonoBehaviour
         {
             force += Vector2.right * speed;
             targetRotation = Quaternion.Euler(0, 0, 0);
-            
-            transform.transform.rotation = Quaternion.RotateTowards(((Component)this).transform.rotation, targetRotation, 360f);
+            transform.transform.rotation = Quaternion.Slerp(this.transform.rotation, targetRotation, 0.1f);
         }
     
         if (Input.GetKey(BwKey))
         {
             force += Vector2.left * speed;
             targetRotation = Quaternion.Euler(0, 180, 0);
-            transform.transform.rotation = Quaternion.RotateTowards(((Component)this).transform.rotation, targetRotation, 360f);
+            transform.transform.rotation = Quaternion.Slerp(this.transform.rotation, targetRotation, 0.1f);
         }
         
         
