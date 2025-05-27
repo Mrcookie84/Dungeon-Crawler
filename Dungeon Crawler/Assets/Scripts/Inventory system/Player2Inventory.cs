@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Player2Inventory : MonoBehaviour
 {
+    public static Player2Inventory P2InventoryINSTANCE;
+    
     [Header("Text : ")]
     public TMP_Text spaceDMGBonusText;
     public TMP_Text realityDMGBonusText;
@@ -27,6 +29,14 @@ public class Player2Inventory : MonoBehaviour
     public ItemData accessorie2ItemData;
     public Image accessorie2Sprite;
     
+    
+    private void Awake()
+    {
+        if (P2InventoryINSTANCE == null)
+            P2InventoryINSTANCE = this;
+        else
+            Destroy(this);
+    }
     
     public void LoadSprite()
     {
