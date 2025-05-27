@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class Player1Inventory : MonoBehaviour
 {
+    public static Player1Inventory P1InventoryINSTANCE;
     
     [Header("Text : ")]
     public TMP_Text spaceDMGBonusText;
@@ -29,6 +30,13 @@ public class Player1Inventory : MonoBehaviour
     public ItemData accessorie2ItemData;
     public Image accessorie2Sprite;
     
+    private void Awake()
+    {
+        if (P1InventoryINSTANCE == null)
+            P1InventoryINSTANCE = this;
+        else
+            Destroy(this);
+    }
     
     public void LoadSprite()
     {
