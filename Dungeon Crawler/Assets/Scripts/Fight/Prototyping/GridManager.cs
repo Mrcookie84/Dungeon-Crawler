@@ -71,7 +71,7 @@ public class GridManager : MonoBehaviour
     {
         foreach (Vector2Int cell in cellList)
         {
-            //Debug.Log($"Case iluminée : ({cell.x}, {cell.y})");
+            //Debug.Log($"Case iluminï¿½e : ({cell.x}, {cell.y})");
             transform.GetChild(cell.x + cell.y * 3).GetChild(0).gameObject.SetActive(true);
         }
     }
@@ -85,7 +85,7 @@ public class GridManager : MonoBehaviour
     }
 
 
-    // Détection des entités
+    // Dï¿½tection des entitï¿½s
     public GameObject GetEntityAtPos(Vector2Int pos)
     {
         if (!IsPosInGrid(pos))

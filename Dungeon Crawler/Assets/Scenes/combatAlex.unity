@@ -2090,6 +2090,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 938379188262996836, guid: ebef84bd1a87f9f4bae660e9b48d7219, type: 3}
   m_PrefabInstance: {fileID: 403026103}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &457030678 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7204186303252219900, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+  m_PrefabInstance: {fileID: 279817250}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597caf215c0add04e90d85635c0b5a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &464254653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,6 +2185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597caf215c0add04e90d85635c0b5a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 87e24761a8459014a9d8ee8bf230f1bf, type: 2}
+  runeSelectionTag: SpellManager
+  maxSelected: 1
 --- !u!1 &493685625
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,6 +2681,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597caf215c0add04e90d85635c0b5a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 9abc87c9058192844afecd4de17a7971, type: 2}
+  runeSelectionTag: SpellManager
+  maxSelected: 1
 --- !u!114 &700326168 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3958174708107888522, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
