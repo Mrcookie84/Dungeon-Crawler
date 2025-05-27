@@ -1,18 +1,22 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Properties;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class SceneManager : MonoBehaviour
 {
+    public GameObject MainMenuScene;
     public static GameObject StartingScene;
     public static GameObject SceneFight;
     
     public static SceneManager SceneManagerInstance;
     public CombatTrigger combatTrigger;
     public MapUIManagerScript mapUIManager;
+    
+    public GameObject MainMenuCamera;
     
     public void Awake()
     {
@@ -33,7 +37,7 @@ public class SceneManager : MonoBehaviour
 
     public void Start()
     {
-        GoToRP();
+        StartTheGame();
     }
 
     public static void GoToRP()
@@ -46,6 +50,24 @@ public class SceneManager : MonoBehaviour
     {
         SceneFight.SetActive(true);
         StartingScene.SetActive(false);
+    }
+
+    public void StartTheGame()
+    {
+        StartingScene.SetActive(false);
+        SceneFight.SetActive(false);
+    }
+    
+    public void StartGame()
+    {
+        MainMenuCamera.SetActive(false);
+        MainMenuScene.SetActive(false);
+        GoToRP();
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
 }
