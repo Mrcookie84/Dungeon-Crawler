@@ -46,6 +46,8 @@ public class EnemyAction : MonoBehaviour
             prob += actionTable[action];
             if (rng < prob)
             {
+                Debug.Log(action.name);
+
                 if (action.isAttack)
                 {
                     Attack(action);
