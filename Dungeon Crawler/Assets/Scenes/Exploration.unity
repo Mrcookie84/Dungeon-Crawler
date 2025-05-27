@@ -965,6 +965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152ee6cb92cad164599798813db095ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KeybindManager: {fileID: 0}
   RB: {fileID: 1150308740666288633}
   speed: 7
   target: {fileID: 0}
@@ -2782,6 +2783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152ee6cb92cad164599798813db095ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KeybindManager: {fileID: 0}
   RB: {fileID: 2926865796510535366}
   speed: 5
   target: {fileID: 0}
@@ -4158,6 +4160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152ee6cb92cad164599798813db095ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KeybindManager: {fileID: 0}
   RB: {fileID: 5493072642729296387}
   speed: 7
   target: {fileID: 0}
@@ -5189,6 +5192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152ee6cb92cad164599798813db095ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KeybindManager: {fileID: 0}
   RB: {fileID: 6349205800568005897}
   speed: 7
   target: {fileID: 0}
@@ -6415,6 +6419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152ee6cb92cad164599798813db095ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KeybindManager: {fileID: 0}
   RB: {fileID: 2656665605713690867}
   speed: 5
   target: {fileID: 0}
@@ -7042,6 +7047,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3076672596682491433}
+    - target: {fileID: 8384418216623401757, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8395801576391752344, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9285,6 +9294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152ee6cb92cad164599798813db095ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KeybindManager: {fileID: 0}
   RB: {fileID: 6187023410588543785}
   speed: 5
   target: {fileID: 0}
