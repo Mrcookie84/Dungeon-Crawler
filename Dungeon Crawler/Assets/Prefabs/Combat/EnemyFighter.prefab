@@ -97,6 +97,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: canBreakBarrier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: columnW.Array.data[0]
       value: 0
       objectReference: {fileID: 0}

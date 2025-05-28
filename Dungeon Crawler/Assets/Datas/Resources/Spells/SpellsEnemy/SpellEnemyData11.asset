@@ -18,8 +18,8 @@ MonoBehaviour:
   - {x: 2, y: 0}
   damageTypesData:
   - {fileID: 11400000, guid: 5fdbe92aff967e24ca63d911f079976b, type: 2}
-  - {fileID: 11400000, guid: 67b5bb60f1016e44bb06720070443f44, type: 2}
-  - {fileID: 11400000, guid: 67b5bb60f1016e44bb06720070443f44, type: 2}
+  - {fileID: 11400000, guid: 45711cdc8222baf48a6fe1c4e3584c9c, type: 2}
+  - {fileID: 11400000, guid: 45711cdc8222baf48a6fe1c4e3584c9c, type: 2}
   displacementList:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
@@ -33,5 +33,6 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: "\xE9change deux ennemis, inflige des d\xE9g\xE2ts d'\xE9crasement et de
-    contact"
+  desc: "- Co\xFBt (4 mana)   - Touche 3 ennemis, \xE9change leurs places, inflige
+    d\u2019important d\xE9g\xE2ts d\u2019\xE9crasement au premier et n\u2019\xE9change
+    pas sa place, inflige d\u2019importants d\xE9g\xE2ts de contact aux autres"

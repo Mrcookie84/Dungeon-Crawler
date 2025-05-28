@@ -16,8 +16,8 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 1, y: 1}
   damageTypesData:
-  - {fileID: 11400000, guid: b35ac40157683084cbc57d18d870f3c5, type: 2}
-  - {fileID: 11400000, guid: b35ac40157683084cbc57d18d870f3c5, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   displacementList:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
@@ -30,4 +30,5 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: "brise la barri\xE8re, applique le statu faiblesse dimensionelle "
+  desc: "- Co\xFBt (3 mana)   - Touche 2 ennemis, Brise la barri\xE8re aux emplacement
+    touch\xE9s, Applique l\u2019Affliction Faiblesse Dimensionnelle (2 tours)"

@@ -36,5 +36,6 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: "inflge des d\xE9g\xE2ts d'\xE9crasement et de contact, touche les ennemis
-    de l'autre monde si la barri\xE8e est bris\xE9e"
+  desc: "- Co\xFBt (6 mana)   - Touche 4 ennemis, inflige d\u2019important d\xE9g\xE2ts
+    d\u2019\xE9crasement \xE0 l\u2019ennemi central, inflige des d\xE9g\xE2ts de
+    contact aux autres"

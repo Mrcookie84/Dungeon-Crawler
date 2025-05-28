@@ -15,7 +15,7 @@ MonoBehaviour:
   hitCellList:
   - {x: 0, y: 0}
   damageTypesData:
-  - {fileID: 11400000, guid: b35ac40157683084cbc57d18d870f3c5, type: 2}
+  - {fileID: 11400000, guid: 0db12dd0b7b7748469c92e29acaf3e02, type: 2}
   displacementList:
   - {x: 0, y: 0}
   reinforceBarrier: 1
@@ -27,4 +27,5 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: "Renforce la barri\xE8re, inflige des d\xE9g\xE2ts de r\xE9alit\xE9"
+  desc: "- Co\xFBt (3 mana)   - Touche 1 ennemi, Renforce la barri\xE8re \xE0 l\u2019emplacement
+    touch\xE9, inflige d\u2019importants d\xE9g\xE2ts de r\xE9alit\xE9"

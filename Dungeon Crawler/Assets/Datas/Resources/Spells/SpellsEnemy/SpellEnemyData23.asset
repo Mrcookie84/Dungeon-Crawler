@@ -15,7 +15,7 @@ MonoBehaviour:
   hitCellList:
   - {x: 0, y: 0}
   damageTypesData:
-  - {fileID: 11400000, guid: ac6929dd593c64545980f64b626b8d88, type: 2}
+  - {fileID: 11400000, guid: 67958aa1b5a19264e9021ccdccabf73d, type: 2}
   displacementList:
   - {x: 0, y: 0}
   reinforceBarrier: 0
@@ -27,4 +27,5 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: "retarde le sort d'un tour, inflige des d\xE9g\xE2ts de d\xE9gradation"
+  desc: "- Co\xFBt (3 mana)   - Le sort se d\xE9clenche avec 1 tour de d\xE9calage,
+    touche 1 ennemi, inflige d\u2019important d\xE9g\xE2ts de d\xE9gradation"

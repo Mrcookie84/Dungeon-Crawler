@@ -15,7 +15,7 @@ MonoBehaviour:
   hitCellList:
   - {x: 0, y: 0}
   damageTypesData:
-  - {fileID: 11400000, guid: 5fdbe92aff967e24ca63d911f079976b, type: 2}
+  - {fileID: 11400000, guid: 693073705fc7939458cbd3aca67701d4, type: 2}
   displacementList:
   - {x: 0, y: 0}
   reinforceBarrier: 0
@@ -27,5 +27,5 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: "inflige des d\xE9g\xE2ts d'\xE9crasement, applique l'affilction immobilisation
-    pour 2 tours"
+  desc: "- Co\xFBt (3 mana)   - Touche 1 ennemi, inflige de tr\xE8s important d\xE9g\xE2ts
+    d\u2019\xE9crasement, Applique L\u2019Affliction Immobilisation (2 tours)"

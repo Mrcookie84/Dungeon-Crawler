@@ -30,5 +30,5 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: "\xE9change les ennemis inflige des d\xE9g\xE2ts d'\xE9crasement, applique
-    l'affilction immobilisation pour 2 tours"
+  desc: "- Co\xFBt (5 mana)   - Touche 2 ennemis, \xE9change leurs places, inflige
+    des d\xE9g\xE2ts de contact, Applique L\u2019Affliction Immobilisation (2 tours)"
