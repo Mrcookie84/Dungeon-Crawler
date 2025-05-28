@@ -7,6 +7,16 @@ public class SoundManager : MonoBehaviour
 
     public AudioMixer audioMixer;
 
+
+    public AudioSource menuMusic;
+    public AudioSource explorationMusic;
+
+    void Start()
+    {
+        menuMusic.Play();
+        explorationMusic.Stop();
+    }
+    
     private void Awake()
     {
         if (SINGLETON == null)
@@ -18,6 +28,12 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    
+    public void SwitchToExplorationMusic()
+    {
+        menuMusic.Stop();
+        explorationMusic.Play();
     }
 
     public void SetMasterVolume(float volume)
@@ -34,4 +50,5 @@ public class SoundManager : MonoBehaviour
     {
         audioMixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
     }
+
 }

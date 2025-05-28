@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,22 +12,44 @@ public class AudioSettingsUI : MonoBehaviour
     private const string MusicKey = "Volume_Music";
     private const string SFXKey = "Volume_SFX";
 
+    public static AudioSettingsUI SINGLETON;
+
+    [Range(0f, 10f)] public float defaultMasterSoundValue;
+    [Range(0f, 10f)] public float defaultMusicSoundValue;
+    [Range(0f, 10f)] public float defaultFxSoundValue;
+
+
     private void Start()
     {
-        masterSlider.value = PlayerPrefs.GetFloat(MasterKey, 1f);
-        musicSlider.value = PlayerPrefs.GetFloat(MusicKey, 1f);
-        sfxSlider.value = PlayerPrefs.GetFloat(SFXKey, 1f);
-        
+        PlayerPrefs.SetFloat(MasterKey, defaultMasterSoundValue);
+        PlayerPrefs.SetFloat(MusicKey, defaultMusicSoundValue);
+        PlayerPrefs.SetFloat(SFXKey, defaultFxSoundValue);
+        masterSlider.value = PlayerPrefs.GetFloat(MasterKey);
+        musicSlider.value = PlayerPrefs.GetFloat(MusicKey);
+        sfxSlider.value = PlayerPrefs.GetFloat(SFXKey);
+
         SoundManager.SINGLETON.SetMasterVolume(masterSlider.value);
         SoundManager.SINGLETON.SetMusicVolume(musicSlider.value);
         SoundManager.SINGLETON.SetSFXVolume(sfxSlider.value);
-        
+
         masterSlider.onValueChanged.AddListener(OnMasterVolumeChanged);
         musicSlider.onValueChanged.AddListener(OnMusicVolumeChanged);
         sfxSlider.onValueChanged.AddListener(OnSFXVolumeChanged);
     }
 
-    private void OnMasterVolumeChanged(float value)
+    private void Awake()
+    {
+        if (SINGLETON == null)
+        {
+            SINGLETON = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+private void OnMasterVolumeChanged(float value)
     {
         SoundManager.SINGLETON.SetMasterVolume(value);
         PlayerPrefs.SetFloat(MasterKey, value);
