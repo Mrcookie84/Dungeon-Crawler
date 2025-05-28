@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15a6ea69e0f41314faafe8cda8413d5e, type: 3}
-  m_Name: EASimpleContactDegradation
+  m_Name: EAGlobalHeal
   m_EditorClassIdentifier: 
-  isAttack: 1
-  dmgValue: 15
-  dmgType: 2
+  isAttack: 0
+  dmgValue: 0
+  dmgType: 0
   multipleTarget: 0
-  healAmount: 0
-  supportTarget: 0
-  status: {fileID: 11400000, guid: a55e12d09b7b06c41b2f6b2404de8161, type: 2}
-  statusDuration: 2
+  healAmount: 10
+  supportTarget: 3
+  status: {fileID: 0}
+  statusDuration: 0
