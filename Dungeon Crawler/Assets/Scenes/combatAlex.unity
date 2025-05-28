@@ -145,7 +145,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38512674}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -153,10 +153,10 @@ RectTransform:
   - {fileID: 1267169318}
   m_Father: {fileID: 1146549156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
-  m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 26.599998, y: -1.67}
+  m_SizeDelta: {x: 227.63, y: 96.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &55431578
 GameObject:
@@ -1804,6 +1804,22 @@ PrefabInstance:
       propertyPath: maxRunes
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7489082427345356588, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: cooldownFill
+      value: 
+      objectReference: {fileID: 1267169319}
+    - target: {fileID: 7489082427345356588, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: cooldownSlider
+      value: 
+      objectReference: {fileID: 1146549157}
+    - target: {fileID: 7489082427345356588, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: cooldownNormalSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4b1c08bf9cc07e04c9b3577dd08933bc, type: 3}
+    - target: {fileID: 7489082427345356588, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: cooldownDepletedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4ddfa8f4387f99444bb97ed57f2eb944, type: 3}
     - target: {fileID: 7505075925228523898, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_LocalScale.y
       value: -1
@@ -2577,7 +2593,6 @@ Transform:
   - {fileID: 1412030045}
   - {fileID: 770185098}
   - {fileID: 518072408}
-  - {fileID: 2041671510}
   - {fileID: 550148394}
   m_Father: {fileID: 1769615210}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2645,7 +2660,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &550148393
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3025,10 +3040,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 0}
-  linkedText: {fileID: 0}
   runeSelectionTag: SpellManager
   maxSelected: 0
   maxRunes: 0
+  linkedText: {fileID: 0}
+  cooldownSlider: {fileID: 0}
+  cooldownFill: {fileID: 0}
+  cooldownNormalSprite: {fileID: 0}
+  cooldownDepletedSprite: {fileID: 0}
 --- !u!114 &777773177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4044,7 +4063,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -73.5, y: -104.5}
-  m_SizeDelta: {x: 160, y: 20}
+  m_SizeDelta: {x: 20, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1146549157
 MonoBehaviour:
@@ -4091,9 +4110,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0.552
+  m_MaxValue: 5
+  m_WholeNumbers: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4614,7 +4633,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267169317}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4623,8 +4642,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 46.5, y: -0.8000002}
-  m_SizeDelta: {x: 92, y: 96}
+  m_AnchoredPosition: {x: 0, y: -0.002521515}
+  m_SizeDelta: {x: 0, y: 0.0049591}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1267169319
 MonoBehaviour:
@@ -4640,7 +4659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4651,7 +4670,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.552
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -5139,10 +5158,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 7706509014c18454a9a819205acae696, type: 2}
-  linkedText: {fileID: 0}
   runeSelectionTag: SpellManager
   maxSelected: 0
   maxRunes: 0
+  linkedText: {fileID: 0}
+  cooldownSlider: {fileID: 0}
+  cooldownFill: {fileID: 0}
+  cooldownNormalSprite: {fileID: 0}
+  cooldownDepletedSprite: {fileID: 0}
 --- !u!114 &1461664687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5805,10 +5828,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 87e24761a8459014a9d8ee8bf230f1bf, type: 2}
-  linkedText: {fileID: 0}
   runeSelectionTag: SpellManager
   maxSelected: 0
   maxRunes: 0
+  linkedText: {fileID: 0}
+  cooldownSlider: {fileID: 0}
+  cooldownFill: {fileID: 0}
+  cooldownNormalSprite: {fileID: 0}
+  cooldownDepletedSprite: {fileID: 0}
 --- !u!114 &1760568077
 MonoBehaviour:
   m_ObjectHideFlags: 0

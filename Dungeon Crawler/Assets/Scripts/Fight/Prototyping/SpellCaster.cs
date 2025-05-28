@@ -26,7 +26,7 @@ public class SpellCaster : MonoBehaviour
 
     public UnityEvent spellCasted = new UnityEvent();
 
-    private CastMode currentCastMode = CastMode.Enemy;
+    [HideInInspector] public CastMode currentCastMode = CastMode.Enemy;
     private EntityPosition casterGPos;
     private SpellEnemyData spellEnemyData;
     private SpellPlayerData spellPlayerData;
