@@ -17,9 +17,9 @@ public class AudioSettingsUI : MonoBehaviour
         musicSlider.value = PlayerPrefs.GetFloat(MusicKey, 1f);
         sfxSlider.value = PlayerPrefs.GetFloat(SFXKey, 1f);
         
-        SoundManager.Instance.SetMasterVolume(masterSlider.value);
-        SoundManager.Instance.SetMusicVolume(musicSlider.value);
-        SoundManager.Instance.SetSFXVolume(sfxSlider.value);
+        SoundManager.SINGLETON.SetMasterVolume(masterSlider.value);
+        SoundManager.SINGLETON.SetMusicVolume(musicSlider.value);
+        SoundManager.SINGLETON.SetSFXVolume(sfxSlider.value);
         
         masterSlider.onValueChanged.AddListener(OnMasterVolumeChanged);
         musicSlider.onValueChanged.AddListener(OnMusicVolumeChanged);
@@ -28,19 +28,19 @@ public class AudioSettingsUI : MonoBehaviour
 
     private void OnMasterVolumeChanged(float value)
     {
-        SoundManager.Instance.SetMasterVolume(value);
+        SoundManager.SINGLETON.SetMasterVolume(value);
         PlayerPrefs.SetFloat(MasterKey, value);
     }
 
     private void OnMusicVolumeChanged(float value)
     {
-        SoundManager.Instance.SetMusicVolume(value);
+        SoundManager.SINGLETON.SetMusicVolume(value);
         PlayerPrefs.SetFloat(MusicKey, value);
     }
 
     private void OnSFXVolumeChanged(float value)
     {
-        SoundManager.Instance.SetSFXVolume(value);
+        SoundManager.SINGLETON.SetSFXVolume(value);
         PlayerPrefs.SetFloat(SFXKey, value);
     }
 }
