@@ -8423,7 +8423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7525254966970367513}
   m_Layer: 0
-  m_Name: SceneDecors
+  m_Name: SceneDecors [1]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17981,3 +17981,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1135214166358749008}
+  - {fileID: 1246855423}
+  - {fileID: 951926863}
