@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Unity.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -18,14 +19,14 @@ public class RuneSelection : MonoBehaviour
     [SerializeField] private Slider manaSliderUI;
     [SerializeField] private Slider potentialManaSliderUI;
 
-    [Header("Capacity")]
-    public int maxCapacity;
-    [HideInInspector] public int currentCapacity;
-    [SerializeField] private Slider capacitySliderUI;
+    [Header("Stability")]
+    public int maxStability;
+    [HideInInspector] public int currentStability;
+    [SerializeField] private Slider stabilitySliderUI;
 
     public Dictionary<Rune, int> selectedRunes = new Dictionary<Rune, int>();
 
-    // ========================= PropriÈtÈs ============================= //
+    // ========================= PropriÔøΩtÔøΩs ============================= //
 
     public string CurrentSpellPlayer
     {
@@ -37,11 +38,24 @@ public class RuneSelection : MonoBehaviour
         get { return "Spells/SpellsEnemy/SpellEnemyData" + GetRuneCombinationData(); }
     }
 
-    // ========================= MÈthodes internes ============================= //
+    public bool IsEmpty
+    {
+        get
+        {
+            foreach (var count in selectedRunes.Values)
+            {
+                if (count > 0) return false;
+            }
+
+            return true;
+        }
+    }
+
+    // ========================= MÔøΩthodes internes ============================= //
 
     private void Start()
     {
-        // Initialisation des runes sÈlectionnÈe
+        // Initialisation des runes sÔøΩlectionnÔøΩe
         foreach (Rune rune in runeSelectors)
         {
             if (rune == null) continue;
@@ -57,11 +71,11 @@ public class RuneSelection : MonoBehaviour
         potentialManaSliderUI.maxValue = maxMana;
         potentialManaSliderUI.value = maxMana;
 
-        // Initialisation de la capacitÈ
-        currentCapacity = maxCapacity;
+        // Initialisation de la capacitÔøΩ
+        currentStability = maxStability;
 
-        capacitySliderUI.maxValue = maxCapacity;
-        capacitySliderUI.value = maxCapacity;
+        stabilitySliderUI.maxValue = maxStability;
+        stabilitySliderUI.value = maxStability;
     }
 
     private bool CheckRuneConflict(Rune newRune)
@@ -89,10 +103,10 @@ public class RuneSelection : MonoBehaviour
         potentialManaSliderUI.value = potentialMana;
     }
     
-    private void ChangeCurrentCapacity(int amount)
+    private void ChangeCurrentStability(int amount)
     {
-        currentCapacity += amount;
-        capacitySliderUI.value = currentCapacity;
+        currentStability += amount;
+        stabilitySliderUI.value = currentStability;
     }
 
     private bool canUsMoreMana(int amount)
@@ -100,9 +114,9 @@ public class RuneSelection : MonoBehaviour
         return potentialMana - amount >= 0;
     }
 
-    private bool canUsMoreCapacity(int amount)
+    private bool canUsMoreStability(int amount)
     {
-        return currentCapacity - amount >= 0;
+        return currentStability - amount >= 0;
     }
 
     private void UpdateRuneUI()
@@ -112,6 +126,10 @@ public class RuneSelection : MonoBehaviour
         int runeIndex = 0;
         foreach (Rune rune in selectedRunes.Keys)
         {
+            // D√©terminer l'√©tat
+            
+            
+            // Affichage de la s√©lection
             GameObject runeUI = rune.data.UIPrefab;
 
             for (int i = 0; i < selectedRunes[rune]; i++)
@@ -135,14 +153,14 @@ public class RuneSelection : MonoBehaviour
         }
     }
 
-    // ========================= MÈthodes externes ============================= //
+    // ========================= MÔøΩthodes externes ============================= //
 
     public bool TryAddRune(Rune rune)
     {   
-        if (CheckRuneConflict(rune) && canUsMoreMana(rune.data.manaCost) && canUsMoreCapacity(rune.data.manaCost))
+        if (CheckRuneConflict(rune) && canUsMoreMana(rune.data.manaCost) && canUsMoreStability(rune.data.manaCost))
         {
             ChangePotentialMana(-rune.data.manaCost);
-            ChangeCurrentCapacity(-rune.data.manaCost);
+            ChangeCurrentStability(-rune.data.manaCost);
             selectedRunes[rune] += 1;
             UpdateRuneUI();
 
@@ -156,7 +174,7 @@ public class RuneSelection : MonoBehaviour
     {
         if (restorMana)
             ChangePotentialMana(rune.data.manaCost * selectedRunes[rune]);
-        ChangeCurrentCapacity(rune.data.manaCost * selectedRunes[rune]);
+        ChangeCurrentStability(rune.data.manaCost * selectedRunes[rune]);
 
         selectedRunes[rune] = 0;
         
@@ -211,10 +229,10 @@ public class RuneSelection : MonoBehaviour
         potentialManaSliderUI.value = maxMana;
     }
 
-    public void ResetCapacity()
+    public void ResetStability()
     {
-        currentCapacity = maxCapacity;
+        currentStability = maxStability;
 
-        capacitySliderUI.value = maxCapacity;
+        stabilitySliderUI.value = maxStability;
     }
 }
