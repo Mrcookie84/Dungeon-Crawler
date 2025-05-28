@@ -6,6 +6,7 @@ public class Rune : MonoBehaviour
 {
     [Header("Rune Infos")]
     public RuneData data;
+    [SerializeField] private Button runeButton;
     [SerializeField] private string runeSelectionTag = "SpellManager";
     private RuneSelection runeSelection;
     private SpellCaster spellCaster;
@@ -151,12 +152,17 @@ public class Rune : MonoBehaviour
         // Changer l'overlay
         if (overlayImage != null)
         {
+            runeButton.interactable = true;
+
             if (runeSelection.IsEmpty)
             {
                 overlayImage.sprite = null;
+                overlayImage.gameObject.SetActive(false);
             }
             else
             {
+                overlayImage.gameObject.SetActive(true);
+
                 if (validSpell)
                 {
                     if (unstableSpell)
@@ -166,6 +172,7 @@ public class Rune : MonoBehaviour
                 }
                 else
                 {
+                    runeButton.interactable = false;
                     overlayImage.sprite = blockedSprite;
                 }
             }

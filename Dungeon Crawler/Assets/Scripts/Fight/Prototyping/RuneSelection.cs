@@ -53,7 +53,7 @@ public class RuneSelection : MonoBehaviour
 
     // ========================= M�thodes internes ============================= //
 
-    private void Start()
+    private void Awake()
     {
         // Initialisation des runes s�lectionn�e
         foreach (Rune rune in runeSelectors)
@@ -126,8 +126,8 @@ public class RuneSelection : MonoBehaviour
         int runeIndex = 0;
         foreach (Rune rune in selectedRunes.Keys)
         {
-            // Déterminer l'état
-            
+            // Mise à jour du bouton
+            rune.UpdateUI();
             
             // Affichage de la sélection
             GameObject runeUI = rune.data.UIPrefab;
