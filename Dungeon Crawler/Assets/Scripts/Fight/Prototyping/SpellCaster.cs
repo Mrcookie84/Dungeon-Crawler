@@ -293,7 +293,7 @@ public class SpellCaster : MonoBehaviour
     {
         // Attente avant déclenchement
         yield return new WaitForSeconds(t);
-
+        
         for (int i = 0; i < affectedEnemies.Length; i++)
         {
             GameObject enemy = affectedEnemies[i];
@@ -306,11 +306,9 @@ public class SpellCaster : MonoBehaviour
             if (spellEnemyData.damageTypesData[i] != null)
                 for (int j = 0; j < spellEnemyData.damageTypesData[i].dmgValues.Length; j++)
                 {
-                    entityHealth.TakeDamage(casterGPos.gameObject, spellEnemyData.damageTypesData[i].dmgValues[j]);
-
-                    // Faire apparaître un texte avec la valeur des dégâts
-                    // et la couleur du type de dégâts infligés
-                    // (c'est pour ça la boucle for, il y a besoin de l'indice)
+                    // Modification de la vie
+                    DamageTypesData damageData = spellEnemyData.damageTypesData[i];
+                    entityHealth.TakeDamage(casterGPos.gameObject, damageData.dmgValues[j], damageData.dmgTypeName[j]);
                 }
             
             // Appliquer de potentiels statuts

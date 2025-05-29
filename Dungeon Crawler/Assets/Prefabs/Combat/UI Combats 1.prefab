@@ -401,10 +401,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 2c796d40a6efb8b48af9dc6b7b0cd7f0, type: 2}
-  linkedText: {fileID: 4738716088090071027}
+  runeButton: {fileID: 0}
   runeSelectionTag: SpellManager
   maxSelected: 1
   maxRunes: 3
+  linkedText: {fileID: 4738716088090071027}
+  cooldownSlider: {fileID: 0}
+  cooldownFill: {fileID: 0}
+  cooldownNormalSprite: {fileID: 0}
+  cooldownDepletedSprite: {fileID: 0}
+  overlayImage: {fileID: 0}
+  highlightSprite: {fileID: 0}
+  highlightUnstableSprite: {fileID: 0}
+  blockedSprite: {fileID: 0}
 --- !u!1 &365659636011208753
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,10 +677,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 092ae61ac451b1b43824abb777695112, type: 2}
-  linkedText: {fileID: 451548366185197067}
+  runeButton: {fileID: 0}
   runeSelectionTag: SpellManager
   maxSelected: 1
   maxRunes: 3
+  linkedText: {fileID: 451548366185197067}
+  cooldownSlider: {fileID: 0}
+  cooldownFill: {fileID: 0}
+  cooldownNormalSprite: {fileID: 0}
+  cooldownDepletedSprite: {fileID: 0}
+  overlayImage: {fileID: 0}
+  highlightSprite: {fileID: 0}
+  highlightUnstableSprite: {fileID: 0}
+  blockedSprite: {fileID: 0}
 --- !u!1 &1495702702366830562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,6 +1508,117 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &3307286924807145659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7632341953785915350}
+  - component: {fileID: 3234014861262318358}
+  - component: {fileID: 1023775011508284725}
+  m_Layer: 0
+  m_Name: SpellManager
+  m_TagString: SpellManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7632341953785915350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3307286924807145659}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -106.0265, y: 17.085724, z: -5069.6895}
+  m_LocalScale: {x: 108, y: 108, z: 108}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7394782567344927466}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3234014861262318358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3307286924807145659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9d507cf859f3b46bc39783e99dbb2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runeHolder: {fileID: 1090216218704441079}
+  runeSelectors:
+  - {fileID: 8352021543158789768}
+  - {fileID: 7489082427345356588}
+  - {fileID: 6740154541914249631}
+  - {fileID: 7922306007967684706}
+  - {fileID: 5595574941974803204}
+  - {fileID: 8420815148125876806}
+  maxMana: 8
+  currentMana: 0
+  manaSliderUI: {fileID: 6077486092753143856}
+  interManaSliderUI: {fileID: 0}
+  potentialManaSliderUI: {fileID: 3958174708107888522}
+  maxStability: 5
+  currentStability: 0
+  stabilitySliderUI: {fileID: 6641911075739510174}
+  interStabilitySliderUI: {fileID: 0}
+--- !u!114 &1023775011508284725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3307286924807145659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16aa84a77c8a923408728bf68b09604a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTurn: {fileID: 0}
+  runeSelection: {fileID: 3234014861262318358}
+  playerGrid: {fileID: 0}
+  enemyGrid: {fileID: 0}
+  barrierGrid: {fileID: 0}
+  UIplayerInterface: {fileID: 3354896643743903471}
+  UIplayerSelections: []
+  UIcastButton: {fileID: 6115520619692257263}
+  UISpellDesc: {fileID: 7650747068319588642}
+  spellCasted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3234014861262318358}
+        m_TargetAssemblyTypeName: RuneSelection, Assembly-CSharp
+        m_MethodName: UpdateMana
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3234014861262318358}
+        m_TargetAssemblyTypeName: RuneSelection, Assembly-CSharp
+        m_MethodName: ResetSelection
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  currentCastMode: 1
 --- !u!1 &3354896643743903471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,10 +1824,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 9abc87c9058192844afecd4de17a7971, type: 2}
-  linkedText: {fileID: 3322078013207968210}
+  runeButton: {fileID: 0}
   runeSelectionTag: SpellManager
   maxSelected: 1
   maxRunes: 3
+  linkedText: {fileID: 3322078013207968210}
+  cooldownSlider: {fileID: 0}
+  cooldownFill: {fileID: 0}
+  cooldownNormalSprite: {fileID: 0}
+  cooldownDepletedSprite: {fileID: 0}
+  overlayImage: {fileID: 0}
+  highlightSprite: {fileID: 0}
+  highlightUnstableSprite: {fileID: 0}
+  blockedSprite: {fileID: 0}
 --- !u!1 &3638184674846096038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2489,10 +2627,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 7989fcc4b0fb8104e85ae8458fe1e64f, type: 2}
-  linkedText: {fileID: 7591819713909752006}
+  runeButton: {fileID: 0}
   runeSelectionTag: SpellManager
   maxSelected: 2
   maxRunes: 3
+  linkedText: {fileID: 7591819713909752006}
+  cooldownSlider: {fileID: 0}
+  cooldownFill: {fileID: 0}
+  cooldownNormalSprite: {fileID: 0}
+  cooldownDepletedSprite: {fileID: 0}
+  overlayImage: {fileID: 0}
+  highlightSprite: {fileID: 0}
+  highlightUnstableSprite: {fileID: 0}
+  blockedSprite: {fileID: 0}
 --- !u!1 &4912629038372663199
 GameObject:
   m_ObjectHideFlags: 0
@@ -2834,10 +2981,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 87e24761a8459014a9d8ee8bf230f1bf, type: 2}
-  linkedText: {fileID: 4740646388459938606}
+  runeButton: {fileID: 0}
   runeSelectionTag: SpellManager
   maxSelected: 2
   maxRunes: 3
+  linkedText: {fileID: 4740646388459938606}
+  cooldownSlider: {fileID: 0}
+  cooldownFill: {fileID: 0}
+  cooldownNormalSprite: {fileID: 0}
+  cooldownDepletedSprite: {fileID: 0}
+  overlayImage: {fileID: 0}
+  highlightSprite: {fileID: 0}
+  highlightUnstableSprite: {fileID: 0}
+  blockedSprite: {fileID: 0}
 --- !u!1 &5114369030780094580
 GameObject:
   m_ObjectHideFlags: 0
@@ -3750,10 +3906,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7632341953785915350}
   - {fileID: 1895545579837559413}
   - {fileID: 5162950660135938113}
   - {fileID: 1939966505522753523}
-  - {fileID: 5162950660135938113}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4720,10 +4876,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 7706509014c18454a9a819205acae696, type: 2}
-  linkedText: {fileID: 748924909700743542}
+  runeButton: {fileID: 0}
   runeSelectionTag: SpellManager
   maxSelected: 2
   maxRunes: 3
+  linkedText: {fileID: 748924909700743542}
+  cooldownSlider: {fileID: 0}
+  cooldownFill: {fileID: 0}
+  cooldownNormalSprite: {fileID: 0}
+  cooldownDepletedSprite: {fileID: 0}
+  overlayImage: {fileID: 0}
+  highlightSprite: {fileID: 0}
+  highlightUnstableSprite: {fileID: 0}
+  blockedSprite: {fileID: 0}
 --- !u!1 &7838400621694896666
 GameObject:
   m_ObjectHideFlags: 0

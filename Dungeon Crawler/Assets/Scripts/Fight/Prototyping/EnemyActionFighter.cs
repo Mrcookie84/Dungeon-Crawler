@@ -40,7 +40,7 @@ public class EnemyActionFighter : EnemyAction
         EntityHealth targetHealth = target.GetComponent<EntityHealth>();
         
         animHandler.ChangeState(EntityFightAnimation.State.Attack);
-        targetHealth.TakeDamage(gameObject, SdmgValue);
+        targetHealth.TakeDamage(gameObject, SdmgValue, DamageTypesData.DmgTypes.Crush);
     }
 
     private void GroupAttack()
@@ -55,7 +55,7 @@ public class EnemyActionFighter : EnemyAction
             EntityHealth targetHealth = target.GetComponent<EntityHealth>();
         
             animHandler.ChangeState(EntityFightAnimation.State.Attack);
-            targetHealth.TakeDamage(gameObject, GdmgValue);
+            targetHealth.TakeDamage(gameObject, GdmgValue, DamageTypesData.DmgTypes.Contact);
         }
     }
 }

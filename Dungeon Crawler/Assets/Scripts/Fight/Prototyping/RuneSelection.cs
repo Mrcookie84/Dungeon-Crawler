@@ -127,7 +127,7 @@ public class RuneSelection : MonoBehaviour
         potentialManaSliderUI.maxValue = maxMana;
         potentialManaSliderUI.value = maxMana;
 
-        // Initialisation de la capacit�
+        // Initialisation de la stabilité
         currentStability = maxStability;
         interStability = maxStability;
 
