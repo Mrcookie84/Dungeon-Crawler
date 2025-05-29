@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class Rune : MonoBehaviour
+public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Rune Infos")]
     public RuneData data;
@@ -187,5 +188,15 @@ public class Rune : MonoBehaviour
             cooldownFill.sprite = cooldownDepletedSprite;
         else
             cooldownFill.sprite = cooldownNormalSprite;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        runeSelection.PreviewRune(data);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        runeSelection.UnPreviewRune(data);
     }
 }
