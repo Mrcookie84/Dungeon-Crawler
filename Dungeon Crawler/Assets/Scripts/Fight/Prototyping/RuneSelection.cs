@@ -168,19 +168,6 @@ public class RuneSelection : MonoBehaviour
 
     }
 
-    private bool CheckRuneConflict(Rune newRune)
-    {
-        // Conflit entre focus et extension
-        if (newRune == runeSelectors[3] && selectedRunes[runeSelectors[4]] > 0)
-            return false;
-        // Conflit entre extension et focus
-        else if (newRune == runeSelectors[4] && selectedRunes[runeSelectors[3]] > 0)
-            return false;
-        // Pas de conflit
-        else
-            return true;
-    }
-
     private bool canUsMoreMana(int amount)
     {
         return interMana - amount >= 0;
@@ -229,7 +216,7 @@ public class RuneSelection : MonoBehaviour
 
     public bool TryAddRune(Rune rune)
     {   
-        if (CheckRuneConflict(rune) && canUsMoreMana(rune.data.manaCost) && canUsMoreStability(rune.data.manaCost))
+        if (canUsMoreMana(rune.data.manaCost) && canUsMoreStability(rune.data.manaCost))
         {
             PotentialMana -= rune.data.manaCost;
             InterMana -= rune.data.manaCost;

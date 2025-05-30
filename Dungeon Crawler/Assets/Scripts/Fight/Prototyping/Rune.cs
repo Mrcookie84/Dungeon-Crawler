@@ -28,6 +28,7 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] private Sprite blockedSprite;
 
     private SortedDictionary<int, int> _coolDownPool = new SortedDictionary<int, int>();
+    private bool previewed;
 
     public int Id { get { return data.ID; } }
     public int CoolDown { get { return data.cooldown; } }
@@ -192,11 +193,19 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        runeSelection.PreviewRune(data);
+        if (!previewed && runeButton.interactable)
+        {
+            runeSelection.PreviewRune(data);
+            previewed = true;
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        runeSelection.UnPreviewRune(data);
+        if (previewed && runeButton.interactable)
+        {
+            runeSelection.UnPreviewRune(data);
+            previewed = false;
+        }
     }
 }

@@ -19,7 +19,7 @@ public class SpellCaster : MonoBehaviour
     [SerializeField] private BarrierGrid barrierGrid;
 
     [Header("UI")]
-    [SerializeField] private GameObject UIPlayerInterface;
+    [SerializeField] private GameObject UIButtonInterface;
     [SerializeField] private GameObject UICastButton;
     [SerializeField] private TMPro.TextMeshProUGUI UISpellDesc;
 
@@ -75,6 +75,16 @@ public class SpellCaster : MonoBehaviour
 
         triggerPos = EnemyRaycast(false);
         UpdateSpell();
+    }
+
+    public void EnableButtons(bool enable)
+    {
+        Button[] buttons = UIButtonInterface.GetComponentsInChildren<Button>();
+
+        foreach (Button button in buttons)
+        {
+            button.interactable = enable;
+        }
     }
 
     public void ChangeCastMode(Image buttonSprite)
@@ -177,6 +187,7 @@ public class SpellCaster : MonoBehaviour
         }
 
         playerGrid.UpdateEntitiesIndex();
+        EnableButtons(true);
     }
 
     /// <summary>
@@ -198,6 +209,9 @@ public class SpellCaster : MonoBehaviour
         enemyGrid.ResetHighlight();
         playerGrid.ResetHighlight();
 
+        // Update UI
+        EnableButtons(false);
+
         if (currentCastMode == CastMode.Enemy)
             StartCoroutine(CastEnemySpellCoroutine(spellEnemyData.SpellDuration));
         else
@@ -212,7 +226,7 @@ public class SpellCaster : MonoBehaviour
     /// <returns></returns>
     private IEnumerator CastEnemySpellCoroutine(float t)
     {
-        UIPlayerInterface.SetActive(false);
+        UIButtonInterface.SetActive(false);
         
         // Récupération des cases et ennemis affectés par le sort
         List<Vector2Int> hitCellList = GetAllCellHit();
@@ -227,7 +241,7 @@ public class SpellCaster : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         ResetSpell();
-        UIPlayerInterface.SetActive(true);
+        EnableButtons(true);
     }
 
     /// <summary>

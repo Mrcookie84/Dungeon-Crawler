@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 2c796d40a6efb8b48af9dc6b7b0cd7f0, type: 2}
-  runeButton: {fileID: 0}
+  runeButton: {fileID: 9110797328847331181}
   runeSelectionTag: SpellManager
   maxSelected: 1
   maxRunes: 3
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 092ae61ac451b1b43824abb777695112, type: 2}
-  runeButton: {fileID: 0}
+  runeButton: {fileID: 5912614853207575226}
   runeSelectionTag: SpellManager
   maxSelected: 1
   maxRunes: 3
@@ -1434,7 +1434,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3731054069563790024}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3234014861262318358}
+        m_TargetAssemblyTypeName: RuneSelection, Assembly-CSharp
+        m_MethodName: ResetSelection
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &3174771139224993940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,8 +1680,8 @@ MonoBehaviour:
   playerGrid: {fileID: 0}
   enemyGrid: {fileID: 0}
   barrierGrid: {fileID: 0}
-  UIPlayerInterface: {fileID: 0}
-  UICastButton: {fileID: 0}
+  UIButtonInterface: {fileID: 3354896643743903471}
+  UICastButton: {fileID: 6115520619692257263}
   UISpellDesc: {fileID: 7650747068319588642}
   spellCasted:
     m_PersistentCalls:
@@ -1955,7 +1967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 9abc87c9058192844afecd4de17a7971, type: 2}
-  runeButton: {fileID: 0}
+  runeButton: {fileID: 9180648685562399522}
   runeSelectionTag: SpellManager
   maxSelected: 1
   maxRunes: 3
@@ -2830,7 +2842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 7989fcc4b0fb8104e85ae8458fe1e64f, type: 2}
-  runeButton: {fileID: 0}
+  runeButton: {fileID: 7883281914364741433}
   runeSelectionTag: SpellManager
   maxSelected: 2
   maxRunes: 3
@@ -3184,7 +3196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 87e24761a8459014a9d8ee8bf230f1bf, type: 2}
-  runeButton: {fileID: 0}
+  runeButton: {fileID: 171841632085479412}
   runeSelectionTag: SpellManager
   maxSelected: 2
   maxRunes: 3
@@ -3532,7 +3544,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5236849656653896951}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1023775011508284725}
+        m_TargetAssemblyTypeName: SpellCaster, Assembly-CSharp
+        m_MethodName: CastSpell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5612724211825698202
 GameObject:
   m_ObjectHideFlags: 0
@@ -5018,7 +5042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5193,7 +5217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 7706509014c18454a9a819205acae696, type: 2}
-  runeButton: {fileID: 0}
+  runeButton: {fileID: 813649762748423210}
   runeSelectionTag: SpellManager
   maxSelected: 2
   maxRunes: 3
@@ -5802,13 +5826,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 3234014861262318358}
+        m_TargetAssemblyTypeName: RuneSelection, Assembly-CSharp
+        m_MethodName: ResetSelection
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3234014861262318358}
+        m_TargetAssemblyTypeName: RuneSelection, Assembly-CSharp
+        m_MethodName: ResetMana
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
