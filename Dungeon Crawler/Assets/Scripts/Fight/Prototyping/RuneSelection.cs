@@ -17,6 +17,8 @@ public class RuneSelection : MonoBehaviour
     [HideInInspector] public int currentMana;
     private int interMana;
     private int potentialMana;
+    [SerializeField] private VerticalLayoutGroup manaGraduationGroup;
+    [SerializeField] private GameObject manaGrad;
     [SerializeField] private Slider manaSliderUI;
     [SerializeField] private Slider interManaSliderUI;
     [SerializeField] private Slider potentialManaSliderUI;
@@ -25,6 +27,8 @@ public class RuneSelection : MonoBehaviour
     public int maxStability;
     [HideInInspector] public int currentStability;
     private int interStability;
+    [SerializeField] private HorizontalLayoutGroup stabilityGraduationGroup;
+    [SerializeField] private GameObject stabilityGrad;
     [SerializeField] private Slider stabilitySliderUI;
     [SerializeField] private Slider interStabilitySliderUI;
 
@@ -135,6 +139,33 @@ public class RuneSelection : MonoBehaviour
         stabilitySliderUI.value = maxStability;
         interStabilitySliderUI.maxValue = maxStability;
         interStabilitySliderUI.value = maxStability;
+    }
+
+    private void Start()
+    {
+        // Plaçage des graduations
+        // Mana
+        for (int i = 0; i < maxMana - 1; i++)
+        {
+            Instantiate(manaGrad, manaGraduationGroup.transform);
+        }
+        float manaHeight = manaGraduationGroup.GetComponent<RectTransform>().rect.height;
+        float manaSpacing = manaHeight / maxMana;
+        manaSpacing -= manaGrad.GetComponent<RectTransform>().rect.height;
+
+        manaGraduationGroup.spacing = manaSpacing;
+
+        // Stability
+        for (int i = 0; i < maxStability - 1; i++)
+        {
+            Instantiate(stabilityGrad, stabilityGraduationGroup.transform);
+        }
+        float stabilityHeight = stabilityGraduationGroup.GetComponent<RectTransform>().rect.width;
+        float stabilitySpacing = stabilityHeight / maxStability;
+        stabilitySpacing -= stabilityGrad.GetComponent<RectTransform>().rect.width;
+
+        stabilityGraduationGroup.spacing = stabilitySpacing;
+
     }
 
     private bool CheckRuneConflict(Rune newRune)

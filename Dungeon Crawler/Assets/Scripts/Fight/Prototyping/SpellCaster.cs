@@ -19,10 +19,11 @@ public class SpellCaster : MonoBehaviour
     [SerializeField] private BarrierGrid barrierGrid;
 
     [Header("UI")]
-    [SerializeField] private GameObject UIplayerInterface;
-    [SerializeField] private GameObject[] UIplayerSelections;
-    [SerializeField] private GameObject UIcastButton;
+    [SerializeField] private GameObject UIPlayerInterface;
+    [SerializeField] private GameObject UICastButton;
     [SerializeField] private TMPro.TextMeshProUGUI UISpellDesc;
+
+    [Space(25)]
 
     public UnityEvent spellCasted = new UnityEvent();
 
@@ -188,6 +189,12 @@ public class SpellCaster : MonoBehaviour
         casterAnim.ChangeState(EntityFightAnimation.State.Attack);
 
         spellCasted.Invoke();
+
+        // Update de la séléction de rune
+        runeSelection.UpdateMana();
+        runeSelection.ResetSelection();
+
+        // Update des grilles
         enemyGrid.ResetHighlight();
         playerGrid.ResetHighlight();
 
@@ -205,7 +212,7 @@ public class SpellCaster : MonoBehaviour
     /// <returns></returns>
     private IEnumerator CastEnemySpellCoroutine(float t)
     {
-        UIplayerInterface.SetActive(false);
+        UIPlayerInterface.SetActive(false);
         
         // Récupération des cases et ennemis affectés par le sort
         List<Vector2Int> hitCellList = GetAllCellHit();
@@ -220,7 +227,7 @@ public class SpellCaster : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         ResetSpell();
-        UIplayerInterface.SetActive(true);
+        UIPlayerInterface.SetActive(true);
     }
 
     /// <summary>
@@ -396,7 +403,7 @@ public class SpellCaster : MonoBehaviour
     {
         if (casterGPos == null)
         {
-            UIcastButton.SetActive(false);
+            UICastButton.SetActive(false);
             return;
         }
         
@@ -407,11 +414,11 @@ public class SpellCaster : MonoBehaviour
                 {
                     if (spellPlayerData == null)
                     {
-                        UIcastButton.SetActive(false);
+                        UICastButton.SetActive(false);
                     }
                     else
                     {
-                        UIcastButton.SetActive(true);
+                        UICastButton.SetActive(true);
                     }
                     break;
                 }
@@ -420,11 +427,11 @@ public class SpellCaster : MonoBehaviour
                 {
                     if (spellEnemyData == null || triggerPos == null)
                     {
-                        UIcastButton.SetActive(false);
+                        UICastButton.SetActive(false);
                     }
                     else
                     {
-                        UIcastButton.SetActive(true);
+                        UICastButton.SetActive(true);
                     }
                     break;
                 }
