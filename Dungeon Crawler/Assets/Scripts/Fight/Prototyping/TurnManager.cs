@@ -89,12 +89,12 @@ public class TurnManager : MonoBehaviour
     
     public void EnablePlayerUI()
     {
-        spellCaster.EnableButtons(true);
+        SpellCaster.EnableButtons(true);
     }
 
     public void DisablePlayerUI()
     {
-        spellCaster.EnableButtons(false);
+        SpellCaster.EnableButtons(false);
     }
 
     public static void TestEndFight(GridManager grid)

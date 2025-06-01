@@ -327,7 +327,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 2c796d40a6efb8b48af9dc6b7b0cd7f0, type: 2}
   runeButton: {fileID: 9110797328847331181}
-  runeSelectionTag: SpellManager
   maxSelected: 1
   maxRunes: 3
   linkedText: {fileID: 4738716088090071027}
@@ -665,7 +664,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 092ae61ac451b1b43824abb777695112, type: 2}
   runeButton: {fileID: 5912614853207575226}
-  runeSelectionTag: SpellManager
   maxSelected: 1
   maxRunes: 3
   linkedText: {fileID: 451548366185197067}
@@ -1651,14 +1649,12 @@ MonoBehaviour:
   - {fileID: 5595574941974803204}
   - {fileID: 8420815148125876806}
   maxMana: 8
-  currentMana: 0
   manaGraduationGroup: {fileID: 2075138915528788651}
   manaGrad: {fileID: 2557462733996515047, guid: 027437a80a366e64dab5bef9e77209bc, type: 3}
   manaSliderUI: {fileID: 6077486092753143856}
   interManaSliderUI: {fileID: 587821646372611412}
   potentialManaSliderUI: {fileID: 2280586311054668450}
   maxStability: 5
-  currentStability: 0
   stabilityGraduationGroup: {fileID: 9001514230204703158}
   stabilityGrad: {fileID: 2382263353128818697, guid: 33d8bb7e0486f62478b4d047e07177f0, type: 3}
   stabilitySliderUI: {fileID: 6641911075739510174}
@@ -1676,17 +1672,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTurn: {fileID: 0}
-  runeSelection: {fileID: 3234014861262318358}
-  playerGrid: {fileID: 0}
-  enemyGrid: {fileID: 0}
-  barrierGrid: {fileID: 0}
   UIButtonInterface: {fileID: 3354896643743903471}
   UICastButton: {fileID: 6115520619692257263}
   UISpellDesc: {fileID: 7650747068319588642}
   spellCasted:
     m_PersistentCalls:
       m_Calls: []
-  currentCastMode: 1
 --- !u!1 &3354896643743903471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,7 +1959,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 9abc87c9058192844afecd4de17a7971, type: 2}
   runeButton: {fileID: 9180648685562399522}
-  runeSelectionTag: SpellManager
   maxSelected: 1
   maxRunes: 3
   linkedText: {fileID: 3322078013207968210}
@@ -2843,7 +2833,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 7989fcc4b0fb8104e85ae8458fe1e64f, type: 2}
   runeButton: {fileID: 7883281914364741433}
-  runeSelectionTag: SpellManager
   maxSelected: 2
   maxRunes: 3
   linkedText: {fileID: 7591819713909752006}
@@ -3197,7 +3186,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 87e24761a8459014a9d8ee8bf230f1bf, type: 2}
   runeButton: {fileID: 171841632085479412}
-  runeSelectionTag: SpellManager
   maxSelected: 2
   maxRunes: 3
   linkedText: {fileID: 4740646388459938606}
@@ -5218,7 +5206,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 7706509014c18454a9a819205acae696, type: 2}
   runeButton: {fileID: 813649762748423210}
-  runeSelectionTag: SpellManager
   maxSelected: 2
   maxRunes: 3
   linkedText: {fileID: 748924909700743542}

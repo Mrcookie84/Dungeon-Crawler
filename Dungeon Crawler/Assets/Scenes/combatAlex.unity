@@ -1500,13 +1500,13 @@ Transform:
   - {fileID: 2041671510}
   - {fileID: 797757652}
   - {fileID: 2146947884}
+  - {fileID: 1461870883}
   - {fileID: 686105098}
   - {fileID: 927520406}
   - {fileID: 1412030045}
   - {fileID: 770185098}
   - {fileID: 550148394}
   - {fileID: 422683667}
-  - {fileID: 1461870883}
   m_Father: {fileID: 1769615210}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &541555351
@@ -3648,7 +3648,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83976601ed8eb2f488c992ff90f45216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrierStates: 010000000100000001000000
 --- !u!1001 &1426492595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3944,6 +3943,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1461870883}
+  - component: {fileID: 1461870884}
   m_Layer: 0
   m_Name: AI controler
   m_TagString: Untagged
@@ -3966,6 +3966,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 514924451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1461870884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461870882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4778a6a0a053c844f81a012ed4e93955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerGrid: {fileID: 1565586015}
+  enemyGrid: {fileID: 1983869222}
+  barrierGrid: {fileID: 1412030046}
 --- !u!114 &1512327639 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7180156485744183537, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}

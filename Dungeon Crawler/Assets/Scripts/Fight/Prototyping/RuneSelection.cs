@@ -8,15 +8,17 @@ using static Unity.Collections.Unicode;
 
 public class RuneSelection : MonoBehaviour
 {
+    public static RuneSelection Instance;
+
     [Header("Rune UI")]
     [SerializeField] private Transform runeHolder;
     [SerializeField] private Rune[] runeSelectors;
 
     [Header("Mana")]
     public int maxMana;
-    [HideInInspector] public int currentMana;
-    private int interMana;
-    private int potentialMana;
+    [HideInInspector] public static int currentMana;
+    private static int interMana;
+    private static int potentialMana;
     [SerializeField] private VerticalLayoutGroup manaGraduationGroup;
     [SerializeField] private GameObject manaGrad;
     [SerializeField] private Slider manaSliderUI;
@@ -25,77 +27,77 @@ public class RuneSelection : MonoBehaviour
 
     [Header("Stability")]
     public int maxStability;
-    [HideInInspector] public int currentStability;
-    private int interStability;
+    [HideInInspector] public static int currentStability;
+    private static int interStability;
     [SerializeField] private HorizontalLayoutGroup stabilityGraduationGroup;
     [SerializeField] private GameObject stabilityGrad;
     [SerializeField] private Slider stabilitySliderUI;
     [SerializeField] private Slider interStabilitySliderUI;
 
-    public Dictionary<Rune, int> selectedRunes = new Dictionary<Rune, int>();
+    public static Dictionary<Rune, int> selectedRunes = new Dictionary<Rune, int>();
 
     // ========================= Propri�t�s ============================= //
-    public int CurrentMana
+    public static int CurrentMana
     {
         get { return currentMana; }
         set
         {
             currentMana = value;
-            manaSliderUI.value = currentMana;
+            Instance.manaSliderUI.value = currentMana;
         }
     }
 
-    private int InterMana
+    private static int InterMana
     {
         get { return interMana; }
         set
         {
             interMana = value;
-            interManaSliderUI.value = interMana;
+            Instance.interManaSliderUI.value = interMana;
         }
     }
 
-    private int PotentialMana
+    private static int PotentialMana
     {
         get { return potentialMana; }
         set
         {
             potentialMana = value;
-            potentialManaSliderUI.value = potentialMana;
+            Instance.potentialManaSliderUI.value = potentialMana;
         }
     }
 
-    public int CurrentStability
+    public static int CurrentStability
     {
         get { return currentStability; }
         set
         {
             currentStability = value;
-            stabilitySliderUI.value = currentStability;
+            Instance.stabilitySliderUI.value = currentStability;
         }
     }
 
-    private int InterStability
+    private static int InterStability
     {
         get { return interStability; }
         set
         {
             interStability = value;
-            interStabilitySliderUI.value = interStability;
+            Instance.interStabilitySliderUI.value = interStability;
         }
     }
 
-    public string CurrentSpellPlayer
+    public static string CurrentSpellPlayer
     {
         get { return "Spells/SpellsPlayer/SpellPlayerData" + GetRuneCombinationData(); }
     }
 
-    public string CurrentSpellEnemy
+    public static string CurrentSpellEnemy
     {
         get { return "Spells/SpellsEnemy/SpellEnemyData" + GetRuneCombinationData(); }
     }
 
-    public bool IsEmpty
+    public static bool IsEmpty
     {
         get
         {
@@ -112,6 +114,8 @@ public class RuneSelection : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
+        
         // Initialisation des runes s�lectionn�e
         foreach (Rune rune in runeSelectors)
         {
@@ -168,17 +172,17 @@ public class RuneSelection : MonoBehaviour
 
     }
 
-    private bool canUsMoreMana(int amount)
+    private static bool canUsMoreMana(int amount)
     {
         return interMana - amount >= 0;
     }
 
-    private bool canUsMoreStability(int amount)
+    private static bool canUsMoreStability(int amount)
     {
         return currentStability - amount >= 0;
     }
 
-    private void UpdateRuneUI()
+    private static void UpdateRuneUI()
     {
         DeleteAllRuneUI();
 
@@ -193,7 +197,7 @@ public class RuneSelection : MonoBehaviour
 
             for (int i = 0; i < selectedRunes[rune]; i++)
             {
-                Transform slot = runeHolder.GetChild(runeIndex);
+                Transform slot = Instance.runeHolder.GetChild(runeIndex);
 
                 Instantiate(runeUI, slot);
 
@@ -202,19 +206,19 @@ public class RuneSelection : MonoBehaviour
         }
     }
 
-    private void DeleteAllRuneUI()
+    private static void DeleteAllRuneUI()
     {
-        for (int i = 0; i < runeHolder.childCount; i++)
+        for (int i = 0; i < Instance.runeHolder.childCount; i++)
         {
-            if (runeHolder.GetChild(i).childCount == 0) continue;
+            if (Instance.runeHolder.GetChild(i).childCount == 0) continue;
 
-            DestroyImmediate(runeHolder.GetChild(i).GetChild(0).gameObject);
+            DestroyImmediate(Instance.runeHolder.GetChild(i).GetChild(0).gameObject);
         }
     }
 
     // ========================= M�thodes externes ============================= //
 
-    public bool TryAddRune(Rune rune)
+    public static bool TryAddRune(Rune rune)
     {   
         if (canUsMoreMana(rune.data.manaCost) && canUsMoreStability(rune.data.manaCost))
         {
@@ -227,13 +231,14 @@ public class RuneSelection : MonoBehaviour
             selectedRunes[rune] += 1;
             UpdateRuneUI();
 
+            SpellCaster.ChangeSpell();
             return true;
         }
 
         return false;
     }
 
-    public void RemoveRune(Rune rune, bool restorMana = true)
+    public static void RemoveRune(Rune rune, bool restorMana = true)
     {
         if (restorMana)
         {
@@ -248,22 +253,22 @@ public class RuneSelection : MonoBehaviour
         UpdateRuneUI();
     }
 
-    public void PreviewRune(RuneData rune)
+    public static void PreviewRune(RuneData rune)
     {
         PotentialMana -= rune.manaCost;
         InterStability -= rune.manaCost;
     }
 
-    public void UnPreviewRune(RuneData rune)
+    public static void UnPreviewRune(RuneData rune)
     {
         PotentialMana += rune.manaCost;
         InterStability += rune.manaCost;
     }
     
-    public string GetRuneCombinationData()
+    public static string GetRuneCombinationData()
     {   
         string dataPath = $"";
-        foreach (Rune rune in runeSelectors)
+        foreach (Rune rune in Instance.runeSelectors)
         {
             if (rune == null) continue;
             for (int i = 0; i < selectedRunes[rune]; i++)
@@ -275,16 +280,16 @@ public class RuneSelection : MonoBehaviour
         return dataPath;
     }
 
-    public void UpdateMana()
+    public static void UpdateMana()
     {
         CurrentMana = potentialMana;
 
         DeleteAllRuneUI();
     }
 
-    public void ResetSelection(bool restoreRune = false)
+    public static void ResetSelection(bool restoreRune = false)
     {
-        foreach (Rune rune in runeSelectors)
+        foreach (Rune rune in Instance.runeSelectors)
         {
             if (rune == null) continue;
 
@@ -297,16 +302,16 @@ public class RuneSelection : MonoBehaviour
         }
     }
 
-    public void ResetMana()
+    public static void ResetMana()
     {
-        CurrentMana = maxMana;
-        InterMana = maxMana;
-        PotentialMana = maxMana;
+        CurrentMana = Instance.maxMana;
+        InterMana = Instance.maxMana;
+        PotentialMana = Instance.maxMana;
     }
 
-    public void ResetStability()
+    public static void ResetStability()
     {
-        CurrentStability = maxStability;
-        InterStability = maxStability;
+        CurrentStability = Instance.maxStability;
+        InterStability = Instance.maxStability;
     }
 }
