@@ -9,10 +9,8 @@ public class TurnPlayer : TurnSubscriber
     }
 
     public override void PlayTurn(TurnManager turnManager)
-    {
-        RuneSelection runeSelec = GameManager.FindObjectOfType<RuneSelection>();
-        
-        foreach (Rune rune in runeSelec.selectedRunes.Keys)
+    {        
+        foreach (Rune rune in RuneSelection.selectedRunes.Keys)
         {
             rune.UpdateCooldown();
         }

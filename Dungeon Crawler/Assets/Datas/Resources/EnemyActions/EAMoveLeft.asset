@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a6ea69e0f41314faafe8cda8413d5e, type: 3}
   m_Name: EAMoveLeft
   m_EditorClassIdentifier: 
-  posChange: {x: 0, y: 0}
+  posChange: {x: -1, y: 0}
   weight: 0
   isAttack: 0
   dmgValue: 0

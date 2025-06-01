@@ -17,7 +17,7 @@ public class PlayerSelection : MonoBehaviour
     {
         spellCaster = GameObject.FindGameObjectWithTag(spellCasterTag).GetComponent<SpellCaster>();
         charaPortait = GameObject.FindGameObjectWithTag(charaPortaitTag).GetComponent<PortraitManager>();
-        playerSelected.AddListener(delegate { spellCaster.ChangeCaster(posComponent); });
+        playerSelected.AddListener(delegate { SpellCaster.ChangeCaster(posComponent); });
         playerSelected.AddListener(delegate { charaPortait.ChangeImage(charaPortraitSprite); });
     }
 

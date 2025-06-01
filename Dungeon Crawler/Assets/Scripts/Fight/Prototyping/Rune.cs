@@ -8,9 +8,6 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [Header("Rune Infos")]
     public RuneData data;
     [SerializeField] private Button runeButton;
-    [SerializeField] private string runeSelectionTag = "SpellManager";
-    private RuneSelection runeSelection;
-    private SpellCaster spellCaster;
     public int maxSelected;
     public int maxRunes;
 
@@ -51,9 +48,6 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private void Start()
     {
-        runeSelection = GameObject.FindGameObjectWithTag(runeSelectionTag).GetComponent<RuneSelection>();
-        spellCaster = GameObject.FindGameObjectWithTag(runeSelectionTag).GetComponent<SpellCaster>();
-
         for (int i = 0; i < CoolDown + 1; i++)
         {
             _coolDownPool.Add(i, 0);
@@ -70,9 +64,9 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if (_coolDownPool[0] <= 0) return;
 
-        if (runeSelection.selectedRunes[this] < maxSelected)
+        if (RuneSelection.selectedRunes[this] < maxSelected)
         {
-            if (runeSelection.TryAddRune(this))
+            if (RuneSelection.TryAddRune(this))
             {
                 _coolDownPool[0]--;
                 _coolDownPool[CoolDown]++;
@@ -84,7 +78,7 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             return;
         }
 
-        runeSelection.RemoveRune(this);
+        RuneSelection.RemoveRune(this);
         _coolDownPool[0] += maxSelected;
         _coolDownPool[CoolDown] -= maxSelected;
 
@@ -122,11 +116,11 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         bool validSpell = false;
         bool unstableSpell = false;
         string spellString = "";
-        switch (spellCaster.currentCastMode)
+        switch (SpellCaster.currentCastMode)
         {
             // Sort sur les personnages
             case SpellCaster.CastMode.Player:
-                spellString = runeSelection.CurrentSpellPlayer + Id;
+                spellString = RuneSelection.CurrentSpellPlayer + Id;
                 
                 SpellPlayerData potentialPSpell = Resources.Load<SpellPlayerData>(spellString);
 
@@ -137,7 +131,7 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             
             // Sort sur les ennemis
             case SpellCaster.CastMode.Enemy:
-                spellString = runeSelection.CurrentSpellEnemy + Id;
+                spellString = RuneSelection.CurrentSpellEnemy + Id;
                 SpellEnemyData potentialESpell = Resources.Load<SpellEnemyData>(spellString);
 
                 if (potentialESpell != null)
@@ -156,7 +150,7 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             runeButton.interactable = true;
 
-            if (runeSelection.IsEmpty)
+            if (RuneSelection.IsEmpty)
             {
                 overlayImage.sprite = null;
                 overlayImage.gameObject.SetActive(false);
@@ -195,7 +189,7 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if (!previewed && runeButton.interactable)
         {
-            runeSelection.PreviewRune(data);
+            RuneSelection.PreviewRune(data);
             previewed = true;
         }
     }
@@ -204,7 +198,7 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if (previewed && runeButton.interactable)
         {
-            runeSelection.UnPreviewRune(data);
+            RuneSelection.UnPreviewRune(data);
             previewed = false;
         }
     }
