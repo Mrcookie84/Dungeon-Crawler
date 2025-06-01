@@ -12,6 +12,6 @@ public class StatusWitherData : StatusData
     {
         EntityHealth entityHealth = entity.GetComponent<EntityHealth>();
         
-        entityHealth.TakeDamage(null, witherAmount);
+        entityHealth.TakeDamage(null, witherAmount, dmgType);
     }
 }

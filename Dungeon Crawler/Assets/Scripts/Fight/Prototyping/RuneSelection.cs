@@ -15,18 +15,75 @@ public class RuneSelection : MonoBehaviour
     [Header("Mana")]
     public int maxMana;
     [HideInInspector] public int currentMana;
+    private int interMana;
     private int potentialMana;
+    [SerializeField] private VerticalLayoutGroup manaGraduationGroup;
+    [SerializeField] private GameObject manaGrad;
     [SerializeField] private Slider manaSliderUI;
+    [SerializeField] private Slider interManaSliderUI;
     [SerializeField] private Slider potentialManaSliderUI;
 
     [Header("Stability")]
     public int maxStability;
     [HideInInspector] public int currentStability;
+    private int interStability;
+    [SerializeField] private HorizontalLayoutGroup stabilityGraduationGroup;
+    [SerializeField] private GameObject stabilityGrad;
     [SerializeField] private Slider stabilitySliderUI;
+    [SerializeField] private Slider interStabilitySliderUI;
 
     public Dictionary<Rune, int> selectedRunes = new Dictionary<Rune, int>();
 
     // ========================= Propri�t�s ============================= //
+    public int CurrentMana
+    {
+        get { return currentMana; }
+        set
+        {
+            currentMana = value;
+            manaSliderUI.value = currentMana;
+        }
+    }
+
+    private int InterMana
+    {
+        get { return interMana; }
+        set
+        {
+            interMana = value;
+            interManaSliderUI.value = interMana;
+        }
+    }
+
+    private int PotentialMana
+    {
+        get { return potentialMana; }
+        set
+        {
+            potentialMana = value;
+            potentialManaSliderUI.value = potentialMana;
+        }
+    }
+
+    public int CurrentStability
+    {
+        get { return currentStability; }
+        set
+        {
+            currentStability = value;
+            stabilitySliderUI.value = currentStability;
+        }
+    }
+
+    private int InterStability
+    {
+        get { return interStability; }
+        set
+        {
+            interStability = value;
+            interStabilitySliderUI.value = interStability;
+        }
+    }
 
     public string CurrentSpellPlayer
     {
@@ -64,54 +121,56 @@ public class RuneSelection : MonoBehaviour
 
         // Initialisation du mana
         currentMana = maxMana;
+        interMana = maxMana;
         potentialMana = maxMana;
 
         manaSliderUI.maxValue = maxMana;
         manaSliderUI.value = maxMana;
+        interManaSliderUI.maxValue = maxMana;
+        interManaSliderUI.value = maxMana;
         potentialManaSliderUI.maxValue = maxMana;
         potentialManaSliderUI.value = maxMana;
 
-        // Initialisation de la capacit�
+        // Initialisation de la stabilité
         currentStability = maxStability;
+        interStability = maxStability;
 
         stabilitySliderUI.maxValue = maxStability;
         stabilitySliderUI.value = maxStability;
+        interStabilitySliderUI.maxValue = maxStability;
+        interStabilitySliderUI.value = maxStability;
     }
 
-    private bool CheckRuneConflict(Rune newRune)
+    private void Start()
     {
-        // Conflit entre focus et extension
-        if (newRune == runeSelectors[3] && selectedRunes[runeSelectors[4]] > 0)
-            return false;
-        // Conflit entre extension et focus
-        else if (newRune == runeSelectors[4] && selectedRunes[runeSelectors[3]] > 0)
-            return false;
-        // Pas de conflit
-        else
-            return true;
-    }
+        // Plaçage des graduations
+        // Mana
+        for (int i = 0; i < maxMana - 1; i++)
+        {
+            Instantiate(manaGrad, manaGraduationGroup.transform);
+        }
+        float manaHeight = manaGraduationGroup.GetComponent<RectTransform>().rect.height;
+        float manaSpacing = manaHeight / maxMana;
+        manaSpacing -= manaGrad.GetComponent<RectTransform>().rect.height;
 
-    private void ChangeCurrentMana(int amount)
-    {
-        currentMana += amount;
-        manaSliderUI.value = currentMana;
-    }
+        manaGraduationGroup.spacing = manaSpacing;
 
-    private void ChangePotentialMana(int amount)
-    {
-        potentialMana += amount;
-        potentialManaSliderUI.value = potentialMana;
-    }
-    
-    private void ChangeCurrentStability(int amount)
-    {
-        currentStability += amount;
-        stabilitySliderUI.value = currentStability;
+        // Stability
+        for (int i = 0; i < maxStability - 1; i++)
+        {
+            Instantiate(stabilityGrad, stabilityGraduationGroup.transform);
+        }
+        float stabilityHeight = stabilityGraduationGroup.GetComponent<RectTransform>().rect.width;
+        float stabilitySpacing = stabilityHeight / maxStability;
+        stabilitySpacing -= stabilityGrad.GetComponent<RectTransform>().rect.width;
+
+        stabilityGraduationGroup.spacing = stabilitySpacing;
+
     }
 
     private bool canUsMoreMana(int amount)
     {
-        return potentialMana - amount >= 0;
+        return interMana - amount >= 0;
     }
 
     private bool canUsMoreStability(int amount)
@@ -157,10 +216,14 @@ public class RuneSelection : MonoBehaviour
 
     public bool TryAddRune(Rune rune)
     {   
-        if (CheckRuneConflict(rune) && canUsMoreMana(rune.data.manaCost) && canUsMoreStability(rune.data.manaCost))
+        if (canUsMoreMana(rune.data.manaCost) && canUsMoreStability(rune.data.manaCost))
         {
-            ChangePotentialMana(-rune.data.manaCost);
-            ChangeCurrentStability(-rune.data.manaCost);
+            PotentialMana -= rune.data.manaCost;
+            InterMana -= rune.data.manaCost;
+
+            CurrentStability -= rune.data.manaCost;
+            InterStability -= rune.data.manaCost;
+
             selectedRunes[rune] += 1;
             UpdateRuneUI();
 
@@ -173,12 +236,28 @@ public class RuneSelection : MonoBehaviour
     public void RemoveRune(Rune rune, bool restorMana = true)
     {
         if (restorMana)
-            ChangePotentialMana(rune.data.manaCost * selectedRunes[rune]);
-        ChangeCurrentStability(rune.data.manaCost * selectedRunes[rune]);
+        {
+            PotentialMana += rune.data.manaCost * selectedRunes[rune];
+            InterMana += rune.data.manaCost * selectedRunes[rune];
+        }
+        CurrentStability += rune.data.manaCost * selectedRunes[rune];
+        InterStability += rune.data.manaCost * selectedRunes[rune];
 
         selectedRunes[rune] = 0;
         
         UpdateRuneUI();
+    }
+
+    public void PreviewRune(RuneData rune)
+    {
+        PotentialMana -= rune.manaCost;
+        InterStability -= rune.manaCost;
+    }
+
+    public void UnPreviewRune(RuneData rune)
+    {
+        PotentialMana += rune.manaCost;
+        InterStability += rune.manaCost;
     }
     
     public string GetRuneCombinationData()
@@ -198,9 +277,7 @@ public class RuneSelection : MonoBehaviour
 
     public void UpdateMana()
     {
-        currentMana = potentialMana;
-        manaSliderUI.value = potentialMana;
-        potentialManaSliderUI.value = potentialMana;
+        CurrentMana = potentialMana;
 
         DeleteAllRuneUI();
     }
@@ -222,17 +299,14 @@ public class RuneSelection : MonoBehaviour
 
     public void ResetMana()
     {
-        currentMana = maxMana;
-        potentialMana = maxMana;
-
-        manaSliderUI.value = maxMana;
-        potentialManaSliderUI.value = maxMana;
+        CurrentMana = maxMana;
+        InterMana = maxMana;
+        PotentialMana = maxMana;
     }
 
     public void ResetStability()
     {
-        currentStability = maxStability;
-
-        stabilitySliderUI.value = maxStability;
+        CurrentStability = maxStability;
+        InterStability = maxStability;
     }
 }

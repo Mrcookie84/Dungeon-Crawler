@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class Rune : MonoBehaviour
+public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Rune Infos")]
     public RuneData data;
@@ -27,6 +28,7 @@ public class Rune : MonoBehaviour
     [SerializeField] private Sprite blockedSprite;
 
     private SortedDictionary<int, int> _coolDownPool = new SortedDictionary<int, int>();
+    private bool previewed;
 
     public int Id { get { return data.ID; } }
     public int CoolDown { get { return data.cooldown; } }
@@ -187,5 +189,23 @@ public class Rune : MonoBehaviour
             cooldownFill.sprite = cooldownDepletedSprite;
         else
             cooldownFill.sprite = cooldownNormalSprite;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (!previewed && runeButton.interactable)
+        {
+            runeSelection.PreviewRune(data);
+            previewed = true;
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (previewed && runeButton.interactable)
+        {
+            runeSelection.UnPreviewRune(data);
+            previewed = false;
+        }
     }
 }

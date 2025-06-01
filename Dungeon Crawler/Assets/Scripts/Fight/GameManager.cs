@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public List<Fighter> playerTeam;
     public List<Fighter> enemyTeam;
 
-    private int currentFighterIndex = 0;
+    //private int currentFighterIndex = 0;
     private bool playerTurn = true;
 
     private void Awake()
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     public void StartPlayerTurn()
     {
         playerTurn = true;
-        currentFighterIndex = 0;
+        //currentFighterIndex = 0;
         Debug.Log("Tour des joueurs !");
     }
 

@@ -8,7 +8,6 @@ public class PositionManager : MonoBehaviour
     
     void Awake()
     {
-        
         Vector3 spawnPos;
         // Remplissage de la grille des ennemies
         for (int i = 0; i < posData.enemyArray.Length; i++)

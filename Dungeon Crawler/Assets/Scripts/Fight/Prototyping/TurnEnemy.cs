@@ -17,7 +17,7 @@ public class TurnEnemy : TurnSubscriber
     public override void PlayTurn(TurnManager turnManager)
     {
         isPlaying = true;
-        ai.ChooseAction();
+        ai.DoAction();
 
         StartCoroutine(AttackCoroutine());
     }

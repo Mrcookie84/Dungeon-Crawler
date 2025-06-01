@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyActionData", menuName = "ScriptableObject/EnemyAction/EnemyActionData")]
 public class EnemyActionData : ScriptableObject
 {
-    [Header("Action Type")]
+    [Header("Movement")]
+    public Vector2Int posChange = Vector2Int.zero;
+
+    [Header("Action Info")]
+    public int weight;
     public bool isAttack;
 
     [Header("Attack")]
@@ -27,5 +29,17 @@ public class EnemyActionData : ScriptableObject
         Other,
         SelfOrOther,
         Multiple
+    }
+
+    private void OnValidate()
+    {
+        if (posChange.y < 0)
+        {
+            posChange.y = 0;
+        }
+        else if (posChange.y > 1)
+        {
+            posChange.y = 1;
+        }
     }
 }

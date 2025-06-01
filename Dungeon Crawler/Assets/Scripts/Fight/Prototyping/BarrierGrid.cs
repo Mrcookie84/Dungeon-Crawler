@@ -8,11 +8,16 @@ public class BarrierGrid : MonoBehaviour
         Reinforced
     }
 
-    public BarrierState[] barrierStates;
+    private BarrierState[] barrierStates = new BarrierState[3];
 
-    public BarrierState CheckBarrierState(int column)
+    public BarrierState GetBarrierState(int column)
     {
         return barrierStates[column];
+    }
+
+    public bool IsBarrierBroken(int column)
+    {
+        return barrierStates[column] == BarrierState.Destroyed;
     }
 
     public void ChangeBarrierState(int column, BarrierState newState)
@@ -31,6 +36,14 @@ public class BarrierGrid : MonoBehaviour
             animator.SetTrigger("reconstruction");
             animator.SetBool("isDestroyed", false);
             //transform.GetChild(column).gameObject.SetActive(true);
+        }
+    }
+
+    private void Awake()
+    {
+        for (int i = 0; i < barrierStates.Length; i++)
+        {
+            barrierStates[i] = BarrierState.Reinforced;
         }
     }
 }

@@ -84,7 +84,7 @@ public class EnemyAction : MonoBehaviour
             if (action.dmgValue > 0)
             {
                 EntityHealth entityHealth = entity.GetComponent<EntityHealth>();
-                entityHealth.TakeDamage(gameObject, action.dmgValue);
+                entityHealth.TakeDamage(gameObject, action.dmgValue, action.dmgType);
             }
 
             if (action.status != null)
