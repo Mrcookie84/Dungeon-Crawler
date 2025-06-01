@@ -186,7 +186,7 @@ public class SpellCaster : MonoBehaviour
             }
         }
 
-        playerGrid.UpdateEntitiesIndex();
+        EnemyAIControler.UpdatePlayerMask();
         EnableButtons(true);
     }
 
@@ -292,7 +292,7 @@ public class SpellCaster : MonoBehaviour
             targetPos.y = Mathf.Abs(targetPos.y) % 2;
 
             bool tryingToCross = spellEnemyData.displacementList[i].y != 0;
-            bool barrierBroken = barrierGrid.CheckBarrierState(enemyPos.gridPos.x) == BarrierGrid.BarrierState.Destroyed;
+            bool barrierBroken = barrierGrid.IsBarrierBroken(enemyPos.gridPos.x);
             bool targetInGrid = enemyGrid.IsPosInGrid(targetPos);
 
             if ((!tryingToCross || barrierBroken) && targetInGrid)
@@ -301,7 +301,7 @@ public class SpellCaster : MonoBehaviour
             }
         }
 
-        enemyGrid.UpdateEntitiesIndex();
+        EnemyAIControler.UpdateEnemyMask();
     }
 
     /// <summary>
@@ -367,6 +367,8 @@ public class SpellCaster : MonoBehaviour
                 // Lancer l'animation
             }
         }
+
+        EnemyAIControler.UpdateBarrierMask();
     }
 
     public List<Vector2Int> GetAllCellHit()
@@ -384,7 +386,7 @@ public class SpellCaster : MonoBehaviour
             if (enemyGrid.IsPosInGrid(currentCell))
             {
                 bool passingThrought = (currentCell.y - previousCell.y) != 0;
-                bool barrierBroken = barrierGrid.CheckBarrierState(currentCell.x) == BarrierGrid.BarrierState.Destroyed;
+                bool barrierBroken = barrierGrid.IsBarrierBroken(currentCell.x);
                 bool canPassThrought = (passingThrought && barrierBroken) || !spellEnemyData.blockedByBarrier;
             
                 if ((canPassThrought ||!passingThrought))

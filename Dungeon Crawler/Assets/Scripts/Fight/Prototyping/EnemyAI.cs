@@ -1,146 +1,340 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    [Header("Position infos")]
-    [SerializeField] private EntityPosition gridComponent;
-    [SerializeField] private string playerGridTag;
-    private GridManager playerGrid;
-    [SerializeField] private string enemyGridTag;
-    private GridManager enemyGrid;
-    [SerializeField] private string barrierGridTag;
-    private BarrierGrid barrierGrid;
+    [Header("Components reference")]
+    [SerializeField] private EntityPosition gridComp;
+    [SerializeField] private EntityFightAnimation animHandler;
 
-    [Header("AI weights")]
+    [Header("Actions")]
+    [SerializeField] private List<EnemyActionData> actions;
+    [SerializeField] private bool canBreakBarrier;
+
+    [Header("Position weights")]
     [SerializeField] private int[] columnW = new int[3];
     [Space(5)]
     [SerializeField] private int dimAffinityRow = 0;
     [SerializeField] private int dimAffintyW = 0;
-    [Space(5)]
-    [SerializeField] private int adjacentEnemyW = 0;
+
+    [Header("Entities weights")]
+    //[SerializeField] private int adjacentEnemyW = 0;
     [Space(5)]
     [SerializeField] private int enemyInWorldW = 0;
     [SerializeField] private int playerInWorldW = 0;
     [Space(5)]
-    [SerializeField] private int scoreDif;
+    //[SerializeField] private int weakestPlayerRowW = 0;
+    //[SerializeField] private int weakestEnemyAdjW = 0;
 
-    [Header("Action")]
-    [SerializeField] private bool canBreakBarrier;
-    [SerializeField] private EnemyAction actionComp;
+    [Header("Choice bias")]
+    [SerializeField] private int nbTurnForesight;
+    [SerializeField] private int initialScoreDif;
+    [SerializeField] private int scoreDifDecay;
+    private int scoreDif;
+    
 
-    private int currentCellScore = 0;
-    private Vector2Int bestCellCoords = new Vector2Int();
-    private int bestCellScore = 0;
+    private int[] scoreMask = new int[6];
+    private Dictionary<Vector2Int, List<EnemyActionData>> sortedActions = new Dictionary<Vector2Int, List<EnemyActionData>>();
 
-    private void Start()
+    // ====================== Propriétés ======================== //
+    public Vector2Int[] Movements
     {
-        playerGrid = GameObject.FindGameObjectWithTag(playerGridTag).GetComponent<GridManager>();
-        enemyGrid = GameObject.FindGameObjectWithTag(enemyGridTag).GetComponent<GridManager>();
-        barrierGrid = GameObject.FindGameObjectWithTag(barrierGridTag).GetComponent<BarrierGrid>();
+        get
+        {
+            return sortedActions.Keys.ToArray();
+        }
     }
 
-    public void ChooseAction()
+    public Vector2Int GridPos
     {
-        EvaluateAllCells();
+        get { return gridComp.gridPos; }
+        set { gridComp.gridPos = value; }
+    }
 
-        if (bestCellScore - currentCellScore >= scoreDif)
+    // ======================= Méthodes ========================= //
+    // Static
+    private static int ActionWeightsSum(List<EnemyActionData> actionList)
+    {
+        int sum = 0;
+        foreach (EnemyActionData actionData in actionList)
+            sum += actionData.weight;
+
+        return sum;
+    }
+
+    public static GameObject RandomEntityInList(List<GameObject> entityList)
+    {
+        int rng = UnityEngine.Random.Range(0, entityList.Count);
+
+        return entityList[rng];
+    }
+
+    // Public
+    public void UpdateMask()
+    {
+        for (int i = 0; i < scoreMask.Length; i++)
         {
-            Move();
+            Vector2Int cell = new Vector2Int(i % 3, i / 3);
+            scoreMask[i] = 0;
+
+            // Position weights
+            if (cell.y == dimAffinityRow)
+            {
+                scoreMask[i] += dimAffintyW;
+            }
+
+            scoreMask[i] += columnW[cell.x];
+
+            // Entity weights
+            scoreMask[i] += EnemyAIControler.CountEnemyOnRow(cell.y) * enemyInWorldW;
+            scoreMask[i] += EnemyAIControler.CountPlayerOnRow(cell.y) * playerInWorldW;
+        }
+    }
+
+    public void ResetMoveInitiative()
+    {
+        scoreDif = initialScoreDif;
+    }
+
+    public void UpdateMoveInitiative()
+    {
+        scoreDif = Math.Max(0, scoreDif - scoreDifDecay);
+    }
+
+    public virtual void DoAction()
+    {
+        (Vector2Int, int) move = FindBestMove(GridPos, nbTurnForesight);
+        Debug.Log(move);
+
+        // Influence de la volonté de déplacement
+        Vector2Int moveKey;
+        if (move.Item2 >= scoreDif)
+        {
+            moveKey = move.Item1;
         }
         else
         {
-            actionComp.DoAction();
+            moveKey = Vector2Int.zero;
         }
-    }
 
-    private void Move()
-    {
-        Vector2Int movDirection = FindMoveDirection();
-        Vector2Int targetCell = gridComponent.gridPos + movDirection;
-
-        // V�rifier si il essaye de passer la barri�re
-        if (movDirection.y != 0 && barrierGrid.CheckBarrierState(gridComponent.gridPos.x) == BarrierGrid.BarrierState.Reinforced)
+        // ============= Aucune action séléectionnée =========== //
+        if (!sortedActions.ContainsKey(moveKey))
         {
-            if (canBreakBarrier)
-                barrierGrid.ChangeBarrierState(targetCell.x, BarrierGrid.BarrierState.Destroyed);
-            else
-                actionComp.DoAction();
+            Debug.LogWarning($"{moveKey} : Aucune action sélectionnée pour {name}");
             return;
         }
 
-        // V�rifier si il y a un autre ennemi sur le chemin
-        GameObject otherEnemy = enemyGrid.GetEntityAtPos(targetCell);
-        if (otherEnemy != null)
+        EnemyActionData action = ChooseAction(moveKey);
+
+        // Déplacement
+        gridComp.ChangePosition(GridPos + moveKey);
+
+        // Échanger avec la potentielle entité sur la destination
+        if (EnemyAIControler.IsEnemyOnCell(GridPos + moveKey))
         {
-            otherEnemy.GetComponent<EntityPosition>().ChangePosition(gridComponent.gridPos);
+            GameObject entity = EnemyAIControler.GetEnemyOnCell(GridPos + moveKey);
+
+            if (entity != null)
+                entity.GetComponent<EntityPosition>().ChangePosition(GridPos);
+        }
+
+        EnemyAIControler.UpdateEnemyMask();
+
+        // Execution de l'action
+        if (action.isAttack)
+        {
+            Attack(action);
+        }
+        else
+        {
+            Support(action);
+        }
+
+        UpdateMoveInitiative();
+    }
+
+    // Private
+    private (Vector2Int,int) FindBestMove(Vector2Int startCell, int depth)
+    {
+        UpdateMask();
+
+        // Not moving
+        int startScore = scoreMask[startCell.x + 3 * startCell.y];
+        (Vector2Int, int) bestMove = (Vector2Int.zero, startScore);
+        bool moved = false;
+
+        // Fin de recherche
+        if (depth <= 0)
+        {
+            return bestMove;
         }
         
-        gridComponent.ChangePosition(targetCell);
+        // Balayage de chaque possibilité de déplacement
+        foreach (Vector2Int cell in Movements)
+        {
+            // Mouvement impossible
+            if (!EnemyAIControler.EnemyGrid.IsPosInGrid(startCell + cell))
+                continue;
+            if (!EnemyAIControler.BarrierGrid.IsBarrierBroken(startCell.x) && cell.y == 1) // sdfdsfsdfdsfsdfsdfdsfsdfdsfsdfsdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+                continue;
 
-        enemyGrid.UpdateEntitiesIndex();
+            // Appel récursif pour prévoir sur plusieurs tours
+            (Vector2Int, int) currentMove = FindBestMove(startCell + cell, --depth);
+
+            if (currentMove.Item2 > bestMove.Item2)
+            {
+                bestMove = (cell, currentMove.Item2);
+                moved = true;
+            }
+        }
+
+        if (moved)
+            return (bestMove.Item1, bestMove.Item2 + startScore);
+        // Ne pas doubler le score quand il n'y a pas de mouvement
+        else
+            return bestMove;
     }
 
-    private Vector2Int FindMoveDirection()
+    private EnemyActionData ChooseAction(Vector2Int moveKey)
     {
-        int xComp = Math.Sign(bestCellCoords.x - gridComponent.gridPos.x);
-        int yComp;
-        if (xComp == 0)
+        var actionList = sortedActions[moveKey];
+        int actionWeights = ActionWeightsSum(actionList);
+
+        int rng = UnityEngine.Random.Range(0, actionWeights);
+        int currentWeight = 0;
+
+        foreach (var action in actionList)
         {
-            yComp = Math.Sign(bestCellCoords.y - gridComponent.gridPos.y);
+            currentWeight += action.weight;
+
+            if (rng <= currentWeight)
+            {
+                return action;
+            }
         }
-        else { yComp = 0; }
         
-
-        return new Vector2Int(xComp, yComp);
+        return null;
     }
 
-    private void EvaluateAllCells()
+    private void Attack(EnemyActionData action)
     {
-        bestCellScore = int.MinValue;
-        for(int i = 0;i < 6; i++)
-        {
-            Vector2Int currentCell = new Vector2Int(i % 3, i / 3);
-            int cellScore = EvaluateCell(currentCell);
+        animHandler.ChangeState(EntityFightAnimation.State.Attack);
 
-            if (currentCell == gridComponent.gridPos)
+        List<GameObject> targets = new List<GameObject>();
+
+        if (action.multipleTarget)
+        {
+            targets = EnemyAIControler.PlayerGrid.GetEntitiesOnRow(gridComp.gridPos.y);
+        }
+        else
+        {
+            targets.Add(EnemyAIControler.PlayerGrid.GetRandomEntityOnRow(gridComp.gridPos.y));
+        }
+
+        foreach (GameObject entity in targets)
+        {
+            if (entity == null) continue;
+
+            if (action.dmgValue > 0)
             {
-                currentCellScore = cellScore;
+                EntityHealth entityHealth = entity.GetComponent<EntityHealth>();
+                entityHealth.TakeDamage(gameObject, action.dmgValue, action.dmgType);
             }
 
-            if (cellScore > bestCellScore)
+            if (action.status != null)
             {
-                bestCellCoords = currentCell;
-                bestCellScore = cellScore;
+                EntityStatusHolder entityStatus = entity.GetComponent<EntityStatusHolder>();
+                entityStatus.AddStatus(action.status, action.statusDuration, gameObject);
             }
         }
     }
 
-    private int EvaluateCell(Vector2Int coords)
+    private void Support(EnemyActionData action)
     {
-        int cellScore = 0;
-
-        // Affinit� dimensionnelle
-        if (coords.y == dimAffinityRow)
+        List<GameObject> targets = new List<GameObject>();
+        List<GameObject> possibleTargets;
+        switch (action.supportTarget)
         {
-            cellScore += dimAffintyW;
+            case EnemyActionData.EnemySupportTarget.Self:
+                targets.Add(gameObject);
+                break;
+
+            case EnemyActionData.EnemySupportTarget.Other:
+                possibleTargets = EnemyAIControler.EnemyGrid.GetAdjacentEntities(gridComp.gridPos);
+
+                targets.Add(RandomEntityInList(possibleTargets));
+                break;
+
+            case EnemyActionData.EnemySupportTarget.SelfOrOther:
+                possibleTargets = EnemyAIControler.EnemyGrid.GetAdjacentEntities(gridComp.gridPos);
+                possibleTargets.Add(gameObject);
+
+                targets.Add(RandomEntityInList(possibleTargets));
+                break;
+
+            case EnemyActionData.EnemySupportTarget.Multiple:
+                targets = EnemyAIControler.EnemyGrid.GetAdjacentEntities(gridComp.gridPos);
+                break;
         }
 
-        // Influence de la colone
-        cellScore += columnW[coords.x];
+        foreach (GameObject entity in targets)
+        {
+            if (action.healAmount > 0)
+            {
+                EntityHealth entityHealth = entity.GetComponent<EntityHealth>();
+                entityHealth.Heal(action.dmgValue);
+            }
 
-        // Placement des ennemis
-        int nbEntitiy = enemyGrid.GetAdjacentEntities(coords, gameObject).Count;
-        cellScore += nbEntitiy * adjacentEnemyW;
+            if (action.status != null)
+            {
+                EntityStatusHolder entityStatus = entity.GetComponent<EntityStatusHolder>();
+                entityStatus.AddStatus(action.status, action.statusDuration, gameObject);
+            }
+        }
+    }
 
-        // Placement dans les mondes
-        nbEntitiy = enemyGrid.GetEntitiesOnRow(coords.y, gameObject).Count;
-        cellScore += nbEntitiy * enemyInWorldW;
+    private void Start()
+    {
+        scoreDif = initialScoreDif;
 
-        nbEntitiy = playerGrid.GetEntitiesOnRow(coords.y).Count;
-        cellScore += nbEntitiy * playerInWorldW;
+        sortedActions = new Dictionary<Vector2Int, List<EnemyActionData>>();
 
-        return cellScore;
+        foreach (EnemyActionData action in actions)
+        {
+            if (action == null)
+            {
+                Debug.LogError($"{name} AI : Invalid Action");
+                continue;
+            }
+
+            if (sortedActions.ContainsKey(action.posChange))
+            {
+                sortedActions[action.posChange].Add(action);
+            }
+
+            else
+            {
+                sortedActions.Add(action.posChange, new List<EnemyActionData>() { action });
+            }
+        }
+
+        /*
+        // Debug
+        string debugString = $"{name} ::";
+
+        foreach (Vector2Int key in sortedActions.Keys)
+        {
+            debugString += key + " : ";
+            foreach (EnemyActionData action in sortedActions[key])
+            {
+                debugString += action.name + ", ";
+            }
+
+            debugString += " | ";
+        }
+        Debug.Log(debugString);
+        */
     }
 }
