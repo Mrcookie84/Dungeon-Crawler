@@ -20,6 +20,9 @@ public class EntityHealth : MonoBehaviour
     public UnityEvent gotAttacked = new UnityEvent();
     public UnityEvent tookDamage = new UnityEvent();
     public UnityEvent isDying = new UnityEvent();
+    
+    [Header("Display")]
+    [SerializeField] private GameObject dmgDisplayPreF;
 
     [HideInInspector] public bool invicible = false;
     
@@ -30,9 +33,9 @@ public class EntityHealth : MonoBehaviour
         healthBarGroup = GameObject.FindGameObjectWithTag(healthBarGroupTag).GetComponent<HealthBarGroupManager>();
     }
 
-    public void TakeDamage(GameObject source, int amount)
+    public void TakeDamage(GameObject source, int amount, DamageTypesData.DmgTypes type)
     {
-        DamageInfo attackInfo = new DamageInfo(source, amount);
+        DamageInfo attackInfo = new DamageInfo(source, amount, type);
         
         if (invicible)
         {
@@ -40,6 +43,11 @@ public class EntityHealth : MonoBehaviour
             gotAttacked.Invoke();
             return;
         }
+        
+        // Affichage des dégâts
+        GameObject display = Instantiate(dmgDisplayPreF, transform);
+        DamageDisplay displayComp = display.GetComponent<DamageDisplay>();
+        StartCoroutine(displayComp.DisplayInfo(attackInfo));
         
         status.DamageResponse(attackInfo);
         gotAttacked.Invoke();

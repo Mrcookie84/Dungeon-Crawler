@@ -140,6 +140,7 @@ MonoBehaviour:
   isDying:
     m_PersistentCalls:
       m_Calls: []
+  dmgDisplayPreF: {fileID: 8984291207886981808, guid: 68a5e495fd6eb584ea7d2825c63d9fac, type: 3}
   invicible: 0
 --- !u!114 &-7666935225237567098
 MonoBehaviour:

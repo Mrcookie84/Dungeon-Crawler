@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: EASimpleContactDegradation
   m_EditorClassIdentifier: 
   isAttack: 1
-  dmgValue: 10
-  dmgType: 0
+  dmgValue: 15
+  dmgType: 2
   multipleTarget: 0
   healAmount: 0
   supportTarget: 0

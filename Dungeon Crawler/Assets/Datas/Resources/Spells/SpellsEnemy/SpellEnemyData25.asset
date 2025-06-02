@@ -22,9 +22,10 @@ MonoBehaviour:
   weakenBarrier: 0
   blockedByBarrier: 0
   statusData: {fileID: 11400000, guid: a55e12d09b7b06c41b2f6b2404de8161, type: 2}
-  statusDuration: 2
+  statusDuration: 3
   t_fx: 0
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: "applique l'affliction d\xE9gradation pendant 2 tours "
+  desc: "- Co\xFBt (3 mana)   - Touche 1 ennemi, Applique l\u2019affliction D\xE9gradation
+    (3 tours) (10 d\xE9g\xE2ts de d\xE9gradation par tour"

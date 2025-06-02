@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb872ca0c597c634795bdb01492d4e4d, type: 3}
   m_Name: DamageReality
   m_EditorClassIdentifier: 
-  dmgTypeName: 04000000
-  dmgValues: 19000000
+  dmgTypeName: 00000000
+  dmgValues: 0a000000

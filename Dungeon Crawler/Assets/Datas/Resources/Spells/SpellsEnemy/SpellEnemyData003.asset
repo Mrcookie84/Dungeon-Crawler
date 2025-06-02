@@ -16,8 +16,8 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 2, y: 0}
   damageTypesData:
-  - {fileID: 11400000, guid: ac6929dd593c64545980f64b626b8d88, type: 2}
-  - {fileID: 11400000, guid: ac6929dd593c64545980f64b626b8d88, type: 2}
+  - {fileID: 11400000, guid: 6f188049876adde4681b3eae8282d4f2, type: 2}
+  - {fileID: 11400000, guid: 6f188049876adde4681b3eae8282d4f2, type: 2}
   displacementList:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
@@ -30,4 +30,5 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: "Renforce la barri\xE8re, inflige des d\xE9g\xE2ts de faiblesse dimensionelle"
+  desc: "Co\xFBt (5 mana)   - Touche 2 ennemi, Renforce la barri\xE8re aux Emplacement
+    touch\xE9s, inflige d\u2019importants d\xE9g\xE2ts faiblesse dimensionnelle"

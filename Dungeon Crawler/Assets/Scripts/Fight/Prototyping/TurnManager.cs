@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
-    [SerializeField] private GameObject playerUI;
+    [SerializeField] private SpellCaster spellCaster;
 
     [SerializeField] private List<TurnSubscriber> turnList = new List<TurnSubscriber>();
     private Stack<TurnSubscriber> turnStack = new Stack<TurnSubscriber>();
@@ -89,12 +89,12 @@ public class TurnManager : MonoBehaviour
     
     public void EnablePlayerUI()
     {
-        playerUI.SetActive(true);
+        spellCaster.EnableButtons(true);
     }
 
     public void DisablePlayerUI()
     {
-        playerUI.SetActive(false);
+        spellCaster.EnableButtons(false);
     }
 
     public static void TestEndFight(GridManager grid)

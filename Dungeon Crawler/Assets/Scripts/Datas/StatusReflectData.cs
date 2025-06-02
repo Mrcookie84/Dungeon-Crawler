@@ -35,7 +35,7 @@ public class StatusReflectData : StatusData
         {
             EntityHealth attackerHeatlh = attackInfo.attacker.GetComponent<EntityHealth>();
             
-            attackerHeatlh.TakeDamage(null, attackInfo.dmgValue);
+            attackerHeatlh.TakeDamage(null, attackInfo.dmgValue, attackInfo.dmgType);
         }
         
         if (recharge)

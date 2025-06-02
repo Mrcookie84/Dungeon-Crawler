@@ -33,4 +33,6 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: "\xE9change les ennemis, inflige des d\xE9g\xE2ts d'\xE9crasement et de contact"
+  desc: "- Co\xFBt (4 mana)   - Touche 3 ennemis, \xE9change leurs places, inflige
+    d\u2019important d\xE9g\xE2ts d\u2019\xE9crasement au premier ennemi, inflige
+    des d\xE9g\xE2ts de contact aux autres"

@@ -19,14 +19,15 @@ public class SpellCaster : MonoBehaviour
     [SerializeField] private BarrierGrid barrierGrid;
 
     [Header("UI")]
-    [SerializeField] private GameObject UIplayerInterface;
-    [SerializeField] private GameObject[] UIplayerSelections;
-    [SerializeField] private GameObject UIcastButton;
+    [SerializeField] private GameObject UIButtonInterface;
+    [SerializeField] private GameObject UICastButton;
     [SerializeField] private TMPro.TextMeshProUGUI UISpellDesc;
+
+    [Space(25)]
 
     public UnityEvent spellCasted = new UnityEvent();
 
-    private CastMode currentCastMode = CastMode.Enemy;
+    [HideInInspector] public CastMode currentCastMode = CastMode.Enemy;
     private EntityPosition casterGPos;
     private SpellEnemyData spellEnemyData;
     private SpellPlayerData spellPlayerData;
@@ -74,6 +75,16 @@ public class SpellCaster : MonoBehaviour
 
         triggerPos = EnemyRaycast(false);
         UpdateSpell();
+    }
+
+    public void EnableButtons(bool enable)
+    {
+        Button[] buttons = UIButtonInterface.GetComponentsInChildren<Button>();
+
+        foreach (Button button in buttons)
+        {
+            button.interactable = enable;
+        }
     }
 
     public void ChangeCastMode(Image buttonSprite)
@@ -176,6 +187,7 @@ public class SpellCaster : MonoBehaviour
         }
 
         playerGrid.UpdateEntitiesIndex();
+        EnableButtons(true);
     }
 
     /// <summary>
@@ -188,8 +200,17 @@ public class SpellCaster : MonoBehaviour
         casterAnim.ChangeState(EntityFightAnimation.State.Attack);
 
         spellCasted.Invoke();
+
+        // Update de la séléction de rune
+        runeSelection.UpdateMana();
+        runeSelection.ResetSelection();
+
+        // Update des grilles
         enemyGrid.ResetHighlight();
         playerGrid.ResetHighlight();
+
+        // Update UI
+        EnableButtons(false);
 
         if (currentCastMode == CastMode.Enemy)
             StartCoroutine(CastEnemySpellCoroutine(spellEnemyData.SpellDuration));
@@ -205,7 +226,7 @@ public class SpellCaster : MonoBehaviour
     /// <returns></returns>
     private IEnumerator CastEnemySpellCoroutine(float t)
     {
-        UIplayerInterface.SetActive(false);
+        UIButtonInterface.SetActive(false);
         
         // Récupération des cases et ennemis affectés par le sort
         List<Vector2Int> hitCellList = GetAllCellHit();
@@ -220,7 +241,7 @@ public class SpellCaster : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         ResetSpell();
-        UIplayerInterface.SetActive(true);
+        EnableButtons(true);
     }
 
     /// <summary>
@@ -293,7 +314,7 @@ public class SpellCaster : MonoBehaviour
     {
         // Attente avant déclenchement
         yield return new WaitForSeconds(t);
-
+        
         for (int i = 0; i < affectedEnemies.Length; i++)
         {
             GameObject enemy = affectedEnemies[i];
@@ -306,11 +327,9 @@ public class SpellCaster : MonoBehaviour
             if (spellEnemyData.damageTypesData[i] != null)
                 for (int j = 0; j < spellEnemyData.damageTypesData[i].dmgValues.Length; j++)
                 {
-                    entityHealth.TakeDamage(casterGPos.gameObject, spellEnemyData.damageTypesData[i].dmgValues[j]);
-
-                    // Faire apparaître un texte avec la valeur des dégâts
-                    // et la couleur du type de dégâts infligés
-                    // (c'est pour ça la boucle for, il y a besoin de l'indice)
+                    // Modification de la vie
+                    DamageTypesData damageData = spellEnemyData.damageTypesData[i];
+                    entityHealth.TakeDamage(casterGPos.gameObject, damageData.dmgValues[j], damageData.dmgTypeName[j]);
                 }
             
             // Appliquer de potentiels statuts
@@ -398,7 +417,7 @@ public class SpellCaster : MonoBehaviour
     {
         if (casterGPos == null)
         {
-            UIcastButton.SetActive(false);
+            UICastButton.SetActive(false);
             return;
         }
         
@@ -409,11 +428,11 @@ public class SpellCaster : MonoBehaviour
                 {
                     if (spellPlayerData == null)
                     {
-                        UIcastButton.SetActive(false);
+                        UICastButton.SetActive(false);
                     }
                     else
                     {
-                        UIcastButton.SetActive(true);
+                        UICastButton.SetActive(true);
                     }
                     break;
                 }
@@ -422,11 +441,11 @@ public class SpellCaster : MonoBehaviour
                 {
                     if (spellEnemyData == null || triggerPos == null)
                     {
-                        UIcastButton.SetActive(false);
+                        UICastButton.SetActive(false);
                     }
                     else
                     {
-                        UIcastButton.SetActive(true);
+                        UICastButton.SetActive(true);
                     }
                     break;
                 }

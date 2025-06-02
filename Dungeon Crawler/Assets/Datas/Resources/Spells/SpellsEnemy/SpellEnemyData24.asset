@@ -30,4 +30,4 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: "inflige des d\xE9g\xE2ts de d\xE9gradation"
+  desc: "- Co\xFBt (4 mana)   - Touche 2 ennemis, inflige des d\xE9g\xE2ts de d\xE9gradation"

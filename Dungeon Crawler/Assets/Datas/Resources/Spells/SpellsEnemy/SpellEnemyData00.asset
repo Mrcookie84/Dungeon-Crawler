@@ -30,4 +30,5 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: "brise la barri\xE8re, inflige des d\xE9g\xE2ts de faiblesse dimensionelle"
+  desc: "- Co\xFBt (4 mana)   - Touche 2 ennemis, Brise la barri\xE8re aux emplacement
+    touch\xE9s, inflige des d\xE9g\xE2ts de faiblesse dimensionnelle"

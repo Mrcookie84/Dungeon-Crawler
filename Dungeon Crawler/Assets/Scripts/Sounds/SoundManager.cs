@@ -3,15 +3,15 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
-    public static SoundManager Instance;
+    public static SoundManager SINGLETON;
 
     public AudioMixer audioMixer;
 
     private void Awake()
     {
-        if (Instance == null)
+        if (SINGLETON == null)
         {
-            Instance = this;
+            SINGLETON = this;
             DontDestroyOnLoad(gameObject);
         }
         else
