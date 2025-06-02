@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class CombatTrigger : MonoBehaviour
 {
-    
+    [Header("Fight state")]
+    [SerializeField] private FightPositionData posData;
     //Faire en sorte de pouvoir set les ennemies utiliser dans le combat sur les trigger 
     
     void Start()
@@ -18,6 +19,11 @@ public class CombatTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Group"))
         {
             SceneManager.GoToFight();
+            
+            // Initialisation du combat
+            PositionManager.posData = posData;
+            PositionManager.FillGrids();
+            
             Destroy(gameObject);
         }
         

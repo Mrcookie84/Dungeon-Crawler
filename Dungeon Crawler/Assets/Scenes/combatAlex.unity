@@ -122,17 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &29984101 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7830869169629704606, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-  m_PrefabInstance: {fileID: 805781976}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916cb7fe286127c44a90734773c7091b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &55431578
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +290,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &65898549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7830869169629704606, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+  m_PrefabInstance: {fileID: 805781976}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916cb7fe286127c44a90734773c7091b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &71390677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,7 +1792,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 0}
   runeButton: {fileID: 0}
-  runeSelectionTag: SpellManager
   maxSelected: 0
   maxRunes: 0
   linkedText: {fileID: 0}
@@ -2026,7 +2025,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d41f55c3372a34ba568077ba5e2b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posData: {fileID: 11400000, guid: c74f7aea3aed88647b9ce285793a1602, type: 2}
   playerGrid: {fileID: 686105098}
   enemyGrid: {fileID: 927520406}
 --- !u!1001 &805781976
@@ -2117,6 +2115,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2277066633467485699, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2277066633467485699, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2556298353699127847, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2125,9 +2131,33 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3038285990429554324, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038285990429554324, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.2000003
+      objectReference: {fileID: 0}
     - target: {fileID: 3638184674846096038, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_TagString
       value: EnemiesHealthBars
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941573067077730205, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941573067077730205, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.2000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536749815474054393, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536749815474054393, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.2000003
       objectReference: {fileID: 0}
     - target: {fileID: 4673149510436076822, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2181,11 +2211,27 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -3.9905996
       objectReference: {fileID: 0}
+    - target: {fileID: 5512803484125211826, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512803484125211826, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5601103007734961448, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5601103007734961448, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771371029178017211, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771371029178017211, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -2215,6 +2261,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6115520619692257263, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6367673600181190367, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6367673600181190367, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6591100286334407047, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
@@ -2380,6 +2434,14 @@ PrefabInstance:
     - target: {fileID: 8034945623173571460, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -3.9905996
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733188332645876773, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733188332645876773, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.2000003
       objectReference: {fileID: 0}
     - target: {fileID: 8952907026041724764, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3004,6 +3066,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16aa84a77c8a923408728bf68b09604a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1212588010 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7180156485744183537, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+  m_PrefabInstance: {fileID: 805781976}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916cb7fe286127c44a90734773c7091b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1218802670
@@ -3828,7 +3901,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 7706509014c18454a9a819205acae696, type: 2}
   runeButton: {fileID: 0}
-  runeSelectionTag: SpellManager
   maxSelected: 0
   maxRunes: 0
   linkedText: {fileID: 0}
@@ -3981,17 +4053,6 @@ MonoBehaviour:
   playerGrid: {fileID: 1565586015}
   enemyGrid: {fileID: 1983869222}
   barrierGrid: {fileID: 1412030046}
---- !u!114 &1512327639 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7180156485744183537, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
-  m_PrefabInstance: {fileID: 805781976}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916cb7fe286127c44a90734773c7091b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1554353581
 GameObject:
   m_ObjectHideFlags: 0
@@ -4556,7 +4617,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 87e24761a8459014a9d8ee8bf230f1bf, type: 2}
   runeButton: {fileID: 0}
-  runeSelectionTag: SpellManager
   maxSelected: 0
   maxRunes: 0
   linkedText: {fileID: 0}
@@ -4789,9 +4849,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1769615209}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f45176f926fd0d24e9f8c76f81e670c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d8b0bd239d193f44a57d8f24733363d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startFightOnLoad: 1
+  posData: {fileID: 11400000, guid: c74f7aea3aed88647b9ce285793a1602, type: 2}
+  eventSystem: {fileID: 2041671509}
 --- !u!1001 &1783398972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4827,7 +4890,7 @@ PrefabInstance:
     - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
       propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 29984101}
+      objectReference: {fileID: 65898549}
     - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
       propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -5037,7 +5100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2041671510
 Transform:
   m_ObjectHideFlags: 0
@@ -5311,7 +5374,7 @@ PrefabInstance:
     - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
       propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1512327639}
+      objectReference: {fileID: 1212588010}
     - target: {fileID: 1104529878877600397, guid: ade6bd5407b069a4db9acd5625119a5d, type: 3}
       propertyPath: gridUpdate.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2

@@ -36,19 +36,10 @@ public class EntityPosition : MonoBehaviour
         //Debug.Log($"{gameObject.name} : {gridPos} → {newPos}");
         
         gridPos = newPos;
-        transform.position = grid.GetChild(newPos.x + 3 * newPos.y).position;
-        
-        // Retourner l'entité si elle es en bas
-        if (gridPos.y == 1)
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 180f));
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-        }
-        else
-        {
-            transform.rotation = Quaternion.Euler(Vector3.zero);
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        }
+        transform.parent = grid.GetChild(newPos.x + 3 * newPos.y);
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
+        transform.localScale = Vector3.one;
 
         isMoving.Invoke();
     }
@@ -60,12 +51,6 @@ public class EntityPosition : MonoBehaviour
             if (transform.position == grid.GetChild(i).transform.position)
             {
                 gridPos = new Vector2Int(i % 3, i / 3);
-
-                if (gridPos.y == 1)
-                {
-                    transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 180f));
-                    transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-                }
             }
         }
     }

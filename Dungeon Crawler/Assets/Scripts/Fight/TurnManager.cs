@@ -103,6 +103,7 @@ public class TurnManager : MonoBehaviour
         
         if (grid.isEmpty)
         {
+            PositionManager.EmptyGrids();
             SceneManager.GoToRP();
         }
     }
