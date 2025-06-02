@@ -67,6 +67,18 @@ public class GridManager : MonoBehaviour
         gridUpdate.Invoke();
     }
 
+    public void EmptyGrid()
+    {
+        entityList = new GameObject[6];
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).childCount < 2) continue;
+            
+            Destroy(transform.GetChild(i));
+        }
+    }
+
     public void HighlightCells(List<Vector2Int> cellList)
     {
         foreach (Vector2Int cell in cellList)

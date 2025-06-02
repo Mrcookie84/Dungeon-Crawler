@@ -86,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3126566767669286085, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_Name
-      value: FightGrenouille Variant
+      value: FightGrenouille
       objectReference: {fileID: 0}
     - target: {fileID: 4293795622654924245, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_Sprite
@@ -94,34 +94,6 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: bc0bd4d075d49c74abce3c68afae4f3c, type: 3}
     - target: {fileID: 7302830686597167030, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.8478873
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.7977756
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}

@@ -2,22 +2,41 @@ using UnityEngine;
 
 public class PositionManager : MonoBehaviour
 {
-    [SerializeField] private FightPositionData posData;
+    public static PositionManager Instance;
+    public static FightPositionData posData;
+    
     [SerializeField] private Transform playerGrid;
     [SerializeField] private Transform enemyGrid;
+
+    private static Transform PlayerGrid
+    {
+        get { return Instance.playerGrid; }
+    }
+
+    private static Transform EnemyGrid
+    {
+        get { return Instance.enemyGrid; }
+    }
+    
+    
     
     void Awake()
     {
-        Vector3 spawnPos;
+        Instance = this;
+    }
+
+    public static void FillGrids()
+    {
+        Transform spawnPoint;
         // Remplissage de la grille des ennemies
         for (int i = 0; i < posData.enemyArray.Length; i++)
         {
             // Apparition d'un ennemi
             if (posData.enemyArray[i] != null)
             {
-                spawnPos = enemyGrid.GetChild(i).position;
+                spawnPoint = EnemyGrid.GetChild(i);
 
-                Instantiate(posData.enemyArray[i], spawnPos, Quaternion.Euler(Vector3.zero), transform.parent);
+                Instantiate(posData.enemyArray[i], spawnPoint);
             }
         }
         
@@ -27,10 +46,15 @@ public class PositionManager : MonoBehaviour
             // Apparition d'un ennemi
             if (posData.playerArray[i] != null)
             {
-                spawnPos = playerGrid.GetChild(i).position;
+                spawnPoint = PlayerGrid.GetChild(i);
                 
-                Instantiate(posData.playerArray[i], spawnPos, Quaternion.Euler(Vector3.zero), transform.parent);
+                Instantiate(posData.playerArray[i], spawnPoint);
             }
         }
+    }
+
+    public static void EmptyGrids()
+    {
+        
     }
 }
