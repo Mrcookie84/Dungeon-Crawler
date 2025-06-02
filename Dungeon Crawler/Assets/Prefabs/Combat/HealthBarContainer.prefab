@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 5680692863641278194}
   - component: {fileID: 1476231485635636853}
   m_Layer: 5
-  m_Name: BulleStatu_001 (6)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7454746651892805852
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25,16 +25,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103154437345924139}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4722222, y: 0.4722222, z: 0.4722222}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3287762241176531673}
+  m_Father: {fileID: 1346507753456419010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 258.7, y: 160}
+  m_AnchoredPosition: {x: 391.77582, y: 400.06665}
   m_SizeDelta: {x: 43, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5680692863641278194
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103154437345924139}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -87,12 +87,12 @@ GameObject:
   - component: {fileID: 6773326706541516714}
   - component: {fileID: 6574396862736005042}
   m_Layer: 5
-  m_Name: BulleStatu_001 (2)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4261656903294451165
 RectTransform:
   m_ObjectHideFlags: 0
@@ -100,16 +100,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599219136874766170}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4722222, y: 0.4722222, z: 0.4722222}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3287762241176531673}
+  m_Father: {fileID: 1346507753456419010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 231.2, y: 125.1}
+  m_AnchoredPosition: {x: 378.78973, y: 383.5861}
   m_SizeDelta: {x: 43, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6773326706541516714
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599219136874766170}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -162,12 +162,12 @@ GameObject:
   - component: {fileID: 8348455664468743178}
   - component: {fileID: 464169447671291612}
   m_Layer: 5
-  m_Name: BulleStatu_001 (4)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7720939959580138462
 RectTransform:
   m_ObjectHideFlags: 0
@@ -175,16 +175,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946601593203245184}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4722222, y: 0.4722222, z: 0.4722222}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3287762241176531673}
+  m_Father: {fileID: 1346507753456419010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 167.5, y: 53.8}
+  m_AnchoredPosition: {x: 348.7091, y: 349.91666}
   m_SizeDelta: {x: 43, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8348455664468743178
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 946601593203245184}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -436,16 +436,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3955740641265329655}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.70710677, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.99992007, y: 0.99992007, z: 0.99992007}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3287762241176531673}
+  m_Father: {fileID: 3013564307274980427}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 251.4, y: 59.7}
+  m_AnchoredPosition: {x: -21.298279, y: -22.398174}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5862401209154270359
@@ -557,12 +557,12 @@ GameObject:
   - component: {fileID: 8782233304824399473}
   - component: {fileID: 5823391009786130988}
   m_Layer: 5
-  m_Name: BulleStatu_001 (1)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1047463560919726291
 RectTransform:
   m_ObjectHideFlags: 0
@@ -570,16 +570,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4051796813833725787}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4722222, y: 0.4722222, z: 0.4722222}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3287762241176531673}
+  m_Father: {fileID: 1346507753456419010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 198.9, y: 84.6}
+  m_AnchoredPosition: {x: 363.53693, y: 364.4611}
   m_SizeDelta: {x: 43, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8782233304824399473
@@ -597,7 +597,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4051796813833725787}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -620,6 +620,61 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4774245558208294551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1346507753456419010}
+  - component: {fileID: 3686059430330452248}
+  m_Layer: 0
+  m_Name: StatusHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1346507753456419010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4774245558208294551}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0.70710677, w: 0.7071068}
+  m_LocalPosition: {x: -768.13873, y: 799.8791, z: 0}
+  m_LocalScale: {x: 2.117478, y: 2.117478, z: 2.117478}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 172287721319852751}
+  - {fileID: 1047463560919726291}
+  - {fileID: 4261656903294451165}
+  - {fileID: 745158021947724367}
+  - {fileID: 7720939959580138462}
+  - {fileID: 8308179692491577137}
+  - {fileID: 7454746651892805852}
+  - {fileID: 9184065935880595413}
+  - {fileID: 1212704193580279811}
+  - {fileID: 1904331026194462335}
+  m_Father: {fileID: 3013564307274980427}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3686059430330452248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4774245558208294551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0dadf1eebe60c841be0d0ddcde618a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusUI: {fileID: 1541534956983386339, guid: a6844070f4c10d24ba704c3618d02ed3, type: 3}
 --- !u!1 &4914087171482212315
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,12 +687,12 @@ GameObject:
   - component: {fileID: 693371991469124160}
   - component: {fileID: 2338890408233414212}
   m_Layer: 5
-  m_Name: BulleStatu_001 (3)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &745158021947724367
 RectTransform:
   m_ObjectHideFlags: 0
@@ -645,16 +700,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4914087171482212315}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4722222, y: 0.4722222, z: 0.4722222}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3287762241176531673}
+  m_Father: {fileID: 1346507753456419010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 274.3, y: 116.5}
+  m_AnchoredPosition: {x: 399.14252, y: 379.52493}
   m_SizeDelta: {x: 43, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &693371991469124160
@@ -672,7 +727,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4914087171482212315}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -707,12 +762,12 @@ GameObject:
   - component: {fileID: 6896059728535146968}
   - component: {fileID: 3709481606894752064}
   m_Layer: 5
-  m_Name: BulleStatu_001 (9)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1904331026194462335
 RectTransform:
   m_ObjectHideFlags: 0
@@ -720,16 +775,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5693674155002246283}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4722222, y: 0.4722222, z: 0.4722222}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3287762241176531673}
+  m_Father: {fileID: 1346507753456419010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 156, y: 153.4}
+  m_AnchoredPosition: {x: 343.27863, y: 396.94998}
   m_SizeDelta: {x: 43, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6896059728535146968
@@ -747,7 +802,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5693674155002246283}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -802,6 +857,8 @@ RectTransform:
   - {fileID: 753092021181088959}
   - {fileID: 2181921310618192816}
   - {fileID: 4680107604016826952}
+  - {fileID: 2196058520347860541}
+  - {fileID: 1346507753456419010}
   m_Father: {fileID: 3287762241176531673}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -890,17 +947,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3013564307274980427}
-  - {fileID: 2196058520347860541}
-  - {fileID: 172287721319852751}
-  - {fileID: 1047463560919726291}
-  - {fileID: 4261656903294451165}
-  - {fileID: 745158021947724367}
-  - {fileID: 7720939959580138462}
-  - {fileID: 8308179692491577137}
-  - {fileID: 7454746651892805852}
-  - {fileID: 9184065935880595413}
-  - {fileID: 1212704193580279811}
-  - {fileID: 1904331026194462335}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -921,8 +967,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  container: {fileID: 0}
-  healthSlider: {fileID: 0}
+  container: {fileID: 6251861111872691428}
+  healthSlider: {fileID: 1473489592050215852}
+  healthValue: {fileID: 3702356953792046703}
 --- !u!1 &6713801266785558729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,12 +1057,12 @@ GameObject:
   - component: {fileID: 6089785376282285290}
   - component: {fileID: 5214242215522179342}
   m_Layer: 5
-  m_Name: BulleStatu_001 (5)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8308179692491577137
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1023,16 +1070,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7091596434665648411}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4722222, y: 0.4722222, z: 0.4722222}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3287762241176531673}
+  m_Father: {fileID: 1346507753456419010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 190.2, y: 126.6}
+  m_AnchoredPosition: {x: 359.4286, y: 384.2944}
   m_SizeDelta: {x: 43, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6089785376282285290
@@ -1050,7 +1097,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7091596434665648411}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1085,12 +1132,12 @@ GameObject:
   - component: {fileID: 1532266814517154971}
   - component: {fileID: 2282719402320314485}
   m_Layer: 5
-  m_Name: BulleStatu_001 (8)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1212704193580279811
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1098,16 +1145,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8643029654627965581}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4722222, y: 0.4722222, z: 0.4722222}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3287762241176531673}
+  m_Father: {fileID: 1346507753456419010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 210.2, y: 173}
+  m_AnchoredPosition: {x: 368.87308, y: 406.20554}
   m_SizeDelta: {x: 43, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1532266814517154971
@@ -1125,7 +1172,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8643029654627965581}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1160,12 +1207,12 @@ GameObject:
   - component: {fileID: 4492117578733902919}
   - component: {fileID: 7262993505482479199}
   m_Layer: 5
-  m_Name: BulleStatu_001 (7)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &9184065935880595413
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1173,16 +1220,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9051907520546297400}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4722222, y: 0.4722222, z: 0.4722222}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3287762241176531673}
+  m_Father: {fileID: 1346507753456419010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 143.8, y: 98.4}
+  m_AnchoredPosition: {x: 337.5175, y: 370.97772}
   m_SizeDelta: {x: 43, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4492117578733902919
@@ -1200,7 +1247,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9051907520546297400}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1235,7 +1282,7 @@ GameObject:
   - component: {fileID: 2813570749079954332}
   - component: {fileID: 6568430021245989364}
   m_Layer: 5
-  m_Name: BulleStatu_001
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1248,16 +1295,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9122791566624670391}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4722222, y: 0.4722222, z: 0.4722222}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3287762241176531673}
+  m_Father: {fileID: 1346507753456419010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 211.7, y: 40.6}
+  m_AnchoredPosition: {x: 369.58136, y: 343.6833}
   m_SizeDelta: {x: 43, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2813570749079954332
@@ -1275,7 +1322,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9122791566624670391}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

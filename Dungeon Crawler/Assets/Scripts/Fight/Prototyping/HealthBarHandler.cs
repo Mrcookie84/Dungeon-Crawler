@@ -6,6 +6,7 @@ public class HealthBarHandler : MonoBehaviour
     [SerializeField] private int id;
     [SerializeField] private GameObject container;
     [SerializeField] private Slider healthSlider;
+    [SerializeField] private TMPro.TextMeshProUGUI healthValue;
 
     public void SyncSlider(GridManager referenceGrid)
     {
@@ -23,6 +24,8 @@ public class HealthBarHandler : MonoBehaviour
             container.SetActive(false);
             return;
         }
+
+        healthValue.text = healthInfo.currentHealth.ToString();
 
         container.SetActive(true);
         healthSlider.maxValue = healthInfo.maxHealth;
