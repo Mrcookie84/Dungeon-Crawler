@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15a6ea69e0f41314faafe8cda8413d5e, type: 3}
-  m_Name: EAGroupReality
+  m_Name: EAShield
   m_EditorClassIdentifier: 
   posChange: {x: 0, y: 0}
-  weight: 50
-  isAttack: 1
-  dmgValue: 10
+  weight: 30
+  isAttack: 0
+  dmgValue: 0
   dmgType: 0
-  multipleTarget: 1
+  multipleTarget: 0
   healAmount: 0
   supportTarget: 0
-  status: {fileID: 0}
-  statusDuration: 0
+  status: {fileID: 11400000, guid: e9e93da8af1d5aa4b9e0710edf948a1f, type: 2}
+  statusDuration: 1
