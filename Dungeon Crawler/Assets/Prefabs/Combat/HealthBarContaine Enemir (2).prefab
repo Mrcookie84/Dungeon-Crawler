@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 6959395396023978166}
   - component: {fileID: 7899178124667370604}
   m_Layer: 5
-  m_Name: BulleStatu_001 (5)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5096536628658833648
 RectTransform:
   m_ObjectHideFlags: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101568739205344596}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 7691633050064006177}
   - component: {fileID: 8691310561927594956}
   m_Layer: 5
-  m_Name: BulleStatu_001
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510346278094859722}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -162,12 +162,12 @@ GameObject:
   - component: {fileID: 8706723890714496205}
   - component: {fileID: 5403053274364599157}
   m_Layer: 5
-  m_Name: BulleStatu_001 (7)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4277506474326864264
 RectTransform:
   m_ObjectHideFlags: 0
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628358706024289934}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -258,6 +258,7 @@ RectTransform:
   - {fileID: 6761447776356879333}
   - {fileID: 3650848351587230711}
   - {fileID: 5447425666943354306}
+  - {fileID: 5670616417913687633}
   m_Father: {fileID: 1906252954437437256}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -478,12 +479,12 @@ GameObject:
   - component: {fileID: 3118858622897246430}
   - component: {fileID: 4762281438935254517}
   m_Layer: 5
-  m_Name: BulleStatu_001 (8)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4977800226883998154
 RectTransform:
   m_ObjectHideFlags: 0
@@ -518,7 +519,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5365445141676640714}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -553,12 +554,12 @@ GameObject:
   - component: {fileID: 3229065873211078133}
   - component: {fileID: 1285853399122659590}
   m_Layer: 5
-  m_Name: BulleStatu_001 (3)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8320806705195630289
 RectTransform:
   m_ObjectHideFlags: 0
@@ -593,7 +594,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5557529801091607852}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -628,7 +629,7 @@ GameObject:
   - component: {fileID: 430938323783163304}
   - component: {fileID: 7820744778624788989}
   m_Layer: 5
-  m_Name: BulleStatu_001 (1)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -668,7 +669,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5742732632989482004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -948,12 +949,12 @@ GameObject:
   - component: {fileID: 1174833443675910816}
   - component: {fileID: 7841761604168563367}
   m_Layer: 5
-  m_Name: BulleStatu_001 (9)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2519153644216413922
 RectTransform:
   m_ObjectHideFlags: 0
@@ -988,7 +989,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6397180602905591995}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1023,12 +1024,12 @@ GameObject:
   - component: {fileID: 3092975803645351549}
   - component: {fileID: 1330548979391608976}
   m_Layer: 5
-  m_Name: BulleStatu_001 (4)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1114308984013327756
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1063,7 +1064,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6656776737115583432}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1098,12 +1099,12 @@ GameObject:
   - component: {fileID: 5303638738499736893}
   - component: {fileID: 5790417150935427}
   m_Layer: 5
-  m_Name: BulleStatu_001 (6)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5584326839775457459
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1138,7 +1139,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6912347365895867965}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1170,8 +1171,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5670616417913687633}
+  - component: {fileID: 5157158102290688473}
   m_Layer: 0
-  m_Name: Statuts effect
+  m_Name: StatusHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1185,9 +1187,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7649115577046575517}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 37, y: -49.8, z: 69080.25}
-  m_LocalScale: {x: -108, y: 107.99999, z: 107.99999}
+  m_LocalRotation: {x: -0, y: -0, z: -0.70710677, w: 0.7071068}
+  m_LocalPosition: {x: -49.8, y: -36.581974, z: 69080.25}
+  m_LocalScale: {x: -108, y: 108, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7722291967487189757}
@@ -1200,8 +1202,21 @@ Transform:
   - {fileID: 4277506474326864264}
   - {fileID: 4977800226883998154}
   - {fileID: 2519153644216413922}
-  m_Father: {fileID: 1906252954437437256}
+  m_Father: {fileID: 8153610462859274057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5157158102290688473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649115577046575517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0dadf1eebe60c841be0d0ddcde618a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusUI: {fileID: 1541534956983386339, guid: a6844070f4c10d24ba704c3618d02ed3, type: 3}
 --- !u!1 &7824250607845657071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,7 +1247,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8153610462859274057}
-  - {fileID: 5670616417913687633}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -1255,6 +1269,7 @@ MonoBehaviour:
   id: 0
   container: {fileID: 1846834756590660942}
   healthSlider: {fileID: 4572721534398779021}
+  healthValue: {fileID: 3514536927374837881}
 --- !u!1 &8488721281092154315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,7 +1282,7 @@ GameObject:
   - component: {fileID: 7744666512960288294}
   - component: {fileID: 2886157440029314885}
   m_Layer: 5
-  m_Name: BulleStatu_001 (2)
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1307,7 +1322,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8488721281092154315}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

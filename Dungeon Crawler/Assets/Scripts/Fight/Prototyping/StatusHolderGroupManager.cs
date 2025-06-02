@@ -12,6 +12,8 @@ public class StatusHolderGroupManager : MonoBehaviour
     {
         for (int i = 0; i < 6; i++)
         {
+            if (statusHolderHandlers[i] == null) continue;
+            
             GameObject currentEntity = linkedGrid.entityList[i];
             if (currentEntity == null)
             {
@@ -20,8 +22,16 @@ public class StatusHolderGroupManager : MonoBehaviour
             }
 
             List<StatusInfo> statusInfos = currentEntity.GetComponent<EntityStatusHolder>().statusList;
-
-            statusHolderHandlers[i].UpdateStatus(statusInfos);
+            if (statusInfos.Count == 0)
+            {
+                statusHolderHandlers[i].ResetStatus();
+            }
+            else
+            {
+                Debug.Log($"{currentEntity.name} : status update");
+                statusHolderHandlers[i].UpdateStatus(statusInfos);
+                Debug.Log($"{currentEntity.name} : status update finished");
+            }
         }
     }
 }
