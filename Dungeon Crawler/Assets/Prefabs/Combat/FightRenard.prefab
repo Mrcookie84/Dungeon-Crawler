@@ -30,12 +30,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3003012497256881573, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: defaultStatus.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -3003012497256881573, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: defaultStatus.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: c245f88aa7e808949bd5b8746d21726d, type: 2}
+      objectReference: {fileID: 11400000, guid: e9e93da8af1d5aa4b9e0710edf948a1f, type: 2}
+    - target: {fileID: -3003012497256881573, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
+      propertyPath: defaultStatus.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c133c9365231e1448c1227e70496a6d, type: 2}
     - target: {fileID: 185897872062742212, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_Size.x
       value: 5.45
@@ -90,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3126566767669286085, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_Name
-      value: FightRenard Variant
+      value: FightRenard
       objectReference: {fileID: 0}
     - target: {fileID: 4293795622654924245, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_Sprite

@@ -15,7 +15,7 @@ public class StatusHolderGroupManager : MonoBehaviour
             GameObject currentEntity = linkedGrid.entityList[i];
             if (currentEntity == null)
             {
-                statusHolderHandlers[i].ResetStatus();
+                statusHolderHandlers[i].ResetStatus(transform.GetChild(i).childCount);
                 continue;
             }
 
