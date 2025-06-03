@@ -1,10 +1,6 @@
 using System.Collections.Generic;
-using Unity.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
-using static Unity.Collections.Unicode;
 
 public class RuneSelection : MonoBehaviour
 {
@@ -15,7 +11,8 @@ public class RuneSelection : MonoBehaviour
     [SerializeField] private Rune[] runeSelectors;
 
     [Header("Mana")]
-    public int maxMana;
+    public int defaultMana;
+    public static int maxMana;
     public static int currentMana;
     private static int interMana;
     private static int potentialMana;
@@ -26,8 +23,9 @@ public class RuneSelection : MonoBehaviour
     [SerializeField] private Slider potentialManaSliderUI;
 
     [Header("Stability")]
-    public int maxStability;
-    [HideInInspector] public static int currentStability;
+    public int defaultStability;
+    public static int maxStability;
+    public static int currentStability;
     private static int interStability;
     [SerializeField] private HorizontalLayoutGroup stabilityGraduationGroup;
     [SerializeField] private GameObject stabilityGrad;
@@ -117,59 +115,73 @@ public class RuneSelection : MonoBehaviour
         Instance = this;
         
         // Initialisation des runes s�lectionn�e
-        foreach (Rune rune in runeSelectors)
+        foreach (Rune rune in Instance.runeSelectors)
         {
             if (rune == null) continue;
             selectedRunes.Add(rune, 0);
         }
+    }
+
+    private void Start()
+    {
+
+    }
+
+    public static void InitializeStats()
+    {
+        maxMana = Instance.defaultMana;
+        maxStability = Instance.defaultStability;
+        if (Player1Inventory.PInventoryINSTANCE != null || Player2Inventory.PInventoryINSTANCE != null)
+        {
+            Debug.Log("feur");
+            maxMana += Player1Inventory.ManaBoost + Player2Inventory.ManaBoost;
+            maxStability += Player1Inventory.StabilityBoost + Player2Inventory.StabilityBoost;
+        }
+            
 
         // Initialisation du mana
         currentMana = maxMana;
         interMana = maxMana;
         potentialMana = maxMana;
 
-        manaSliderUI.maxValue = maxMana;
-        manaSliderUI.value = maxMana;
-        interManaSliderUI.maxValue = maxMana;
-        interManaSliderUI.value = maxMana;
-        potentialManaSliderUI.maxValue = maxMana;
-        potentialManaSliderUI.value = maxMana;
+        Instance.manaSliderUI.maxValue = maxMana;
+        Instance.manaSliderUI.value = maxMana;
+        Instance.interManaSliderUI.maxValue = maxMana;
+        Instance.interManaSliderUI.value = maxMana;
+        Instance.potentialManaSliderUI.maxValue = maxMana;
+        Instance.potentialManaSliderUI.value = maxMana;
 
         // Initialisation de la stabilité
         currentStability = maxStability;
         interStability = maxStability;
 
-        stabilitySliderUI.maxValue = maxStability;
-        stabilitySliderUI.value = maxStability;
-        interStabilitySliderUI.maxValue = maxStability;
-        interStabilitySliderUI.value = maxStability;
-    }
-
-    private void Start()
-    {
+        Instance.stabilitySliderUI.maxValue = maxStability;
+        Instance.stabilitySliderUI.value = maxStability;
+        Instance.interStabilitySliderUI.maxValue = maxStability;
+        Instance.interStabilitySliderUI.value = maxStability;
+        
         // Plaçage des graduations
         // Mana
         for (int i = 0; i < maxMana - 1; i++)
         {
-            Instantiate(manaGrad, manaGraduationGroup.transform);
+            Instantiate(Instance.manaGrad, Instance.manaGraduationGroup.transform);
         }
-        float manaHeight = manaGraduationGroup.GetComponent<RectTransform>().rect.height;
+        float manaHeight = Instance.manaGraduationGroup.GetComponent<RectTransform>().rect.height;
         float manaSpacing = manaHeight / maxMana;
-        manaSpacing -= manaGrad.GetComponent<RectTransform>().rect.height;
+        manaSpacing -= Instance.manaGrad.GetComponent<RectTransform>().rect.height;
 
-        manaGraduationGroup.spacing = manaSpacing;
+        Instance.manaGraduationGroup.spacing = manaSpacing;
 
         // Stability
         for (int i = 0; i < maxStability - 1; i++)
         {
-            Instantiate(stabilityGrad, stabilityGraduationGroup.transform);
+            Instantiate(Instance.stabilityGrad, Instance.stabilityGraduationGroup.transform);
         }
-        float stabilityHeight = stabilityGraduationGroup.GetComponent<RectTransform>().rect.width;
+        float stabilityHeight = Instance.stabilityGraduationGroup.GetComponent<RectTransform>().rect.width;
         float stabilitySpacing = stabilityHeight / maxStability;
-        stabilitySpacing -= stabilityGrad.GetComponent<RectTransform>().rect.width;
+        stabilitySpacing -= Instance.stabilityGrad.GetComponent<RectTransform>().rect.width;
 
-        stabilityGraduationGroup.spacing = stabilitySpacing;
-
+        Instance.stabilityGraduationGroup.spacing = stabilitySpacing;
     }
 
     private static bool canUsMoreMana(int amount)
@@ -304,14 +316,14 @@ public class RuneSelection : MonoBehaviour
 
     public static void ResetMana()
     {
-        CurrentMana = Instance.maxMana;
-        InterMana = Instance.maxMana;
-        PotentialMana = Instance.maxMana;
+        CurrentMana = maxMana;
+        InterMana = maxMana;
+        PotentialMana = maxMana;
     }
 
     public static void ResetStability()
     {
-        CurrentStability = Instance.maxStability;
-        InterStability = Instance.maxStability;
+        CurrentStability = maxStability;
+        InterStability = maxStability;
     }
 }

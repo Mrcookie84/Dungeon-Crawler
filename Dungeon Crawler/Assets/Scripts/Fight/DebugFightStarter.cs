@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,12 @@ public class DebugFightStarter : MonoBehaviour
     [Header("Fight Data")]
     public FightPositionData posData;
     public GameObject eventSystem;
-    
+
+    private void Awake()
+    {
+        EntityHealth.InitializeCurrentHealth();
+    }
+
     void Start()
     {
         if (startFightOnLoad)
@@ -20,6 +26,7 @@ public class DebugFightStarter : MonoBehaviour
             if (PositionManager.Instance == null) Debug.LogError("Kill yourself");
             PositionManager.posData = posData;
             PositionManager.FillGrids();
+            RuneSelection.InitializeStats();
         }
     }
 }

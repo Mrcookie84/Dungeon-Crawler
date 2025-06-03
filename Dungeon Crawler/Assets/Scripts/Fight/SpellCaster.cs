@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -90,7 +89,7 @@ public class SpellCaster : MonoBehaviour
         }
     }
 
-    public static void ChangeCastMode(Image buttonSprite)
+    public static void ChangeCastMode()
     {
         // Alterner entre les différents modes d'attaque
         switch (currentCastMode)
@@ -99,14 +98,12 @@ public class SpellCaster : MonoBehaviour
             case CastMode.Player:
                 {
                     currentCastMode = CastMode.Enemy;
-                    buttonSprite.color = Color.red;
                     break;
                 }
 
             case CastMode.Enemy:
                 {
                     currentCastMode = CastMode.Player;
-                    buttonSprite.color = Color.green;
                     break;
                 }
 
@@ -114,7 +111,6 @@ public class SpellCaster : MonoBehaviour
             default:
                 {
                     currentCastMode = CastMode.Enemy;
-                    buttonSprite.color = Color.red;
                     break;
                 }
         }

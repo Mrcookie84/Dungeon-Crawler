@@ -12,7 +12,7 @@ namespace DefaultNamespace
         [SerializeField] private RectTransform m_scrollerContent;
         [SerializeField] public GameObject m_uiItem;
 
-        [SerializeField] public List<Item> m_data;
+        [SerializeField] public List<ItemData> m_data;
         public int Spacing;
 
         private void Awake()
@@ -20,7 +20,7 @@ namespace DefaultNamespace
             SetUpItems(m_data);
         }
 
-        public void SetUpItems(List<Item> items)
+        public void SetUpItems(List<ItemData> items)
         {
             for (var i = 0; i < items.Count; i++)
             {

@@ -10,9 +10,9 @@ public class OnItemClicked : MonoBehaviour, IPointerClickHandler
 {
     public static List<OnItemClicked> mAllItems = new List<OnItemClicked>();
 
-    public Item item;
+    public ItemData item;
 
-    public GameObject selectedGo;
+    //public GameObject selectedGo;
     
     private void Awake()
     {
@@ -28,25 +28,22 @@ public class OnItemClicked : MonoBehaviour, IPointerClickHandler
     {
         UnselectAllItems();
         transform.localScale = new Vector3(1.1f,1.1f);
-        selectedGo = gameObject;
+        //selectedGo = gameObject;
     }
     
-    public void UnselectAllItems()
+    public static void UnselectAllItems()
     {
         foreach (var varItem in mAllItems)
         {
             varItem.transform.localScale = new Vector3(1,1);
         }
-        
     }
     
     public void OnPointerClick(PointerEventData eventData)
     {
-
-            SelectItem();
-            Debug.Log($"Clicked on : " + this.item.ItemData.itemName);
-            InventoryManagerScript.InventoryINSTANCE.SaveSelectedItemData(item.ItemData);
-        
+        SelectItem();
+        Debug.Log($"Clicked on : " + item.itemName);
+        InventoryManagerScript.InventoryINSTANCE.SaveSelectedItemData(item);
     }
     
     private void OnDestroy()

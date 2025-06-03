@@ -1,23 +1,49 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
 [Serializable]
-public class ItemData
+[CreateAssetMenu(fileName = "ItemData", menuName = "ScriptableObject/ItemData")]
+public class ItemData : ScriptableObject
 {
+    [Header("Item info")]
     public string itemName;
     public Sprite sprite;
+    public ItemSlot itemSlot;
     
-    public int spaceDmgBonus;
-    public int realityDmgBonus;
+    [Header("Added runes")]
+    public SerializedDictionary<RuneType, int> runes;
+
+    [Header("Stats Boosts")]
+    public int addedPV;
+    public int addedStability;
+    public int addedMana;
+    [Space(10)]
+    
+    [SerializedDictionary("Damage Type", "Percent")]
+    public SerializedDictionary<DamageTypesData.DmgTypes, float> dmgResistance;
+    
+    [SerializedDictionary("Damage Type", "Percent")]
+    public SerializedDictionary<DamageTypesData.DmgTypes, float> dmgBoost;
+
+    public enum RuneType
+    {
+        Reality = 0,
+        Space = 1,
+        Time = 2,
+        Focus = 3,
+        Extension = 4,
+        Affliction = 5
+    }
         
     public enum ItemSlot
     {
-        Weapon,
-        Armor,
-        Accessories
+        Weapon = 0,
+        Armor = 1,
+        Accessories1 = 2,
+        Accessories2 = 3,
+        Accessories3 = 4
     }
-
-    public ItemSlot itemSlot;
 }
