@@ -57,7 +57,31 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: dimAffintyW
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: enemyInWorldW
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: dimAffinityRow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: playerInWorldW
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: canBreakBarrier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: initialScoreDif
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: nbTurnForesight
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
@@ -88,6 +112,14 @@ PrefabInstance:
       propertyPath: actions.Array.data[5]
       value: 
       objectReference: {fileID: 11400000, guid: a0b081b65f54d9944b8e86b792b55653, type: 2}
+    - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: columnW.Array.data[1]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: columnW.Array.data[2]
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6095385791367872599, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: maxHealth
       value: 120
