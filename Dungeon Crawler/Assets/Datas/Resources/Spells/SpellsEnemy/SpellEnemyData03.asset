@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0160c4158dda8c47b86463cc1cd798e, type: 3}
   m_Name: SpellEnemyData03
   m_EditorClassIdentifier: 
+  unstable: 0
   hitCellList:
   - {x: 0, y: 0}
   damageTypesData:
@@ -27,5 +28,5 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: "- Co\xFBt (3 mana)   - Touche 1 ennemi, Renforce la barri\xE8re \xE0 l\u2019emplacement
-    touch\xE9, inflige d\u2019importants d\xE9g\xE2ts de r\xE9alit\xE9"
+  desc: "- Touche 1 ennemi<br> - Renforce la barri\xE8re \xE0 l\u2019emplacement
+    touch\xE9<br> - Inflige d\u2019importants d\xE9g\xE2ts de r\xE9alit\xE9"
