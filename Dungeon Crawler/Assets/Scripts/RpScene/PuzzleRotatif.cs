@@ -14,7 +14,7 @@ public class PuzzleRotatif : MonoBehaviour
     
     [Header("Door :")] 
     [SerializeField] public GameObject door;
-    
+     [SerializeField] public GameObject doorOpen;
     [Header("Position de la touche E :")]
     
     [Header("LES GD , C'EST ICI QU'IL FAUT MODIFIER LE MDP : ")]
@@ -59,11 +59,12 @@ public class PuzzleRotatif : MonoBehaviour
 
             ChangeActualBubble();
         }
-        
+
 
         if ((mdpPart1 == curentState[0]) && (mdpPart2 == curentState[1]) && (mdpPart3 == curentState[2]))
         {
             door.SetActive(false);
+            doorOpen.SetActive(true);
         }
         else
         {
