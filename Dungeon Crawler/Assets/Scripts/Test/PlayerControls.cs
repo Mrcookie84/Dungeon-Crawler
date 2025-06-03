@@ -14,14 +14,14 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 force = new Vector2(0, 0);
         
-        if (Input.GetKey(KeybindManager.SINGLETON.GetKey("Right")))
+        if (Input.GetKey(KeybindManager.SINGLETON.GetKey("Left")))
         {
             force += Vector2.left * speed;
             targetRotation = Quaternion.Euler(0, 180, 0);
             transform.transform.rotation = Quaternion.Slerp(this.transform.rotation, targetRotation, 0.1f);
         }
 
-        if (Input.GetKey(KeybindManager.SINGLETON.GetKey("Left")))
+        if (Input.GetKey(KeybindManager.SINGLETON.GetKey("Right")))
         {
             force += Vector2.right * speed;
             targetRotation = Quaternion.Euler(0, 0, 0);
