@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0160c4158dda8c47b86463cc1cd798e, type: 3}
   m_Name: SpellEnemyData2
   m_EditorClassIdentifier: 
+  unstable: 0
   hitCellList:
   - {x: 0, y: 0}
   damageTypesData:
@@ -27,4 +28,4 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: "- Co\xFBt (2 mana)   - Touche 1 ennemi, inflige des d\xE9g\xE2ts de d\xE9gradation"
+  desc: "- Touche 1 ennemi<br> - Inflige des d\xE9g\xE2ts de d\xE9gradation"
