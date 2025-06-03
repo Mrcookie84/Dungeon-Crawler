@@ -48,6 +48,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2938522100775240832, guid: 5f6968725f228aa4f9821bd20a1920f6, type: 3}
+      propertyPath: actions.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2938522100775240832, guid: 5f6968725f228aa4f9821bd20a1920f6, type: 3}
+      propertyPath: actions.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f90cadf41fd7cf4ea6af564eb6e6d21, type: 2}
+    - target: {fileID: 2938522100775240832, guid: 5f6968725f228aa4f9821bd20a1920f6, type: 3}
+      propertyPath: actions.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: f1b32a36a4deed147ac97b4f5fbdd2b5, type: 2}
+    - target: {fileID: 2938522100775240832, guid: 5f6968725f228aa4f9821bd20a1920f6, type: 3}
+      propertyPath: actions.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5e6c3dae59ef30b458cf2cf64767d5c6, type: 2}
     - target: {fileID: 3494757982100120357, guid: 5f6968725f228aa4f9821bd20a1920f6, type: 3}
       propertyPath: maxHealth
       value: 180
