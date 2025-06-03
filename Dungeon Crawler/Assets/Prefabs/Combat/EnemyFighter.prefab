@@ -155,9 +155,13 @@ PrefabInstance:
     - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: actions.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 617e4ec348599aa4fbe3af92c1001297, type: 2}
+      objectReference: {fileID: 11400000, guid: 4f5fe194a980352458358d65f13545d5, type: 2}
     - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: actions.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 32df8b8521713eb4d872b1c475dd6b66, type: 2}
+    - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: actions.Array.data[5]
       value: 
       objectReference: {fileID: 11400000, guid: 32df8b8521713eb4d872b1c475dd6b66, type: 2}
     - target: {fileID: 5489690597942634482, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
