@@ -16,7 +16,7 @@ public class RuneSelection : MonoBehaviour
 
     [Header("Mana")]
     public int maxMana;
-    [HideInInspector] public static int currentMana;
+    public static int currentMana;
     private static int interMana;
     private static int potentialMana;
     [SerializeField] private VerticalLayoutGroup manaGraduationGroup;
