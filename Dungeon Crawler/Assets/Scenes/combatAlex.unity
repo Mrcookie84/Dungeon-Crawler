@@ -2071,6 +2071,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -3.9905996
       objectReference: {fileID: 0}
+    - target: {fileID: 1007071699758448882, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -564
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007071699758448882, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 378
+      objectReference: {fileID: 0}
     - target: {fileID: 1023775011508284725, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: enemyGrid
       value: 
@@ -2114,6 +2122,34 @@ PrefabInstance:
     - target: {fileID: 1245327433536748646, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252203766648719867, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -563
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453162258220512184, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.6148555
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453162258220512184, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.79393077
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453162258220512184, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7.9127197
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453162258220512184, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -56.91266
+      objectReference: {fileID: 0}
+    - target: {fileID: 1812200261973480095, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -348
+      objectReference: {fileID: 0}
+    - target: {fileID: 1812200261973480095, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 688
       objectReference: {fileID: 0}
     - target: {fileID: 2277066633467485699, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2278,6 +2314,14 @@ PrefabInstance:
     - target: {fileID: 6596283165032836780, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_Name
       value: UI Combats 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836881938928333379, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -346
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836881938928333379, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 378
       objectReference: {fileID: 0}
     - target: {fileID: 6882440391562622091, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
