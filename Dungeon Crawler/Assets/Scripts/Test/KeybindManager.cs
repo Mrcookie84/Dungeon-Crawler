@@ -21,6 +21,11 @@ public class KeybindManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start()
+    {
+        LoadAllKeybinds();
+        Debug.Log("dadzadzad");
+    }
 
     public void SetKey(string action, KeyCode key)
     {
@@ -42,12 +47,12 @@ public class KeybindManager : MonoBehaviour
         }
     }
 
-    private void LoadAllKeybinds()
+    public void LoadAllKeybinds()
     {
         LoadKey("Right", KeyCode.D);
         LoadKey("Left", KeyCode.Q);
         LoadKey("Grimoire", KeyCode.G);
-        LoadKey("Inventaire", KeyCode.I);
+       // LoadKey("Inventaire", KeyCode.I);
         LoadKey("Parametre", KeyCode.Escape);
         LoadKey("Map", KeyCode.M);
         LoadKey("Interagir", KeyCode.F);
