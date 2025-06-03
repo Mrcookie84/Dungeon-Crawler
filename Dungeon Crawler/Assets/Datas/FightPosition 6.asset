@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e2169a2e5f24640aef5905883ae5e1, type: 3}
+  m_Name: FightPosition 6
+  m_EditorClassIdentifier: 
+  playerArray:
+  - {fileID: 0}
+  - {fileID: 6738760618170967851, guid: 2c0e1f400ae8161469f40e2c88799fe8, type: 3}
+  - {fileID: 3548002928779807524, guid: ddeb47f21fa491144ab8309f13490688, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enemyArray:
+  - {fileID: 1780906407045188297, guid: 5e8fc2f5bed97bf41938d4ceee181ebb, type: 3}
+  - {fileID: 5200535693190016583, guid: 55aeff1ebd2010d4190ac8beddc7ba21, type: 3}
+  - {fileID: 0}
+  - {fileID: 4338044252648731311, guid: 5f6968725f228aa4f9821bd20a1920f6, type: 3}
+  - {fileID: 0}
+  - {fileID: 5200535693190016583, guid: 55aeff1ebd2010d4190ac8beddc7ba21, type: 3}
