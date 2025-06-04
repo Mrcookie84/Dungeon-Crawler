@@ -17,6 +17,15 @@ public class HealthBarHandler : MonoBehaviour
             return;
         }
 
+        if (transform.localScale.y == -1)
+        {
+            healthValue.transform.localScale = new Vector3(1f, -1f, 1f);
+        }
+        else
+        {
+            healthValue.transform.localScale = new Vector3(1f, 1f, 1f);
+        }
+
         EntityHealth healthInfo = linkedEntity.GetComponent<EntityHealth>();
 
         if (healthInfo.dead)
