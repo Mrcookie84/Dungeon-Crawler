@@ -14,7 +14,6 @@ public class SceneManager : MonoBehaviour
     
     public static SceneManager SceneManagerInstance;
     public CombatTrigger combatTrigger;
-    public MapUIManagerScript mapUIManager;
     
     public GameObject MainMenuCamera;
     
@@ -39,20 +38,8 @@ public class SceneManager : MonoBehaviour
     {
         StartTheGame();
     }
-
-    public static void GoToRP()
-    {
-        StartingScene.SetActive(true);
-        SceneFight.SetActive(false);
-    }
     
-    public static void GoToFight()
-    {
-        SceneFight.SetActive(true);
-        StartingScene.SetActive(false);
-    }
-
-    public void StartTheGame()
+    private void StartTheGame()
     {
         StartingScene.SetActive(false);
         SceneFight.SetActive(false);
@@ -63,6 +50,18 @@ public class SceneManager : MonoBehaviour
         MainMenuCamera.SetActive(false);
         MainMenuScene.SetActive(false);
         GoToRP();
+    }
+    
+    public static void GoToRP()
+    {
+        StartingScene.SetActive(true);
+        SceneFight.SetActive(false);
+    }
+    
+    public static void GoToFight()
+    {
+        SceneFight.SetActive(true);
+        StartingScene.SetActive(false);
     }
 
     public void QuitGame()
