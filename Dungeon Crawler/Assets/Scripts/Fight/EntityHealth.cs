@@ -41,21 +41,8 @@ public class EntityHealth : MonoBehaviour
     void Awake()
     {
         maxHealth = data.defaultHealth;
-        switch (data.linkedInventory)
-        {
-            case HealthData.LinkedInventory.None:
-                break;
-            
-            case HealthData.LinkedInventory.Player1:
-                if (Player1Inventory.PInventoryINSTANCE == null) break;
-                maxHealth += Player1Inventory.HealthBoost;
-                break;
-            
-            case HealthData.LinkedInventory.Player2:
-                if (Player2Inventory.PInventoryINSTANCE == null) break;
-                maxHealth += Player2Inventory.HealthBoost;
-                break;
-        }
+        if (data.isLinkedToInv)
+            maxHealth += PlayerInventory.HealthBoost;
 
         if (data.keepHealth)
             currentHealth = data.currentHealth;

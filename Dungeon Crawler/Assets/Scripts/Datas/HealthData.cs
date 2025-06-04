@@ -8,13 +8,6 @@ public class HealthData : ScriptableObject
     [Header("Info")]
     public int defaultHealth;
     [HideInInspector] public int currentHealth;
-    public LinkedInventory linkedInventory;
+    public bool isLinkedToInv;
     public bool keepHealth;
-
-    public enum LinkedInventory
-    {
-        None,
-        Player1,
-        Player2
-    }
 }

@@ -7,10 +7,7 @@ public class InventoryManagerScript : MonoBehaviour
 
     public ItemData CurrentSelectedItemData;
     public ItemData emptyData;
-
-    [Header("Player individual inventory :")]
-    public Player1Inventory player1Inventory;
-    public Player2Inventory player2Inventory;
+    
 
     private void Awake()
     {
@@ -22,8 +19,7 @@ public class InventoryManagerScript : MonoBehaviour
 
     private void Start()
     {
-        Player1Inventory.ResetInventory();
-        Player2Inventory.ResetInventory();
+        //PlayerInventory.ResetInventory();
         CurrentSelectedItemData = emptyData;
 
         RefreshInventoryUI();
@@ -155,10 +151,8 @@ public class InventoryManagerScript : MonoBehaviour
 
     private void RefreshInventoryUI()
     {
-        Player1Inventory.LoadSprite();
-        Player1Inventory.RefreshItemStatsUpdate();
-
-        Player2Inventory.LoadSprite();
-        Player2Inventory.RefreshItemStatsUpdate();
+        /*
+        PlayerInventory.LoadSprite();
+        PlayerInventory.RefreshItemStatsUpdate();*/
     }
 }
