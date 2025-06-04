@@ -131,12 +131,13 @@ public class RuneSelection : MonoBehaviour
     {
         maxMana = Instance.defaultMana;
         maxStability = Instance.defaultStability;
+        /*
         if (Player1Inventory.PInventoryINSTANCE != null || Player2Inventory.PInventoryINSTANCE != null)
         {
             Debug.Log("feur");
             maxMana += Player1Inventory.ManaBoost + Player2Inventory.ManaBoost;
             maxStability += Player1Inventory.StabilityBoost + Player2Inventory.StabilityBoost;
-        }
+        }*/
             
 
         // Initialisation du mana

@@ -1,25 +1,11 @@
-using AYellowpaper.SerializedCollections;
-using TMPro;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public abstract class PlayerInventory : MonoBehaviour
 {
-    [Header("Text : ")]
-    public TMP_Text itemEquippedText;
-    
-    [SerializedDictionary("Slot","Item")]
-    public SerializedDictionary<ItemData.ItemSlot, ItemData> items =
-            new SerializedDictionary<ItemData.ItemSlot, ItemData>()
-            {
-                {ItemData.ItemSlot.Weapon, null},
-                {ItemData.ItemSlot.Armor, null},
-                {ItemData.ItemSlot.Accessories1, null},
-                {ItemData.ItemSlot.Accessories2, null},
-                {ItemData.ItemSlot.Accessories3, null}
-            };
-    
-    public static PlayerInventory PInventoryINSTANCE;
+    private static PlayerInventory Instance;
+
+    public List<ItemData> items;
     
     // ============== Propriété =================== //
     public static int ManaBoost
@@ -28,7 +14,7 @@ public abstract class PlayerInventory : MonoBehaviour
         {
             int manaBoost = 0;
 
-            foreach (var item in PInventoryINSTANCE.items.Values)
+            foreach (var item in Instance.items)
             {
                 if (item == null) continue;
                 manaBoost += item.addedMana;
@@ -44,7 +30,7 @@ public abstract class PlayerInventory : MonoBehaviour
         {
             int stabilityBoost = 0;
 
-            foreach (var item in PInventoryINSTANCE.items.Values)
+            foreach (var item in Instance.items)
             {
                 if (item == null) continue;
                 stabilityBoost += item.addedStability;
@@ -60,7 +46,7 @@ public abstract class PlayerInventory : MonoBehaviour
         {
             int healthBoost = 0;
 
-            foreach (var item in PInventoryINSTANCE.items.Values)
+            foreach (var item in Instance.items)
             {
                 if (item == null) continue;
                 healthBoost += item.addedPV;
@@ -73,27 +59,19 @@ public abstract class PlayerInventory : MonoBehaviour
     // ============== Méthode =================== //
     private void Awake()
     {
-        if (PInventoryINSTANCE == null)
-            PInventoryINSTANCE = this;
+        if (Instance == null)
+            Instance = this;
         else
             Destroy(this);
     }
 
     public static void ResetInventory()
     {
-        foreach (var slot in PInventoryINSTANCE.items.Keys)
-        {
-            PInventoryINSTANCE.items[slot] = null;
-        }
-    }
-    
-    public static void LoadSprite()
-    {
-        
+        Instance.items = new List<ItemData>();
     }
 
-    public static void RefreshItemStatsUpdate()
+    public static void AddItem(ItemData item)
     {
-        
+        Instance.items.Add(item);
     }
 }

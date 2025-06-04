@@ -61,12 +61,12 @@ public class SpellCaster : MonoBehaviour
         UpdateSpell();
     }
 
-    public static void ResetSpell()
+    public static void ResetSpell(bool restoreRune = false)
     {
         spellEnemyData = null;
         spellPlayerData = null;
 
-        RuneSelection.ResetSelection();
+        RuneSelection.ResetSelection(restoreRune);
         UpdateSpell();
     }
 
@@ -91,6 +91,8 @@ public class SpellCaster : MonoBehaviour
 
     public static void ChangeCastMode()
     {
+        ResetSpell(true);
+        
         // Alterner entre les différents modes d'attaque
         switch (currentCastMode)
         {
@@ -187,6 +189,7 @@ public class SpellCaster : MonoBehaviour
 
         EnemyAIControler.UpdatePlayerMask();
         EnableButtons(true);
+        ResetSpell();
     }
 
     /// <summary>
@@ -237,8 +240,8 @@ public class SpellCaster : MonoBehaviour
 
         yield return new WaitForSeconds(5f);
 
-        ResetSpell();
         EnableButtons(true);
+        ResetSpell();
     }
 
     /// <summary>
