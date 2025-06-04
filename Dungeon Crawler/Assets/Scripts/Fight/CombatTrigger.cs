@@ -11,6 +11,7 @@ public class CombatTrigger : MonoBehaviour
     void Start()
     {
         SceneManager.SceneManagerInstance.combatTrigger = this;
+        StartCoroutine(WaitForLoading());
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -22,5 +23,11 @@ public class CombatTrigger : MonoBehaviour
         }
         
         
+    }
+
+    IEnumerator WaitForLoading()
+    {
+        yield return new WaitForSeconds(1f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 }

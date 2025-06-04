@@ -11,8 +11,6 @@ namespace SystemDeSauvegarde
 
         private void Start()
         {
-            if (AudioManager.SINGLETON != null)
-                AudioManager.SINGLETON.PlayMusic(AudioManager.SINGLETON.musicSource);
             UpdatePlayerLevelUI();
             UpdatePlayerXPUI();
         }
