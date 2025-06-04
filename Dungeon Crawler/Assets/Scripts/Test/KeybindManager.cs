@@ -52,7 +52,7 @@ public class KeybindManager : MonoBehaviour
         LoadKey("Right", KeyCode.D);
         LoadKey("Left", KeyCode.Q);
         LoadKey("Grimoire", KeyCode.G);
-       // LoadKey("Inventaire", KeyCode.I);
+        LoadKey("Inventaire", KeyCode.I);
         LoadKey("Parametre", KeyCode.Escape);
         LoadKey("Map", KeyCode.M);
         LoadKey("Interagir", KeyCode.F);
