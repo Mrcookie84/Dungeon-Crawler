@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: RuneData 2
   m_EditorClassIdentifier: 
   ID: 2
-  manaCost: 2
-  cooldown: 1
+  manaCost: 1
+  cooldown: 2
   UIPrefab: {fileID: 4720094450973123644, guid: 17739a06d51b8a34b9da5c41802f6595, type: 3}
