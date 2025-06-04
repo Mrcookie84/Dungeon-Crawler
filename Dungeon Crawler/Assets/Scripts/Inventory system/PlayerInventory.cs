@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class PlayerInventory : MonoBehaviour
+public class PlayerInventory : MonoBehaviour
 {
     private static PlayerInventory Instance;
 

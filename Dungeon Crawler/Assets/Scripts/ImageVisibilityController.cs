@@ -36,13 +36,14 @@ public class ImageVisibilityController : MonoBehaviour
             imageToShowHide.SetActive(false);
             Debug.Log("Image rendu visible");
         }
-         void ToggleImageVisibility()
+        
+        void ToggleImageVisibility()
         {
             if (imageToShowHide != null)
             {
-                // Inverse l'état actif actuel de l'objet
+                // Inverse l'ï¿½tat actif actuel de l'objet
                 imageToShowHide.SetActive(!imageToShowHide.activeSelf);
-                Debug.Log("Visibilité de l'image basculée. Nouvelle visibilité : " + imageToShowHide.activeSelf);
+                Debug.Log("Visibilitï¿½ de l'image basculï¿½e. Nouvelle visibilitï¿½ : " + imageToShowHide.activeSelf);
             }
         }
     }
