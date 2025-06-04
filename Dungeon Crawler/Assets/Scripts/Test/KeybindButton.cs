@@ -22,7 +22,7 @@ public class KeybindButton : MonoBehaviour
         {
             foreach (KeyCode kc in Enum.GetValues(typeof(KeyCode)))
             {
-                if (Input.GetKeyDown(kc))
+                if (Input.GetKeyDown(kc) && kc != KeyCode.Mouse0 && kc != KeyCode.Mouse1)
                 {
                     KeybindManager.SINGLETON.SetKey(actionName, kc);
                     waitingForKey = false;
