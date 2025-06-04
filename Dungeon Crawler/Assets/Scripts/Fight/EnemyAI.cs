@@ -129,15 +129,17 @@ public class EnemyAI : MonoBehaviour
         EnemyActionData action = ChooseAction(moveKey);
 
         // Déplacement
-        gridComp.ChangePosition(GridPos + moveKey);
+        Vector2Int oldPos = GridPos;
+        Vector2Int newPos = GridPos + moveKey;
+        gridComp.ChangePosition(newPos);
 
         // Échanger avec la potentielle entité sur la destination
-        if (EnemyAIControler.IsEnemyOnCell(GridPos + moveKey))
+        if (EnemyAIControler.IsEnemyOnCell(newPos))
         {
-            GameObject entity = EnemyAIControler.GetEnemyOnCell(GridPos + moveKey);
+            GameObject entity = EnemyAIControler.GetEnemyOnCell(newPos);
 
             if (entity != null)
-                entity.GetComponent<EntityPosition>().ChangePosition(GridPos);
+                entity.GetComponent<EntityPosition>().ChangePosition(oldPos);
         }
 
         EnemyAIControler.UpdateEnemyMask();
