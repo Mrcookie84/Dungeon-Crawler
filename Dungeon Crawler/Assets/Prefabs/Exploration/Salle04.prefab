@@ -1841,7 +1841,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 285199e7cf8b70b4e8577ce933ed128e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5309,11 +5309,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 7fdcd956460da294ab4dbb19278d4987, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.09
+      value: 13.02
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 7fdcd956460da294ab4dbb19278d4987, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25.66
+      value: -25.76
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 7fdcd956460da294ab4dbb19278d4987, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5658,11 +5658,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3155605733832672222, guid: 1369c3cc918ee6b4c8f140b14b7b4767, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.41
+      value: 4.64
       objectReference: {fileID: 0}
     - target: {fileID: 3155605733832672222, guid: 1369c3cc918ee6b4c8f140b14b7b4767, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -28.99
+      value: -28.98
       objectReference: {fileID: 0}
     - target: {fileID: 3155605733832672222, guid: 1369c3cc918ee6b4c8f140b14b7b4767, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5713,8 +5713,7 @@ PrefabInstance:
       value: CombatTrigger (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 3985031082711177165, guid: 1369c3cc918ee6b4c8f140b14b7b4767, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1369c3cc918ee6b4c8f140b14b7b4767, type: 3}
@@ -6465,11 +6464,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3155605733832672222, guid: 1369c3cc918ee6b4c8f140b14b7b4767, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.75
+      value: 42.03
       objectReference: {fileID: 0}
     - target: {fileID: 3155605733832672222, guid: 1369c3cc918ee6b4c8f140b14b7b4767, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -23.28
+      value: -29.06
       objectReference: {fileID: 0}
     - target: {fileID: 3155605733832672222, guid: 1369c3cc918ee6b4c8f140b14b7b4767, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6552,12 +6551,8 @@ PrefabInstance:
       value: CombatTrigger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 3985031082711177165, guid: 1369c3cc918ee6b4c8f140b14b7b4767, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3155605733832672222, guid: 1369c3cc918ee6b4c8f140b14b7b4767, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4885771205338346209}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1369c3cc918ee6b4c8f140b14b7b4767, type: 3}
 --- !u!4 &8530834913666946592 stripped
@@ -7061,7 +7056,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1861420853359090909, guid: def7155802f6bf0469bc42828b4babd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35.56
+      value: 21.49
       objectReference: {fileID: 0}
     - target: {fileID: 1861420853359090909, guid: def7155802f6bf0469bc42828b4babd7, type: 3}
       propertyPath: m_LocalPosition.y
