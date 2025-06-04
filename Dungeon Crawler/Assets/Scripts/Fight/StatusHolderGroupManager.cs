@@ -28,9 +28,7 @@ public class StatusHolderGroupManager : MonoBehaviour
             }
             else
             {
-                Debug.Log($"{currentEntity.name} : status update");
                 statusHolderHandlers[i].UpdateStatus(statusInfos);
-                Debug.Log($"{currentEntity.name} : status update finished");
             }
         }
     }

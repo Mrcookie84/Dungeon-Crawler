@@ -84,7 +84,7 @@ public class GridManager : MonoBehaviour
         foreach (Vector2Int cell in cellList)
         {
             //Debug.Log($"Case iluminée : ({cell.x}, {cell.y})");
-            transform.GetChild(cell.x + cell.y * 3).GetChild(0).gameObject.SetActive(true);
+            transform.GetChild(cell.x + cell.y * 3).GetChild(0).GetChild(0).gameObject.SetActive(true);
         }
     }
 
@@ -92,7 +92,7 @@ public class GridManager : MonoBehaviour
     {
         for (int i = 0; i < 6; i++)
         {
-            transform.GetChild(i).GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(i).GetChild(0).GetChild(0).gameObject.SetActive(false);
         }
     }
 

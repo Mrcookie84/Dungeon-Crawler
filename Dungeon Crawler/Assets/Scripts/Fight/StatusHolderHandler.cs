@@ -12,9 +12,7 @@ public class StatusHolderHandler : MonoBehaviour
     {
         for (int i = 0; i < transform.childCount; i++)
         {
-            Debug.Log(i);
             transform.GetChild(i).GetComponent<Image>().enabled = false;
-            Debug.Log(i);
             if (transform.GetChild(i).childCount == 0) continue;
             
             DestroyImmediate(transform.GetChild(i).GetChild(0).gameObject);
@@ -31,7 +29,6 @@ public class StatusHolderHandler : MonoBehaviour
             if (info.duration <= 0) continue;
 
             transform.GetChild(statusHolderIndex).GetComponent<Image>().enabled = true;
-            Debug.Log($"{name} : {statusHolderIndex}");
             GameObject currentUI = Instantiate(statusUI, transform.GetChild(statusHolderIndex));
             statusHolderIndex++;
             

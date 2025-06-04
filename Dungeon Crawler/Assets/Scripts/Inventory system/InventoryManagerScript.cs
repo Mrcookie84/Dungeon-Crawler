@@ -22,27 +22,11 @@ public class InventoryManagerScript : MonoBehaviour
 
     private void Start()
     {
-        ResetInventory(player1Inventory);
-        ResetInventory(player2Inventory);
+        Player1Inventory.ResetInventory();
+        Player2Inventory.ResetInventory();
         CurrentSelectedItemData = emptyData;
 
         RefreshInventoryUI();
-    }
-
-    private void ResetInventory(MonoBehaviour inventory)
-    {
-        if (inventory is Player1Inventory p1)
-        {
-            p1.weaponItemData = p1.armorItemData = p1.accessorie1ItemData = p1.accessorie2ItemData = emptyData;
-            p1.weaponSprite.sprite = p1.armornSprite.sprite =
-                p1.accessorie1Sprite.sprite = p1.accessorie2Sprite.sprite = emptyData.sprite;
-        }
-        else if (inventory is Player2Inventory p2)
-        {
-            p2.weaponItemData = p2.armorItemData = p2.accessorie1ItemData = p2.accessorie2ItemData = emptyData;
-            p2.weaponSprite.sprite = p2.armornSprite.sprite =
-                p2.accessorie1Sprite.sprite = p2.accessorie2Sprite.sprite = emptyData.sprite;
-        }
     }
 
     public void SaveSelectedItemData(ItemData itemData)
@@ -77,13 +61,17 @@ public class InventoryManagerScript : MonoBehaviour
 
     private bool IsValidSlotForItem(int slotID, ItemData.ItemSlot itemSlot)
     {
+        /*
         return (slotID == 1 || slotID == 9) && itemSlot == ItemData.ItemSlot.Weapon
             || (slotID == 2 || slotID == 10) && itemSlot == ItemData.ItemSlot.Armor
-            || (slotID == 3 || slotID == 4 || slotID == 11 || slotID == 12) && itemSlot == ItemData.ItemSlot.Accessories;
+            || (slotID == 3 || slotID == 4 || slotID == 11 || slotID == 12) && itemSlot == ItemData.ItemSlot.Accessories;*/
+
+        return true;
     }
 
     private void EquipItem(int boutonID)
     {
+        /*
         switch (boutonID)
         {
             case 1: player1Inventory.weaponItemData = CurrentSelectedItemData; break;
@@ -94,11 +82,13 @@ public class InventoryManagerScript : MonoBehaviour
             case 10: player2Inventory.armorItemData = CurrentSelectedItemData; break;
             case 11: player2Inventory.accessorie1ItemData = CurrentSelectedItemData; break;
             case 12: player2Inventory.accessorie2ItemData = CurrentSelectedItemData; break;
-        }
+        }*/
+        
     }
 
     private void UnequipSlot(int boutonID)
     {
+        /*
         switch (boutonID)
         {
             case 1: player1Inventory.weaponItemData = emptyData; break;
@@ -111,11 +101,12 @@ public class InventoryManagerScript : MonoBehaviour
             case 12: player2Inventory.accessorie2ItemData = emptyData; break;
         }
 
-        RefreshInventoryUI();
+        RefreshInventoryUI();*/
     }
 
     private void CheckIfAlreadyEquippedInSameSpot(int boutonID)
     {
+        /*
         if (CurrentSelectedItemData == emptyData) return;
 
         switch (boutonID)
@@ -130,11 +121,12 @@ public class InventoryManagerScript : MonoBehaviour
             case 12 when CurrentSelectedItemData == player2Inventory.accessorie2ItemData:
                 Debug.Log("Item already equipped in the same slot.");
                 break;
-        }
+        }*/
     }
 
     private void CheckIfAlreadyEquippedSomewhereElse(int boutonID)
     {
+        /*
         // Déquiper l'item s’il est équipé ailleurs
         if (player1Inventory.weaponItemData == CurrentSelectedItemData)
             player1Inventory.weaponItemData = emptyData;
@@ -158,15 +150,15 @@ public class InventoryManagerScript : MonoBehaviour
             player2Inventory.accessorie1ItemData = emptyData;
 
         if (player2Inventory.accessorie2ItemData == CurrentSelectedItemData)
-            player2Inventory.accessorie2ItemData = emptyData;
+            player2Inventory.accessorie2ItemData = emptyData;*/
     }
 
     private void RefreshInventoryUI()
     {
-        player1Inventory.LoadSprite();
-        player1Inventory.RefreshItemStatsUpdate();
+        Player1Inventory.LoadSprite();
+        Player1Inventory.RefreshItemStatsUpdate();
 
-        player2Inventory.LoadSprite();
-        player2Inventory.RefreshItemStatsUpdate();
+        Player2Inventory.LoadSprite();
+        Player2Inventory.RefreshItemStatsUpdate();
     }
 }

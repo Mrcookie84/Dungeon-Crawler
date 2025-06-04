@@ -4,8 +4,9 @@ using UnityEngine.Events;
 
 public class EntityHealth : MonoBehaviour
 {
-    public float maxHealth;
-    public float currentHealth;
+    [SerializeField] private HealthData data;
+    [HideInInspector] public float maxHealth;
+    [HideInInspector] public float currentHealth;
     [SerializeField] private string healthBarGroupTag;
     private HealthBarGroupManager healthBarGroup;
     [SerializeField] private EntityPosition posComponent;
@@ -25,10 +26,41 @@ public class EntityHealth : MonoBehaviour
     [SerializeField] private GameObject dmgDisplayPreF;
 
     [HideInInspector] public bool invicible = false;
+
+    public static void InitializeCurrentHealth()
+    {
+        HealthData foxHealth = Resources.Load<HealthData>("Health/FoxHealthData");
+        if (foxHealth == null) return;
+        foxHealth.currentHealth = foxHealth.defaultHealth;
+        
+        HealthData frogHealth = Resources.Load<HealthData>("Health/FrogHealthData");
+        if (frogHealth == null) return;
+        frogHealth.currentHealth = frogHealth.defaultHealth;
+    }
     
     void Awake()
     {
-        currentHealth = maxHealth;
+        maxHealth = data.defaultHealth;
+        switch (data.linkedInventory)
+        {
+            case HealthData.LinkedInventory.None:
+                break;
+            
+            case HealthData.LinkedInventory.Player1:
+                if (Player1Inventory.PInventoryINSTANCE == null) break;
+                maxHealth += Player1Inventory.HealthBoost;
+                break;
+            
+            case HealthData.LinkedInventory.Player2:
+                if (Player2Inventory.PInventoryINSTANCE == null) break;
+                maxHealth += Player2Inventory.HealthBoost;
+                break;
+        }
+
+        if (data.keepHealth)
+            currentHealth = data.currentHealth;
+        else
+            currentHealth = maxHealth;
 
         healthBarGroup = GameObject.FindGameObjectWithTag(healthBarGroupTag).GetComponent<HealthBarGroupManager>();
     }

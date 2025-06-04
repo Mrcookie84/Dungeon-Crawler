@@ -1375,13 +1375,13 @@ MonoBehaviour:
   - {fileID: 7922306007967684706}
   - {fileID: 5595574941974803204}
   - {fileID: 8420815148125876806}
-  maxMana: 8
+  defaultMana: 0
   manaGraduationGroup: {fileID: 2075138915528788651}
   manaGrad: {fileID: 2557462733996515047, guid: 027437a80a366e64dab5bef9e77209bc, type: 3}
   manaSliderUI: {fileID: 6077486092753143856}
   interManaSliderUI: {fileID: 587821646372611412}
   potentialManaSliderUI: {fileID: 2280586311054668450}
-  maxStability: 5
+  defaultStability: 0
   stabilityGraduationGroup: {fileID: 9001514230204703158}
   stabilityGrad: {fileID: 2382263353128818697, guid: 33d8bb7e0486f62478b4d047e07177f0, type: 3}
   stabilitySliderUI: {fileID: 6641911075739510174}
