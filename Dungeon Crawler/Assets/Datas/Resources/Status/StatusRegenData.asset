@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4cf1b13fad359545afb290694279eaa, type: 3}
   m_Name: StatusRegenData
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  permanent: 0
+  icon: {fileID: 21300000, guid: 486af0395bfabac439d79607f5a815a6, type: 3}
   regenAmount: 10
