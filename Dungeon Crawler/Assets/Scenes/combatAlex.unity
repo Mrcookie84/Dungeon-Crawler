@@ -2099,6 +2099,7 @@ Transform:
   - {fileID: 770185098}
   - {fileID: 550148394}
   - {fileID: 422683667}
+  - {fileID: 1899449737}
   m_Father: {fileID: 1769615210}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &541555351
@@ -2631,7 +2632,7 @@ PrefabInstance:
     - target: {fileID: 101501503286787093, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: syncGrid
       value: 
-      objectReference: {fileID: 1983869222}
+      objectReference: {fileID: 0}
     - target: {fileID: 397905120025085472, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2667,7 +2668,7 @@ PrefabInstance:
     - target: {fileID: 1023775011508284725, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: enemyGrid
       value: 
-      objectReference: {fileID: 1983869222}
+      objectReference: {fileID: 0}
     - target: {fileID: 1023775011508284725, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: playerGrid
       value: 
@@ -2955,7 +2956,7 @@ PrefabInstance:
     - target: {fileID: 7180156485744183537, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: linkedGrid
       value: 
-      objectReference: {fileID: 1983869222}
+      objectReference: {fileID: 0}
     - target: {fileID: 7394782567344927466, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -6147,7 +6148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGrid: {fileID: 1565586015}
-  enemyGrid: {fileID: 1983869222}
+  enemyGrid: {fileID: 0}
   barrierGrid: {fileID: 1412030046}
 --- !u!1 &1554353581
 GameObject:

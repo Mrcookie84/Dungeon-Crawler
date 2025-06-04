@@ -1076,10 +1076,10 @@ MonoBehaviour:
 
     - 1 mana, cooldown 1 tour
 
-    
 
-    -sorts plus precis avec des
-    effets particuliers'
+
+    -sorts plus precis avec des effets
+    particuliers'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d040bd4eaac4cec46873b880914d2192, type: 2}
   m_sharedMaterial: {fileID: 2348596365753169489, guid: d040bd4eaac4cec46873b880914d2192, type: 2}
@@ -6451,7 +6451,7 @@ MonoBehaviour:
 
     - 1 mana, cooldown 2 tour
 
-    
+
 
     - Applique des status particulier
     a chaque rune primordiale'
