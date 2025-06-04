@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: StatusReflectCDData
   m_EditorClassIdentifier: 
   permanent: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c259ac4ddaea1ae4cb2c1d051b232f5a, type: 3}
   restoredStatus: {fileID: 11400000, guid: c245f88aa7e808949bd5b8746d21726d, type: 2}
   restoredDuration: 1

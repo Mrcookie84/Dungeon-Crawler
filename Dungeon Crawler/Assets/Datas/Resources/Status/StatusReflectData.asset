@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StatusReflectData
   m_EditorClassIdentifier: 
   permanent: 1
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: ef2983907ca01b1478170c1c0e8e3c05, type: 3}
   recharge: 1
   chargeTurn: 5
   reloadStatus: {fileID: 11400000, guid: e9e93da8af1d5aa4b9e0710edf948a1f, type: 2}

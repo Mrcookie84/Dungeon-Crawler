@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3a4ef213db0d844b7cac0936dfeeaa, type: 3}
   m_Name: StatusSwitchWorldData
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  permanent: 0
+  icon: {fileID: 21300000, guid: cec2cab71be3f104993acf3470939ba9, type: 3}

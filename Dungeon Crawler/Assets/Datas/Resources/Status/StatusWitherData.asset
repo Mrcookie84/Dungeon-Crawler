@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: StatusWitherData
   m_EditorClassIdentifier: 
   permanent: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 0fac6a5d9a8f022439b33adf11f1489a, type: 3}
   witherAmount: 10
   dmgType: 3
