@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0160c4158dda8c47b86463cc1cd798e, type: 3}
   m_Name: SpellEnemyData04
   m_EditorClassIdentifier: 
+  unstable: 0
   hitCellList:
   - {x: 0, y: 0}
   - {x: 2, y: 0}
@@ -33,5 +34,5 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: "- Co\xFBt (4 mana)   - Touche 3 ennemis, Brise la barri\xE8re aux emplacement
-    touch\xE9s, inflige de faibles d\xE9g\xE2ts de r\xE9alit\xE9"
+  desc: "- Touche 3 ennemis<br> - Brise la barri\xE8re aux emplacement touch\xE9s<br>
+    - Inflige de faibles d\xE9g\xE2ts de r\xE9alit\xE9"

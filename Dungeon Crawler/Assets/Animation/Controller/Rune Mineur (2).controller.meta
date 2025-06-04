@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Dungeon Crawler/Assets/Animation/Controller/Rune Mineur (2).controller.meta
 guid: db74e21807dd2b74a888b3423504886c
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000
+========
+guid: a0b081b65f54d9944b8e86b792b55653
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+>>>>>>>> 98fd101 (update actions ennemi 2 + pop up):Dungeon Crawler/Assets/Datas/Resources/EnemyActions/EASimpleDegradation2.asset.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 
