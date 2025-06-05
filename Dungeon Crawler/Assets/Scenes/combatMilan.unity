@@ -1023,6 +1023,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6079591474809653621, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6082106009069819422, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Interactable
       value: 1
