@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyAIControler : MonoBehaviour
@@ -8,6 +9,8 @@ public class EnemyAIControler : MonoBehaviour
     public static bool[] playerGridMask = new bool[6];
     public static bool[] enemyGridMask = new bool[6];
     public static bool[] barrierGridMask = new bool[3];
+
+    public Transform debugTexts;
     
     // ======================= Méthodes ======================== //
     // Static
@@ -108,6 +111,15 @@ public class EnemyAIControler : MonoBehaviour
     public static bool IsBarrierActive(Vector2Int cell)
     {
         return barrierGridMask[cell.x];
+    }
+
+    public static void DebugMask(int[] value)
+    {
+        for (int i = 0;i < value.Length; i++)
+        {
+            TMPro.TextMeshProUGUI text = Instance.debugTexts.GetChild(i).GetComponent<TMPro.TextMeshProUGUI>();
+            text.text = value[i].ToString();
+        }
     }
 
     // Non - static

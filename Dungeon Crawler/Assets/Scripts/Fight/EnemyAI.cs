@@ -93,6 +93,8 @@ public class EnemyAI : MonoBehaviour
             scoreMask[i] += EnemyAIControler.CountEnemyOnRow(cell.y) * enemyInWorldW;
             scoreMask[i] += EnemyAIControler.CountPlayerOnRow(cell.y) * playerInWorldW;
         }
+
+        EnemyAIControler.DebugMask(scoreMask);
     }
 
     public void ResetMoveInitiative()
@@ -174,46 +176,46 @@ public class EnemyAI : MonoBehaviour
     {
         UpdateMask();
 
-        // Not moving
         int startScore = scoreMask[startCell.x + 3 * startCell.y];
-        (Vector2Int, int) bestMove = (Vector2Int.zero, startScore);
-        bool moved = false;
 
-        // Fin de recherche
+        #region Fin de recherche
         if (depth <= 0)
         {
-            return bestMove;
+            return (Vector2Int.zero, startScore);
         }
+        #endregion
+
+        // Not moving
+        int bestScore = FindBestMove(startCell, --depth).Item2;
+        (Vector2Int, int) bestMove = (Vector2Int.zero, 0);
+
         
+
         // Balayage de chaque possibilité de déplacement
         foreach (Vector2Int cell in Movements)
         {
             Vector2Int nextCell = startCell + cell;
             nextCell.y %= 2;
-            
-            // Mouvement impossible
+
+            #region Mouvement impossible
             if (!GridManager.EnemyGrid.IsPosInGrid(nextCell))
                 continue;
             if (!BarrierGrid.IsBarrierBroken(startCell.x) && cell.y == 1 && !canBreakBarrier)
             {
                 continue;
             }
+            #endregion
 
             // Appel récursif pour prévoir sur plusieurs tours
-            (Vector2Int, int) currentMove = FindBestMove(nextCell, --depth);
+            int currentScore = FindBestMove(nextCell, --depth).Item2 - startScore;
 
-            if (currentMove.Item2 > bestMove.Item2)
+            if (currentScore > bestMove.Item2)
             {
-                bestMove = (cell, currentMove.Item2);
-                moved = true;
+                bestMove = (cell, currentScore);
             }
         }
 
-        if (moved)
-            return (bestMove.Item1, bestMove.Item2 - startScore);
-        // Ne pas doubler le score quand il n'y a pas de mouvement
-        else
-            return bestMove;
+        return bestMove;
     }
 
     private EnemyActionData ChooseAction(Vector2Int moveKey)
