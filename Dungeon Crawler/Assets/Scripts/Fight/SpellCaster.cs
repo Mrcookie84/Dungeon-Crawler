@@ -127,7 +127,7 @@ public class SpellCaster : MonoBehaviour
         {
             for (int i = 3; i < 0; i--)
             {
-                if (EnemyAIControler.EnemyGrid.entityList[3 * casterGPos.gridPos.y + i - 1] != null)
+                if (GridManager.EnemyGrid.entityList[3 * casterGPos.gridPos.y + i - 1] != null)
                 {
                     return new Vector2Int(i, casterGPos.gridPos.y);
                 }
@@ -139,7 +139,7 @@ public class SpellCaster : MonoBehaviour
         // Balayage de la grille ennemi pour trouver la case sur laquelle activer le sort
         for (int i = 0; i < 3; i++)
         {
-            if (EnemyAIControler.EnemyGrid.entityList[3* casterGPos.gridPos.y + i] != null)
+            if (GridManager.EnemyGrid.entityList[3* casterGPos.gridPos.y + i] != null)
             {
                 return new Vector2Int(i, casterGPos.gridPos.y);
             }
@@ -155,9 +155,9 @@ public class SpellCaster : MonoBehaviour
         // Balayage de la ligne
         for (int i = 0; i < 3; i++)
         {
-            if (EnemyAIControler.PlayerGrid.entityList[3* casterGPos.gridPos.y + i] != null)
+            if (GridManager.PlayerGrid.entityList[3* casterGPos.gridPos.y + i] != null)
             {
-                playerList.Add(EnemyAIControler.PlayerGrid.entityList[3 * casterGPos.gridPos.y + i].GetComponent<EntityPosition>());
+                playerList.Add(GridManager.PlayerGrid.entityList[3 * casterGPos.gridPos.y + i].GetComponent<EntityPosition>());
             }
         }
 
@@ -208,8 +208,8 @@ public class SpellCaster : MonoBehaviour
         RuneSelection.ResetSelection();
 
         // Update des grilles
-        EnemyAIControler.EnemyGrid.ResetHighlight();
-        EnemyAIControler.PlayerGrid.ResetHighlight();
+        GridManager.EnemyGrid.ResetHighlight();
+        GridManager.PlayerGrid.ResetHighlight();
 
         // Update UI
         EnableButtons(false);
@@ -230,7 +230,7 @@ public class SpellCaster : MonoBehaviour
     {   
         // Récupération des cases et ennemis affectés par le sort
         List<Vector2Int> hitCellList = GetAllCellHit();
-        GameObject[] enemyArray = EnemyAIControler.EnemyGrid.GetEntitiesAtMultPos(hitCellList);
+        GameObject[] enemyArray = GridManager.EnemyGrid.GetEntitiesAtMultPos(hitCellList);
 
         // Lancement de toutes le coroutines
         StartCoroutine(FxCoroutine(spellEnemyData.t_fx, hitCellList));
@@ -293,7 +293,7 @@ public class SpellCaster : MonoBehaviour
 
             bool tryingToCross = spellEnemyData.displacementList[i].y != 0;
             bool barrierBroken = EnemyAIControler.BarrierGrid.IsBarrierBroken(enemyPos.gridPos.x);
-            bool targetInGrid = EnemyAIControler.EnemyGrid.IsPosInGrid(targetPos);
+            bool targetInGrid = GridManager.EnemyGrid.IsPosInGrid(targetPos);
 
             if ((!tryingToCross || barrierBroken) && targetInGrid)
             {
@@ -383,7 +383,7 @@ public class SpellCaster : MonoBehaviour
             currentCell = (Vector2Int)triggerPos + spellEnemyData.hitCellList[i];
             currentCell.y %= 2; // Remettre la coordonnée y dans le cadriage
 
-            if (EnemyAIControler.EnemyGrid.IsPosInGrid(currentCell))
+            if (GridManager.EnemyGrid.IsPosInGrid(currentCell))
             {
                 bool passingThrought = (currentCell.y - previousCell.y) != 0;
                 bool barrierBroken = EnemyAIControler.BarrierGrid.IsBarrierBroken(currentCell.x);
@@ -456,8 +456,8 @@ public class SpellCaster : MonoBehaviour
 
     private static void UpdateSpellPreview()
     {
-        EnemyAIControler.PlayerGrid.ResetHighlight();
-        EnemyAIControler.EnemyGrid.ResetHighlight();
+        GridManager.PlayerGrid.ResetHighlight();
+        GridManager.EnemyGrid.ResetHighlight();
 
         if (casterGPos == null)
         {
@@ -489,7 +489,7 @@ public class SpellCaster : MonoBehaviour
                         highlightCoords.Add(casterGPos.gridPos);
                     }
 
-                    EnemyAIControler.PlayerGrid.HighlightCells(highlightCoords);
+                    GridManager.PlayerGrid.HighlightCells(highlightCoords);
 
                     break;
                 }
@@ -501,7 +501,7 @@ public class SpellCaster : MonoBehaviour
                         return;
                     }
 
-                    EnemyAIControler.EnemyGrid.HighlightCells(GetAllCellHit());
+                    GridManager.EnemyGrid.HighlightCells(GetAllCellHit());
 
                     break;
                 }
