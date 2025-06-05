@@ -108,7 +108,7 @@ public class EnemyAI : MonoBehaviour
     public virtual void DoAction()
     {
         (Vector2Int, int) move = FindBestMove(GridPos, nbTurnForesight);
-        Debug.Log(move);
+        //Debug.Log(move);
 
         // Influence de la volonté de déplacement
         Vector2Int moveKey;

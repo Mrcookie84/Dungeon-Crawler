@@ -42,39 +42,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2551319208624728258, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.745
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3126566767669286085, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_Name
       value: FightPanda
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

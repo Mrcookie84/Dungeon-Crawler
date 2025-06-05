@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class EntityHealth : MonoBehaviour
 {
     [SerializeField] private HealthData data;
+    [SerializeField] private bool isPlayer;
     [HideInInspector] public float maxHealth;
     [HideInInspector] public float currentHealth;
     [SerializeField] private string healthBarGroupTag;
@@ -55,6 +56,8 @@ public class EntityHealth : MonoBehaviour
 
     public void TakeDamage(GameObject source, int amount, DamageTypesData.DmgTypes type)
     {
+        if (dead) return;
+
         DamageInfo attackInfo = new DamageInfo(source, amount, type);
         
         if (invicible)
@@ -75,13 +78,21 @@ public class EntityHealth : MonoBehaviour
         currentHealth -= amount;
         healthBarGroup.UpdateHealthBars();
 
-        if (CheckDeath() && !dead)
+        if (CheckDeath())
         {
             dead = true;
             animHandler.ChangeState(EntityFightAnimation.State.Dead);
             isDying.Invoke();
 
+            if (isPlayer)
+            {
+                SpellCaster.ResetCaster();
+                CharaPortraitHandler.ResetPortait();
+            }
+
             TurnManager.TestEndFight(posComponent.LinkedGrid);
+
+            // A changer pour laisser l'animation de mort se jouer
             if (destoryOnDeath) Destroy(gameObject);
         }
         else if (!dead)

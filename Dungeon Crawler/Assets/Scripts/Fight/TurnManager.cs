@@ -101,7 +101,7 @@ public class TurnManager : MonoBehaviour
 
     public static void TestEndFight(GridManager grid)
     {
-        Debug.Log("Test fin de combat");
+        //Debug.Log("Test fin de combat");
         
         if (grid.IsEmpty)
         {

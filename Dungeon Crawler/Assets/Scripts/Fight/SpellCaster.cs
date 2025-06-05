@@ -79,6 +79,14 @@ public class SpellCaster : MonoBehaviour
         UpdateSpell();
     }
 
+    public static void ResetCaster()
+    {
+        casterGPos = null;
+
+        triggerPos = null;
+        UpdateSpell();
+    }
+
     public static void EnableButtons(bool enable)
     {
         Button[] buttons = Instance.UIButtonInterface.GetComponentsInChildren<Button>();

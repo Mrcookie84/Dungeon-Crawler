@@ -28,13 +28,11 @@ public class EntityFightAnimation : MonoBehaviour
             case State.Attack:
                 animator.SetTrigger("CAttaque");
                 currentState = State.Idle;
-                animator.SetBool("isIdle", true);
                 break;
             
             case State.Hurt:
                 animator.SetTrigger("CDegat");
                 currentState = State.Idle;
-                animator.SetBool("isIdle", true);
                 break;
             
             case State.Dead:

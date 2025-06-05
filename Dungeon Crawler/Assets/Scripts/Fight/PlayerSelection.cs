@@ -5,10 +5,13 @@ using UnityEngine.UIElements;
 public class PlayerSelection : MonoBehaviour
 {
     [SerializeField] private EntityPosition posComponent;
+    [SerializeField] private EntityHealth healthComponent;
     [SerializeField] private Sprite charaPortraitSprite;
 
     public void SelectAsCaster()
     {
+        if (healthComponent.dead) return;
+
         SpellCaster.ChangeCaster(posComponent);
         CharaPortraitHandler.ChangePortrait(charaPortraitSprite);
     }
