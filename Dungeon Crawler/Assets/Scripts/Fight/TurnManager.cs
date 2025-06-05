@@ -64,6 +64,8 @@ public class TurnManager : MonoBehaviour
 
     public void NextTurn()
     {
+        EnemyAIControler.UpdateAllMasks();
+        
         if (turnStack.Count != 0)
         {
             StartTurn();

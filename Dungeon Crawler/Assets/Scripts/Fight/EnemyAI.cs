@@ -21,6 +21,7 @@ public class EnemyAI : MonoBehaviour
 
     [Header("Entities weights")]
     //[SerializeField] private int adjacentEnemyW = 0;
+    [SerializeField] private int enemyOnCellW = 0;
     [Space(5)]
     [SerializeField] private int enemyInWorldW = 0;
     [SerializeField] private int playerInWorldW = 0;
@@ -88,6 +89,7 @@ public class EnemyAI : MonoBehaviour
             scoreMask[i] += columnW[cell.x];
 
             // Entity weights
+            scoreMask[i] += EnemyAIControler.IsEnemyOnCell(cell) && i != GridPos.x+3*GridPos.y ? enemyOnCellW : 0;
             scoreMask[i] += EnemyAIControler.CountEnemyOnRow(cell.y) * enemyInWorldW;
             scoreMask[i] += EnemyAIControler.CountPlayerOnRow(cell.y) * playerInWorldW;
         }
@@ -106,7 +108,7 @@ public class EnemyAI : MonoBehaviour
     public virtual void DoAction()
     {
         (Vector2Int, int) move = FindBestMove(GridPos, nbTurnForesight);
-        //Debug.Log(move);
+        Debug.Log(move);
 
         // Influence de la volonté de déplacement
         Vector2Int moveKey;
@@ -119,7 +121,7 @@ public class EnemyAI : MonoBehaviour
             moveKey = Vector2Int.zero;
         }
 
-        // ============= Aucune action séléectionnée =========== //
+        // ============= Aucune action sélectionnée =========== //
         if (!sortedActions.ContainsKey(moveKey))
         {
             Debug.LogWarning($"{moveKey} : Aucune action sélectionnée pour {name}");
@@ -131,7 +133,16 @@ public class EnemyAI : MonoBehaviour
         // Déplacement
         Vector2Int oldPos = GridPos;
         Vector2Int newPos = GridPos + moveKey;
-        gridComp.ChangePosition(newPos);
+        newPos.y %= 2;
+        
+        if (!BarrierGrid.IsBarrierBroken(GridPos.x) && moveKey.y == 1)
+        {
+            BarrierGrid.ChangeBarrierState(GridPos.x, BarrierGrid.BarrierState.Destroyed);
+        }
+        else
+        {
+            gridComp.ChangePosition(newPos);
+        }
 
         // Échanger avec la potentielle entité sur la destination
         if (EnemyAIControler.IsEnemyOnCell(newPos))
@@ -142,7 +153,8 @@ public class EnemyAI : MonoBehaviour
                 entity.GetComponent<EntityPosition>().ChangePosition(oldPos);
         }
 
-        EnemyAIControler.UpdateEnemyMask();
+        GridManager.EnemyGrid.UpdateEntitiesIndex();
+        EnemyAIControler.UpdateAllMasks();
 
         // Execution de l'action
         if (action.isAttack)
@@ -176,14 +188,19 @@ public class EnemyAI : MonoBehaviour
         // Balayage de chaque possibilité de déplacement
         foreach (Vector2Int cell in Movements)
         {
+            Vector2Int nextCell = startCell + cell;
+            nextCell.y %= 2;
+            
             // Mouvement impossible
-            if (!GridManager.EnemyGrid.IsPosInGrid(startCell + cell))
+            if (!GridManager.EnemyGrid.IsPosInGrid(nextCell))
                 continue;
-            if (!EnemyAIControler.BarrierGrid.IsBarrierBroken(startCell.x) && cell.y == 1) // sdfdsfsdfdsfsdfsdfdsfsdfdsfsdfsdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+            if (!BarrierGrid.IsBarrierBroken(startCell.x) && cell.y == 1 && !canBreakBarrier)
+            {
                 continue;
+            }
 
             // Appel récursif pour prévoir sur plusieurs tours
-            (Vector2Int, int) currentMove = FindBestMove(startCell + cell, --depth);
+            (Vector2Int, int) currentMove = FindBestMove(nextCell, --depth);
 
             if (currentMove.Item2 > bestMove.Item2)
             {
@@ -193,7 +210,7 @@ public class EnemyAI : MonoBehaviour
         }
 
         if (moved)
-            return (bestMove.Item1, bestMove.Item2 + startScore);
+            return (bestMove.Item1, bestMove.Item2 - startScore);
         // Ne pas doubler le score quand il n'y a pas de mouvement
         else
             return bestMove;
