@@ -23,10 +23,11 @@ public class DebugFightStarter : MonoBehaviour
             eventSystem.SetActive(true);
             
             // Initialisation du combat
-            if (PositionManager.Instance == null) Debug.LogError("Kill yourself");
             PositionManager.posData = posData;
             PositionManager.FillGrids();
             RuneSelection.InitializeStats();
+            EnemyAIControler.UpdateAllMasks();
+
         }
     }
 }

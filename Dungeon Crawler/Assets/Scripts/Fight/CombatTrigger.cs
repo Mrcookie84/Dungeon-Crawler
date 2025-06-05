@@ -23,6 +23,8 @@ public class CombatTrigger : MonoBehaviour
             // Initialisation du combat
             PositionManager.posData = posData;
             PositionManager.FillGrids();
+            RuneSelection.InitializeStats();
+            EnemyAIControler.UpdateAllMasks();
             
             Destroy(gameObject);
         }
