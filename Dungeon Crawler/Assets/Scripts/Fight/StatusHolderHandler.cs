@@ -30,12 +30,18 @@ public class StatusHolderHandler : MonoBehaviour
 
             transform.GetChild(statusHolderIndex).GetComponent<Image>().enabled = true;
             GameObject currentUI = Instantiate(statusUI, transform.GetChild(statusHolderIndex));
+
+            currentUI.transform.localScale = new Vector3(1f, transform.parent.parent.localScale.y, 1f);
             statusHolderIndex++;
             
             currentUI.name = info.status.name;
 
             if (info.status.icon != null)
-                currentUI.GetComponent<Image>().sprite = info.status.icon;
+            {
+                Image statusImage = currentUI.GetComponent<Image>();
+                statusImage.sprite = info.status.icon;
+                statusImage.SetNativeSize();
+            }
 
             if (info.status.permanent)
                 currentUI.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = "";
