@@ -177,7 +177,7 @@ public class EnemyAI : MonoBehaviour
         foreach (Vector2Int cell in Movements)
         {
             // Mouvement impossible
-            if (!EnemyAIControler.EnemyGrid.IsPosInGrid(startCell + cell))
+            if (!GridManager.EnemyGrid.IsPosInGrid(startCell + cell))
                 continue;
             if (!EnemyAIControler.BarrierGrid.IsBarrierBroken(startCell.x) && cell.y == 1) // sdfdsfsdfdsfsdfsdfdsfsdfdsfsdfsdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
                 continue;
@@ -228,11 +228,11 @@ public class EnemyAI : MonoBehaviour
 
         if (action.multipleTarget)
         {
-            targets = EnemyAIControler.PlayerGrid.GetEntitiesOnRow(gridComp.gridPos.y);
+            targets = GridManager.PlayerGrid.GetEntitiesOnRow(gridComp.gridPos.y);
         }
         else
         {
-            targets.Add(EnemyAIControler.PlayerGrid.GetRandomEntityOnRow(gridComp.gridPos.y));
+            targets.Add(GridManager.PlayerGrid.GetRandomEntityOnRow(gridComp.gridPos.y));
         }
 
         foreach (GameObject entity in targets)
@@ -264,20 +264,20 @@ public class EnemyAI : MonoBehaviour
                 break;
 
             case EnemyActionData.EnemySupportTarget.Other:
-                possibleTargets = EnemyAIControler.EnemyGrid.GetAdjacentEntities(gridComp.gridPos);
+                possibleTargets = GridManager.EnemyGrid.GetAdjacentEntities(gridComp.gridPos);
 
                 targets.Add(RandomEntityInList(possibleTargets));
                 break;
 
             case EnemyActionData.EnemySupportTarget.SelfOrOther:
-                possibleTargets = EnemyAIControler.EnemyGrid.GetAdjacentEntities(gridComp.gridPos);
+                possibleTargets = GridManager.EnemyGrid.GetAdjacentEntities(gridComp.gridPos);
                 possibleTargets.Add(gameObject);
 
                 targets.Add(RandomEntityInList(possibleTargets));
                 break;
 
             case EnemyActionData.EnemySupportTarget.Multiple:
-                targets = EnemyAIControler.EnemyGrid.GetAdjacentEntities(gridComp.gridPos);
+                targets = GridManager.EnemyGrid.GetAdjacentEntities(gridComp.gridPos);
                 break;
         }
 

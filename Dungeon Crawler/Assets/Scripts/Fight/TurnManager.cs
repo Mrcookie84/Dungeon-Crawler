@@ -101,7 +101,7 @@ public class TurnManager : MonoBehaviour
     {
         Debug.Log("Test fin de combat");
         
-        if (grid.isEmpty)
+        if (grid.IsEmpty)
         {
             PositionManager.EmptyGrids();
             SceneManager.GoToRP();

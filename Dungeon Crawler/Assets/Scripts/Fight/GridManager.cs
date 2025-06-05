@@ -1,14 +1,19 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class GridManager : MonoBehaviour
 {
+    public static GridManager PlayerGrid;
+    public static GridManager EnemyGrid;
+    
     public GameObject[] entityList = new GameObject[6];
     
     public UnityEvent gridUpdate = new UnityEvent();
 
-    public bool isEmpty
+    public bool IsEmpty
     {
         get
         {
@@ -28,6 +33,24 @@ public class GridManager : MonoBehaviour
 
             return result;
         }
+    }
+
+    public static bool IsPlayerGridEmpty
+    {
+        get { return PlayerGrid.IsEmpty; }
+    }
+
+    public static bool IsEnemyGridEmpty
+    {
+        get { return EnemyGrid.IsEmpty; }
+    }
+
+    private void Awake()
+    {
+        if (tag == "EnemyGrid")
+            EnemyGrid = this;
+        else if (tag == "PlayerGrid")
+            PlayerGrid = this;
     }
 
     public void AddEntity(GameObject entity, Vector2Int gridPos)
