@@ -64,6 +64,8 @@ public class TurnManager : MonoBehaviour
 
     public void NextTurn()
     {
+        EnemyAIControler.UpdateAllMasks();
+        
         if (turnStack.Count != 0)
         {
             StartTurn();
@@ -99,7 +101,7 @@ public class TurnManager : MonoBehaviour
 
     public static void TestEndFight(GridManager grid)
     {
-        Debug.Log("Test fin de combat");
+        //Debug.Log("Test fin de combat");
         
         if (grid.IsEmpty)
         {

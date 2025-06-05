@@ -10,6 +10,7 @@ public class GridManager : MonoBehaviour
     public static GridManager EnemyGrid;
     
     public GameObject[] entityList = new GameObject[6];
+    public CellHighlighter[] highlighterList = new CellHighlighter[6];
     
     public UnityEvent gridUpdate = new UnityEvent();
 
@@ -102,12 +103,11 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    public void HighlightCells(List<Vector2Int> cellList)
+    public void HighlightCells(List<CellHighlighter.HighlightInfo> cellList)
     {
-        foreach (Vector2Int cell in cellList)
+        foreach (var hlInfo in cellList)
         {
-            //Debug.Log($"Case iluminée : ({cell.x}, {cell.y})");
-            transform.GetChild(cell.x + cell.y * 3).GetChild(0).GetChild(0).gameObject.SetActive(true);
+            highlighterList[hlInfo.cell.x + 3 * hlInfo.cell.y].Highlight(hlInfo);
         }
     }
 
@@ -115,7 +115,7 @@ public class GridManager : MonoBehaviour
     {
         for (int i = 0; i < 6; i++)
         {
-            transform.GetChild(i).GetChild(0).GetChild(0).gameObject.SetActive(false);
+            highlighterList[i].ResetHL();
         }
     }
 

@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &523813749849583958
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2786611580890795145}
-  m_Layer: 0
-  m_Name: Status Holder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2786611580890795145
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 523813749849583958}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8907508124825360126}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3126566767669286085
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,7 +37,6 @@ Transform:
   - {fileID: 2551319208624728258}
   - {fileID: 2119575284852711873}
   - {fileID: 6782358934867309043}
-  - {fileID: 2786611580890795145}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-7346857730855540150
@@ -113,6 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 0}
+  isPlayer: 1
   maxHealth: 100
   currentHealth: 0
   healthBarGroupTag: PlayersHealthBars
@@ -170,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultStatus:
-  - {fileID: 11400000, guid: 555b3ec30c76bd246bb4f9ce6421298a, type: 2}
+  - {fileID: 0}
   defaultDuration: 1
   statusList: []
 --- !u!114 &5347879556732771913
@@ -186,11 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posComponent: {fileID: -7346857730855540150}
-  charaPortaitTag: CharaPortrait
+  healthComponent: {fileID: 0}
   charaPortraitSprite: {fileID: 0}
-  playerSelected:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &5720583357554483498
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +329,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1322260763606463193}
           m_TargetAssemblyTypeName: PlayerSelection, Assembly-CSharp
-          m_MethodName: InvokeSelectionEvent
+          m_MethodName: SelectAsCaster
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -418,11 +384,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posComponent: {fileID: -7346857730855540150}
-  charaPortaitTag: CharaPortrait
+  healthComponent: {fileID: 2109979061175751635}
   charaPortraitSprite: {fileID: 0}
-  playerSelected:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &7027195218989833837
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,21 +404,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2551319208624728258
-Transform:
+--- !u!224 &2551319208624728258
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7027195218989833837}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8907508124825360126}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0.932, y: 1.776}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!212 &185897872062742212
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -507,7 +474,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &1720636928566789164
 Animator:
   serializedVersion: 5

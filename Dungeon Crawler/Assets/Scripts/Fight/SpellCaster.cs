@@ -79,6 +79,14 @@ public class SpellCaster : MonoBehaviour
         UpdateSpell();
     }
 
+    public static void ResetCaster()
+    {
+        casterGPos = null;
+
+        triggerPos = null;
+        UpdateSpell();
+    }
+
     public static void EnableButtons(bool enable)
     {
         Button[] buttons = Instance.UIButtonInterface.GetComponentsInChildren<Button>();
@@ -292,7 +300,7 @@ public class SpellCaster : MonoBehaviour
             targetPos.y = Mathf.Abs(targetPos.y) % 2;
 
             bool tryingToCross = spellEnemyData.displacementList[i].y != 0;
-            bool barrierBroken = EnemyAIControler.BarrierGrid.IsBarrierBroken(enemyPos.gridPos.x);
+            bool barrierBroken = BarrierGrid.IsBarrierBroken(enemyPos.gridPos.x);
             bool targetInGrid = GridManager.EnemyGrid.IsPosInGrid(targetPos);
 
             if ((!tryingToCross || barrierBroken) && targetInGrid)
@@ -358,12 +366,12 @@ public class SpellCaster : MonoBehaviour
         {
             if (spellEnemyData.reinforceBarrier)
             {
-                EnemyAIControler.BarrierGrid.ChangeBarrierState(cell.x, BarrierGrid.BarrierState.Reinforced);
+                BarrierGrid.ChangeBarrierState(cell.x, BarrierGrid.BarrierState.Reinforced);
                 // Lancer l'animation
             }
             else if (spellEnemyData.weakenBarrier)
             {
-                EnemyAIControler.BarrierGrid.ChangeBarrierState(cell.x, BarrierGrid.BarrierState.Destroyed);
+                BarrierGrid.ChangeBarrierState(cell.x, BarrierGrid.BarrierState.Destroyed);
                 // Lancer l'animation
             }
         }
@@ -386,7 +394,7 @@ public class SpellCaster : MonoBehaviour
             if (GridManager.EnemyGrid.IsPosInGrid(currentCell))
             {
                 bool passingThrought = (currentCell.y - previousCell.y) != 0;
-                bool barrierBroken = EnemyAIControler.BarrierGrid.IsBarrierBroken(currentCell.x);
+                bool barrierBroken = BarrierGrid.IsBarrierBroken(currentCell.x);
                 bool canPassThrought = (passingThrought && barrierBroken) || !spellEnemyData.blockedByBarrier;
             
                 if ((canPassThrought ||!passingThrought))
@@ -468,6 +476,7 @@ public class SpellCaster : MonoBehaviour
         {
             case CastMode.Player:
                 {
+                    // Aucun sort
                     if (spellPlayerData == null)
                     {
                         return;
@@ -475,9 +484,11 @@ public class SpellCaster : MonoBehaviour
 
                     List<Vector2Int> highlightCoords = new List<Vector2Int>();
 
+                    // Sélection des cibles
+                    List<EntityPosition> playersPosComponent;
                     if (spellPlayerData.multipleTargets)
                     {
-                        List<EntityPosition> playersPosComponent = GetAllPlayersOnRow();
+                        playersPosComponent = GetAllPlayersOnRow();
 
                         foreach (EntityPosition posComp in playersPosComponent)
                         {
@@ -489,19 +500,32 @@ public class SpellCaster : MonoBehaviour
                         highlightCoords.Add(casterGPos.gridPos);
                     }
 
-                    GridManager.PlayerGrid.HighlightCells(highlightCoords);
+                    //GridManager.PlayerGrid.HighlightCells(highlightCoords, DamageTypesData.DmgTypes.None, Vector2Int.down);
 
                     break;
                 }
 
             case CastMode.Enemy:
                 {
+                    // Aucun Sort
                     if (spellEnemyData == null || triggerPos == null)
                     {
                         return;
                     }
 
-                    GridManager.EnemyGrid.HighlightCells(GetAllCellHit());
+                    List<CellHighlighter.HighlightInfo> highlightInfo = new List<CellHighlighter.HighlightInfo>();
+                    int i = 0;
+                    foreach (var cell in GetAllCellHit())
+                    {
+                        DamageTypesData.DmgTypes dmgType = spellEnemyData.damageTypesData[i].dmgTypeName[0];
+                        Vector2Int displ = spellEnemyData.displacementList[i];
+
+                        var hlInfo = new CellHighlighter.HighlightInfo(cell, dmgType, displ);
+                        highlightInfo.Add(hlInfo);
+
+                        i++;
+                    }
+                    GridManager.EnemyGrid.HighlightCells(highlightInfo);
 
                     break;
                 }

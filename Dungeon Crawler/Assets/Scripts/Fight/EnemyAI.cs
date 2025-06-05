@@ -21,6 +21,7 @@ public class EnemyAI : MonoBehaviour
 
     [Header("Entities weights")]
     //[SerializeField] private int adjacentEnemyW = 0;
+    [SerializeField] private int enemyOnCellW = 0;
     [Space(5)]
     [SerializeField] private int enemyInWorldW = 0;
     [SerializeField] private int playerInWorldW = 0;
@@ -88,6 +89,7 @@ public class EnemyAI : MonoBehaviour
             scoreMask[i] += columnW[cell.x];
 
             // Entity weights
+            scoreMask[i] += EnemyAIControler.IsEnemyOnCell(cell) && i != GridPos.x+3*GridPos.y ? enemyOnCellW : 0;
             scoreMask[i] += EnemyAIControler.CountEnemyOnRow(cell.y) * enemyInWorldW;
             scoreMask[i] += EnemyAIControler.CountPlayerOnRow(cell.y) * playerInWorldW;
         }
@@ -119,7 +121,7 @@ public class EnemyAI : MonoBehaviour
             moveKey = Vector2Int.zero;
         }
 
-        // ============= Aucune action séléectionnée =========== //
+        // ============= Aucune action sélectionnée =========== //
         if (!sortedActions.ContainsKey(moveKey))
         {
             Debug.LogWarning($"{moveKey} : Aucune action sélectionnée pour {name}");
@@ -131,7 +133,16 @@ public class EnemyAI : MonoBehaviour
         // Déplacement
         Vector2Int oldPos = GridPos;
         Vector2Int newPos = GridPos + moveKey;
-        gridComp.ChangePosition(newPos);
+        newPos.y %= 2;
+        
+        if (!BarrierGrid.IsBarrierBroken(GridPos.x) && moveKey.y == 1)
+        {
+            BarrierGrid.ChangeBarrierState(GridPos.x, BarrierGrid.BarrierState.Destroyed);
+        }
+        else
+        {
+            gridComp.ChangePosition(newPos);
+        }
 
         // Échanger avec la potentielle entité sur la destination
         if (EnemyAIControler.IsEnemyOnCell(newPos))
@@ -142,7 +153,8 @@ public class EnemyAI : MonoBehaviour
                 entity.GetComponent<EntityPosition>().ChangePosition(oldPos);
         }
 
-        EnemyAIControler.UpdateEnemyMask();
+        GridManager.EnemyGrid.UpdateEntitiesIndex();
+        EnemyAIControler.UpdateAllMasks();
 
         // Execution de l'action
         if (action.isAttack)
@@ -162,41 +174,46 @@ public class EnemyAI : MonoBehaviour
     {
         UpdateMask();
 
-        // Not moving
         int startScore = scoreMask[startCell.x + 3 * startCell.y];
-        (Vector2Int, int) bestMove = (Vector2Int.zero, startScore);
-        bool moved = false;
 
-        // Fin de recherche
+        #region Fin de recherche
         if (depth <= 0)
         {
-            return bestMove;
+            return (Vector2Int.zero, startScore);
         }
+        #endregion
+
+        // Not moving
+        int bestScore = FindBestMove(startCell, --depth).Item2;
+        (Vector2Int, int) bestMove = (Vector2Int.zero, 0);
+
         
+
         // Balayage de chaque possibilité de déplacement
         foreach (Vector2Int cell in Movements)
         {
-            // Mouvement impossible
-            if (!GridManager.EnemyGrid.IsPosInGrid(startCell + cell))
+            Vector2Int nextCell = startCell + cell;
+            nextCell.y %= 2;
+
+            #region Mouvement impossible
+            if (!GridManager.EnemyGrid.IsPosInGrid(nextCell))
                 continue;
-            if (!EnemyAIControler.BarrierGrid.IsBarrierBroken(startCell.x) && cell.y == 1) // sdfdsfsdfdsfsdfsdfdsfsdfdsfsdfsdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+            if (!BarrierGrid.IsBarrierBroken(startCell.x) && cell.y == 1 && !canBreakBarrier)
+            {
                 continue;
+            }
+            #endregion
 
             // Appel récursif pour prévoir sur plusieurs tours
-            (Vector2Int, int) currentMove = FindBestMove(startCell + cell, --depth);
+            int currentScore = FindBestMove(nextCell, --depth).Item2 - startScore;
 
-            if (currentMove.Item2 > bestMove.Item2)
+            if (currentScore > bestMove.Item2)
             {
-                bestMove = (cell, currentMove.Item2);
-                moved = true;
+                bestMove = (cell, currentScore);
             }
         }
 
-        if (moved)
-            return (bestMove.Item1, bestMove.Item2 + startScore);
-        // Ne pas doubler le score quand il n'y a pas de mouvement
-        else
-            return bestMove;
+        return bestMove;
     }
 
     private EnemyActionData ChooseAction(Vector2Int moveKey)

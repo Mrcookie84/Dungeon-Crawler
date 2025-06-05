@@ -5,21 +5,14 @@ using UnityEngine.UIElements;
 public class PlayerSelection : MonoBehaviour
 {
     [SerializeField] private EntityPosition posComponent;
-    [SerializeField] private string charaPortaitTag;
+    [SerializeField] private EntityHealth healthComponent;
     [SerializeField] private Sprite charaPortraitSprite;
-    private PortraitManager charaPortait;
 
-    public UnityEvent playerSelected = new UnityEvent();
-
-    private void Start()
+    public void SelectAsCaster()
     {
-        charaPortait = GameObject.FindGameObjectWithTag(charaPortaitTag).GetComponent<PortraitManager>();
-        playerSelected.AddListener(delegate { SpellCaster.ChangeCaster(posComponent); });
-        playerSelected.AddListener(delegate { charaPortait.ChangeImage(charaPortraitSprite); });
-    }
+        if (healthComponent.dead) return;
 
-    public void InvokeSelectionEvent()
-    {
-        playerSelected.Invoke();
+        SpellCaster.ChangeCaster(posComponent);
+        CharaPortraitHandler.ChangePortrait(charaPortraitSprite);
     }
 }

@@ -12,6 +12,7 @@ public class DamageTypesData : ScriptableObject
         Crush,
         Contact,
         Degradation,
-        DimensionalWeakness
+        DimensionalWeakness,
+        None
     }
 }

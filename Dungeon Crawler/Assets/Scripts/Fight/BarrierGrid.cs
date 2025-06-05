@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class BarrierGrid : MonoBehaviour
 {
+    public static BarrierGrid Grid;
+    
     public enum BarrierState
     {
         Destroyed,
@@ -10,20 +12,22 @@ public class BarrierGrid : MonoBehaviour
 
     private BarrierState[] barrierStates = new BarrierState[3];
 
-    public BarrierState GetBarrierState(int column)
+    
+    
+    public static BarrierState GetBarrierState(int column)
     {
-        return barrierStates[column];
+        return Grid.barrierStates[column];
     }
 
-    public bool IsBarrierBroken(int column)
+    public static bool IsBarrierBroken(int column)
     {
-        return barrierStates[column] == BarrierState.Destroyed;
+        return Grid.barrierStates[column] == BarrierState.Destroyed;
     }
 
-    public void ChangeBarrierState(int column, BarrierState newState)
+    public static void ChangeBarrierState(int column, BarrierState newState)
     {
-        barrierStates[column] = newState;
-        Animator animator = transform.GetChild(column).GetComponent<Animator>();
+        Grid.barrierStates[column] = newState;
+        Animator animator = Grid.transform.GetChild(column).GetComponent<Animator>();
         if (newState == BarrierState.Destroyed)
         {
             animator.SetTrigger("destruction");
@@ -41,6 +45,8 @@ public class BarrierGrid : MonoBehaviour
 
     private void Awake()
     {
+        Grid = this;
+        
         for (int i = 0; i < barrierStates.Length; i++)
         {
             barrierStates[i] = BarrierState.Reinforced;

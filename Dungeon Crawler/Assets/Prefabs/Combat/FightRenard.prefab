@@ -24,38 +24,6 @@ PrefabInstance:
       propertyPath: attackAnim
       value: 
       objectReference: {fileID: 7400000, guid: db8019968099b594198a70b2f1bd9e4d, type: 2}
-    - target: {fileID: -3003012497256881573, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: defaultDuration
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -3003012497256881573, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: defaultStatus.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: -3003012497256881573, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: defaultStatus.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: e9e93da8af1d5aa4b9e0710edf948a1f, type: 2}
-    - target: {fileID: -3003012497256881573, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: defaultStatus.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4c133c9365231e1448c1227e70496a6d, type: 2}
-    - target: {fileID: -3003012497256881573, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: defaultStatus.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: e9e93da8af1d5aa4b9e0710edf948a1f, type: 2}
-    - target: {fileID: -3003012497256881573, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: defaultStatus.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: c245f88aa7e808949bd5b8746d21726d, type: 2}
-    - target: {fileID: -3003012497256881573, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: defaultStatus.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: a55e12d09b7b06c41b2f6b2404de8161, type: 2}
-    - target: {fileID: -3003012497256881573, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: defaultStatus.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: 555b3ec30c76bd246bb4f9ce6421298a, type: 2}
     - target: {fileID: 185897872062742212, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_Size.x
       value: 5.45

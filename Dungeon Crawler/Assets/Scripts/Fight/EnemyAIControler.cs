@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyAIControler : MonoBehaviour
@@ -9,14 +10,6 @@ public class EnemyAIControler : MonoBehaviour
     public static bool[] enemyGridMask = new bool[6];
     public static bool[] barrierGridMask = new bool[3];
     
-    public BarrierGrid barrierGrid;
-
-    // ====================== Propriété ======================== //
-    public static BarrierGrid BarrierGrid
-    {
-        get { return Instance.barrierGrid; }
-    }
-
     // ======================= Méthodes ======================== //
     // Static
     public static void UpdateAllMasks()
@@ -32,12 +25,14 @@ public class EnemyAIControler : MonoBehaviour
 
         for (int i = 0; i < playerGridMask.Length; i++)
         {
-            GameObject entity = GridManager.PlayerGrid.GetEntityAtPos(new Vector2Int(i / 3, i % 3));
+            GameObject entity = GridManager.PlayerGrid.GetEntityAtPos(new Vector2Int(i % 3, i / 3));
 
             if (entity != null)
                 playerGridMask[i] = true;
             else
                 playerGridMask[i] = false;
+            
+            //Debug.Log(playerGridMask[i]);
         }
     }
 
@@ -47,7 +42,7 @@ public class EnemyAIControler : MonoBehaviour
 
         for (int i = 0; i < enemyGridMask.Length; i++)
         {
-            GameObject entity = GridManager.EnemyGrid.GetEntityAtPos(new Vector2Int(i / 3, i % 3));
+            GameObject entity = GridManager.EnemyGrid.GetEntityAtPos(new Vector2Int(i % 3, i / 3));
 
             if (entity != null)
                 enemyGridMask[i] = true;
@@ -124,6 +119,6 @@ public class EnemyAIControler : MonoBehaviour
 
     private void Start()
     {
-        UpdateBarrierMask();
+        UpdateAllMasks();
     }
 }
