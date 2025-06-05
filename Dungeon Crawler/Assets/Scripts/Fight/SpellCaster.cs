@@ -468,6 +468,7 @@ public class SpellCaster : MonoBehaviour
         {
             case CastMode.Player:
                 {
+                    // Aucun sort
                     if (spellPlayerData == null)
                     {
                         return;
@@ -489,19 +490,32 @@ public class SpellCaster : MonoBehaviour
                         highlightCoords.Add(casterGPos.gridPos);
                     }
 
-                    GridManager.PlayerGrid.HighlightCells(highlightCoords);
+                    //GridManager.PlayerGrid.HighlightCells(highlightCoords, DamageTypesData.DmgTypes.None, Vector2Int.down);
 
                     break;
                 }
 
             case CastMode.Enemy:
                 {
+                    // Aucun Sort
                     if (spellEnemyData == null || triggerPos == null)
                     {
                         return;
                     }
 
-                    GridManager.EnemyGrid.HighlightCells(GetAllCellHit());
+                    List<CellHighlighter.HighlightInfo> highlightInfo = new List<CellHighlighter.HighlightInfo>();
+                    int i = 0;
+                    foreach (var cell in GetAllCellHit())
+                    {
+                        DamageTypesData.DmgTypes dmgType = spellEnemyData.damageTypesData[i].dmgTypeName[0];
+                        Vector2Int displ = spellEnemyData.displacementList[i];
+
+                        var hlInfo = new CellHighlighter.HighlightInfo(cell, dmgType, displ);
+                        highlightInfo.Add(hlInfo);
+
+                        i++;
+                    }
+                    GridManager.EnemyGrid.HighlightCells(highlightInfo);
 
                     break;
                 }
