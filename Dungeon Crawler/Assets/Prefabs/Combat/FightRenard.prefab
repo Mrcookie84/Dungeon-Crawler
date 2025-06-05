@@ -120,21 +120,25 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 7a3bec99f00bb3b4cb2c031ac7c2a941, type: 3}
+    - target: {fileID: 5347879556732771913, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
+      propertyPath: charaPortraitSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2c41339a7e3e0944f9c6e30dfab18476, type: 3}
     - target: {fileID: 7302830686597167030, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.82
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.82
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.82
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

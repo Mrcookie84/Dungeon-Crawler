@@ -13,7 +13,7 @@ public class EnemyAIControler : MonoBehaviour
     public GridManager enemyGrid;
     public BarrierGrid barrierGrid;
 
-    // ====================== Propriété ======================== //
+    // ====================== PropriÃ©tÃ© ======================== //
     public static GridManager PlayerGrid
     {
         get { return Instance.playerGrid; }
@@ -29,8 +29,15 @@ public class EnemyAIControler : MonoBehaviour
         get { return Instance.barrierGrid; }
     }
 
-    // ======================= Méthodes ======================== //
+    // ======================= MÃ©thodes ======================== //
     // Static
+    public static void UpdateAllMasks()
+    {
+        UpdateBarrierMask();
+        UpdateEnemyMask();
+        UpdatePlayerMask();
+    }
+    
     public static void UpdatePlayerMask()
     {
         PlayerGrid.UpdateEntitiesIndex();

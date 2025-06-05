@@ -38,15 +38,17 @@ public class StatusHolderHandler : MonoBehaviour
 
             if (info.status.icon != null)
             {
-                Image statusImage = currentUI.GetComponent<Image>();
+                Image statusImage = currentUI.transform.GetChild(0).GetComponent<Image>();
                 statusImage.sprite = info.status.icon;
                 statusImage.SetNativeSize();
             }
 
             if (info.status.permanent)
-                currentUI.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = "";
+                currentUI.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text = "";
             else
-                currentUI.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = info.duration.ToString();
+                currentUI.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text = info.duration.ToString();
+            
+            //Debug.Log("yis");
         }
     } 
 }
