@@ -24,10 +24,6 @@ PrefabInstance:
       propertyPath: attackAnim
       value: 
       objectReference: {fileID: 7400000, guid: aafa63f3452b34f459573f7402beea92, type: 2}
-    - target: {fileID: -3003012497256881573, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
-      propertyPath: defaultStatus.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 185897872062742212, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_Size.x
       value: 5.45

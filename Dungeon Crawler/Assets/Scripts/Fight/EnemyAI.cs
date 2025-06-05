@@ -93,8 +93,6 @@ public class EnemyAI : MonoBehaviour
             scoreMask[i] += EnemyAIControler.CountEnemyOnRow(cell.y) * enemyInWorldW;
             scoreMask[i] += EnemyAIControler.CountPlayerOnRow(cell.y) * playerInWorldW;
         }
-
-        EnemyAIControler.DebugMask(scoreMask);
     }
 
     public void ResetMoveInitiative()

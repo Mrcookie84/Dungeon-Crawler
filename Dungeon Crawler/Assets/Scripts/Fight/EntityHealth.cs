@@ -30,11 +30,12 @@ public class EntityHealth : MonoBehaviour
     public static void InitializeCurrentHealth()
     {
         HealthData foxHealth = Resources.Load<HealthData>("Health/FoxHealthData");
-        if (foxHealth == null) return;
         foxHealth.currentHealth = foxHealth.defaultHealth;
-        
+
+        HealthData pandaHealth = Resources.Load<HealthData>("Health/PandaHealthData");
+        pandaHealth.currentHealth = pandaHealth.defaultHealth;
+
         HealthData frogHealth = Resources.Load<HealthData>("Health/FrogHealthData");
-        if (frogHealth == null) return;
         frogHealth.currentHealth = frogHealth.defaultHealth;
     }
     

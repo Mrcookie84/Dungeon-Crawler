@@ -5,21 +5,6 @@ public class PositionManager : MonoBehaviour
     public static PositionManager Instance;
     public static FightPositionData posData;
     
-    [SerializeField] private Transform playerGrid;
-    [SerializeField] private Transform enemyGrid;
-
-    private static Transform PlayerGrid
-    {
-        get { return Instance.playerGrid; }
-    }
-
-    private static Transform EnemyGrid
-    {
-        get { return Instance.enemyGrid; }
-    }
-    
-    
-    
     void Awake()
     {
         Instance = this;
@@ -34,22 +19,28 @@ public class PositionManager : MonoBehaviour
             // Apparition d'un ennemi
             if (posData.enemyArray[i] != null)
             {
-                spawnPoint = EnemyGrid.GetChild(i);
+                spawnPoint = GridManager.EnemyGrid.transform.GetChild(i);
 
                 Instantiate(posData.enemyArray[i], spawnPoint);
             }
         }
         
         // Remplissage de la grille des joueur
-        for (int i = 0; i < posData.playerArray.Length; i++)
+        for (int i = 2; i >= 0; i--)
         {
             // Apparition d'un ennemi
-            if (posData.playerArray[i] != null)
+            if (PlayerPositionData.PlayerPrefabs[i] != null)
             {
-                spawnPoint = PlayerGrid.GetChild(i);
+                spawnPoint = GridManager.PlayerGrid.transform.GetChild(i + 3 * PlayerPositionData.currentPos[2 - i]);
                 
-                Instantiate(posData.playerArray[i], spawnPoint);
+                Instantiate(PlayerPositionData.PlayerPrefabs[2 - i], spawnPoint);
             }
+        }
+
+        // Appliquer l'état de la barrier
+        for (int i = 3;  i < 0; i++)
+        {
+            BarrierGrid.ChangeBarrierState(i, posData.barrierState[i]);
         }
     }
 
