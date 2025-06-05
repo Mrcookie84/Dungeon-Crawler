@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: bc0bd4d075d49c74abce3c68afae4f3c, type: 3}
+    - target: {fileID: 5347879556732771913, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
+      propertyPath: charaPortraitSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9954112855e754d41986030404e3070a, type: 3}
     - target: {fileID: 7302830686597167030, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
