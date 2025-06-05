@@ -519,7 +519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1861420853359090909, guid: def7155802f6bf0469bc42828b4babd7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1184.2275
+      value: -1184.13
       objectReference: {fileID: 0}
     - target: {fileID: 1861420853359090909, guid: def7155802f6bf0469bc42828b4babd7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7583,22 +7583,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7370334452973472660}
     m_Modifications:
-    - target: {fileID: 2127959828741124162, guid: 2b7e426c6a8293f4ea1f31dd231fd8ba, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 7.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 2127959828741124162, guid: 2b7e426c6a8293f4ea1f31dd231fd8ba, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 2539285998305462124, guid: 2b7e426c6a8293f4ea1f31dd231fd8ba, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 11.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 2539285998305462124, guid: 2b7e426c6a8293f4ea1f31dd231fd8ba, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 7.71
-      objectReference: {fileID: 0}
     - target: {fileID: 4957325952008070134, guid: 2b7e426c6a8293f4ea1f31dd231fd8ba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.55
@@ -7642,18 +7626,6 @@ PrefabInstance:
     - target: {fileID: 6456766376521318836, guid: 2b7e426c6a8293f4ea1f31dd231fd8ba, type: 3}
       propertyPath: m_Name
       value: PuzzleRotatif
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026212590928332100, guid: 2b7e426c6a8293f4ea1f31dd231fd8ba, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: d2148a258e807d745b42ef01bca2c995, type: 3}
-    - target: {fileID: 7389580200737410576, guid: 2b7e426c6a8293f4ea1f31dd231fd8ba, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 7.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 7389580200737410576, guid: 2b7e426c6a8293f4ea1f31dd231fd8ba, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
