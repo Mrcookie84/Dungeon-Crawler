@@ -12,6 +12,8 @@ public class PlayerInventory : MonoBehaviour
     {
         get
         {
+            if (Instance == null) return 0;
+            
             int manaBoost = 0;
 
             foreach (var item in Instance.items)
@@ -28,6 +30,8 @@ public class PlayerInventory : MonoBehaviour
     {
         get
         {
+            if (Instance == null) return 0;
+            
             int stabilityBoost = 0;
 
             foreach (var item in Instance.items)
@@ -44,6 +48,8 @@ public class PlayerInventory : MonoBehaviour
     {
         get
         {
+            if (Instance == null) return 0;
+            
             int healthBoost = 0;
 
             foreach (var item in Instance.items)
@@ -67,16 +73,22 @@ public class PlayerInventory : MonoBehaviour
 
     public static void ResetInventory()
     {
+        if (Instance == null) return;
+        
         Instance.items = new List<ItemData>();
     }
 
     public static void AddItem(ItemData item)
     {
+        if (Instance == null) return;
+        
         Instance.items.Add(item);
     }
 
     public static int GetDmgRestance(DamageTypesData.DmgTypes dmgType)
     {
+        if (Instance == null) return 0;
+        
         int resist = 0;
 
         foreach (var item in Instance.items)
@@ -90,6 +102,8 @@ public class PlayerInventory : MonoBehaviour
     
     public static int GetDmgBoost(DamageTypesData.DmgTypes dmgType)
     {
+        if (Instance == null) return 0;
+        
         int boost = 0;
 
         foreach (var item in Instance.items)
@@ -98,6 +112,7 @@ public class PlayerInventory : MonoBehaviour
                 boost += item.dmgBoost[dmgType];
         }
 
+        Debug.Log(boost);
         return boost;
     }
 }
