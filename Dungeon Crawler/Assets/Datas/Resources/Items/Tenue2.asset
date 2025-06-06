@@ -24,8 +24,8 @@ MonoBehaviour:
   addedStability: 0
   addedMana: 1
   dmgResistance:
-    _serializedList: []
-  dmgBoost:
     _serializedList:
     - Key: 0
-      Value: 5
+      Value: 0
+  dmgBoost:
+    _serializedList: []
