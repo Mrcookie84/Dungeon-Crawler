@@ -4,10 +4,14 @@ public class PositionManager : MonoBehaviour
 {
     public static PositionManager Instance;
     public static FightPositionData posData;
+
+    public static PlayerPositionData playerPos;
     
     void Awake()
     {
         Instance = this;
+        
+        playerPos = Resources.Load<PlayerPositionData>("FightPositions/PlayerPosition");
     }
 
     public static void FillGrids()
@@ -29,15 +33,15 @@ public class PositionManager : MonoBehaviour
         for (int i = 2; i >= 0; i--)
         {
             // Apparition d'un ennemi
-            if (PlayerPositionData.PlayerPrefabs[i] != null)
+            if (playerPos.playerPrefabs[i] != null)
             {
-                spawnPoint = GridManager.PlayerGrid.transform.GetChild(i + 3 * PlayerPositionData.currentPos[2 - i]);
+                spawnPoint = GridManager.PlayerGrid.transform.GetChild(i + 3 * playerPos.currentPos[i]);
                 
-                Instantiate(PlayerPositionData.PlayerPrefabs[2 - i], spawnPoint);
+                Instantiate(playerPos.playerPrefabs[2 - i], spawnPoint);
             }
         }
 
-        // Appliquer l'état de la barrier
+        // Appliquer l'ï¿½tat de la barrier
         for (int i = 3;  i < 0; i++)
         {
             BarrierGrid.ChangeBarrierState(i, posData.barrierState[i]);
