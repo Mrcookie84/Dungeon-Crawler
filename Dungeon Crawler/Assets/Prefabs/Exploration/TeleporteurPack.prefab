@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7816220015482051666}
   - component: {fileID: 8749961579721771823}
+  - component: {fileID: 3451445258389548393}
   m_Layer: 0
   m_Name: Calque 599
   m_TagString: Untagged
@@ -84,6 +85,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3451445258389548393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097297663371068500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397ac14a4b59cba42a5ad05304d9ed57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 1
+  outlineHeight: 1
+  pulseSpeed: 0.6
+  maxAlpha: 0.6
+  outlineSortingOrder: 1
 --- !u!1 &6951933769181661389
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8759665251391957648}
   - component: {fileID: 2130229724708446266}
+  - component: {fileID: 4466986864316384016}
   m_Layer: 0
   m_Name: Calque 599 copie
   m_TagString: Untagged
@@ -168,6 +188,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4466986864316384016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6951933769181661389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397ac14a4b59cba42a5ad05304d9ed57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 1
+  outlineHeight: 1
+  pulseSpeed: 0.6
+  maxAlpha: 0.6
+  outlineSortingOrder: 1
 --- !u!1 &9076604984225772672
 GameObject:
   m_ObjectHideFlags: 0

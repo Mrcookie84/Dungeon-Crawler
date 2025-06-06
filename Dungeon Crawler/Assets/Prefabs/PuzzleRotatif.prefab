@@ -754,6 +754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 865119774637248740}
   - component: {fileID: 199351689496177646}
+  - component: {fileID: 8033838538560323835}
   m_Layer: 0
   m_Name: PuzzleRotatifVisual
   m_TagString: Untagged
@@ -835,3 +836,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8033838538560323835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9192226646056650446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397ac14a4b59cba42a5ad05304d9ed57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 1
+  outlineHeight: 1
+  pulseSpeed: 0.6
+  maxAlpha: 0.6
+  outlineSortingOrder: 1
