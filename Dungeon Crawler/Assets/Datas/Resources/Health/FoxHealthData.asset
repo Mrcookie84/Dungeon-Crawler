@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5135af670d5f943a577677f0afe331, type: 3}
   m_Name: FoxHealthData
   m_EditorClassIdentifier: 
-  defaultHealth: 120
-  currentHealth: 120
-  linkedInventory: 1
+  defaultHealth: 150
+  currentHealth: 150
+  isLinkedToInv: 0
   keepHealth: 1

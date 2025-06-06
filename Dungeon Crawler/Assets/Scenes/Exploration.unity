@@ -698,6 +698,7 @@ PrefabInstance:
     - {fileID: 7702500280494309939, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
     - {fileID: 3124091416576920206, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
     - {fileID: 1925243798794313516, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
+    - {fileID: 2598952393133424046, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1016095060164627293, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
       insertIndex: 4
@@ -2108,6 +2109,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 1694718465817501085, guid: db46c773767c65a43bac195f5af0e047, type: 3}
     - {fileID: 1282133493313029538, guid: db46c773767c65a43bac195f5af0e047, type: 3}
+    - {fileID: 2134116074379152018, guid: db46c773767c65a43bac195f5af0e047, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1246219451277089113, guid: db46c773767c65a43bac195f5af0e047, type: 3}
       insertIndex: 2
@@ -3029,6 +3031,10 @@ PrefabInstance:
       value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 1910443281971277108, guid: a21d918cc4d6b5a4087f22146599a7c0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 80cd701b1f2da59489ed930aae0a6f4a, type: 3}
+    - target: {fileID: 1910443281971277108, guid: a21d918cc4d6b5a4087f22146599a7c0, type: 3}
       propertyPath: m_SortingOrder
       value: 89
       objectReference: {fileID: 0}
@@ -3162,11 +3168,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5504962793251455054, guid: a21d918cc4d6b5a4087f22146599a7c0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.66
+      value: -17.6
       objectReference: {fileID: 0}
     - target: {fileID: 5504962793251455054, guid: a21d918cc4d6b5a4087f22146599a7c0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.13
+      value: 3.89
       objectReference: {fileID: 0}
     - target: {fileID: 7512634453967495660, guid: a21d918cc4d6b5a4087f22146599a7c0, type: 3}
       propertyPath: m_text

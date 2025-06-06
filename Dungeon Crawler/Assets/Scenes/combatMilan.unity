@@ -1904,7 +1904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5595574941974803204, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: maxRunes
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5601103007734961448, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1956,7 +1956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6740154541914249631, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: maxRunes
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7180156485744183537, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: linkedGrid
