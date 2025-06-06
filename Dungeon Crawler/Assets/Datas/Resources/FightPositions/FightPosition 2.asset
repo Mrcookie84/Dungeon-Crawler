@@ -15,8 +15,8 @@ MonoBehaviour:
   barrierState: 000000000000000000000000
   enemyArray:
   - {fileID: 1780906407045188297, guid: 5e8fc2f5bed97bf41938d4ceee181ebb, type: 3}
-  - {fileID: 5200535693190016583, guid: 55aeff1ebd2010d4190ac8beddc7ba21, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 4338044252648731311, guid: 5f6968725f228aa4f9821bd20a1920f6, type: 3}
+  - {fileID: 0}
+  - {fileID: 5200535693190016583, guid: 55aeff1ebd2010d4190ac8beddc7ba21, type: 3}
+  - {fileID: 0}

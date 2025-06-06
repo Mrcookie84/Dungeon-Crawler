@@ -4165,7 +4165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startFightOnLoad: 1
-  posData: {fileID: 11400000, guid: 4ac6585789d184d47aa68fe7aa1adc12, type: 2}
+  posData: {fileID: 11400000, guid: 5de0adc2d328d3c46a99f93128a7e8e4, type: 2}
   eventSystem: {fileID: 2041671509}
 --- !u!114 &1769615212
 MonoBehaviour:
