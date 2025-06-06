@@ -16,4 +16,15 @@ public class CombatTrigger : MonoBehaviour
             StartCoroutine(EnterCombatRoutine());
         }
     }
+
+
+    IEnumerator EnterCombatRoutine()
+    {
+        PositionManager.posData = posData;
+        PositionManager.FillGrids();
+        SceneManager.GoToFight();
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
+    }
+
 }
