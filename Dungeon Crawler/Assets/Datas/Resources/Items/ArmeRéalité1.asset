@@ -10,16 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 346e9572659532a4da89a66c54bccbed, type: 3}
-  m_Name: ItemData 4
+  m_Name: "ArmeR\xE9alit\xE91"
   m_EditorClassIdentifier: 
-  itemName: 
-  sprite: {fileID: 0}
+  itemName: "Poing de R\xE9alit\xE9"
+  sprite: {fileID: 21300000, guid: 4e598d3b7865e5f4b90a11d13caf39a7, type: 3}
   runes:
-    _serializedList: []
+    _serializedList:
+    - Key: 0
+      Value: 1
   addedPV: 0
   addedStability: 0
-  addedMana: 0
+  addedMana: 1
   dmgResistance:
     _serializedList: []
   dmgBoost:
-    _serializedList: []
+    _serializedList:
+    - Key: 0
+      Value: 10
