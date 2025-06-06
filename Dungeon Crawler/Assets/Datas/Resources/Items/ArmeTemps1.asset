@@ -10,16 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 346e9572659532a4da89a66c54bccbed, type: 3}
-  m_Name: ItemData 4
+  m_Name: ArmeTemps1
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Sablier
   sprite: {fileID: 0}
   runes:
-    _serializedList: []
+    _serializedList:
+    - Key: 2
+      Value: 1
   addedPV: 0
   addedStability: 0
   addedMana: 0
   dmgResistance:
     _serializedList: []
   dmgBoost:
-    _serializedList: []
+    _serializedList:
+    - Key: 3
+      Value: 10

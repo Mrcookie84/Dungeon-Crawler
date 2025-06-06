@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ArmeEspace1
   m_EditorClassIdentifier: 
   itemName: Sceptre Spatial
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: c60a7e87f3acfde45aba21336006503a, type: 3}
   runes:
     _serializedList:
     - Key: 1
