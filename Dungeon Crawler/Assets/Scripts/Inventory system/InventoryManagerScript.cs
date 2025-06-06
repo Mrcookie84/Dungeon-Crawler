@@ -45,9 +45,6 @@ public class InventoryManagerScript : MonoBehaviour
             return;
         }
 
-        if (!IsValidSlotForItem(boutonID, CurrentSelectedItemData.itemSlot))
-            return;
-
         CheckIfAlreadyEquippedInSameSpot(boutonID);
         CheckIfAlreadyEquippedSomewhereElse(boutonID);
         EquipItem(boutonID);
