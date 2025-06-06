@@ -1,12 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+using Image = UnityEngine.UI.Image;
 
 public class MainMenuPrincipal : MonoBehaviour
 {
     public void StartGame()
     {
-        StartCoroutine(WaitForLoading());
+        StartCoroutine(StartGameRoutine());
     }
 
     public void QuitGame()
@@ -14,9 +16,12 @@ public class MainMenuPrincipal : MonoBehaviour
         Application.Quit();
     }
 
-    IEnumerator WaitForLoading()
+    IEnumerator StartGameRoutine()
     {
-        yield return new WaitForSeconds(1f);
+        AudioManager.SINGLETON.fadeImage.gameObject.SetActive(true);
+        AudioManager.SINGLETON.fadeImage.DOFade(1f, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 }

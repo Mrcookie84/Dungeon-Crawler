@@ -5,36 +5,29 @@ using UnityEngine;
 
 public class CombatTrigger : MonoBehaviour
 {
-    [Header("Fight state")]
-    [SerializeField] private FightPositionData posData;
+    [Header("Fight state")] [SerializeField]
+    private FightPositionData posData;
     //Faire en sorte de pouvoir set les ennemies utiliser dans le combat sur les trigger 
-    
+
     void Start()
     {
         SceneManager.SceneManagerInstance.combatTrigger = this;
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Group"))
         {
-            SceneManager.GoToFight();
-            
-            // Initialisation du combat
-            PositionManager.posData = posData;
-            PositionManager.FillGrids();
-            RuneSelection.InitializeStats();
-            EnemyAIControler.UpdateAllMasks();
-            
-            Destroy(gameObject);
+            StartCoroutine(EnterCombatRoutine());
         }
-        
-        
     }
 
-    IEnumerator WaitForLoading()
+    IEnumerator EnterCombatRoutine()
     {
-        yield return new WaitForSeconds(1f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        PositionManager.posData = posData;
+        PositionManager.FillGrids();
+        SceneManager.GoToFight();
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 }
