@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee5135af670d5f943a577677f0afe331, type: 3}
-  m_Name: PandaHealthData
+  m_Name: BossHealt
   m_EditorClassIdentifier: 
-  defaultHealth: 140
-  currentHealth: 100
-  isLinkedToInv: 0
-  keepHealth: 1
+  defaultHealth: 200
+  currentHealth: 0
+  linkedInventory: 0
+  keepHealth: 0

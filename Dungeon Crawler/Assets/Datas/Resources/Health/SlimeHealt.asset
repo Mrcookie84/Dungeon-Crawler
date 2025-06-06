@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee5135af670d5f943a577677f0afe331, type: 3}
-  m_Name: PandaHealthData
+  m_Name: SlimeHealt
   m_EditorClassIdentifier: 
-  defaultHealth: 140
-  currentHealth: 100
+  defaultHealth: 120
+  currentHealth: 0
   isLinkedToInv: 0
-  keepHealth: 1
+  keepHealth: 0
