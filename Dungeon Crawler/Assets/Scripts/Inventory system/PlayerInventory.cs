@@ -74,4 +74,30 @@ public class PlayerInventory : MonoBehaviour
     {
         Instance.items.Add(item);
     }
+
+    public static int GetDmgRestance(DamageTypesData.DmgTypes dmgType)
+    {
+        int resist = 0;
+
+        foreach (var item in Instance.items)
+        {
+            if (item.dmgResistance.ContainsKey(dmgType))
+                resist += item.dmgResistance[dmgType];
+        }
+
+        return resist;
+    }
+    
+    public static int GetDmgBoost(DamageTypesData.DmgTypes dmgType)
+    {
+        int boost = 0;
+
+        foreach (var item in Instance.items)
+        {
+            if (item.dmgBoost.ContainsKey(dmgType))
+                boost += item.dmgBoost[dmgType];
+        }
+
+        return boost;
+    }
 }

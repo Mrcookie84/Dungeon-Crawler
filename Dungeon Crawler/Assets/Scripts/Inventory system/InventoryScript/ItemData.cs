@@ -22,10 +22,10 @@ public class ItemData : ScriptableObject
     [Space(10)]
     
     [SerializedDictionary("Damage Type", "Percent")]
-    public SerializedDictionary<DamageTypesData.DmgTypes, float> dmgResistance;
+    public SerializedDictionary<DamageTypesData.DmgTypes, int> dmgResistance;
     
     [SerializedDictionary("Damage Type", "Percent")]
-    public SerializedDictionary<DamageTypesData.DmgTypes, float> dmgBoost;
+    public SerializedDictionary<DamageTypesData.DmgTypes, int> dmgBoost;
 
     public enum RuneType
     {

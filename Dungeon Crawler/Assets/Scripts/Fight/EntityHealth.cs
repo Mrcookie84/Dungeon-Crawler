@@ -57,7 +57,7 @@ public class EntityHealth : MonoBehaviour
     public void TakeDamage(GameObject source, int amount, DamageTypesData.DmgTypes type)
     {
         if (dead) return;
-
+        
         DamageInfo attackInfo = new DamageInfo(source, amount, type);
         
         if (invicible)
@@ -66,6 +66,28 @@ public class EntityHealth : MonoBehaviour
             gotAttacked.Invoke();
             return;
         }
+        
+        
+        // Application des resistances
+        int coef = 100;
+        
+        // Vérifier si le coef est altéré par défaut
+        if (data.resistInfos.ContainsKey(type))
+        {
+            coef -= data.resistInfos[type];
+        }
+        
+        // Vérifier si l'inventaire change le coef
+        if (data.isLinkedToInv)
+        {
+            coef -= PlayerInventory.GetDmgRestance(type);
+        }
+
+        coef = Math.Max(0, coef);
+        int trueAmount = amount * (coef / 100);
+
+        attackInfo = new DamageInfo(source, trueAmount, type);
+        
         
         // Affichage des dégâts
         GameObject display = Instantiate(dmgDisplayPreF, transform);
@@ -78,6 +100,7 @@ public class EntityHealth : MonoBehaviour
         currentHealth -= amount;
         healthBarGroup.UpdateHealthBars();
 
+        #region Death
         if (CheckDeath())
         {
             dead = true;
@@ -97,6 +120,7 @@ public class EntityHealth : MonoBehaviour
             
             return;
         }
+        #endregion
         
         animHandler.ChangeState(EntityFightAnimation.State.Hurt);
         tookDamage.Invoke();
