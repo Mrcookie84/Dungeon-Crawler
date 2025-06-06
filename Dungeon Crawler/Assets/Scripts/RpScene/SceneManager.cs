@@ -69,4 +69,8 @@ public class SceneManager : MonoBehaviour
         Application.Quit();
     }
 
+    internal static void LoadScene(string nextSceneName)
+    {
+        throw new NotImplementedException();
+    }
 }
