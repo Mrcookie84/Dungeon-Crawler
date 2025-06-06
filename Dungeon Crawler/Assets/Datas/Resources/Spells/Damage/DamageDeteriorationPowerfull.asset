@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: DamageDeteriorationPowerfull
   m_EditorClassIdentifier: 
   dmgTypeName: 03000000
-  dmgValues: 1e000000
+  dmgValues: 23000000

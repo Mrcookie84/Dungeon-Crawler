@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: DamageContactPowerfull
   m_EditorClassIdentifier: 
   dmgTypeName: 02000000
-  dmgValues: 14000000
+  dmgValues: 19000000
