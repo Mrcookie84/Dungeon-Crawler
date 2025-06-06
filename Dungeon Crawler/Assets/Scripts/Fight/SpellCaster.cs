@@ -335,9 +335,16 @@ public class SpellCaster : MonoBehaviour
             if (spellEnemyData.damageTypesData[i] != null)
                 for (int j = 0; j < spellEnemyData.damageTypesData[i].dmgValues.Length; j++)
                 {
-                    // Modification de la vie
                     DamageTypesData damageData = spellEnemyData.damageTypesData[i];
-                    entityHealth.TakeDamage(casterGPos.gameObject, damageData.dmgValues[j], damageData.dmgTypeName[j]);
+                    
+                    // Calcule des dégâts
+                    int damage = damageData.dmgValues[j];
+                    int coef = 100 + PlayerInventory.GetDmgBoost(damageData.dmgTypeName[j]);
+
+                    damage = (int)(damage * (coef / 100f));
+                    
+                    // Modification de la vie
+                    entityHealth.TakeDamage(casterGPos.gameObject, damage, damageData.dmgTypeName[j]);
                 }
             
             // Appliquer de potentiels statuts
