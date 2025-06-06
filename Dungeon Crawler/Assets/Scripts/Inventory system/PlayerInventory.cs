@@ -8,6 +8,11 @@ public class PlayerInventory : MonoBehaviour
     public List<ItemData> items;
     
     // ============== Propriété =================== //
+    public static List<ItemData> Items
+    {
+        get { return Instance.items; }
+    }
+
     public static int ManaBoost
     {
         get
@@ -83,6 +88,8 @@ public class PlayerInventory : MonoBehaviour
         if (Instance == null) return;
         
         Instance.items.Add(item);
+
+        InventoryView.UpdateInvView();
     }
 
     public static int GetDmgRestance(DamageTypesData.DmgTypes dmgType)
