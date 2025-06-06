@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PositionManager : MonoBehaviour
@@ -50,6 +51,15 @@ public class PositionManager : MonoBehaviour
 
     public static void EmptyGrids()
     {
-        
+        for (int i = 0; i < 6; i++)
+        {
+            GridManager.EnemyGrid.entityList = new GameObject[6];
+            if (GridManager.EnemyGrid.transform.GetChild(i).childCount == 2)
+                Destroy(GridManager.EnemyGrid.transform.GetChild(i).GetChild(1));
+            
+            GridManager.PlayerGrid.entityList = new GameObject[6];
+            if (GridManager.PlayerGrid.transform.GetChild(i).childCount == 2)
+                Destroy(GridManager.PlayerGrid.transform.GetChild(i).GetChild(1));
+        }
     }
 }

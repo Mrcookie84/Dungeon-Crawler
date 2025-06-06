@@ -9,11 +9,6 @@ public class CombatTrigger : MonoBehaviour
     [SerializeField] private FightPositionData posData;
     //Faire en sorte de pouvoir set les ennemies utiliser dans le combat sur les trigger 
     
-    void Start()
-    {
-        SceneManager.SceneManagerInstance.combatTrigger = this;
-    }
-    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Group"))
@@ -28,13 +23,5 @@ public class CombatTrigger : MonoBehaviour
             
             Destroy(gameObject);
         }
-        
-        
-    }
-
-    IEnumerator WaitForLoading()
-    {
-        yield return new WaitForSeconds(1f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 }

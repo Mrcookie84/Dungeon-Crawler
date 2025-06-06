@@ -13,7 +13,6 @@ public class SceneManager : MonoBehaviour
     public static GameObject SceneFight;
     
     public static SceneManager SceneManagerInstance;
-    public CombatTrigger combatTrigger;
     
     public GameObject MainMenuCamera;
     
