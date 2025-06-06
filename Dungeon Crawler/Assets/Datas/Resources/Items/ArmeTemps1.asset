@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346e9572659532a4da89a66c54bccbed, type: 3}
   m_Name: ArmeTemps1
   m_EditorClassIdentifier: 
-  itemName: Sablier
-  sprite: {fileID: 0}
+  itemName: Baguette du Temps
+  sprite: {fileID: 21300000, guid: cc902035689383a4085201cb7f46edd4, type: 3}
   runes:
     _serializedList:
     - Key: 2

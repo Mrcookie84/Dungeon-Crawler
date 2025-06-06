@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346e9572659532a4da89a66c54bccbed, type: 3}
   m_Name: Tenue1
   m_EditorClassIdentifier: 
-  itemName: 
-  sprite: {fileID: 0}
+  itemName: Tunique d'Os
+  sprite: {fileID: 21300000, guid: 85b0a02229f4e5f4cb2863187a71416a, type: 3}
   runes:
-    _serializedList: []
+    _serializedList:
+    - Key: 4
+      Value: 1
   addedPV: 0
-  addedStability: 0
+  addedStability: 1
   addedMana: 0
   dmgResistance:
     _serializedList: []
   dmgBoost:
-    _serializedList: []
+    _serializedList:
+    - Key: 2
+      Value: 10

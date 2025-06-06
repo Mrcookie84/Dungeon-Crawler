@@ -19,7 +19,7 @@ MonoBehaviour:
     - Key: 1
       Value: 1
   addedPV: 0
-  addedStability: 0
+  addedStability: 1
   addedMana: 0
   dmgResistance:
     _serializedList: []

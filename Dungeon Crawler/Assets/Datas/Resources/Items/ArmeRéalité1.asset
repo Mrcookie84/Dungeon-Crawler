@@ -20,7 +20,7 @@ MonoBehaviour:
       Value: 1
   addedPV: 0
   addedStability: 0
-  addedMana: 0
+  addedMana: 1
   dmgResistance:
     _serializedList: []
   dmgBoost:
