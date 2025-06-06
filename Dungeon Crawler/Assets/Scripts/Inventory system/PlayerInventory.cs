@@ -111,8 +111,7 @@ public class PlayerInventory : MonoBehaviour
             if (item.dmgBoost.ContainsKey(dmgType))
                 boost += item.dmgBoost[dmgType];
         }
-
-        Debug.Log(boost);
+        
         return boost;
     }
 }

@@ -4089,6 +4089,7 @@ GameObject:
   - component: {fileID: 1769615210}
   - component: {fileID: 1769615211}
   - component: {fileID: 1769615212}
+  - component: {fileID: 1769615213}
   m_Layer: 0
   m_Name: CombatParent
   m_TagString: Untagged
@@ -4128,7 +4129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8b0bd239d193f44a57d8f24733363d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startFightOnLoad: 1
+  startFightOnLoad: 0
   posData: {fileID: 11400000, guid: 4ac6585789d184d47aa68fe7aa1adc12, type: 2}
   eventSystem: {fileID: 2041671509}
 --- !u!114 &1769615212
@@ -4143,6 +4144,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22d50183000a8a429cc8a1b8bc87a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1769615213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769615209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ebdb29fde90df44f92bdbde7609ab4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 11400000, guid: 5b92699185c419244bdeffd0a8f426df, type: 2}
 --- !u!114 &1773961244 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8445141887451077887, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
