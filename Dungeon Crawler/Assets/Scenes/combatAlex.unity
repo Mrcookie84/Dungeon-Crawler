@@ -1874,6 +1874,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3234014861262318358, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: defaultStability
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4466265758959622141, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 948
@@ -4125,7 +4129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startFightOnLoad: 1
-  posData: {fileID: 11400000, guid: c74f7aea3aed88647b9ce285793a1602, type: 2}
+  posData: {fileID: 11400000, guid: 4ac6585789d184d47aa68fe7aa1adc12, type: 2}
   eventSystem: {fileID: 2041671509}
 --- !u!114 &1769615212
 MonoBehaviour:
