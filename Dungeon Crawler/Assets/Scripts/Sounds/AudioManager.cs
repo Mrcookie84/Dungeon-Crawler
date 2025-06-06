@@ -1,32 +1,57 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UIElements;
-using Image = UnityEngine.UI.Image;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource AudioSource;
-    [SerializeField] private Image FadeImage;
+    public static AudioManager SINGLETON;
+
+    public AudioSource menuMusic;
+    public Image fadeImage;
+
+    private void Awake()
+    {
+        if (SINGLETON == null)
+        {
+            SINGLETON = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        StartCoroutine(WaitForFade());
+    }
+
     private void Start()
     {
-        AudioSource.DOFade(1, 1f);
-        FadeImage.DOFade(0, 1f);
-        StartCoroutine(EndFade());
+        StartMenuMusic();
+        
+
     }
 
-    IEnumerator EndFade()
+    IEnumerator WaitForFade()
     {
-        yield return new WaitForSeconds(1f);
-        FadeImage.gameObject.SetActive(false);
+        fadeImage.DOFade(0f, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        fadeImage.gameObject.SetActive(false);
     }
 
-    public void FadeOff()
+    public IEnumerator TransitionMusic(AudioSource from, AudioSource to)
     {
-        AudioSource.DOFade(0, 1f);
-        FadeImage.gameObject.SetActive(true);
-        FadeImage.DOFade(1, 1f);
+        fadeImage.gameObject.SetActive(true);
+        fadeImage.DOFade(1f, 0.5f);
+        from.DOFade(0f, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        from.Stop();
+        to.volume = 0;
+        to.Play();
+        to.DOFade(1f, 0.5f);
+        fadeImage.DOFade(0f, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        fadeImage.gameObject.SetActive(false);
     }
+
+    public void StartMenuMusic() => menuMusic.Play();
 }
