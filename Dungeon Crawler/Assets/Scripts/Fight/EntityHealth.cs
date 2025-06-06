@@ -94,12 +94,12 @@ public class EntityHealth : MonoBehaviour
 
             // A changer pour laisser l'animation de mort se jouer
             if (destoryOnDeath) Destroy(gameObject);
+            
+            return;
         }
-        else if (!dead)
-        {
-            animHandler.ChangeState(EntityFightAnimation.State.Hurt);
-            tookDamage.Invoke();
-        }
+        
+        animHandler.ChangeState(EntityFightAnimation.State.Hurt);
+        tookDamage.Invoke();
     }
 
     public void Heal(int amount)
