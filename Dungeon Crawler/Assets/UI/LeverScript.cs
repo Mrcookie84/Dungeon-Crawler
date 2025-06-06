@@ -11,13 +11,20 @@ public class LeverScript : MonoBehaviour
     public GameObject doorOpened;
     public GameObject interactBubble;
     private KeyCode interactKey = KeyCode.E;
-
+    
+    public Animator animatorComponent;
 
     private void Start()
     {
         door.SetActive(true);
         doorOpened.SetActive(false);
         interactBubble.SetActive(false);
+        
+        animatorComponent = GetComponent<Animator>();
+        if (animatorComponent == null)
+        {
+            Debug.LogWarning("No animator detected on" + gameObject.name);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -47,18 +54,29 @@ public class LeverScript : MonoBehaviour
                 
                 doorOpened.SetActive(true);
                 door.SetActive(false);
-                
-                lever.transform.Rotate(0, 180, 0);
+
+                StartCoroutine(LeverAnimationCorout());
             }
-            else
+            else if (door.activeSelf == false)
             {
                 
                 doorOpened.SetActive(false);
                 door.SetActive(true);
                 
-                lever.transform.Rotate(0, 180, 0);
+                StartCoroutine(LeverAnimationCorout());
             }
             
         }
     }
+
+    private IEnumerator LeverAnimationCorout()
+    {
+        
+        animatorComponent.Play("levier");
+        yield return new WaitForSeconds(1f);
+        lever.transform.Rotate(0, 180, 0);
+        
+    }
+    
+    
 }
