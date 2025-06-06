@@ -12,6 +12,7 @@ public class CombatTrigger : MonoBehaviour
     void Start()
     {
         SceneManager.SceneManagerInstance.combatTrigger = this;
+        StartCoroutine(WaitForLoading());
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -20,11 +21,8 @@ public class CombatTrigger : MonoBehaviour
         {
             SceneManager.GoToFight();
             
-            // Initialisation du combat
             PositionManager.posData = posData;
             PositionManager.FillGrids();
-            RuneSelection.InitializeStats();
-            EnemyAIControler.UpdateAllMasks();
             
             Destroy(gameObject);
         }
