@@ -11,7 +11,6 @@ public class ItemData : ScriptableObject
     [Header("Item info")]
     public string itemName;
     public Sprite sprite;
-    public ItemSlot itemSlot;
     
     [Header("Added runes")]
     public SerializedDictionary<RuneType, int> runes;
