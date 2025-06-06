@@ -27,6 +27,9 @@ public class ItemData : ScriptableObject
     [SerializedDictionary("Damage Type", "Percent")]
     public SerializedDictionary<DamageTypesData.DmgTypes, int> dmgBoost;
 
+    [Header("Description")]
+    public string desc;
+
     public enum RuneType
     {
         Reality = 0,

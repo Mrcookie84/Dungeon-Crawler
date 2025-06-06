@@ -148,7 +148,7 @@ public class InventoryManagerScript : MonoBehaviour
 
     private void RefreshInventoryUI()
     {
-        /*
+     /*   
         PlayerInventory.LoadSprite();
         PlayerInventory.RefreshItemStatsUpdate();*/
     }
