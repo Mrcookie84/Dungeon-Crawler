@@ -84,7 +84,7 @@ public class EntityHealth : MonoBehaviour
         }
 
         coef = Math.Max(0, coef);
-        int trueAmount = amount * (coef / 100);
+        int trueAmount = (int)(amount * (coef / 100f));
 
         attackInfo = new DamageInfo(source, trueAmount, type);
         
