@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6708415141997707760}
   - component: {fileID: 3764579851846549497}
+  - component: {fileID: 4031916407936616691}
   m_Layer: 0
   m_Name: Coffre 2 copie
   m_TagString: Untagged
@@ -85,6 +86,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4031916407936616691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2485925141634127891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397ac14a4b59cba42a5ad05304d9ed57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 1
+  outlineHeight: 1
+  pulseSpeed: 0.6
+  maxAlpha: 0.6
+  outlineSortingOrder: 1
 --- !u!1 &5630578190875783387
 GameObject:
   m_ObjectHideFlags: 0
