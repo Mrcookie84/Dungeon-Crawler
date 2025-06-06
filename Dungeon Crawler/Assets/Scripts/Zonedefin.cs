@@ -1,50 +1,42 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-public class ImageTransition : MonoBehaviour
-{
-    public RectTransform image1; // Première image (fond)
-    public RectTransform image2; // Deuxième image (superposition)
-    public float scrollSpeed = 100f; // Vitesse de défilement
-    public string nextSceneName; // Nom de la scène suivante
-    public float delayBeforeNextScene = 1f; // Délai avant de charger la scène
 
-    private bool isTransitioning = false;
+
+public class ImageScroller : MonoBehaviour
+{
+    public float scrollSpeed = 50f; // Vitesse du défilement
+    public string nextSceneName; // Nom de la prochaine scène
+
+    private RectTransform rectTransform;
+    private bool isScrolling = true;
+
+    void Start()
+    {
+        rectTransform = GetComponent<RectTransform>();
+    }
 
     void Update()
     {
-        if (!isTransitioning)
+        if (isScrolling)
         {
-            StartTransition();
+            // Faire défiler l'image vers le haut
+            rectTransform.anchoredPosition += Vector2.up * scrollSpeed * Time.deltaTime;
+
+            // Vérifier si l'image est complètement sortie de l'écran
+            if (rectTransform.anchoredPosition.y >= rectTransform.rect.height)
+            {
+                isScrolling = false;
+                LoadNextScene();
+            }
         }
     }
 
-    private void StartTransition()
+    void LoadNextScene()
     {
-        isTransitioning = true;
-        StartCoroutine(PerformTransition());
-    }
-
-    private IEnumerator PerformTransition()
-    {
-        // Défilement de `Image1` (fond) vers le haut
-        while (image1.anchoredPosition.y < Screen.height)
+        if (!string.IsNullOrEmpty(nextSceneName))
         {
-            image1.anchoredPosition += Vector2.up * scrollSpeed * Time.deltaTime;
-            yield return null;
+            SceneManager.LoadScene(nextSceneName);
         }
-
-        // Défilement de `Image2` (superposition) vers le haut
-        while (image2.anchoredPosition.y < Screen.height)
-        {
-            image2.anchoredPosition += Vector2.up * scrollSpeed * Time.deltaTime;
-            yield return null;
-        }
-
-        // Attendre avant de charger la scène
-        yield return new WaitForSeconds(delayBeforeNextScene);
-
-        // Charger la scène suivante
-        SceneManager.LoadScene(nextSceneName);
     }
 }
