@@ -29,3 +29,5 @@ MonoBehaviour:
       Value: 0
   dmgBoost:
     _serializedList: []
+  desc: "Ajoute une rune de focus et une rune d\u2019affliction, ajoute une r\xE9sistance
+    de 5% aux d\xE9g\xE2ts de r\xE9alit\xE9, augmente le mana de 1"

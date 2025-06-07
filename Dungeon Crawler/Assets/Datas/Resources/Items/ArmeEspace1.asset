@@ -27,3 +27,5 @@ MonoBehaviour:
     _serializedList:
     - Key: 2
       Value: 10
+  desc: "Ajoute 1 rune d\u2019espace, ajoute 10% de d\xE9g\xE2ts de contact, augmente
+    la stabilit\xE9 de 1"

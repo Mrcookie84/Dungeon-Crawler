@@ -27,3 +27,4 @@ MonoBehaviour:
     _serializedList:
     - Key: 3
       Value: 10
+  desc: "Ajoute 1 rune de temps, ajoute 10% de d\xE9g\xE2ts de d\xE9gradation"

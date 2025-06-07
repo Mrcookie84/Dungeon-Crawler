@@ -27,3 +27,5 @@ MonoBehaviour:
       Value: 0
   dmgBoost:
     _serializedList: []
+  desc: "Ajoute 1 rune d\u2019extension, ajoute une r\xE9sistance de 10% aux d\xE9g\xE2ts
+    de contact, augmente la stabilit\xE9 de 1"
