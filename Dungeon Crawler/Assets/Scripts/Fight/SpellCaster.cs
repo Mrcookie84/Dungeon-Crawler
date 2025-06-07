@@ -479,8 +479,10 @@ public class SpellCaster : MonoBehaviour
             return;
         }
 
+        Vector2Int displ;
         switch (currentCastMode)
         {
+            
             case CastMode.Player:
                 {
                     // Aucun sort
@@ -489,25 +491,32 @@ public class SpellCaster : MonoBehaviour
                         return;
                     }
 
-                    List<Vector2Int> highlightCoords = new List<Vector2Int>();
+                    List<CellHighlighter.HighlightInfo> highlightInfoList = new List<CellHighlighter.HighlightInfo>();
 
-                    // Sélection des cibles
-                    List<EntityPosition> playersPosComponent;
+                    // Cibles
+                    List<EntityPosition> playersPosComponent = new List<EntityPosition>();
                     if (spellPlayerData.multipleTargets)
                     {
                         playersPosComponent = GetAllPlayersOnRow();
-
-                        foreach (EntityPosition posComp in playersPosComponent)
-                        {
-                            highlightCoords.Add(posComp.gridPos);
-                        }
                     }
                     else
                     {
-                        highlightCoords.Add(casterGPos.gridPos);
+                        playersPosComponent.Add(casterGPos);
                     }
 
-                    //GridManager.PlayerGrid.HighlightCells(highlightCoords, DamageTypesData.DmgTypes.None, Vector2Int.down);
+                    // Direction
+                    if (spellPlayerData.switchWorld)
+                        displ = Vector2Int.up;
+                    else
+                        displ = Vector2Int.zero;
+
+                    foreach (EntityPosition pos in playersPosComponent)
+                    {
+                        CellHighlighter.HighlightInfo highlightInfo1 = new CellHighlighter.HighlightInfo(pos.gridPos, spellPlayerData.type, displ);
+                        highlightInfoList.Add(highlightInfo1);
+                    }
+
+                    GridManager.PlayerGrid.HighlightCells(highlightInfoList);
 
                     break;
                 }
@@ -525,7 +534,7 @@ public class SpellCaster : MonoBehaviour
                     foreach (var cell in GetAllCellHit())
                     {
                         DamageTypesData.DmgTypes dmgType = spellEnemyData.damageTypesData[i].dmgTypeName[0];
-                        Vector2Int displ = spellEnemyData.displacementList[i];
+                        displ = spellEnemyData.displacementList[i];
 
                         var hlInfo = new CellHighlighter.HighlightInfo(cell, dmgType, displ);
                         highlightInfo.Add(hlInfo);
