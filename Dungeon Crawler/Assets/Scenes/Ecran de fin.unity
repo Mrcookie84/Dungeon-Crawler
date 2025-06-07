@@ -773,6 +773,7 @@ GameObject:
   - component: {fileID: 2080944186}
   - component: {fileID: 2080944185}
   - component: {fileID: 2080944184}
+  - component: {fileID: 2080944187}
   m_Layer: 5
   m_Name: Button Skip
   m_TagString: Untagged
@@ -893,6 +894,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080944182}
   m_CullTransparentMesh: 1
+--- !u!114 &2080944187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080944182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c33eefff968512449873d57e0a492e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Scene2
 --- !u!1001 &62733335709057329
 PrefabInstance:
   m_ObjectHideFlags: 0
