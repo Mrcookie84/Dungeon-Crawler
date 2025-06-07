@@ -1747,6 +1747,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3234014861262318358, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: defaultMana
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3234014861262318358, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: defaultStability
       value: 4
       objectReference: {fileID: 0}
@@ -4005,7 +4009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8b0bd239d193f44a57d8f24733363d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startFightOnLoad: 0
+  startFightOnLoad: 1
   posData: {fileID: 11400000, guid: 4ac6585789d184d47aa68fe7aa1adc12, type: 2}
   eventSystem: {fileID: 2041671509}
 --- !u!114 &1769615212

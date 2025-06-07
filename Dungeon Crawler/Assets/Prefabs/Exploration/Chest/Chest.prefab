@@ -144,7 +144,6 @@ MonoBehaviour:
   itemPool:
   - {fileID: 11400000, guid: 0390bc7c41c890f4cb0f5dccf7a8ac35, type: 2}
   - {fileID: 11400000, guid: d30f5e21e76f57c409188cc04cc77cf1, type: 2}
-  - {fileID: 11400000, guid: b28242d5dc95b1d4b886156c3d997917, type: 2}
   maxSelected: 2
 --- !u!114 &4652172366764679865
 MonoBehaviour:

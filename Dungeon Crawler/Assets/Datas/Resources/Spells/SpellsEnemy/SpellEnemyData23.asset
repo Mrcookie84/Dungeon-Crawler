@@ -16,13 +16,13 @@ MonoBehaviour:
   hitCellList:
   - {x: 0, y: 0}
   damageTypesData:
-  - {fileID: 11400000, guid: 67958aa1b5a19264e9021ccdccabf73d, type: 2}
+  - {fileID: 11400000, guid: 9bc6e92cfa126fc4ea2db555c4ac6c8e, type: 2}
   displacementList:
   - {x: 0, y: 0}
   reinforceBarrier: 0
   weakenBarrier: 0
   blockedByBarrier: 0
-  statusData: {fileID: 0}
+  statusData: {fileID: 11400000, guid: 2747fb74d0683ef45ae4363509ef528a, type: 2}
   statusDuration: 0
   t_fx: 0
   t_damage: 0
