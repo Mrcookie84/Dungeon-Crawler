@@ -4,6 +4,7 @@ using UnityEngine;
 public class CellHighlighter : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField] private Vector2Int cellCoords;
     [SerializeField] private SpriteRenderer hlRenderer;
     [SerializeField] private SpriteRenderer arrowRenderer;
     
@@ -16,6 +17,7 @@ public class CellHighlighter : MonoBehaviour
 
     public void Highlight(HighlightInfo hlInfo)
     {
+        // Debug
         if (!hlSprites.ContainsKey(hlInfo.dmgType))
         {
             Debug.LogWarning($"Highlight : {hlInfo.dmgType} n'est pas dans le dictionnaire des sprites.");
@@ -33,6 +35,7 @@ public class CellHighlighter : MonoBehaviour
 
         if (hlInfo.displ != Vector2Int.zero)
         {
+            //Debug
             if (!arrowSprites.ContainsKey(hlInfo.displ))
             {
                 Debug.LogWarning($"Highlight : {hlInfo.displ} n'est pas dans le dictionnaire des sprites.");
@@ -46,7 +49,12 @@ public class CellHighlighter : MonoBehaviour
             }
             
             arrowRenderer.enabled = true;
-            arrowRenderer.sprite = arrowSprites[hlInfo.displ];
+            Vector2Int adjustedDispl = hlInfo.displ;
+            int verticalDispl = (adjustedDispl + cellCoords).y;
+            if (0 > verticalDispl || verticalDispl > 1)
+                adjustedDispl.y *= -1;
+
+            arrowRenderer.sprite = arrowSprites[adjustedDispl];
         }
     }
 
