@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SpellPlayerData", menuName = "ScriptableObject/Spells/SpellPlayerData")]
@@ -15,6 +16,15 @@ public class SpellPlayerData : ScriptableObject
     [Space(5)]
     public int healAmount;
 
+    [Header("Timer")]
+    public float t_fx;
+    public float t_effect;
+
     [Header("Description")]
     public string desc;
+
+    public float SpellDuration
+    {
+        get { return Mathf.Max(t_effect, t_fx); }
+    }
 }

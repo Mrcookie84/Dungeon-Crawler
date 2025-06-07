@@ -200,10 +200,6 @@ public class SpellCaster : MonoBehaviour
         ResetSpell();
     }
 
-    /// <summary>
-    /// Méthode appelée par le bouton "Lancer" dans l'interface joueur
-    /// C'est ici que le sort est déclenché
-    /// </summary>
     public void CastSpell()
     {
         EntityFightAnimation casterAnim = casterGPos.gameObject.GetComponent<EntityFightAnimation>();
@@ -226,14 +222,53 @@ public class SpellCaster : MonoBehaviour
             StartCoroutine(CastEnemySpellCoroutine(spellEnemyData.SpellDuration));
         else
             CastPlayerSpell(); // Doit être mis à jour plus tard
+        StartCoroutine(CastPlayerSpellCoroutine(1f));
     }
 
-    /// <summary>
-    /// Coroutine qui lance toutes les autres coroutines qui appliquent les données du sort
-    /// - Durée définie par les data de spellEnemyData.SpellDuration
-    /// </summary>
-    /// <param name="t"> Durée de la coroutine </param>
-    /// <returns></returns>
+    #region Player Spell
+    private IEnumerator CastPlayerSpellCoroutine(float t)
+    {
+        // Liste des entités
+        List<EntityPosition> affectedPlayers = new List<EntityPosition>();
+        if (spellPlayerData.multipleTargets)
+        {
+            affectedPlayers = GetAllPlayersOnRow();
+        }
+
+        else
+        {
+            affectedPlayers.Add(casterGPos);
+        }
+
+        // Liste des cases
+        List<Vector2Int> affectedCells = new List<Vector2Int>();
+        foreach (EntityPosition p in affectedPlayers)
+        {
+            affectedCells.Add(p.gridPos);
+        }
+
+        // Lancer les coroutine
+        StartCoroutine(CastPlayerFxCoroutine(1f));
+        StartCoroutine(CastPlayerEffectCoroutine(1f));
+
+        yield return new WaitForSeconds(t);
+
+        EnableButtons(true);
+        ResetSpell();
+    }
+
+    private IEnumerator CastPlayerEffectCoroutine(float t)
+    {
+        yield return new WaitForSeconds(t);
+    }
+
+    private IEnumerator CastPlayerFxCoroutine(float t)
+    {
+        yield return new WaitForSeconds(t);
+    }
+    #endregion
+
+    #region Enemy Spell
     private IEnumerator CastEnemySpellCoroutine(float t)
     {   
         // Récupération des cases et ennemis affectés par le sort
@@ -252,13 +287,6 @@ public class SpellCaster : MonoBehaviour
         ResetSpell();
     }
 
-    /// <summary>
-    /// Coroutine qui déclenche les fx du sort lancé au bout d'une durée définie
-    /// - Durée définie par spell"""Data.t_fx
-    /// </summary>
-    /// <param name="t"> Durée de la coroutine </param>
-    /// <param name="affectedCells"> Liste des cases où il faut déclencher un fx</param>
-    /// <returns></returns>
     private IEnumerator FxCoroutine(float t, List<Vector2Int> affectedCells)
     {
         yield return new WaitForSeconds(t);
@@ -281,12 +309,6 @@ public class SpellCaster : MonoBehaviour
         // Instantier les fx
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="t"> Durée de la coroutine </param>
-    /// <param name="affectedCells"></param>
-    /// <returns></returns>
     private IEnumerator DisplacementCoroutine(float t, GameObject[] affectedEnemies)
     {
         yield return new WaitForSeconds(t);
@@ -312,12 +334,6 @@ public class SpellCaster : MonoBehaviour
         EnemyAIControler.UpdateEnemyMask();
     }
 
-    /// <summary>
-    /// Coroutine qui déclenche l'application des dégâts sur les ennemis affectés
-    /// </summary>
-    /// <param name="t"> Durée de la coroutine </param>
-    /// <param name="affectedEnemies"> Liste des ennemis</param>
-    /// <returns></returns>
     private IEnumerator DamageCoroutine(float t, GameObject[] affectedEnemies)
     {
         // Attente avant déclenchement
@@ -357,13 +373,6 @@ public class SpellCaster : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Coroutine qui définie quand la barrière est mise à jour
-    /// - Durée définie par spell"""Data.t_barrier
-    /// </summary>
-    /// <param name="t"> Durée de la coroutine </param>
-    /// <param name="affectedCells"> Liste des cases où l'état de la barrière est mis à jour </param>
-    /// <returns></returns>
     private IEnumerator BarrierCoroutine(float t, List<Vector2Int> affectedCells)
     {
         yield return new WaitForSeconds(t);
@@ -385,6 +394,7 @@ public class SpellCaster : MonoBehaviour
 
         EnemyAIControler.UpdateBarrierMask();
     }
+    #endregion
 
     public static List<Vector2Int> GetAllCellHit()
     {
@@ -423,6 +433,7 @@ public class SpellCaster : MonoBehaviour
         return hitCellList;
     }
 
+    #region Spell Update
     private static void UpdateSpell()
     {
         UpdateSpellDesc();
@@ -578,4 +589,5 @@ public class SpellCaster : MonoBehaviour
                 }
         }
     }
+    #endregion
 }
