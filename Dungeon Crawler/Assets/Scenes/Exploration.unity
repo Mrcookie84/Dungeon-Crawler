@@ -11966,6 +11966,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Explo 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5859221503366010066, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 854
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859221503366010066, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 459
+      objectReference: {fileID: 0}
     - target: {fileID: 6331595465198497806, guid: e19d35b1084a4f44eaeee6e295143279, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
