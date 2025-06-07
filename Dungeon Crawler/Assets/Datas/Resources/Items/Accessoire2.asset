@@ -27,3 +27,5 @@ MonoBehaviour:
       Value: 0
   dmgBoost:
     _serializedList: []
+  desc: "Ajoute 2 runes d\u2019affliction, et donne une r\xE9sistance de 5% aux d\xE9g\xE2ts
+    d\u2019\xE9crasement, ajoute 15 points de vie"

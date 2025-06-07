@@ -27,3 +27,5 @@ MonoBehaviour:
     _serializedList:
     - Key: 0
       Value: 10
+  desc: "Ajoute 1 rune de r\xE9alit\xE9, ajoute 10% de d\xE9g\xE2ts de r\xE9alit\xE9,
+    augmente le mana de 1"

@@ -27,3 +27,5 @@ MonoBehaviour:
     _serializedList: []
   dmgBoost:
     _serializedList: []
+  desc: "Ajoute 1 rune d\u2019extension et 1 rune de r\xE9alit\xE9, augmente le mana
+    de 2"

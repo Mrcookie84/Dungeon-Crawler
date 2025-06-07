@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: StatusTimedDamage
   m_EditorClassIdentifier: 
   permanent: 0
-  icon: {fileID: 0}
-  witherAmount: 0
-  dmgType: 0
+  icon: {fileID: 21300000, guid: be8b2b0f32d3150468efdc696c9c3414, type: 3}
+  witherAmount: 60
+  dmgType: 3
