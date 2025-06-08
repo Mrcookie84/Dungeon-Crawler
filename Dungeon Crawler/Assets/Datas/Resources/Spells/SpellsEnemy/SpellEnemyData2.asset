@@ -28,4 +28,4 @@ MonoBehaviour:
   t_damage: 0
   t_disp: 0
   t_barrier: 0
-  desc: "- Touche 1 ennemi<br> - Inflige des d\xE9g\xE2ts de d\xE9gradation"
+  desc: "- Touche 1 ennemi<br> - Inflige des d\xE9g\xE2ts de d\xE9gradation mod\xE9r\xE9es"

@@ -17,8 +17,8 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 1, y: 1}
   damageTypesData:
-  - {fileID: 11400000, guid: ac6929dd593c64545980f64b626b8d88, type: 2}
-  - {fileID: 11400000, guid: ac6929dd593c64545980f64b626b8d88, type: 2}
+  - {fileID: 11400000, guid: a31e375ca73dec345bb7ff51b6d3260b, type: 2}
+  - {fileID: 11400000, guid: a31e375ca73dec345bb7ff51b6d3260b, type: 2}
   displacementList:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
