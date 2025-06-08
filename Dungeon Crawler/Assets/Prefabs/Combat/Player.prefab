@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2109979061175751635}
   - component: {fileID: -7666935225237567098}
   - component: {fileID: -3003012497256881573}
-  - component: {fileID: 5347879556732771913}
   m_Layer: 0
   m_Name: Player
   m_TagString: PlayerEntityFight
@@ -142,21 +141,6 @@ MonoBehaviour:
   - {fileID: 0}
   defaultDuration: 1
   statusList: []
---- !u!114 &5347879556732771913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3126566767669286085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8c5310eb04d25841b7bcab2a216d2c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posComponent: {fileID: -7346857730855540150}
-  healthComponent: {fileID: 2109979061175751635}
-  charaPortraitSprite: {fileID: 0}
 --- !u!1 &5720583357554483498
 GameObject:
   m_ObjectHideFlags: 0
