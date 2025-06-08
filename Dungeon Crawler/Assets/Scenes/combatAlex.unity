@@ -2116,7 +2116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6740154541914249631, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: maxRunes
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7180156485744183537, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: linkedGrid
@@ -2270,6 +2270,10 @@ PrefabInstance:
       propertyPath: maxRunes
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7922306007967684706, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: maxSelected
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8034945623173571460, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2280,11 +2284,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8352021543158789768, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: maxRunes
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8420815148125876806, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: maxRunes
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8952907026041724764, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4578,8 +4582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8b0bd239d193f44a57d8f24733363d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startFightOnLoad: 1
-  posData: {fileID: 11400000, guid: b5a9708184babb3419bfb30d42862e61, type: 2}
+  startFightOnLoad: 0
+  posData: {fileID: 11400000, guid: 4ac6585789d184d47aa68fe7aa1adc12, type: 2}
   eventSystem: {fileID: 2041671509}
 --- !u!114 &1769615212
 MonoBehaviour:
