@@ -16,7 +16,7 @@ MonoBehaviour:
   hitCellList:
   - {x: 0, y: 0}
   damageTypesData:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: ac6929dd593c64545980f64b626b8d88, type: 2}
   displacementList:
   - {x: 0, y: 0}
   reinforceBarrier: 0
