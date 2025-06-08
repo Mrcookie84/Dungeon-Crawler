@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb872ca0c597c634795bdb01492d4e4d, type: 3}
-  m_Name: DamageNull
+  m_Name: DamageNulDegral
   m_EditorClassIdentifier: 
-  dmgTypeName: 00000000
+  dmgTypeName: 03000000
   dmgValues: 00000000
