@@ -221,8 +221,7 @@ public class SpellCaster : MonoBehaviour
         if (currentCastMode == CastMode.Enemy)
             StartCoroutine(CastEnemySpellCoroutine(spellEnemyData.SpellDuration));
         else
-            CastPlayerSpell(); // Doit être mis à jour plus tard
-        //StartCoroutine(CastPlayerSpellCoroutine(1f));
+            StartCoroutine(CastPlayerSpellCoroutine(1f));
     }
 
     #region Player Spell
@@ -249,7 +248,7 @@ public class SpellCaster : MonoBehaviour
 
         // Lancer les coroutine
         StartCoroutine(CastPlayerFxCoroutine(1f));
-        StartCoroutine(CastPlayerEffectCoroutine(1f));
+        StartCoroutine(CastPlayerEffectCoroutine(1f, affectedPlayers));
 
         yield return new WaitForSeconds(t);
 
@@ -257,9 +256,34 @@ public class SpellCaster : MonoBehaviour
         ResetSpell();
     }
 
-    private IEnumerator CastPlayerEffectCoroutine(float t)
+    private IEnumerator CastPlayerEffectCoroutine(float t, List<EntityPosition> affectedPlayers)
     {
         yield return new WaitForSeconds(t);
+
+        foreach (EntityPosition player in affectedPlayers)
+        {
+            // Changement de position
+            if (spellPlayerData.switchWorld)
+            {
+                player.ChangePosition(new Vector2Int(player.gridPos.x, (player.gridPos.y + 1) % 2));
+            }
+
+            // Appliquer du soin
+            if (spellPlayerData.healAmount > 0)
+            {
+                EntityHealth healthComp = player.GetComponent<EntityHealth>();
+                healthComp.Heal(spellPlayerData.healAmount);
+            }
+            
+            // Appliquer un statut
+            if (spellPlayerData.appliedStatus != null)
+            {
+                EntityStatusHolder statusComp = player.GetComponent<EntityStatusHolder>();
+                statusComp.AddStatus(spellPlayerData.appliedStatus, spellPlayerData.statusDuration, casterGPos.gameObject);
+            }
+        }
+
+        GridManager.PlayerGrid.UpdateEntitiesIndex();
     }
 
     private IEnumerator CastPlayerFxCoroutine(float t)
