@@ -10,8 +10,14 @@ public class CharaPortraitHandler : MonoBehaviour
 
     public static void ChangePortrait(Sprite portrait)
     {
+        Debug.Log(portrait);
+
         if (portrait == null)
+        {
             Instance.portraitHolder.sprite = Instance.defaultSprite;
+            Debug.Log("No");
+        }
+            
         else
             Instance.portraitHolder.sprite = portrait;
 

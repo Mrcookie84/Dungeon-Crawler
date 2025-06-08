@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FightPanda
       objectReference: {fileID: 0}
+    - target: {fileID: 5347879556732771913, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
+      propertyPath: charaPortraitSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 927c700e670a502448701bb736256873, type: 3}
     - target: {fileID: 8907508124825360126, guid: d1dd310ffd196234d9c12dcc59194159, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0

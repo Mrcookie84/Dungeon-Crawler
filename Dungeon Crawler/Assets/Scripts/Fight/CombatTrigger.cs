@@ -27,8 +27,9 @@ public class CombatTrigger : MonoBehaviour
         EnemyAIControler.UpdateAllMasks();
 
         SceneManager.GoToFight();
+        gameObject.SetActive(false);
+
         yield return new WaitForSeconds(0.5f);
-        Destroy(gameObject);
     }
 
 }
