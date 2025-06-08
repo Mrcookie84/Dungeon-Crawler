@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2109979061175751635}
   - component: {fileID: -7666935225237567098}
   - component: {fileID: -3003012497256881573}
+  - component: {fileID: 7404720905261777109}
   m_Layer: 0
   m_Name: Player
   m_TagString: PlayerEntityFight
@@ -67,6 +68,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  reverseLook: 0
+  preferedWorld: 0
 --- !u!114 &2109979061175751635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,11 +87,12 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBarGroupTag: PlayersHealthBars
-  posComponent: {fileID: -7346857730855540150}
   dead: 0
   destoryOnDeath: 0
   animHandler: {fileID: -7666935225237567098}
   status: {fileID: -3003012497256881573}
+  posComp: {fileID: -7346857730855540150}
+  bonusStats: {fileID: 7404720905261777109}
   gotAttacked:
     m_PersistentCalls:
       m_Calls:
@@ -141,6 +145,20 @@ MonoBehaviour:
   - {fileID: 0}
   defaultDuration: 1
   statusList: []
+--- !u!114 &7404720905261777109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3126566767669286085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4105a1b6f00310a4083e8b56d525b49b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generalAttackBoost: 0
+  generalResBoost: 0
 --- !u!1 &5720583357554483498
 GameObject:
   m_ObjectHideFlags: 0

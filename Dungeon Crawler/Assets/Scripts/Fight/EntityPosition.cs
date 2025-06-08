@@ -11,12 +11,20 @@ public class EntityPosition : MonoBehaviour
 
     [HideInInspector] public bool reverseLook;
 
+    [Header("Dimensional affinity")]
+    [Range(0, 1)] public int preferedWorld;
+
     public int gridIndex
     {
         get
         {
             return gridPos.x + 3 * gridPos.y;
         }
+    }
+
+    public bool IsWeak
+    {
+        get { return gridPos.y != preferedWorld; }
     }
 
     public GridManager LinkedGrid

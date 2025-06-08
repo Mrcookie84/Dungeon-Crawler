@@ -40,13 +40,13 @@ public class EntityStatusHolder : MonoBehaviour
         updateGrid.gridUpdate.Invoke();
     }
 
-    public void RemoveStatus(StatusData status)
+    public void RemoveStatus(StatusData status, bool applyFinishedEffect = true)
     {
         for (int i = 0; i < statusList.Count; i++)
         {
             if (statusList[i].status != status) continue;
 
-            status.Finish(gameObject);
+            if (applyFinishedEffect) status.Finish(gameObject);
             statusList.RemoveAt(i);
 
             updateGrid.gridUpdate.Invoke();

@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour
 {
     [Header("Components reference")]
     [SerializeField] private EntityPosition gridComp;
+    [SerializeField] private EntityStatsModifier bonusStats;
     [SerializeField] private EntityFightAnimation animHandler;
 
     [Header("Actions")]
@@ -263,8 +264,14 @@ public class EnemyAI : MonoBehaviour
 
             if (action.dmgValue > 0)
             {
+                int trueDmg = action.dmgValue;
+
+                int coef = 100 + bonusStats.generalAttackBoost;
+
+                trueDmg = (int)(trueDmg * (coef / 100f));
+
                 EntityHealth entityHealth = entity.GetComponent<EntityHealth>();
-                entityHealth.TakeDamage(gameObject, action.dmgValue, action.dmgType);
+                entityHealth.TakeDamage(gameObject, trueDmg, action.dmgType);
             }
 
             if (action.status != null)

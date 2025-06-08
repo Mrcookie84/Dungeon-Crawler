@@ -10,7 +10,6 @@ public class EntityHealth : MonoBehaviour
     [HideInInspector] public float currentHealth;
     [SerializeField] private string healthBarGroupTag;
     private HealthBarGroupManager healthBarGroup;
-    [SerializeField] private EntityPosition posComponent;
 
     [HideInInspector] public bool dead;
     [SerializeField] private bool destoryOnDeath;
@@ -18,6 +17,8 @@ public class EntityHealth : MonoBehaviour
     [Header("Components")]
     [SerializeField] private EntityFightAnimation animHandler;
     [SerializeField] private EntityStatusHolder status;
+    [SerializeField] private EntityPosition posComp;
+    [SerializeField] private EntityStatsModifier bonusStats;
 
     public UnityEvent gotAttacked = new UnityEvent();
     public UnityEvent tookDamage = new UnityEvent();
@@ -67,6 +68,11 @@ public class EntityHealth : MonoBehaviour
             return;
         }
         
+        // Faiblesse dimensionnel
+        if (!posComp.IsWeak && type == DamageTypesData.DmgTypes.DimensionalWeakness)
+        {
+            attackInfo = new DamageInfo(source, 10, DamageTypesData.DmgTypes.Reality);
+        }
         
         // Application des resistances
         int coef = 100;
@@ -83,10 +89,12 @@ public class EntityHealth : MonoBehaviour
             coef -= PlayerInventory.GetDmgRestance(type);
         }
 
-        coef = Math.Max(0, coef);
-        int trueAmount = (int)(amount * (coef / 100f));
+        coef += bonusStats.generalResBoost;
 
-        attackInfo = new DamageInfo(source, trueAmount, type);
+        coef = Math.Max(0, coef);
+        int trueAmount = (int)(attackInfo.dmgValue * (coef / 100f));
+
+        attackInfo = new DamageInfo(source, trueAmount, attackInfo.dmgType);
         
         
         // Affichage des dégâts
@@ -116,7 +124,7 @@ public class EntityHealth : MonoBehaviour
                 CharaPortraitHandler.ResetPortait();
             }
 
-            TurnManager.TestEndFight(posComponent.LinkedGrid);
+            TurnManager.TestEndFight(posComp.LinkedGrid);
 
             // A changer pour laisser l'animation de mort se jouer
             if (destoryOnDeath) Destroy(gameObject);
