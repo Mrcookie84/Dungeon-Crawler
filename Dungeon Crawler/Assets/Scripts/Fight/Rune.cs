@@ -46,7 +46,7 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         for (int i = 0; i < CoolDown + 1; i++)
         {
@@ -56,7 +56,10 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         if (cooldownSlider != null)
             cooldownSlider.maxValue = data.cooldown;
+    }
 
+    private void Start()
+    {
         UpdateUI();
     }
 
