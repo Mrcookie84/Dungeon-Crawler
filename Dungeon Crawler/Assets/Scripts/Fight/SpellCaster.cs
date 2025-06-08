@@ -222,7 +222,7 @@ public class SpellCaster : MonoBehaviour
             StartCoroutine(CastEnemySpellCoroutine(spellEnemyData.SpellDuration));
         else
             CastPlayerSpell(); // Doit être mis à jour plus tard
-        StartCoroutine(CastPlayerSpellCoroutine(1f));
+        //StartCoroutine(CastPlayerSpellCoroutine(1f));
     }
 
     #region Player Spell
