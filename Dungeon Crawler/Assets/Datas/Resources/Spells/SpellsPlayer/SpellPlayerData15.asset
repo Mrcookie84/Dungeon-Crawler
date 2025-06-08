@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f8f6ec2228fb4744bc604dc7d0530e3, type: 3}
-  m_Name: SpellPlayerData0
+  m_Name: SpellPlayerData15
   m_EditorClassIdentifier: 
-  switchWorld: 1
+  switchWorld: 0
   multipleTargets: 0
-  type: 0
-  appliedStatus: {fileID: 0}
-  statusDuration: 0
+  type: 2
+  appliedStatus: {fileID: 11400000, guid: e9e93da8af1d5aa4b9e0710edf948a1f, type: 2}
+  statusDuration: 1
   healAmount: 0
   t_fx: 0
   t_effect: 0
-  desc: 'Change de monde un personnage '
+  desc: 'Applique une protection sur un personnage, elle encaisse 1 attaque (1 tour) '

@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f8f6ec2228fb4744bc604dc7d0530e3, type: 3}
-  m_Name: SpellPlayerData0
+  m_Name: SpellPlayerData25
   m_EditorClassIdentifier: 
-  switchWorld: 1
+  switchWorld: 0
   multipleTargets: 0
-  type: 0
-  appliedStatus: {fileID: 0}
+  type: 3
+  appliedStatus: {fileID: 11400000, guid: 4c133c9365231e1448c1227e70496a6d, type: 2}
   statusDuration: 0
   healAmount: 0
   t_fx: 0
   t_effect: 0
-  desc: 'Change de monde un personnage '
+  desc: "Applique le statu r\xE9g\xE9n\xE9ration (3 tours) sur un personnage (10
+    points de vie par tour)"
