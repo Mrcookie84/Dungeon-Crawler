@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8f6ec2228fb4744bc604dc7d0530e3, type: 3}
   m_Name: SpellPlayerData05
   m_EditorClassIdentifier: 
-  switchWorld: 1
-  multipleTargets: 1
-  desc: "Change de monde tout les personnages d\u2019un monde"
+  switchWorld: 0
+  multipleTargets: 0
+  type: 0
+  appliedStatus: {fileID: 11400000, guid: f19281c9efbe7fc49b1ba99d320f11f2, type: 2}
+  statusDuration: 1
+  healAmount: 0
+  t_fx: 0
+  t_effect: 0
+  desc: 'Applique sur un personnage le statu force ou faiblesse dimensionnelle (en
+    fonction du monde du personnage) '

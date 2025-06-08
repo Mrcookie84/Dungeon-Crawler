@@ -2280,11 +2280,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8352021543158789768, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: maxRunes
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8420815148125876806, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: maxRunes
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8952907026041724764, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
