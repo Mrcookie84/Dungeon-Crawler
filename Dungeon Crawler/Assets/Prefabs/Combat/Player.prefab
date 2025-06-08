@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posComponent: {fileID: -7346857730855540150}
-  healthComponent: {fileID: 0}
+  healthComponent: {fileID: 2109979061175751635}
   charaPortraitSprite: {fileID: 0}
 --- !u!1 &5720583357554483498
 GameObject:
