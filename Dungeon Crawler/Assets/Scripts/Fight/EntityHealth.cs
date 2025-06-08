@@ -90,9 +90,12 @@ public class EntityHealth : MonoBehaviour
         
         
         // Affichage des dégâts
-        GameObject display = Instantiate(dmgDisplayPreF, transform);
-        DamageDisplay displayComp = display.GetComponent<DamageDisplay>();
-        StartCoroutine(displayComp.DisplayInfo(attackInfo));
+        if (amount > 0)
+        {
+            GameObject display = Instantiate(dmgDisplayPreF, transform);
+            DamageDisplay displayComp = display.GetComponent<DamageDisplay>();
+            StartCoroutine(displayComp.DisplayInfo(attackInfo));
+        }
         
         status.DamageResponse(attackInfo);
         gotAttacked.Invoke();
