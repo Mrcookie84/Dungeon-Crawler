@@ -24,6 +24,8 @@ public class StatusReflectData : StatusData
 
     public override void Hit(GameObject entity, EntityHealth.DamageInfo attackInfo)
     {
+        if (attackInfo.attacker == null) return;
+
         EntityHealth health = entity.GetComponent<EntityHealth>();
 
         health.invicible = false;
