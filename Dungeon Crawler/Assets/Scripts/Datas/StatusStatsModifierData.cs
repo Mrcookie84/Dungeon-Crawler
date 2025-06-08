@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "StatusStatsModifierData", menuName = "ScriptableObject/Status/StatusStatsModifierData")]
 public class StatusStatsModifierData : StatusData
 {
     [Header("Stats modifications")]
