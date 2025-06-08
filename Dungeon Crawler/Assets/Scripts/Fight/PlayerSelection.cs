@@ -12,8 +12,6 @@ public class PlayerSelection : MonoBehaviour
     {
         if (healthComponent.dead) return;
 
-        Debug.Log("Allo");
-
         SpellCaster.ChangeCaster(posComponent);
         CharaPortraitHandler.ChangePortrait(charaPortraitSprite);
     }

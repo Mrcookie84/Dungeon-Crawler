@@ -55,7 +55,7 @@ public class SpellCaster : MonoBehaviour
 
         if (casterGPos != null)
         {
-            triggerPos = EnemyRaycast(false);
+            triggerPos = EnemyRaycast(casterGPos.reverseLook);
         }
 
         UpdateSpell();
@@ -75,7 +75,7 @@ public class SpellCaster : MonoBehaviour
         casterGPos = casterPos;
         //Debug.Log($"{casterGPos.gameObject.name} est sélectionné.");
 
-        triggerPos = EnemyRaycast(false);
+        triggerPos = EnemyRaycast(casterGPos.reverseLook);
         UpdateSpell();
     }
 
@@ -133,9 +133,9 @@ public class SpellCaster : MonoBehaviour
         // Blayage de la grille ennemi depuis l'arrière
         if (reverseRaycast)
         {
-            for (int i = 3; i < 0; i--)
+            for (int i = 2; i >= 0; i--)
             {
-                if (GridManager.EnemyGrid.entityList[3 * casterGPos.gridPos.y + i - 1] != null)
+                if (GridManager.EnemyGrid.entityList[i + 3 * casterGPos.gridPos.y] != null)
                 {
                     return new Vector2Int(i, casterGPos.gridPos.y);
                 }
@@ -296,7 +296,7 @@ public class SpellCaster : MonoBehaviour
     private IEnumerator CastEnemySpellCoroutine(float t)
     {   
         // Récupération des cases et ennemis affectés par le sort
-        List<Vector2Int> hitCellList = GetAllCellHit();
+        List<Vector2Int> hitCellList = GetAllCellHit(casterGPos.reverseLook);
         GameObject[] enemyArray = GridManager.EnemyGrid.GetEntitiesAtMultPos(hitCellList);
 
         // Lancement de toutes le coroutines
@@ -420,7 +420,7 @@ public class SpellCaster : MonoBehaviour
     }
     #endregion
 
-    public static List<Vector2Int> GetAllCellHit()
+    public static List<Vector2Int> GetAllCellHit(bool reverse)
     {
         List<Vector2Int> hitCellList = new List<Vector2Int>();
 
@@ -428,8 +428,12 @@ public class SpellCaster : MonoBehaviour
         for (int i = 0; i < spellEnemyData.hitCellList.Count; i++)
         {
             Vector2Int previousCell = currentCell;
-            
-            currentCell = (Vector2Int)triggerPos + spellEnemyData.hitCellList[i];
+
+            Vector2Int proj = spellEnemyData.hitCellList[i];
+            if (reverse)
+                proj.x *= -1;
+
+            currentCell = (Vector2Int)triggerPos + proj;
             currentCell.y %= 2; // Remettre la coordonnée y dans le cadriage
 
             if (GridManager.EnemyGrid.IsPosInGrid(currentCell))
@@ -566,7 +570,7 @@ public class SpellCaster : MonoBehaviour
 
                     List<CellHighlighter.HighlightInfo> highlightInfo = new List<CellHighlighter.HighlightInfo>();
                     int i = 0;
-                    foreach (var cell in GetAllCellHit())
+                    foreach (var cell in GetAllCellHit(casterGPos.reverseLook))
                     {
                         DamageTypesData.DmgTypes dmgType = spellEnemyData.damageTypesData[i].dmgTypeName[0];
                         displ = spellEnemyData.displacementList[i];

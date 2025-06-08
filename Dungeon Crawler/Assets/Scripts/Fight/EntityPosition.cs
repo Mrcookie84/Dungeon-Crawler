@@ -9,6 +9,8 @@ public class EntityPosition : MonoBehaviour
 
     public UnityEvent isMoving = new UnityEvent();
 
+    [HideInInspector] public bool reverseLook;
+
     public int gridIndex
     {
         get
