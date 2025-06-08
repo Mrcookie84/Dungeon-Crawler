@@ -4907,17 +4907,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37a36baeb5ef59048bf97350291a7186, type: 3}
---- !u!114 &1940389191 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 12445749536396612, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
-  m_PrefabInstance: {fileID: 2143922538}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f5b1e215c8b6b04cbb5153b0f9a3e15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1948579475
 GameObject:
   m_ObjectHideFlags: 0
@@ -5423,7 +5412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 778617206969281089, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 778617206969281089, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -5436,7 +5425,7 @@ PrefabInstance:
     - target: {fileID: 778617206969281089, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1940389191}
+      objectReference: {fileID: 1971535403}
     - target: {fileID: 778617206969281089, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -5451,7 +5440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 778617206969281089, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleVisibility
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 778617206969281089, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -5459,7 +5448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 778617206969281089, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ToggleObject, Assembly-CSharp
+      value: UnityEngine.AudioSource, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 778617206969281089, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
