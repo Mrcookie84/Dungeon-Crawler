@@ -25,8 +25,8 @@ MonoBehaviour:
   reinforceBarrier: 0
   weakenBarrier: 1
   blockedByBarrier: 0
-  statusData: {fileID: 0}
-  statusDuration: 0
+  statusData: {fileID: 11400000, guid: f19281c9efbe7fc49b1ba99d320f11f2, type: 2}
+  statusDuration: 1
   t_fx: 0
   t_damage: 0
   t_disp: 0

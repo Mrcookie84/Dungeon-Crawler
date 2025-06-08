@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridComp: {fileID: -5975568748125914461}
+  bonusStats: {fileID: 8777460682947520719}
   animHandler: {fileID: 8916927351157303100}
   actions: []
   canBreakBarrier: 0
