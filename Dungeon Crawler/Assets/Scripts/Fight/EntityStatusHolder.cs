@@ -26,7 +26,11 @@ public class EntityStatusHolder : MonoBehaviour
         {
             if (statusInfo.status != status) continue;
 
-            statusInfo.duration = Math.Max(duration, statusInfo.duration);
+            if (status.onOff)
+                RemoveStatus(status);
+            else
+                statusInfo.duration = Math.Max(duration, statusInfo.duration);
+
             return;
         }
 
@@ -87,8 +91,8 @@ public class EntityStatusHolder : MonoBehaviour
     [Serializable]
     public class StatusInfo
     {
-        public StatusData status { get; set; }
-        public int duration { get; set; }
+        [SerializeField] public StatusData status { get; set; }
+        [SerializeField] public int duration { get; set; }
 
         public StatusInfo(StatusData newStatus, int newDuration)
         {
