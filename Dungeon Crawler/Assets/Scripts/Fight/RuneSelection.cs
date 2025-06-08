@@ -131,14 +131,16 @@ public class RuneSelection : MonoBehaviour
     {
         maxMana = Instance.defaultMana;
         maxStability = Instance.defaultStability;
-        /*
-        if (Player1Inventory.PInventoryINSTANCE != null || Player2Inventory.PInventoryINSTANCE != null)
+
+        maxMana += PlayerInventory.ManaBoost;
+        maxStability += PlayerInventory.StabilityBoost;
+
+        foreach (var rune in Instance.runeSelectors)
         {
-            Debug.Log("feur");
-            maxMana += Player1Inventory.ManaBoost + Player2Inventory.ManaBoost;
-            maxStability += Player1Inventory.StabilityBoost + Player2Inventory.StabilityBoost;
-        }*/
-            
+            rune.maxRunes = rune.defaultRunes + PlayerInventory.GetBonusRunes(rune.Id);
+            rune.InitializeRune();
+        }
+        
 
         // Initialisation du mana
         currentMana = maxMana;

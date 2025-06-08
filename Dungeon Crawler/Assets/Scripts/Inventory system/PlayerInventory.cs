@@ -121,4 +121,19 @@ public class PlayerInventory : MonoBehaviour
         
         return boost;
     }
+
+    public static int GetBonusRunes(int runeIndex)
+    {
+        if (Instance == null) return 0;
+
+        int addedRunes = 0;
+
+        foreach (var item in Instance.items)
+        {
+            if (item.runes.ContainsKey((ItemData.RuneType)runeIndex))
+                addedRunes += item.runes[(ItemData.RuneType)runeIndex];
+        }
+
+        return addedRunes;
+    }
 }

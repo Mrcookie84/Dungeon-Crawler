@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static EntityStatusHolder;
 
 public class EntityStatusHolder : MonoBehaviour
 {
@@ -22,36 +23,42 @@ public class EntityStatusHolder : MonoBehaviour
 
     public void AddStatus(StatusData status, int duration, GameObject source)
     {
-        foreach (var statusInfo in statusList)
+        for (int i = 0; i < statusList.Count; i++)
         {
-            if (statusInfo.status != status) continue;
+            if (statusList[i].status != status) continue;
 
             if (status.onOff)
                 RemoveStatus(status);
             else
-                statusInfo.duration = Math.Max(duration, statusInfo.duration);
+                statusList[i].SetDuration(Math.Max(duration, statusList[i].duration));
 
             return;
         }
 
-        status.Apply(gameObject, source);
         statusList.Add(new StatusInfo(status,duration));
+        status.Apply(gameObject, source);
 
         updateGrid.gridUpdate.Invoke();
     }
 
     public void RemoveStatus(StatusData status, bool applyFinishedEffect = true)
     {
+        List<StatusInfo> newStatusList = new List<StatusInfo>();
+
         for (int i = 0; i < statusList.Count; i++)
         {
-            if (statusList[i].status != status) continue;
+            if (statusList[i].status != status)
+            {
+                newStatusList.Add(statusList[i]);
+                continue;
+            }
 
+            Debug.Log(statusList[i].status.name);
             if (applyFinishedEffect) status.Finish(gameObject);
-            statusList.RemoveAt(i);
-
-            updateGrid.gridUpdate.Invoke();
-            return;
         }
+
+        statusList = newStatusList;
+        updateGrid.gridUpdate.Invoke();
     }
 
     public void UpdateStatus()
@@ -67,8 +74,8 @@ public class EntityStatusHolder : MonoBehaviour
             if (statusInfo.duration <= 0)
             {
                 statusInfo.status.Finish(gameObject);
-                statusList.RemoveAt(i);
-                return;
+                RemoveStatus(statusInfo.status);
+                continue;
             }
 
             statusList[i] = statusInfo;
@@ -88,8 +95,13 @@ public class EntityStatusHolder : MonoBehaviour
         }
     }
 
+    public void ForcedUpdate()
+    {
+        updateGrid.gridUpdate.Invoke();
+    }
+
     [Serializable]
-    public class StatusInfo
+    public struct StatusInfo
     {
         [SerializeField] public StatusData status { get; set; }
         [SerializeField] public int duration { get; set; }
@@ -97,6 +109,11 @@ public class EntityStatusHolder : MonoBehaviour
         public StatusInfo(StatusData newStatus, int newDuration)
         {
             this.status = newStatus;
+            this.duration = newDuration;
+        }
+
+        public void SetDuration(int newDuration)
+        {
             this.duration = newDuration;
         }
     }

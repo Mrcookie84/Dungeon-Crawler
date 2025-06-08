@@ -9,7 +9,8 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public RuneData data;
     [SerializeField] private Button runeButton;
     public int maxSelected;
-    public int maxRunes;
+    public int defaultRunes;
+    [HideInInspector] public int maxRunes;
 
     [Header("UI")]
     [SerializeField] private TMPro.TextMeshProUGUI linkedText;
@@ -48,6 +49,18 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private void Awake()
     {
+        InitializeRune();
+    }
+
+    private void Start()
+    {
+        UpdateUI();
+    }
+
+    public void InitializeRune()
+    {
+        _coolDownPool = new SortedDictionary<int, int>();
+
         for (int i = 0; i < CoolDown + 1; i++)
         {
             _coolDownPool.Add(i, 0);
@@ -56,11 +69,6 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         if (cooldownSlider != null)
             cooldownSlider.maxValue = data.cooldown;
-    }
-
-    private void Start()
-    {
-        UpdateUI();
     }
 
     public void UpdateRuneSelection()
