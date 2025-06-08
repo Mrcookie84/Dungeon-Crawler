@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour
     [Header("Actions")]
     [SerializeField] private List<EnemyActionData> actions;
     [SerializeField] private bool canBreakBarrier;
+    [HideInInspector] public bool lobotomized;
 
     [Header("Position weights")]
     [SerializeField] private int[] columnW = new int[3];
@@ -112,7 +113,11 @@ public class EnemyAI : MonoBehaviour
 
         // Influence de la volonté de déplacement
         Vector2Int moveKey;
-        if (move.Item2 >= scoreDif)
+        if (lobotomized)
+        {
+            moveKey = Vector2Int.zero;
+        }
+        else if (move.Item2 >= scoreDif)
         {
             moveKey = move.Item1;
         }
