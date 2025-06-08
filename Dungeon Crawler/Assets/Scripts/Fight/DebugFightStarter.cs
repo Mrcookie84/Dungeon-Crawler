@@ -21,12 +21,13 @@ public class DebugFightStarter : MonoBehaviour
         if (startFightOnLoad)
         {
             eventSystem.SetActive(true);
-            
+
             // Initialisation du combat
             PositionManager.posData = posData;
             PositionManager.FillGrids();
             RuneSelection.InitializeStats();
             EnemyAIControler.UpdateAllMasks();
+            TurnManager.InitializeTurn();
 
         }
     }

@@ -22,6 +22,9 @@ public class SpellCaster : MonoBehaviour
     [SerializeField] private GameObject UICastButton;
     [SerializeField] private TMPro.TextMeshProUGUI UISpellDesc;
 
+    [Header("Sound")]
+    [SerializeField] private AudioSource spellSE;
+
     [Space(25)]
 
     public UnityEvent spellCasted = new UnityEvent();
@@ -172,38 +175,12 @@ public class SpellCaster : MonoBehaviour
         return playerList;
     }
 
-    private static void CastPlayerSpell()
-    {
-        if (spellPlayerData.multipleTargets)
-        {
-            List<EntityPosition> affectedPlayers = GetAllPlayersOnRow();
-
-            foreach (EntityPosition player in affectedPlayers)
-            {
-                if (spellPlayerData.switchWorld)
-                {
-                    player.ChangePosition(new Vector2Int(player.gridPos.x, (player.gridPos.y + 1) % 2));
-                }
-            }
-        }
-
-        else
-        {
-            if (spellPlayerData.switchWorld)
-            {
-                casterGPos.ChangePosition(new Vector2Int(casterGPos.gridPos.x, (casterGPos.gridPos.y + 1) % 2));
-            }
-        }
-
-        EnemyAIControler.UpdatePlayerMask();
-        EnableButtons(true);
-        ResetSpell();
-    }
-
     public void CastSpell()
     {
         EntityFightAnimation casterAnim = casterGPos.gameObject.GetComponent<EntityFightAnimation>();
         casterAnim.ChangeState(EntityFightAnimation.State.Attack);
+
+        spellSE.Play();
 
         spellCasted.Invoke();
 

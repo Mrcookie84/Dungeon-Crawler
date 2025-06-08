@@ -6,17 +6,19 @@ using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
+    public static TurnManager Instance;
+
     [SerializeField] private SpellCaster spellCaster;
 
     [SerializeField] private List<TurnSubscriber> turnList = new List<TurnSubscriber>();
     private Stack<TurnSubscriber> turnStack = new Stack<TurnSubscriber>();
 
-    private void Start()
+    public static void InitializeTurn()
     {
         // Ajout du joueur
         TurnSubscriber playerTurn = GameObject.FindGameObjectWithTag("PlayerFight").GetComponent<TurnSubscriber>();
-        playerTurn.InitializeTurn(this);
-        turnList.Add(playerTurn);
+        playerTurn.InitializeTurn(Instance);
+        Instance.turnList.Add(playerTurn);
 
         // Ajout des tanks
         TurnSubscriber tankIndividualTurn;
@@ -24,8 +26,8 @@ public class TurnManager : MonoBehaviour
         for (int i = 0; i < tanksTurn.Length; i++)
         {
             tankIndividualTurn = tanksTurn[i].GetComponent<TurnSubscriber>();
-            tankIndividualTurn.InitializeTurn(this);    
-            turnList.Add(tankIndividualTurn);
+            tankIndividualTurn.InitializeTurn(Instance);
+            Instance.turnList.Add(tankIndividualTurn);
         }
         // Ajout des attaquants
         TurnSubscriber fighterIndividualTurn;
@@ -33,8 +35,8 @@ public class TurnManager : MonoBehaviour
         for (int i = 0; i < fightersTurn.Length; i++)
         {
             fighterIndividualTurn = fightersTurn[i].GetComponent<TurnSubscriber>();
-            fighterIndividualTurn.InitializeTurn(this);
-            turnList.Add(fighterIndividualTurn);
+            fighterIndividualTurn.InitializeTurn(Instance);
+            Instance.turnList.Add(fighterIndividualTurn);
         }
         // Ajout des supports
         TurnSubscriber supportIndividualTurn;
@@ -42,11 +44,16 @@ public class TurnManager : MonoBehaviour
         for (int i = 0; i < supportsTurn.Length; i++)
         {
             supportIndividualTurn = supportsTurn[i].GetComponent<TurnSubscriber>();
-            supportIndividualTurn.InitializeTurn(this);
-            turnList.Add(supportIndividualTurn);
+            supportIndividualTurn.InitializeTurn(Instance);
+            Instance.turnList.Add(supportIndividualTurn);
         }
 
-        ResetGlobalTurn();
+        Instance.ResetGlobalTurn();
+    }
+
+    private void Awake()
+    {
+        Instance = this;
     }
 
     private void StartTurn()
@@ -106,6 +113,7 @@ public class TurnManager : MonoBehaviour
         if (grid.IsEmpty)
         {
             PositionManager.EmptyGrids();
+            EntityHealth.SaveHealthValue();
             SceneManager.GoToRP();
         }
     }

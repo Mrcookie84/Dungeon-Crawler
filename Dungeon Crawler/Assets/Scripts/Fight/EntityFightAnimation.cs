@@ -37,11 +37,6 @@ public class EntityFightAnimation : MonoBehaviour
             
             case State.Dead:
                 animator.SetBool("isDead", true);
-                animator.SetBool("isIdle", false);
-                break;
-            
-            default:
-                animator.SetBool("isIdle", true);
                 break;
         }
     }

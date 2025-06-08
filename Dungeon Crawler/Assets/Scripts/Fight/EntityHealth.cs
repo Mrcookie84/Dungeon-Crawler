@@ -1,13 +1,16 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class EntityHealth : MonoBehaviour
 {
+    public static List<EntityHealth> PlayersHealthComps = new List<EntityHealth>();
+
     [SerializeField] private HealthData data;
     [SerializeField] private bool isPlayer;
-    [HideInInspector] public float maxHealth;
-    [HideInInspector] public float currentHealth;
+    [HideInInspector] public int maxHealth;
+    [HideInInspector] public int currentHealth;
     [SerializeField] private string healthBarGroupTag;
     private HealthBarGroupManager healthBarGroup;
 
@@ -27,6 +30,10 @@ public class EntityHealth : MonoBehaviour
     [Header("Display")]
     [SerializeField] private GameObject dmgDisplayPreF;
 
+    [Header("Sound")]
+    [SerializeField] private AudioSource hurtSE;
+    [SerializeField] private AudioSource deathSE;
+
     [HideInInspector] public bool invicible = false;
 
     public static void InitializeCurrentHealth()
@@ -40,9 +47,22 @@ public class EntityHealth : MonoBehaviour
         HealthData frogHealth = Resources.Load<HealthData>("Health/FrogHealthData");
         frogHealth.currentHealth = frogHealth.defaultHealth;
     }
+
+    public static void SaveHealthValue()
+    {
+        foreach (EntityHealth entity in PlayersHealthComps)
+        {
+            if (entity.currentHealth >= 1)
+                entity.data.currentHealth = entity.currentHealth;
+        }
+
+        PlayersHealthComps.Clear();
+    }
     
     void Awake()
     {
+        if (data.keepHealth) PlayersHealthComps.Add(this);
+
         maxHealth = data.defaultHealth;
         if (data.isLinkedToInv)
             maxHealth += PlayerInventory.HealthBoost;
@@ -73,7 +93,8 @@ public class EntityHealth : MonoBehaviour
         {
             attackInfo = new DamageInfo(source, 10, DamageTypesData.DmgTypes.Reality);
         }
-        
+
+        #region Damage
         // Application des resistances
         int coef = 100;
         
@@ -104,8 +125,10 @@ public class EntityHealth : MonoBehaviour
             DamageDisplay displayComp = display.GetComponent<DamageDisplay>();
             StartCoroutine(displayComp.DisplayInfo(attackInfo));
         }
-        
+        #endregion
+
         status.DamageResponse(attackInfo);
+        animHandler.ChangeState(EntityFightAnimation.State.Hurt);
         gotAttacked.Invoke();
 
         currentHealth -= amount;
@@ -115,6 +138,11 @@ public class EntityHealth : MonoBehaviour
         if (CheckDeath())
         {
             dead = true;
+
+            GridManager.PlayerGrid.gridUpdate.Invoke();
+            GridManager.EnemyGrid.gridUpdate.Invoke();
+
+            deathSE.Play();
             animHandler.ChangeState(EntityFightAnimation.State.Dead);
             isDying.Invoke();
 
@@ -124,6 +152,8 @@ public class EntityHealth : MonoBehaviour
                 CharaPortraitHandler.ResetPortait();
             }
 
+            if (data.keepHealth) data.currentHealth = 1;
+
             TurnManager.TestEndFight(posComp.LinkedGrid);
 
             // A changer pour laisser l'animation de mort se jouer
@@ -132,8 +162,9 @@ public class EntityHealth : MonoBehaviour
             return;
         }
         #endregion
-        
-        animHandler.ChangeState(EntityFightAnimation.State.Hurt);
+
+
+        hurtSE.Play();
         tookDamage.Invoke();
     }
 

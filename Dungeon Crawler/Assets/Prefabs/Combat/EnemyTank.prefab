@@ -40,10 +40,18 @@ PrefabInstance:
       propertyPath: probActions.Array.data[2]
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 922953007132723990, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 55d967c2f2ffedd48841a4b168f4df2e, type: 3}
     - target: {fileID: 1119370436856598345, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 272303c722bead24a9f7b00ec08e6486, type: 2}
+    - target: {fileID: 1254460282209540803, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cc7e0d5fee244074199a6ad4c8fb5032, type: 3}
     - target: {fileID: 2108263569466956935, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -164,6 +172,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Tank
       objectReference: {fileID: 0}
+    - target: {fileID: 7124059440393292106, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a38c4e1143414a64da94ca4b704431a4, type: 3}
     - target: {fileID: 7613900510651527408, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
