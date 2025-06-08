@@ -20,8 +20,12 @@ public class CombatTrigger : MonoBehaviour
 
     IEnumerator EnterCombatRoutine()
     {
+        // Initialisation du combat
         PositionManager.posData = posData;
         PositionManager.FillGrids();
+        RuneSelection.InitializeStats();
+        EnemyAIControler.UpdateAllMasks();
+
         SceneManager.GoToFight();
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
