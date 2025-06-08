@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5135af670d5f943a577677f0afe331, type: 3}
   m_Name: SpidaureHealthData
   m_EditorClassIdentifier: 
-  defaultHealth: 160
+  defaultHealth: 140
   currentHealth: 0
   isLinkedToInv: 0
   keepHealth: 0

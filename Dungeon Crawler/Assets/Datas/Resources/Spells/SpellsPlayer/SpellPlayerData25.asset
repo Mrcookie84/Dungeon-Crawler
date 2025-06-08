@@ -16,7 +16,7 @@ MonoBehaviour:
   multipleTargets: 0
   type: 3
   appliedStatus: {fileID: 11400000, guid: 4c133c9365231e1448c1227e70496a6d, type: 2}
-  statusDuration: 0
+  statusDuration: 3
   healAmount: 0
   t_fx: 0
   t_effect: 0

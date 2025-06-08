@@ -2110,6 +2110,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Combats 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6740154541914249631, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: maxRunes
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7180156485744183537, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: linkedGrid
       value: 
@@ -2194,6 +2198,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489082427345356588, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: maxRunes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489082427345356588, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: maxSelected
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7629535468040761746, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2250,6 +2262,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7922306007967684706, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: maxRunes
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8034945623173571460, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2257,6 +2273,10 @@ PrefabInstance:
     - target: {fileID: 8034945623173571460, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8352021543158789768, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: maxRunes
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8952907026041724764, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
