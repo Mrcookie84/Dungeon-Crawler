@@ -1160,9 +1160,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3234014861262318358}
-        m_TargetAssemblyTypeName: RuneSelection, Assembly-CSharp
-        m_MethodName: ResetSelection
+      - m_Target: {fileID: 1023775011508284725}
+        m_TargetAssemblyTypeName: SpellCaster, Assembly-CSharp
+        m_MethodName: ResetSpell
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
