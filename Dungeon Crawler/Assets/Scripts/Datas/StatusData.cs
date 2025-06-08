@@ -3,6 +3,7 @@ using UnityEngine;
 public abstract class StatusData : ScriptableObject
 {
     public bool permanent;
+    public bool onOff;
     
     [Header("UI")]
     public Sprite icon;

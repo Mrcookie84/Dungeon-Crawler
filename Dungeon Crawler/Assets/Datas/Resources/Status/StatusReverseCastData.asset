@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: StatusReverseCastData
   m_EditorClassIdentifier: 
   permanent: 1
+  onOff: 1
   icon: {fileID: 21300000, guid: 893f7191b51cad149b876ad4d0f5f432, type: 3}
