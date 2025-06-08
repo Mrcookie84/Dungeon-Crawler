@@ -24,9 +24,11 @@ public class StatusStatsModifierData : StatusData
             if (posComp.IsWeak)
             {
                 EntityStatusHolder statusComp = entity.GetComponent<EntityStatusHolder>();
-                statusComp.RemoveStatus(this, false);
 
                 statusComp.AddStatus(altStatus, altDuration, source);
+                statusComp.RemoveStatus(this, false);
+
+                statusComp.ForcedUpdate();
 
                 return;
             }
