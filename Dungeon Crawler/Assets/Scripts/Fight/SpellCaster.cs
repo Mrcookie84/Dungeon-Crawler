@@ -381,6 +381,10 @@ public class SpellCaster : MonoBehaviour
                     int damage = damageData.dmgValues[j];
                     int coef = 100 + PlayerInventory.GetDmgBoost(damageData.dmgTypeName[j]);
 
+                    EntityStatsModifier bonusStats = casterGPos.GetComponent<EntityStatsModifier>();
+                    coef += bonusStats.generalAttackBoost;
+
+                    coef = Mathf.Max(0, coef);
                     damage = (int)(damage * (coef / 100f));
                     
                     // Modification de la vie
