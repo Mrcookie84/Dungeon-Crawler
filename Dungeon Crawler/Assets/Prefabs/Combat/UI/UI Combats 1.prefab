@@ -224,7 +224,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 2c796d40a6efb8b48af9dc6b7b0cd7f0, type: 2}
   runeButton: {fileID: 9110797328847331181}
   maxSelected: 1
-  maxRunes: 3
+  maxRunes: 0
   linkedText: {fileID: 4738716088090071027}
   cooldownSlider: {fileID: 0}
   cooldownFill: {fileID: 0}
@@ -457,7 +457,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 092ae61ac451b1b43824abb777695112, type: 2}
   runeButton: {fileID: 5912614853207575226}
   maxSelected: 1
-  maxRunes: 3
+  maxRunes: 0
   linkedText: {fileID: 451548366185197067}
   cooldownSlider: {fileID: 0}
   cooldownFill: {fileID: 0}
@@ -1687,7 +1687,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 9abc87c9058192844afecd4de17a7971, type: 2}
   runeButton: {fileID: 9180648685562399522}
   maxSelected: 1
-  maxRunes: 3
+  maxRunes: 1
   linkedText: {fileID: 3322078013207968210}
   cooldownSlider: {fileID: 0}
   cooldownFill: {fileID: 0}
@@ -2521,7 +2521,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 7989fcc4b0fb8104e85ae8458fe1e64f, type: 2}
   runeButton: {fileID: 7883281914364741433}
   maxSelected: 2
-  maxRunes: 3
+  maxRunes: 1
   linkedText: {fileID: 7591819713909752006}
   cooldownSlider: {fileID: 0}
   cooldownFill: {fileID: 0}
@@ -2876,7 +2876,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 87e24761a8459014a9d8ee8bf230f1bf, type: 2}
   runeButton: {fileID: 171841632085479412}
   maxSelected: 2
-  maxRunes: 3
+  maxRunes: 2
   linkedText: {fileID: 4740646388459938606}
   cooldownSlider: {fileID: 0}
   cooldownFill: {fileID: 0}
@@ -4717,8 +4717,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 7706509014c18454a9a819205acae696, type: 2}
   runeButton: {fileID: 813649762748423210}
-  maxSelected: 1
-  maxRunes: 3
+  maxSelected: 2
+  maxRunes: 1
   linkedText: {fileID: 748924909700743542}
   cooldownSlider: {fileID: 0}
   cooldownFill: {fileID: 0}
