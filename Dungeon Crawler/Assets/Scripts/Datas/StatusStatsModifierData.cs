@@ -18,7 +18,7 @@ public class StatusStatsModifierData : StatusData
     {
         base.Apply(entity, source);
 
-        if (!hasAlt)
+        if (hasAlt)
         {
             EntityPosition posComp = entity.GetComponent<EntityPosition>();
             if (posComp.IsWeak)
