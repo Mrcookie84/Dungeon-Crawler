@@ -4747,7 +4747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8b0bd239d193f44a57d8f24733363d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startFightOnLoad: 1
+  startFightOnLoad: 0
   posData: {fileID: 11400000, guid: 4f69bd707172b0b49a9f676d4d82abea, type: 2}
   eventSystem: {fileID: 2041671509}
 --- !u!114 &1769615212
