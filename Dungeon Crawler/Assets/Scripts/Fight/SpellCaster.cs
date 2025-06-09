@@ -292,22 +292,14 @@ public class SpellCaster : MonoBehaviour
     {
         yield return new WaitForSeconds(t);
 
-        /*
         for (int i = 0; i < affectedCells.Count; i++)
         {
             Vector2Int cell = affectedCells[i];
-            Transform cellTr = enemyGrid.transform.GetChild(cell.x + 3 * cell.y);
+            Transform cellTr = GridManager.EnemyGrid.transform.GetChild(cell.x + 3 * cell.y);
 
-            switch (spellEnemyData.damageTypesData[i])
-            {
-                default:
-                    ParticleSystem fxHolder = cellTr.GetChild(cellTr.childCount-1).GetComponent<ParticleSystem>();
-                    fxHolder.Play();
-                    break;
-            }
-        }*/
-        
-        // Instantier les fx
+            if (spellEnemyData.fxCell != null)
+                Instantiate(spellEnemyData.fxCell, cellTr);
+        }
     }
 
     private IEnumerator DisplacementCoroutine(float t, GameObject[] affectedEnemies)
