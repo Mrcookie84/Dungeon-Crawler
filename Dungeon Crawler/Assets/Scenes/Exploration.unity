@@ -3756,6 +3756,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 6973546961957764226, guid: db46c773767c65a43bac195f5af0e047, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 7191027064731994193, guid: db46c773767c65a43bac195f5af0e047, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -3798,7 +3802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8636399758578467320, guid: db46c773767c65a43bac195f5af0e047, type: 3}
       propertyPath: m_SortingOrder
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
