@@ -114,7 +114,11 @@ public class TurnManager : MonoBehaviour
         {
             PositionManager.EmptyGrids();
             EntityHealth.SaveHealthValue();
-            SceneManager.GoToRP();
+
+            if (grid == GridManager.EnemyGrid)
+                SceneManager.GoToRP();
+            else if (grid == GridManager.PlayerGrid)
+                Application.Quit();
         }
     }
 }
