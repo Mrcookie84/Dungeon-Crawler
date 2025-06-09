@@ -1876,7 +1876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 588565201688244566, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.89
+      value: 0.8899994
       objectReference: {fileID: 0}
     - target: {fileID: 698466264310245397, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5199,7 +5199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8b0bd239d193f44a57d8f24733363d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startFightOnLoad: 1
+  startFightOnLoad: 0
   posData: {fileID: 11400000, guid: 4f69bd707172b0b49a9f676d4d82abea, type: 2}
   eventSystem: {fileID: 2041671509}
 --- !u!114 &1769615212
