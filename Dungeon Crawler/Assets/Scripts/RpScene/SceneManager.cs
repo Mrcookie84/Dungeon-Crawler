@@ -9,18 +9,18 @@ using UnityEngine.Serialization;
 public class SceneManager : MonoBehaviour
 {
     public GameObject MainMenuScene;
-    public static GameObject StartingScene;
+    public static GameObject SceneRp;
     public static GameObject SceneFight;
+    public static GameObject EndingScene;
     
     public static SceneManager SceneManagerInstance;
-    
-    public GameObject MainMenuCamera;
     
     public void Awake()
     {
         
         UnityEngine.SceneManagement.SceneManager.LoadScene(1, LoadSceneMode.Additive);
         UnityEngine.SceneManagement.SceneManager.LoadScene(2, LoadSceneMode.Additive);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(3, LoadSceneMode.Additive);
         
         if (SceneManagerInstance != null)
         {
@@ -31,36 +31,50 @@ public class SceneManager : MonoBehaviour
             SceneManagerInstance = this;
             DontDestroyOnLoad(this.transform.root.gameObject);
         }
+        
     }
 
     public void Start()
     {
         StartTheGame();
     }
+
+    public void Reload()
+    {
+        
+    }
     
     private void StartTheGame()
     {
-        StartingScene.SetActive(false);
+        MainMenuScene.SetActive(true);
+        SceneRp.SetActive(false);
         SceneFight.SetActive(false);
+        EndingScene.SetActive(false);
     }
     
     public void StartGame()
     {
-        MainMenuCamera.SetActive(false);
         MainMenuScene.SetActive(false);
         GoToRP();
     }
     
     public static void GoToRP()
     {
-        StartingScene.SetActive(true);
+        SceneRp.SetActive(true);
         SceneFight.SetActive(false);
     }
     
     public static void GoToFight()
     {
         SceneFight.SetActive(true);
-        StartingScene.SetActive(false);
+        SceneRp.SetActive(false);
+    }
+
+    public static void GoToEnding()
+    {
+        SceneRp.SetActive(false);
+        SceneFight.SetActive(false);
+        EndingScene.SetActive(true);
     }
 
     public void QuitGame()

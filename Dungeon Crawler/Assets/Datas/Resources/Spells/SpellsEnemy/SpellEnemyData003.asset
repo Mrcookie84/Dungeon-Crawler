@@ -33,3 +33,5 @@ MonoBehaviour:
   t_barrier: 0
   desc: "- Touche 2 ennemi<br> - Renforce la barri\xE8re aux Emplacement touch\xE9s<br>
     - Inflige d\u2019importants d\xE9g\xE2ts faiblesse dimensionnelle"
+  fxCell: {fileID: 1932580158577866800, guid: 0d7067080b8d2804b9e22684b7dc8dd9, type: 3}
+  fxCast: {fileID: 3967150126871494226, guid: 490e438af24be4a4b803d51e0581ed0e, type: 3}

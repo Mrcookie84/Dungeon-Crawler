@@ -30,3 +30,5 @@ MonoBehaviour:
   t_barrier: 0
   desc: "- Touche 1 ennemi<br> - Inflige de tr\xE8s important d\xE9g\xE2ts d\u2019\xE9crasement<br>
     - Applique L\u2019Affliction Immobilisation (2 tours)"
+  fxCell: {fileID: 3746992177775028226, guid: 53ea3f51254a86542abf07c82fd9722d, type: 3}
+  fxCast: {fileID: 576792155977699835, guid: c9449b0f86e149943b624413bea7935d, type: 3}

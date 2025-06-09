@@ -11,6 +11,8 @@ public class EntityPosition : MonoBehaviour
 
     [HideInInspector] public bool reverseLook;
 
+    public Transform castPoint;
+
     [Header("Dimensional affinity")]
     [Range(0, 1)] public int preferedWorld;
 

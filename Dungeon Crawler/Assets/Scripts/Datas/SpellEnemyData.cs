@@ -29,6 +29,10 @@ public class SpellEnemyData : ScriptableObject
     [Header("Description")]
     public string desc;
 
+    [Header("FX")]
+    public GameObject fxCell;
+    public GameObject fxCast;
+
     public float SpellDuration
     {
         get { return Mathf.Max(t_barrier, t_damage, t_disp, t_fx); }
