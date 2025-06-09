@@ -5,7 +5,7 @@ using UnityEngine;
 public class EndingScreen : MonoBehaviour
 {
 
-    public void OnEndingPancarteJaiJureeCaVaPlus()
+    public void OnClickEnding()
     {
         SceneManager.GoToEnding();
     }

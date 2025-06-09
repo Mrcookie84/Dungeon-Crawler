@@ -5,9 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class boutonUI : MonoBehaviour
 {
+    
+    //
+    // Script not continuated
+    //
+    /*
     [SerializeField] private string newGameLevel = "Level1";
     public void NewGameButton()
     {
         SceneManager.LoadScene(newGameLevel);
     }
+    */
 }
