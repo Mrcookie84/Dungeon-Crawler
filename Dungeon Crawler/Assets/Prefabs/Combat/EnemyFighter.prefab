@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5975568748125914461, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: preferedWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5975568748125914461, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: isMoving.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
