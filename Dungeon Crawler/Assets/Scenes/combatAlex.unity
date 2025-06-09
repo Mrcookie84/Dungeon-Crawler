@@ -2078,6 +2078,10 @@ PrefabInstance:
       propertyPath: maxRunes
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5595574941974803204, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: defaultRunes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5601103007734961448, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2157,6 +2161,10 @@ PrefabInstance:
     - target: {fileID: 6740154541914249631, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: maxRunes
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962752508504800797, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -6.1
       objectReference: {fileID: 0}
     - target: {fileID: 7180156485744183537, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: linkedGrid
@@ -2329,6 +2337,10 @@ PrefabInstance:
     - target: {fileID: 8420815148125876806, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: maxRunes
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8420815148125876806, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: defaultRunes
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8952907026041724764, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4820,7 +4832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8b0bd239d193f44a57d8f24733363d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startFightOnLoad: 1
+  startFightOnLoad: 0
   posData: {fileID: 11400000, guid: 4f69bd707172b0b49a9f676d4d82abea, type: 2}
   eventSystem: {fileID: 2041671509}
 --- !u!114 &1769615212
