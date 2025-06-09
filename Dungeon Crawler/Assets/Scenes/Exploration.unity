@@ -1019,6 +1019,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1997448452414165909, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
+      propertyPath: m_text
+      value: THE ENDE ?
+      objectReference: {fileID: 0}
     - target: {fileID: 2179709182709392842, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
       propertyPath: m_SortingOrder
       value: -1
@@ -1034,6 +1038,26 @@ PrefabInstance:
     - target: {fileID: 4567446184695811947, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
       propertyPath: m_Name
       value: Salle04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647487462906653673, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647487462906653673, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1588906977}
+    - target: {fileID: 4647487462906653673, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647487462906653673, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Butonskipmanager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647487462906653673, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Ecran de fin
       objectReference: {fileID: 0}
     - target: {fileID: 4700206861103217279, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1082,10 +1106,14 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8164075948935312030, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
+    - {fileID: 2152929313079073425, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1830860605071134880, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2099573811}
+    - targetCorrespondingSourceObject: {fileID: 863595493395065019, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1588906978}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
 --- !u!1 &246467296 stripped
@@ -1101,6 +1129,11 @@ Transform:
 --- !u!4 &246467298 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1830860605071134880, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
+  m_PrefabInstance: {fileID: 246467295}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &246467299 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 863595493395065019, guid: 3c05101848058f84a82928b6c907f1ed, type: 3}
   m_PrefabInstance: {fileID: 246467295}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &275751874 stripped
@@ -2583,8 +2616,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 51.841, y: 32.2}
-  m_SizeDelta: {x: 165.09, y: 37.68}
+  m_AnchoredPosition: {x: 59.2, y: 32.87}
+  m_SizeDelta: {x: 179.82, y: 39.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &798642244
 MonoBehaviour:
@@ -5821,6 +5854,50 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &1588906976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1588906978}
+  - component: {fileID: 1588906977}
+  m_Layer: 0
+  m_Name: bouton de fin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1588906977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588906976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63598b55ef7763147a97ea6851c235cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1588906978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588906976}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 246467299}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1625263555
 GameObject:
   m_ObjectHideFlags: 0
