@@ -330,16 +330,27 @@ public class SpellCaster : MonoBehaviour
             if (affectedEnemies[i] == null) continue;
 
             EntityPosition enemyPos = affectedEnemies[i].GetComponent<EntityPosition>();
-            Vector2Int targetPos = enemyPos.gridPos + spellEnemyData.displacementList[i];
+            Vector2Int displ = spellEnemyData.displacementList[i];
+            if (casterGPos.reverseLook)
+                displ.x *= -1;
+
+            Vector2Int targetPos = enemyPos.gridPos + displ;
             targetPos.y = Mathf.Abs(targetPos.y) % 2;
 
-            bool tryingToCross = spellEnemyData.displacementList[i].y != 0;
+            bool tryingToCross = displ.y != 0;
             bool barrierBroken = BarrierGrid.IsBarrierBroken(enemyPos.gridPos.x);
             bool targetInGrid = GridManager.EnemyGrid.IsPosInGrid(targetPos);
 
-            if ((!tryingToCross || barrierBroken) && targetInGrid)
+            if (targetInGrid)
             {
-                enemyPos.ChangePosition(targetPos);
+                if ((!tryingToCross || barrierBroken))
+                {
+                    enemyPos.ChangePosition(targetPos);
+                }
+            }
+            else
+            {
+                break;
             }
         }
 
