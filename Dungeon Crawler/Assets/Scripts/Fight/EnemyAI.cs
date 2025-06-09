@@ -156,10 +156,9 @@ public class EnemyAI : MonoBehaviour
         // Échanger avec la potentielle entité sur la destination
         if (EnemyAIControler.IsEnemyOnCell(newPos))
         {
-            GameObject entity = EnemyAIControler.GetEnemyOnCell(newPos);
+            GameObject entity = GridManager.EnemyGrid.GetEntityAtPos(newPos);
 
-            if (entity != null)
-                entity.GetComponent<EntityPosition>().ChangePosition(oldPos);
+            entity.GetComponent<EntityPosition>().ChangePosition(oldPos);
         }
 
         GridManager.EnemyGrid.UpdateEntitiesIndex();

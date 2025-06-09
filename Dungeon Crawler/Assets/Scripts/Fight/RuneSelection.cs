@@ -165,6 +165,11 @@ public class RuneSelection : MonoBehaviour
         
         // Plaçage des graduations
         // Mana
+        foreach (Transform grad in Instance.manaGrad.transform)
+        {
+            Destroy(grad.gameObject);
+        }
+
         for (int i = 0; i < maxMana - 1; i++)
         {
             Instantiate(Instance.manaGrad, Instance.manaGraduationGroup.transform);
@@ -176,6 +181,11 @@ public class RuneSelection : MonoBehaviour
         Instance.manaGraduationGroup.spacing = manaSpacing;
 
         // Stability
+        foreach (Transform grad in Instance.stabilityGrad.transform)
+        {
+            Destroy(grad.gameObject);
+        }
+
         for (int i = 0; i < maxStability - 1; i++)
         {
             Instantiate(Instance.stabilityGrad, Instance.stabilityGraduationGroup.transform);
