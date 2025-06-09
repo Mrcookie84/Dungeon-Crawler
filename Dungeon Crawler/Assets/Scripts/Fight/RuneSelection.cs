@@ -280,16 +280,20 @@ public class RuneSelection : MonoBehaviour
         InterStability += rune.manaCost;
     }
     
-    public static string GetRuneCombinationData()
+    public static string GetRuneCombinationData(Rune projectedRune = null)
     {   
         string dataPath = $"";
         foreach (Rune rune in Instance.runeSelectors)
         {
             if (rune == null) continue;
+
             for (int i = 0; i < selectedRunes[rune]; i++)
             {
                 dataPath += $"{rune.Id}";
             }
+
+            if (rune == projectedRune)
+                dataPath += $"{projectedRune.Id}";
         }
 
         return dataPath;
