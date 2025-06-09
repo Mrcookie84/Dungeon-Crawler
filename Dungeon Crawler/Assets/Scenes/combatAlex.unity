@@ -7734,6 +7734,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4878391985477144652, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5118659879613020856, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.061
@@ -8030,7 +8034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7421778055201813751, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7456249514891645530, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
