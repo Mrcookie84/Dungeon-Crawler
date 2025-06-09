@@ -22,7 +22,7 @@ public class PlayerDetection : MonoBehaviour
             }
             else if (playerID == 2)
             {
-                Debug.Log("Interact Panda");
+                animatorComponent.Play("panda_interaction");
             }
             else if(playerID == 3)
             {

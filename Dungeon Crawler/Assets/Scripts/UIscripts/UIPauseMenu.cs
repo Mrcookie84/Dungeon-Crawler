@@ -41,14 +41,14 @@ public class UIPauseMenu : MonoBehaviour
         public List<GameObject> boutonToDisableRenard = new List<GameObject>();
         private bool _renardPersonalInventoryState = false;
         
-        /*
+        
         [Header("Panda")]
-        [SerializeField] public GameObject inventory;
+        [SerializeField] public GameObject pandaPersonalInventory;
         public List<GameObject> boutonToDisablePanda = new List<GameObject>();
         private bool _pandaPersonalInventoryState;
-        */
         
-        [Header("Parameter")]
+        
+        [Header("Grenouille")]
         [SerializeField] public GameObject grenouillePersonalInventory;
         public List<GameObject> boutonToDisableGrenouille = new List<GameObject>();
         private bool _grenouillePersonalInventoryState = false;
@@ -149,6 +149,19 @@ public class UIPauseMenu : MonoBehaviour
                 foreach (var iGameObject in boutonToDisableGrenouille)
                 {
                     iGameObject.SetActive(!_grenouillePersonalInventoryState);
+                }
+            }
+        }
+        
+        public void OpenClosePandaPersonalInventory()
+        {
+            {
+                _pandaPersonalInventoryState = !_pandaPersonalInventoryState;
+                pandaPersonalInventory.SetActive(_pandaPersonalInventoryState);
+
+                foreach (var iGameObject in boutonToDisablePanda)
+                {
+                    iGameObject.SetActive(!_pandaPersonalInventoryState);
                 }
             }
         }
