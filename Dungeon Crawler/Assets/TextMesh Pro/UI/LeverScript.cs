@@ -24,7 +24,10 @@ public class LeverScript : MonoBehaviour
         if (animatorComponent == null)
         {
             Debug.LogWarning("No animator detected on" + gameObject.name);
+<<<<<<< HEAD
             
+=======
+>>>>>>> f746321 (Bug fix)
         }
     }
 

@@ -5,7 +5,11 @@ using UnityEngine;
 public class CursorManager : MonoBehaviour
 {
 
+<<<<<<< HEAD
     [SerializeField] public Texture2D cursorTexture;
+=======
+    [SerializeField] private Texture2D cursorTexture;
+>>>>>>> f746321 (Bug fix)
 
     private Vector2 cursorHotSpot;
     

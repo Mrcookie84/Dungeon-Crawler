@@ -302,7 +302,11 @@ public class SpellCaster : MonoBehaviour
     private IEnumerator FxCoroutine(float t, List<Vector2Int> affectedCells)
     {
         // Fx lancer
+<<<<<<< HEAD
         GameObject castFx = Instantiate(spellEnemyData.fxCast, casterGPos.transform.GetChild(0));
+=======
+        GameObject castFx = Instantiate(spellEnemyData.fxCast, casterGPos.transform);
+>>>>>>> f746321 (Bug fix)
         castFx.GetComponent<FxControler>().SetPointToReach(GridManager.EnemyGrid.GetEntityAtPos(triggerPos.Value).transform.GetChild(0).position);
 
         yield return new WaitForSeconds(t);

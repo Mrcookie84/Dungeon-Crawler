@@ -21,7 +21,11 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
+<<<<<<< HEAD
   isReadable: 1
+=======
+  isReadable: 0
+>>>>>>> f746321 (Bug fix)
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -54,7 +58,11 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
+<<<<<<< HEAD
   textureType: 7
+=======
+  textureType: 8
+>>>>>>> f746321 (Bug fix)
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
