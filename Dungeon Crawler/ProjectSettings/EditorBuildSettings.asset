@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/combatAlex.unity
     guid: 8a1951982c3517341bf9898e852f02a6
+  - enabled: 1
+    path: Assets/Scenes/Ecran de fin.unity
+    guid: a7d0f855b2d6bdb499d065446248809d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: d15c77617d9525f4c82a0f9c6f22d071, type: 3}
