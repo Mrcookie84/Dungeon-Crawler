@@ -36,6 +36,9 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private int initialScoreDif;
     [SerializeField] private int scoreDifDecay;
     private int scoreDif;
+
+    [Header("Sound")]
+    [SerializeField] private AudioSource attackSE;
     
 
     private int[] scoreMask = new int[6];
@@ -246,6 +249,8 @@ public class EnemyAI : MonoBehaviour
     private void Attack(EnemyActionData action)
     {
         animHandler.ChangeState(EntityFightAnimation.State.Attack);
+
+        attackSE.Play();
 
         List<GameObject> targets = new List<GameObject>();
 

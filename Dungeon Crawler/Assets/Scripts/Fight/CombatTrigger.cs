@@ -25,6 +25,7 @@ public class CombatTrigger : MonoBehaviour
         PositionManager.FillGrids();
         RuneSelection.InitializeStats();
         EnemyAIControler.UpdateAllMasks();
+        TurnManager.InitializeTurn();
 
         SceneManager.GoToFight();
         gameObject.SetActive(false);

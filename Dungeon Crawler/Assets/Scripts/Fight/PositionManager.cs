@@ -55,11 +55,11 @@ public class PositionManager : MonoBehaviour
         {
             GridManager.EnemyGrid.entityList = new GameObject[6];
             if (GridManager.EnemyGrid.transform.GetChild(i).childCount == 2)
-                Destroy(GridManager.EnemyGrid.transform.GetChild(i).GetChild(1));
+                Destroy(GridManager.EnemyGrid.transform.GetChild(i).GetChild(1).gameObject);
             
             GridManager.PlayerGrid.entityList = new GameObject[6];
             if (GridManager.PlayerGrid.transform.GetChild(i).childCount == 2)
-                Destroy(GridManager.PlayerGrid.transform.GetChild(i).GetChild(1));
+                Destroy(GridManager.PlayerGrid.transform.GetChild(i).GetChild(1).gameObject);
         }
     }
 }

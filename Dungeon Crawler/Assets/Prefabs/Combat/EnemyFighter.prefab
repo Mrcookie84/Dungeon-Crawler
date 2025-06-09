@@ -68,10 +68,18 @@ PrefabInstance:
       propertyPath: probActions.Array.data[2]
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 922953007132723990, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ce406239f02edcf459d6dac3532bc675, type: 3}
     - target: {fileID: 1119370436856598345, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: e1b4ce74fbb616842b558c79c87afd79, type: 2}
+    - target: {fileID: 1254460282209540803, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4eb7110952a7aa347b0c84998c589e97, type: 3}
     - target: {fileID: 2108263569466956935, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -196,6 +204,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Fighter
       objectReference: {fileID: 0}
+    - target: {fileID: 7124059440393292106, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 77e7974910d025543916813ba3e6223c, type: 3}
     - target: {fileID: 7613900510651527408, guid: b1114c0d72ad99049ae747c9149af3f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
