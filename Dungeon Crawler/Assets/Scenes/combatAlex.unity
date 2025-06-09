@@ -2507,6 +2507,153 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &809174315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 809174316}
+  - component: {fileID: 809174318}
+  - component: {fileID: 809174317}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &809174316
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809174315}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 7.00002}
+  m_LocalScale: {x: 1, y: 1, z: 0.99996006}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1919681595}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.014, y: 0.057}
+  m_SizeDelta: {x: 0.50166, y: 0.79087}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &809174317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809174315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "1. Runes Mineures\r\nRune de Focus\r\n- La rune de Focus permet de r\xE9aliser
+    un sort plus pr\xE9cis avec des effets particuliers\r\n\r\nRune d\u2019Extension\r\n-
+    La rune d\u2019Extension permet d\u2019\xE9tendre la zone d\u2019effet du sort\r\n\r\nRune
+    d\u2019Affliction\r\n- La rune d\u2019Affliction permet d\u2019appliquer des
+    status particulier \xE0 chaque rune primordiale\r\n\r\n1. Mana et stabilit\xE9
+    \r\n\r\nChaque sort coute du mana pour \xEAtre lancer, son co\xFBt est d\xE9terminer
+    par celui de toutes les runes qui le compose. si le joueur n\u2019a plus de mana
+    il ne peut plus lancer de sort et donc il fini son tour\r\n\r\nchaque rune \xE0
+    donc un co\xFBt en mana, en les ajoutant au sort on peut voir une pr\xE9visualisation
+    du co\xFBt du sort sur la barre de mana\r\n\r\nLa stabilit\xE9 d\xE9termine le
+    maximum du co\xFBt en mana d\u2019un sort, et donc de la limite de rune dans
+    un seul sort.\r\n\r\n1. Cooldown\r\n\r\nchaque rune \xE0 poss\xE8de un cooldown
+    apr\xE8s utilisation (nombre de tours), il faut donc bien maitriser leurs utilisation
+    et pr\xE9voir le prochain tour"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 0.02
+  m_fontSizeBase: 0.02
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &809174318
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809174315}
+  m_CullTransparentMesh: 1
 --- !u!1 &833687959
 GameObject:
   m_ObjectHideFlags: 0
@@ -3253,7 +3400,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.014999971, y: 0.041}
+  m_AnchoredPosition: {x: 0.014, y: 0.051}
   m_SizeDelta: {x: 0.50166, y: 0.79087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1137656976
@@ -3276,7 +3423,21 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dfd
+  m_text: "Sort sur les ennemis\r\n\n1. Zone d'action\r\n\r\nles sorts touchent la
+    zone ennemie, qui est d\xE9coup\xE9e en une grille de 3 par 2\r\nsur cette zone
+    les ennemis peuvent se d\xE9placer, et les sort touche plus ou moins de cases\r\n\r\n1.
+    Barri\xE8re\r\n\r\nEntre les haut et le bas de la grille d\u2019ennemi, ce trouve
+    une barri\xE8re, elle peut \xEAtre soit bris\xE9e soit renforc\xE9e\r\nles sorts
+    comme les ennemis sont bloquer par cette barri\xE8re, il donc en fonction de
+    la situation int\xE9ressant de soit la briser soit le renforcer\r\n\r\n1. Type
+    de d\xE9g\xE2ts\r\n\nles types de d\xE9g\xE2ts sont d\xE9finis par les runes
+    utilis\xE9es, ainsi que leur zone d\u2019action\r\nles ennemis comme les personnages
+    ont des faiblesse ou r\xE9sistances \xE0 certains types de d\xE9g\xE2ts\r\n\r\nSort
+    sur les personnages du joueur\r\n\n1. Sort sur les Personnages\r\n\r\nLe joueur
+    \xE0 2 moyens de lancer un sort, soit sur les ennemis, soit sur ses personnages\r\nles
+    sorts sur les personnages sont plus limit\xE9s, mais offre des soins ou boost
+    particulier\r\nexemple : la rune de temps qui permet de r\xE9aliser des sorts
+    de soin\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3303,8 +3464,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.03
-  m_fontSizeBase: 0.03
+  m_fontSize: 0.02
+  m_fontSizeBase: 0.02
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4659,8 +4820,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8b0bd239d193f44a57d8f24733363d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startFightOnLoad: 0
-  posData: {fileID: 11400000, guid: 4ac6585789d184d47aa68fe7aa1adc12, type: 2}
+  startFightOnLoad: 1
+  posData: {fileID: 11400000, guid: 4f69bd707172b0b49a9f676d4d82abea, type: 2}
   eventSystem: {fileID: 2041671509}
 --- !u!114 &1769615212
 MonoBehaviour:
@@ -4915,6 +5076,11 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!224 &1919681595 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5999251988656661304, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
+  m_PrefabInstance: {fileID: 2143922538}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1922601599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5165,8 +5331,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021188699}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 7.00002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5174,7 +5340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.015, y: 0.041}
+  m_AnchoredPosition: {x: 0.017, y: 0.034}
   m_SizeDelta: {x: 0.50166, y: 0.79087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2021188701
@@ -5197,7 +5363,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dfd
+  m_text: "1. Runes primordiales\r\n\r\nil existe 3 rune primordiale (Temps, R\xE9alit\xE9,
+    Espace)\r\n\r\nTout sort doit avoir au minimum une rune primordiale, et au maximum
+    2. \r\n\r\nElles apporte l\u2019effet principal du sort ainsi que le type de
+    d\xE9g\xE2t qu\u2019il inflige et des affliction ou effets \r\n\r\nRune de Temps
+    \r\n- La rune de Temps permet de soigner les personnages ou de faire d\u2019importants
+    d\xE9g\xE2ts ou effets\r\n\r\nRune de R\xE9alit\xE9\r\n- La rune de R\xE9alit\xE9
+    permet d\u2019affaiblir ou renforcer la barri\xE8re entre les mondes\r\n\r\nRune
+    d\u2019espace\r\n- La rune d\u2019Espace permet de d\xE9placer les ennemis et
+    faire des attaques de zones\r\n\r\n2. Combinaison\r\n\r\nLes Rune primordiale
+    donne les r\xE8gles essentielles d\u2019un sort, elle peuvent \xEAtres combin\xE9es
+    avec des runes mineures pour modifier cet effet en fonction de la rune mineure
+    utilis\xE9.\r\n\r\nUn sort ne peut contenir qu\u2019un maximum de 3 runes (2
+    runes Primordiale et 1 Mineure)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5224,8 +5402,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.03
-  m_fontSizeBase: 0.03
+  m_fontSize: 0.02
+  m_fontSizeBase: 0.02
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5621,11 +5799,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1761854395827515962, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.26
+      value: -1.78
       objectReference: {fileID: 0}
     - target: {fileID: 1761854395827515962, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.38
+      value: -1.48
       objectReference: {fileID: 0}
     - target: {fileID: 1769165593484152411, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5669,7 +5847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -5685,19 +5863,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
@@ -5718,19 +5896,19 @@ PrefabInstance:
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 502099847}
+      objectReference: {fileID: 1971535403}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 274903502}
+      objectReference: {fileID: 1971535403}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1773961244}
+      objectReference: {fileID: 1971535403}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 507502002}
+      objectReference: {fileID: 1971535403}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
@@ -5781,19 +5959,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowPage
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: set_raycastTarget
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: set_raycastTarget
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: set_raycastTarget
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
@@ -5813,19 +5991,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HelpPageManager, Assembly-CSharp
+      value: UnityEngine.AudioSource, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Graphic, UnityEngine.UI
+      value: UnityEngine.AudioSource, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Graphic, UnityEngine.UI
+      value: UnityEngine.AudioSource, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: UnityEngine.UI.Graphic, UnityEngine.UI
+      value: UnityEngine.AudioSource, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
@@ -5837,7 +6015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
@@ -5852,7 +6030,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2867286277778700623, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
@@ -5923,6 +6109,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d05b033c140ba5c47bd080641aed8eb2, type: 3}
+    - target: {fileID: 3444789889201134213, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3444789889201134213, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3444789889201134213, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -6400,6 +6594,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: d05b033c140ba5c47bd080641aed8eb2, type: 3}
     - target: {fileID: 8935443927640579291, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935443927640579291, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935443927640579291, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935443927640579291, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
@@ -6439,6 +6645,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5276424885824022632, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2021188700}
+    - targetCorrespondingSourceObject: {fileID: 5999251988656661304, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 809174316}
     - targetCorrespondingSourceObject: {fileID: 6009061550023898559, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1137656975}
