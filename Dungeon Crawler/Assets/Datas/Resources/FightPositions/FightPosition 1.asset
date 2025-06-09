@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrierState: 000000000000000000000000
   enemyArray:
+  - {fileID: 4338044252648731311, guid: 5f6968725f228aa4f9821bd20a1920f6, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 1780906407045188297, guid: 5e8fc2f5bed97bf41938d4ceee181ebb, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 4338044252648731311, guid: 5f6968725f228aa4f9821bd20a1920f6, type: 3}
   - {fileID: 0}
