@@ -9,17 +9,21 @@ public class CatTroll : MonoBehaviour
     
     public void OnMouseDown()
     {
-        CAT.SetActive(false);
-        StartCoroutine(QUITCOROUT());
+        if (CAT.activeSelf == true)
+        {
+            StartCoroutine(QUITCOROUT());
+        }
+        
     }
 
     public IEnumerator QUITCOROUT()
     {
-
+        Debug.LogWarning("Trigger secret ending");
+        
         yield return new WaitForSeconds(1);
         
-        Debug.LogWarning("SUPOSSED TO QUICK");
-        Application.Quit();
+        SceneManager.GoToEnding();
+        
     }
     
 }

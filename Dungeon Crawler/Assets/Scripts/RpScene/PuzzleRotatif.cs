@@ -69,6 +69,7 @@ public class PuzzleRotatif : MonoBehaviour
         else
         {
             door.SetActive(true);
+            doorOpen.SetActive(false);
         }
     }
 
