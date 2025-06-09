@@ -37,3 +37,5 @@ MonoBehaviour:
   desc: "- Touche 3 ennemis<br> - \xC9change leurs places<br> - Inflige d\u2019important
     d\xE9g\xE2ts d\u2019\xE9crasement au premier ennemi<br> - Inflige des d\xE9g\xE2ts
     de contact aux autres"
+  fxCell: {fileID: 3746992177775028226, guid: 53ea3f51254a86542abf07c82fd9722d, type: 3}
+  fxCast: {fileID: 576792155977699835, guid: c9449b0f86e149943b624413bea7935d, type: 3}
