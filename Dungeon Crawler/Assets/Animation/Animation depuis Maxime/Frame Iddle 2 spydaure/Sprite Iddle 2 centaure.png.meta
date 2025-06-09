@@ -1,0 +1,339 @@
+fileFormatVersion: 2
+guid: f3d967c1b449c92469a5e6bd9b29aa55
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sprite Iddle 2 centaure_0
+      rect:
+        serializedVersion: 2
+        x: 4380
+        y: 161
+        width: 841
+        height: 934
+      alignment: 9
+      pivot: {x: 0.27785292, y: 0.01660148}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a30ad743193f6449ac36719e0e88201
+      internalID: -72642551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Iddle 2 centaure_1
+      rect:
+        serializedVersion: 2
+        x: 5433
+        y: 161
+        width: 847
+        height: 1006
+      alignment: 9
+      pivot: {x: 0.29985023, y: 0.013368504}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 159041e8555129545b64b82593028776
+      internalID: -332161472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Iddle 2 centaure_2
+      rect:
+        serializedVersion: 2
+        x: 6583
+        y: 161
+        width: 829
+        height: 946
+      alignment: 9
+      pivot: {x: 0.27463728, y: 0.013590274}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25e51b6863738ea4ba0cd9e3c97a9c31
+      internalID: -174538233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Iddle 2 centaure_7
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 167
+        width: 847
+        height: 703
+      alignment: 9
+      pivot: {x: 0.25696167, y: 0.030008677}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c39323b77965fa447808dae7848b4d46
+      internalID: 1092684464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Iddle 2 centaure_8
+      rect:
+        serializedVersion: 2
+        x: 7620
+        y: 161
+        width: 817
+        height: 942
+      alignment: 9
+      pivot: {x: 0.2586229, y: 0.020706646}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac7ef757390007b4d8d5d21d76857610
+      internalID: 823068727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Iddle 2 centaure_10
+      rect:
+        serializedVersion: 2
+        x: 8704
+        y: 160
+        width: 847
+        height: 1021
+      alignment: 9
+      pivot: {x: 0.26104543, y: 0.020517811}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de1bde7bc1040cf4781e71cd43b4f2af
+      internalID: -1582822998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Iddle 2 centaure_11
+      rect:
+        serializedVersion: 2
+        x: 9803
+        y: 161
+        width: 848
+        height: 709
+      alignment: 9
+      pivot: {x: 0.25928655, y: 0.026666423}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 594ad7f14518e574fa5f62e293d0bf2d
+      internalID: -392423185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Iddle 2 centaure_12
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 161
+        width: 848
+        height: 655
+      alignment: 9
+      pivot: {x: 0.29804662, y: 0.037822764}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0292219ab96a78a4fb54b07d5efc1ac6
+      internalID: -1962590171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Iddle 2 centaure_13
+      rect:
+        serializedVersion: 2
+        x: 2287
+        y: 161
+        width: 848
+        height: 624
+      alignment: 9
+      pivot: {x: 0.3306856, y: 0.0342675}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4861b41157b4be744983807f86eb016e
+      internalID: -2059399443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Iddle 2 centaure_14
+      rect:
+        serializedVersion: 2
+        x: 3284
+        y: 161
+        width: 914
+        height: 643
+      alignment: 9
+      pivot: {x: 0.36373052, y: 0.023816882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd3e83d920847f74fa372d257135acf5
+      internalID: 2022011593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Sprite Iddle 2 centaure_0: -72642551
+      Sprite Iddle 2 centaure_1: -332161472
+      Sprite Iddle 2 centaure_10: -1582822998
+      Sprite Iddle 2 centaure_11: -392423185
+      Sprite Iddle 2 centaure_12: -1962590171
+      Sprite Iddle 2 centaure_13: -2059399443
+      Sprite Iddle 2 centaure_14: 2022011593
+      Sprite Iddle 2 centaure_2: -174538233
+      Sprite Iddle 2 centaure_3: -1432179778
+      Sprite Iddle 2 centaure_4: -1099938159
+      Sprite Iddle 2 centaure_5: 1756782509
+      Sprite Iddle 2 centaure_6: -301270826
+      Sprite Iddle 2 centaure_7: 1092684464
+      Sprite Iddle 2 centaure_8: 823068727
+      Sprite Iddle 2 centaure_9: 1579776080
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
