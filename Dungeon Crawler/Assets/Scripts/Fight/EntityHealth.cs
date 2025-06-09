@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -157,7 +158,7 @@ public class EntityHealth : MonoBehaviour
             TurnManager.TestEndFight(posComp.LinkedGrid);
 
             // A changer pour laisser l'animation de mort se jouer
-            if (destoryOnDeath) Destroy(gameObject);
+            if (destoryOnDeath) StartCoroutine(DeathCoroutine());
             
             return;
         }
@@ -166,6 +167,13 @@ public class EntityHealth : MonoBehaviour
 
         hurtSE.Play();
         tookDamage.Invoke();
+    }
+
+    IEnumerator DeathCoroutine()
+    {
+        yield return new WaitForSeconds(2f);
+
+        Destroy(gameObject);
     }
 
     public void Heal(int amount)
