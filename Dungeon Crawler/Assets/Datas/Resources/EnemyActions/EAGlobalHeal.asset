@@ -18,7 +18,7 @@ MonoBehaviour:
   dmgValue: 0
   dmgType: 0
   multipleTarget: 0
-  healAmount: 10
+  healAmount: 5
   supportTarget: 3
   status: {fileID: 0}
   statusDuration: 0
