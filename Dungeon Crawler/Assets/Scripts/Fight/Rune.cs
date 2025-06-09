@@ -35,15 +35,15 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         get
         {
-            foreach (int nbTurn in _coolDownPool.Keys)
+            for (int i = 1; i < CoolDown + 1; i++)
             {
-                if (_coolDownPool[nbTurn] > 0)
+                if (_coolDownPool[i] > 0)
                 {
-                    return nbTurn;
+                    return i;
                 }
             }
 
-            return _coolDownPool.Count - 1;
+            return 0;
         }
     }
 
@@ -124,6 +124,8 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         linkedText.text = _coolDownPool[0].ToString();
 
         // Mise à jour de l'état
+        Debug.Log($"{data.name} =====================");
+
         bool validSpell = false;
         bool unstableSpell = false;
         string spellString = "";
@@ -131,18 +133,22 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             // Sort sur les personnages
             case SpellCaster.CastMode.Player:
-                spellString = RuneSelection.CurrentSpellPlayer + Id;
-                
+                spellString = "Spells/SpellsPlayer/SpellPlayerData" + RuneSelection.GetRuneCombinationData(this);
+                Debug.Log(spellString);
+
                 SpellPlayerData potentialPSpell = Resources.Load<SpellPlayerData>(spellString);
 
                 if (potentialPSpell != null)
                     validSpell = true;
-                
+
+                Debug.Log(validSpell);
                 break;
             
             // Sort sur les ennemis
             case SpellCaster.CastMode.Enemy:
-                spellString = RuneSelection.CurrentSpellEnemy + Id;
+                spellString = "Spells/SpellsEnemy/SpellEnemyData" + RuneSelection.GetRuneCombinationData(this);
+                Debug.Log(spellString);
+
                 SpellEnemyData potentialESpell = Resources.Load<SpellEnemyData>(spellString);
 
                 if (potentialESpell != null)
@@ -152,7 +158,8 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                     if (potentialESpell.unstable)
                         unstableSpell = true;
                 }
-                
+
+                Debug.Log(validSpell);
                 break;
         }
         
@@ -161,8 +168,10 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             runeButton.interactable = true;
 
-            if (RuneSelection.IsEmpty)
+            if (RuneSelection.IsEmpty && Id <= 2)
             {
+                Debug.Log("First Rune");
+
                 overlayImage.sprite = null;
                 overlayImage.gameObject.SetActive(false);
             }
@@ -172,6 +181,8 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
                 if (validSpell)
                 {
+                    Debug.Log("Valide !");
+
                     if (unstableSpell)
                         overlayImage.sprite = highlightUnstableSprite;
                     else
@@ -179,6 +190,8 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                 }
                 else
                 {
+                    Debug.Log("In-valide ...");
+
                     runeButton.interactable = false;
                     overlayImage.sprite = blockedSprite;
                 }
@@ -188,6 +201,7 @@ public class Rune : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         // Mise � jour du cooldown
         if (cooldownSlider == null) return;
 
+        cooldownSlider.maxValue = CoolDown;
         cooldownSlider.value = MinCooldown;
 
         if (_coolDownPool[0] == 0)
