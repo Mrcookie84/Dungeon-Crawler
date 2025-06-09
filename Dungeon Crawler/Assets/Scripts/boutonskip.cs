@@ -3,18 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Butonskipmanager : MonoBehaviour
+public class boutonUI : MonoBehaviour
 {
-    // Méthode pour changer de scène
-    public void ChangeScene(string sceneName)
+    [SerializeField] private string newGameLevel = "Level1";
+    public void NewGameButton()
     {
-        if (!string.IsNullOrEmpty(sceneName)) // Vérifie que le nom n'est pas vide
-        {
-            SceneManager.LoadScene(sceneName); // Change la scène
-        }
-        else
-        {
-            Debug.LogError("Nom de scène invalide ou vide !");
-        }
+        SceneManager.LoadScene(newGameLevel);
     }
 }
