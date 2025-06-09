@@ -4799,7 +4799,6 @@ Transform:
   - {fileID: 541555352}
   - {fileID: 707555759}
   - {fileID: 1971535404}
-  - {fileID: 8856880243248798050}
   - {fileID: 879102513}
   - {fileID: 1765256941165022153}
   - {fileID: 5500188369799565690}
@@ -8118,23 +8117,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 212db98adf5421341b0fe829d2717b7a, type: 3}
---- !u!1 &5619090764006639043
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8856880243248798050}
-  - component: {fileID: 8602814775059387295}
-  m_Layer: 0
-  m_Name: AudioManagerCombat
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1001 &5805426838123011422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8388,35 +8370,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5174976590639576914, guid: 28ae1e87780e7b940a48ab349083abc4, type: 3}
   m_PrefabInstance: {fileID: 7291769315470359192}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8602814775059387295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5619090764006639043}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e916b0b1a2e9d834695ba38cb2d20688, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuMusic: {fileID: 0}
-  fadeImage: {fileID: 0}
---- !u!4 &8856880243248798050
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5619090764006639043}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 713.4643, y: 17.088593, z: -155.46967}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1769615210}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &9125050494133288208
 PrefabInstance:
   m_ObjectHideFlags: 0
