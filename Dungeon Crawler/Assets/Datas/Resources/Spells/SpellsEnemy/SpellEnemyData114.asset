@@ -33,10 +33,10 @@ MonoBehaviour:
   blockedByBarrier: 1
   statusData: {fileID: 0}
   statusDuration: 0
-  t_fx: 0
-  t_damage: 0
-  t_disp: 0
-  t_barrier: 0
+  t_fx: 0.44
+  t_damage: 0.55
+  t_disp: 0.55
+  t_barrier: 0.55
   desc: "- Touche 4 ennemis<br> - Inflige d\u2019important d\xE9g\xE2ts d\u2019\xE9crasement
     \xE0 l\u2019ennemi central<br> - Inflige des d\xE9g\xE2ts de contact aux autres"
   fxCell: {fileID: 3746992177775028226, guid: 53ea3f51254a86542abf07c82fd9722d, type: 3}

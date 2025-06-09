@@ -27,10 +27,10 @@ MonoBehaviour:
   blockedByBarrier: 1
   statusData: {fileID: 0}
   statusDuration: 0
-  t_fx: 0
-  t_damage: 0
-  t_disp: 0
-  t_barrier: 0
+  t_fx: 0.44
+  t_damage: 0.55
+  t_disp: 0.55
+  t_barrier: 0.55
   desc: "- Touche 2 ennemis<br> - \xC9change leurs places si la barri\xE8re est bris\xE9e<br>
     - Inflige d\u2019important d\xE9g\xE2ts d\u2019\xE9crasement au premier ennemi<br>
     - Inflige des d\xE9g\xE2ts de contact aux autres"

@@ -27,10 +27,10 @@ MonoBehaviour:
   blockedByBarrier: 0
   statusData: {fileID: 11400000, guid: e872c538a0399194e96c30194a8efa0b, type: 2}
   statusDuration: 2
-  t_fx: 0
-  t_damage: 0
-  t_disp: 0
-  t_barrier: 0
+  t_fx: 0.44
+  t_damage: 0.55
+  t_disp: 0.55
+  t_barrier: 0.55
   desc: "- Touche 2 ennemis, \xE9change leurs places<br> - Inflige des d\xE9g\xE2ts
     de contact<br> - Applique L\u2019Affliction Immobilisation (2 tours)"
   fxCell: {fileID: 3746992177775028226, guid: 53ea3f51254a86542abf07c82fd9722d, type: 3}

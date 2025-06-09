@@ -23,6 +23,9 @@ public class SpellPlayerData : ScriptableObject
     [Header("Description")]
     public string desc;
 
+    [Header("FX")]
+    public GameObject fxCell;
+
     public float SpellDuration
     {
         get { return Mathf.Max(t_effect, t_fx); }

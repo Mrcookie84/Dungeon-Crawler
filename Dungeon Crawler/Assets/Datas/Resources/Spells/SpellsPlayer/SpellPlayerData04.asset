@@ -14,4 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   switchWorld: 1
   multipleTargets: 1
+  type: 0
+  appliedStatus: {fileID: 0}
+  statusDuration: 0
+  healAmount: 0
+  t_fx: 0
+  t_effect: 0
   desc: "Change de monde tout les personnages d\u2019un monde"
+  fxCell: {fileID: 1932580158577866800, guid: 0d7067080b8d2804b9e22684b7dc8dd9, type: 3}

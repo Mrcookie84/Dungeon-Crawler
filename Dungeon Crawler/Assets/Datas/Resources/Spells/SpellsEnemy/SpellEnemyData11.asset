@@ -30,10 +30,10 @@ MonoBehaviour:
   blockedByBarrier: 0
   statusData: {fileID: 0}
   statusDuration: 0
-  t_fx: 0
-  t_damage: 0
-  t_disp: 0
-  t_barrier: 0
+  t_fx: 0.44
+  t_damage: 0.55
+  t_disp: 0.55
+  t_barrier: 0.55
   desc: "- Touche 3 ennemis<br> - \xC9change leurs places<br> - inflige d\u2019important
     d\xE9g\xE2ts d\u2019\xE9crasement au premier et n\u2019\xE9change pas sa place<br>
     - inflige d\u2019importants d\xE9g\xE2ts de contact aux autres"

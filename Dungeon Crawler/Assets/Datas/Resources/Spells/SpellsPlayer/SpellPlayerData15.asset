@@ -21,3 +21,4 @@ MonoBehaviour:
   t_fx: 0
   t_effect: 0
   desc: 'Applique une protection sur un personnage, elle encaisse 1 attaque (1 tour) '
+  fxCell: {fileID: 3746992177775028226, guid: 53ea3f51254a86542abf07c82fd9722d, type: 3}
