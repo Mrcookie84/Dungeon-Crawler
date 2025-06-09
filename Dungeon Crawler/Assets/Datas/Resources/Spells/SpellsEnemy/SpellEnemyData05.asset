@@ -27,10 +27,10 @@ MonoBehaviour:
   blockedByBarrier: 0
   statusData: {fileID: 11400000, guid: f19281c9efbe7fc49b1ba99d320f11f2, type: 2}
   statusDuration: 1
-  t_fx: 0
-  t_damage: 0
-  t_disp: 0
-  t_barrier: 0
+  t_fx: 0.44
+  t_damage: 0.55
+  t_disp: 0.55
+  t_barrier: 0.55
   desc: "- Touche 2 ennemis<br> - Brise la barri\xE8re aux emplacement touch\xE9s<br>
     - Applique l\u2019Affliction Faiblesse Dimensionnelle (2 tours)"
   fxCell: {fileID: 1932580158577866800, guid: 0d7067080b8d2804b9e22684b7dc8dd9, type: 3}

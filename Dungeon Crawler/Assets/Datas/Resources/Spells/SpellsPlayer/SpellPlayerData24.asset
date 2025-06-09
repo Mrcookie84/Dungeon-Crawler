@@ -21,3 +21,4 @@ MonoBehaviour:
   t_fx: 0
   t_effect: 0
   desc: 'Soigne tout les personnages de 20 points de vie '
+  fxCell: {fileID: 3046429212655490475, guid: f3212124964487b4eafb9f4e5b7d3854, type: 3}

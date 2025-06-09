@@ -24,10 +24,10 @@ MonoBehaviour:
   blockedByBarrier: 0
   statusData: {fileID: 0}
   statusDuration: 0
-  t_fx: 0
-  t_damage: 0
-  t_disp: 0
-  t_barrier: 0
+  t_fx: 0.44
+  t_damage: 0.55
+  t_disp: 0.55
+  t_barrier: 0.55
   desc: "- Touche 1 ennemi<br> - Inflige des d\xE9g\xE2ts de d\xE9gradation mod\xE9r\xE9es"
   fxCell: {fileID: 3046429212655490475, guid: f3212124964487b4eafb9f4e5b7d3854, type: 3}
   fxCast: {fileID: 6964524067351350486, guid: 943b0e52ad2ced44c893f192e8f61dd8, type: 3}

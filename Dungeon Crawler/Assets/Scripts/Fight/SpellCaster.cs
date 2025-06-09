@@ -225,7 +225,7 @@ public class SpellCaster : MonoBehaviour
         }
 
         // Lancer les coroutine
-        StartCoroutine(CastPlayerFxCoroutine(1f));
+        StartCoroutine(CastPlayerFxCoroutine(1f, affectedCells));
         StartCoroutine(CastPlayerEffectCoroutine(1f, affectedPlayers));
 
         yield return new WaitForSeconds(t);
@@ -264,9 +264,19 @@ public class SpellCaster : MonoBehaviour
         GridManager.PlayerGrid.UpdateEntitiesIndex();
     }
 
-    private IEnumerator CastPlayerFxCoroutine(float t)
+    private IEnumerator CastPlayerFxCoroutine(float t, List<Vector2Int> affectedCells)
     {
         yield return new WaitForSeconds(t);
+
+        foreach (Vector2Int cell in affectedCells)
+        {
+            Transform cellTr = GridManager.PlayerGrid.transform.GetChild(cell.x + 3 * cell.y);
+
+            if (spellPlayerData.fxCell != null)
+            {
+                GameObject currentFx = Instantiate(spellEnemyData.fxCell, cellTr);
+            }
+        }
     }
     #endregion
 
@@ -292,7 +302,7 @@ public class SpellCaster : MonoBehaviour
     private IEnumerator FxCoroutine(float t, List<Vector2Int> affectedCells)
     {
         // Fx lancer
-        GameObject castFx = Instantiate(spellEnemyData.fxCast, casterGPos.transform);
+        GameObject castFx = Instantiate(spellEnemyData.fxCast, casterGPos.transform.GetChild(0));
         castFx.GetComponent<FxControler>().SetPointToReach(GridManager.EnemyGrid.GetEntityAtPos(triggerPos.Value).transform.GetChild(0).position);
 
         yield return new WaitForSeconds(t);

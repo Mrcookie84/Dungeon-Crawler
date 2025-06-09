@@ -24,10 +24,10 @@ MonoBehaviour:
   blockedByBarrier: 0
   statusData: {fileID: 11400000, guid: a55e12d09b7b06c41b2f6b2404de8161, type: 2}
   statusDuration: 3
-  t_fx: 0
-  t_damage: 0
-  t_disp: 0
-  t_barrier: 0
+  t_fx: 0.44
+  t_damage: 0.55
+  t_disp: 0.55
+  t_barrier: 0.55
   desc: "- Touche 1 ennemi<br> - Applique l\u2019affliction D\xE9gradation (3 tours)
     (10 d\xE9g\xE2ts de d\xE9gradation par tour)"
   fxCell: {fileID: 3046429212655490475, guid: f3212124964487b4eafb9f4e5b7d3854, type: 3}
