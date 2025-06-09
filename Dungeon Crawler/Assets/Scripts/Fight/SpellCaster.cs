@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -290,15 +291,23 @@ public class SpellCaster : MonoBehaviour
 
     private IEnumerator FxCoroutine(float t, List<Vector2Int> affectedCells)
     {
+        // Fx lancer
+        GameObject castFx = Instantiate(spellEnemyData.fxCast, casterGPos.transform);
+        castFx.GetComponent<FxControler>().SetPointToReach(GridManager.EnemyGrid.GetEntityAtPos(triggerPos.Value).transform.GetChild(0).position);
+
         yield return new WaitForSeconds(t);
 
+        // Fx impact
         for (int i = 0; i < affectedCells.Count; i++)
         {
             Vector2Int cell = affectedCells[i];
             Transform cellTr = GridManager.EnemyGrid.transform.GetChild(cell.x + 3 * cell.y);
 
             if (spellEnemyData.fxCell != null)
-                Instantiate(spellEnemyData.fxCell, cellTr);
+            {
+                GameObject currentFx = Instantiate(spellEnemyData.fxCell, cellTr);
+            }
+                
         }
     }
 

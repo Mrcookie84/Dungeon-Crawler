@@ -1862,6 +1862,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 588565201688244566, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 698466264310245397, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 813649762748423210, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -1925,6 +1933,10 @@ PrefabInstance:
     - target: {fileID: 1245327433536748646, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366925306154389827, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1514296976495193011, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2026,6 +2038,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 948
       objectReference: {fileID: 0}
+    - target: {fileID: 4512025692354708082, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4673149510436076822, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2065,6 +2081,14 @@ PrefabInstance:
     - target: {fileID: 4817381382314050672, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838072301185970464, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481788344798246859, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5512803484125211826, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4832,7 +4856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8b0bd239d193f44a57d8f24733363d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startFightOnLoad: 0
+  startFightOnLoad: 1
   posData: {fileID: 11400000, guid: 4f69bd707172b0b49a9f676d4d82abea, type: 2}
   eventSystem: {fileID: 2041671509}
 --- !u!114 &1769615212
