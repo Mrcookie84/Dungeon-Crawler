@@ -155,10 +155,17 @@ public class EntityHealth : MonoBehaviour
 
             if (data.keepHealth) data.currentHealth = 1;
 
-            TurnManager.TestEndFight(posComp.LinkedGrid);
-
             // A changer pour laisser l'animation de mort se jouer
             if (destoryOnDeath) StartCoroutine(DeathCoroutine());
+            
+            if (posComp != null && posComp.LinkedGrid != null)
+            {
+                TurnManager.Instance.TestEndFight(posComp.LinkedGrid);
+            }
+            else
+            {
+                Debug.LogError("posComp or LinkedGrid is null in EntityHealth");
+            }
             
             return;
         }

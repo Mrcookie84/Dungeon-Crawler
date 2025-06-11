@@ -11,7 +11,7 @@ public class CombatTrigger : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Group"))
+        if (other.gameObject.CompareTag("Player"))
         {
             StartCoroutine(EnterCombatRoutine());
         }

@@ -51,15 +51,27 @@ public class PositionManager : MonoBehaviour
 
     public static void EmptyGrids()
     {
+        if (GridManager.EnemyGrid == null || GridManager.PlayerGrid == null)
+        {
+            Debug.LogError("EnemyGrid or PlayerGrid is null");
+            return;
+        }
+        
         for (int i = 0; i < 6; i++)
         {
             GridManager.EnemyGrid.entityList = new GameObject[6];
             if (GridManager.EnemyGrid.transform.GetChild(i).childCount == 2)
+            {
                 Destroy(GridManager.EnemyGrid.transform.GetChild(i).GetChild(1).gameObject);
+                Debug.LogWarning("Ennemy : " + i + " has been cleared");
+            }
+                
             
             GridManager.PlayerGrid.entityList = new GameObject[6];
             if (GridManager.PlayerGrid.transform.GetChild(i).childCount == 2)
+            {
                 Destroy(GridManager.PlayerGrid.transform.GetChild(i).GetChild(1).gameObject);
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
@@ -6,6 +7,7 @@ using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
+    
     public static TurnManager Instance;
 
     [SerializeField] private SpellCaster spellCaster;
@@ -106,19 +108,88 @@ public class TurnManager : MonoBehaviour
         SpellCaster.EnableButtons(false);
     }
 
-    public static void TestEndFight(GridManager grid)
-    {
-        //Debug.Log("Test fin de combat");
-        
-        if (grid.IsEmpty)
-        {
-            PositionManager.EmptyGrids();
-            EntityHealth.SaveHealthValue();
+    public void TestEndFight(GridManager grid)
+{
+    Debug.Log("Test fin de combat");
 
-            if (grid == GridManager.EnemyGrid)
-                SceneManager.GoToRP();
-            else if (grid == GridManager.PlayerGrid)
-                Application.Quit();
+    // Coroutine pour détruire TOUTES les entités après les animations
+    IEnumerator CleanupAndTransition(bool isVictory)
+    {
+        // 1. Détruire tous les ennemis (même en victoire/défaite)
+        foreach (Transform slot in GridManager.EnemyGrid.transform)
+        {
+            if (slot.childCount > 1) // Index 1 = l'entité
+            {
+                Destroy(slot.GetChild(1).gameObject);
+            }
         }
+
+        // 2. Détruire les joueurs SEULEMENT en victoire
+        if (isVictory)
+        {
+            foreach (Transform slot in GridManager.PlayerGrid.transform)
+            {
+                if (slot.childCount > 1)
+                {
+                    Destroy(slot.GetChild(1).gameObject);
+                }
+            }
+        }
+
+        // 3. Attend que les animations de mort se terminent
+        yield return new WaitForSeconds(2f); // Ajustez selon vos animations
+
+        // 4. Transition
+        if (isVictory)
+        {
+            StartCoroutine(GoToRPCorout()); // Retour au RP
+        }
+        else
+        {
+            StartCoroutine(DeathCorout());  // Game Over
+        }
+    }
+
+    // --- Cas 1 : Vérification victoire (tous ennemis morts) ---
+    if (grid == GridManager.EnemyGrid)
+    {
+        bool allEnemiesDead = !GridManager.EnemyGrid.transform.Cast<Transform>()
+            .Any(slot => slot.childCount > 1 && 
+                        slot.GetChild(1).TryGetComponent<EntityHealth>(out var health) && 
+                        !health.dead);
+
+        if (allEnemiesDead)
+        {
+            StartCoroutine(CleanupAndTransition(true)); // Victory cleanup
+        }
+    }
+    // --- Cas 2 : Vérification défaite (tous joueurs morts) ---
+    else if (grid == GridManager.PlayerGrid)
+    {
+        bool allPlayersDead = !GridManager.PlayerGrid.transform.Cast<Transform>()
+            .Any(slot => slot.childCount > 1 && 
+                        slot.GetChild(1).TryGetComponent<EntityHealth>(out var health) && 
+                        !health.dead);
+
+        if (allPlayersDead)
+        {
+            StartCoroutine(CleanupAndTransition(false)); // Defeat cleanup
+        }
+    }
+}
+
+    private IEnumerator GoToRPCorout()
+    {
+        yield return new WaitForSeconds(5f);
+        
+        SceneManager.GoToRP();
+        
+    }
+
+    private IEnumerator DeathCorout()
+    {
+        yield return new WaitForSeconds(1f);
+        
+        Application.Quit();
     }
 }

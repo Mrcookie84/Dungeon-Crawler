@@ -5,7 +5,7 @@ using UnityEngine;
 public class CursorManager : MonoBehaviour
 {
 
-    [SerializeField] private Texture2D cursorTexture;
+    [SerializeField] public Texture2D cursorTexture;
 
     private Vector2 cursorHotSpot;
     

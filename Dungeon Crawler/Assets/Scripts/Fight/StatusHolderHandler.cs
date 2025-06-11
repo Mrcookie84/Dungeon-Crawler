@@ -7,6 +7,8 @@ using static EntityStatusHolder;
 public class StatusHolderHandler : MonoBehaviour
 {
     [SerializeField] private GameObject statusUI;
+    
+    
 
     public void ResetStatus()
     {
@@ -15,7 +17,7 @@ public class StatusHolderHandler : MonoBehaviour
             transform.GetChild(i).GetComponent<Image>().enabled = false;
             if (transform.GetChild(i).childCount == 0) continue;
             
-            DestroyImmediate(transform.GetChild(i).GetChild(0).gameObject);
+            Destroy(transform.GetChild(i).GetChild(0).gameObject);
         }
     }
 
