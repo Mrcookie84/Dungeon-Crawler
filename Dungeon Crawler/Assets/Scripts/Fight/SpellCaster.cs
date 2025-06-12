@@ -303,10 +303,14 @@ public class SpellCaster : MonoBehaviour
     {
         // Fx lancer
 <<<<<<< HEAD
+<<<<<<< HEAD
         GameObject castFx = Instantiate(spellEnemyData.fxCast, casterGPos.transform.GetChild(0));
 =======
         GameObject castFx = Instantiate(spellEnemyData.fxCast, casterGPos.transform);
 >>>>>>> f746321 (Bug fix)
+=======
+        GameObject castFx = Instantiate(spellEnemyData.fxCast, casterGPos.transform);
+>>>>>>> origin/gd/Thomas
         castFx.GetComponent<FxControler>().SetPointToReach(GridManager.EnemyGrid.GetEntityAtPos(triggerPos.Value).transform.GetChild(0).position);
 
         yield return new WaitForSeconds(t);

@@ -5,7 +5,11 @@ using UnityEngine;
 public class EndingScreen : MonoBehaviour
 {
 
+<<<<<<< HEAD
     public void OnClickEnding()
+=======
+    public void OnEndingPancarteJaiJureeCaVaPlus()
+>>>>>>> origin/gd/Thomas
     {
         SceneManager.GoToEnding();
     }

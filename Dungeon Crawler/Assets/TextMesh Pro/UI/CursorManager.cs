@@ -6,10 +6,14 @@ public class CursorManager : MonoBehaviour
 {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     [SerializeField] public Texture2D cursorTexture;
 =======
     [SerializeField] private Texture2D cursorTexture;
 >>>>>>> f746321 (Bug fix)
+=======
+    [SerializeField] private Texture2D cursorTexture;
+>>>>>>> origin/gd/Thomas
 
     private Vector2 cursorHotSpot;
     

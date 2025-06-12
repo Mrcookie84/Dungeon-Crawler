@@ -25,9 +25,12 @@ public class LeverScript : MonoBehaviour
         {
             Debug.LogWarning("No animator detected on" + gameObject.name);
 <<<<<<< HEAD
+<<<<<<< HEAD
             
 =======
 >>>>>>> f746321 (Bug fix)
+=======
+>>>>>>> origin/gd/Thomas
         }
     }
 

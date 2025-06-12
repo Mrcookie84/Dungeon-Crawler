@@ -1636,7 +1636,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 588565201688244566, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchoredPosition.x
+<<<<<<< HEAD
       value: 0.8899994
+=======
+      value: 0.89
+>>>>>>> origin/gd/Thomas
       objectReference: {fileID: 0}
     - target: {fileID: 698466264310245397, guid: 26f60d9b7b360014486fd41d92498a17, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5659,6 +5663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 --- !u!1 &2089157287 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4055137035032090135, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
@@ -5669,6 +5674,8 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 423340613608869998, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}
   m_PrefabInstance: {fileID: 2143922538}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> origin/gd/Thomas
 --- !u!114 &2108816543 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9098899270918912084, guid: 0bfb76e2ef5b71941865d4eee81d5477, type: 3}

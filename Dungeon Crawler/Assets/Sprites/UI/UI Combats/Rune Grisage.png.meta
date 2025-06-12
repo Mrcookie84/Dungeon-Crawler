@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 fileFormatVersion: 2
 guid: bd3dd6c432189fa4a9691a99ca32aebd
 TextureImporter:
@@ -114,6 +115,8 @@ TextureImporter:
   assetBundleName: 
   assetBundleVariant: 
 =======
+=======
+>>>>>>> origin/gd/Thomas
 fileFormatVersion: 2
 guid: bd3dd6c432189fa4a9691a99ca32aebd
 TextureImporter:
@@ -228,4 +231,7 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<< HEAD
 >>>>>>> f746321 (Bug fix)
+=======
+>>>>>>> origin/gd/Thomas
